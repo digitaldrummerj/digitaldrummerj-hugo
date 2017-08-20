@@ -1,0 +1,66 @@
+{{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+  {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+
+
+  <div class="blog-post">
+    <h3>
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </h3>
+    <div class="callout small">
+      <small>
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{ .Date.Format $dateFormat }}
+        </time> by {{ .Params.author | default .Site.Params.author }}.
+        {{ if (.Params.categories) }}Categories: {{ partial "meta-categories.html" . }}.{{ end }}
+        {{ if (.Params.tags) }}Tags: {{ partial "meta-tags.html" . }}.{{ end }}
+        <br>
+        {{ if not .Site.Params.sharingicons.hide }}
+          {{ partial "sharing-icons.html" . }}
+        {{ end }}
+      </small>
+    </div>
+     {{if .Params.series}}
+	    {{ $name := index .Params.series 0 }}
+    	<p class="seriesname">Series: <a href="{{.Site.BaseURL}}/series/{{$name | urlize}}">{{$name}}</a></p>
+    {{end}}
+    <p>
+      {{ .Content }}
+    </p>
+    {{ if .IsTranslated }}
+      <h4>{{ i18n "translations" }}</h4>
+      <ul>
+        {{ range .Translations }}
+          <li><a href="{{ .Permalink }}">
+            {{ .Lang }}: {{ .Title }}{{ if .IsPage }}{{ end }}
+          </a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+    <hr>
+  </div>
+    {{ if .Params.series }}
+        {{ $link := .Permalink }}
+	    {{ $name := index .Params.series 0 }}
+	    <hr/>
+    	<p><a href="" id="series"></a>This is a post in the <b>{{$name}}</b> series.<br/>
+    	Other posts in this series:</p>
+        {{ $name := $name | urlize }}
+        {{ $series := index .Site.Taxonomies.series $name }}
+        <ul class="series">
+        {{ range $series.Pages }}
+            <li>{{.Date.Format "Jan 02, 2006"}} - 
+            {{ if eq .Permalink $link }}
+                {{.LinkTitle}}
+            {{else}}
+                <a href="{{.Permalink}}">{{.LinkTitle}} </a>
+            {{end}}
+            </li>
+        {{end}}
+        </ul>
+	{{end}} 
+  {{ if .Site.DisqusShortname }}
+    {{ partial "disqus.html" . }}
+  {{ end }}
+
+{{ end }}
