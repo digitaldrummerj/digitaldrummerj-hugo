@@ -1,6 +1,10 @@
 {{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
 {{ define "main" }}
-  {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+{{ if .Params.page_template }}
+  {{ partial .Params.page_template }}
+{{ else }}
+
+{{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 
 
   <div class="blog-post">
@@ -24,3 +28,5 @@
   </div>
 
 {{ end }}
+{{ end }}
+

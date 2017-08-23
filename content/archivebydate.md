@@ -1,7 +1,7 @@
 ---
 title: "Blog Archive by Date"
 teaser: "Check out all blog posts grouped by month."
-permalink: /blog/archive/monthview/
+url: /blog/archive/monthview/
 sitemap: false
 sidebar: right
 ---

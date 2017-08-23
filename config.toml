@@ -3,34 +3,29 @@
 baseurl = "http://digitaldrummerj.me/"
 languageCode = "en-us"
 title = "Justin James"
-theme = "theme-hugo-foundation6"
-
+theme = "foundation6"
+# theme = "icarus"
+# theme = "bulma"
 # number of posts to show on home/category/tag pages (Default: 10)
 paginate = 5
+buildDrafts = true
+buildFuture = true
+
 # optionally override the site's footer with custom copyright text
 # copyright = "Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/)."
 #googleAnalytics = "UA-123-45"
 #disqusShortname = "XYW"
 
 [permalinks]
-	blog = "/:year/:month/:filename/"
-  post = "/:year/:month/:title/"
+  blog = "/:slug"
   page = "/:slug/"
-
-[[menu.sidebar]]
-  name = "Link 1"
-  url = "https://example.com"
-
-[[menu.sidebar]]
-  name = "Link 2"
-  url = "https://example.org"
 
 # custom navbar menu entry.   See the custom_navbar parameter below for
 # details.
 
-#[[menu.navbar]]
-#  name = "Link 1"
-#  url = "https://example.org"
+[[menu.navbar]]
+  name = "Link 1"
+  url = "https://example.org"
 
 
 # Theme variables
@@ -38,11 +33,11 @@ paginate = 5
 [params]
   # Site author
   author = "Justin James"
-  twitter = ""
-  github = ""
-  youtube = ""
-  twitch = ""
-
+  twitter = "digitaldrummerj"
+  github = "digitaldrummerj"
+  youtube = "digitaldrummerj"
+  twitch = "digitaldrummerj"
+  slideshare = "digitaldrummerj"
   
   # Description/subtitle for homepage (can be Markdown)
   description = "Web Developer and Professional Speaker"
@@ -109,3 +104,10 @@ paginate = 5
   series = "series"
   tag = "tags"
   category = "categories"
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    recent_articles = true
+    categories = true
+    tags = true
+    tag_cloud = true

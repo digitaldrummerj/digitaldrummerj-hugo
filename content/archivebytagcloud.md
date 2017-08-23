@@ -2,7 +2,7 @@
 title: "Blog Archive by Tag Cloud"
 teaser: "Check out all blog posts by tag cloud."
 #breadcrumb: true
-permalink: /blog/archive/tagcloudview/
+url: /blog/archive/tagcloudview/
 sitemap: false
 sidebar: right
 ---

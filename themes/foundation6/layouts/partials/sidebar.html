@@ -1,0 +1,38 @@
+<div class="medium-3 columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="content">
+
+  {{ if isset .Site.Params.sidebar "about" }}
+    <h4>{{ i18n "about" }}</h4>
+    <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
+  {{ end }}
+
+  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+
+  <h4>{{ i18n "recentPosts" }}</h4>
+  <ul>
+    {{ range first $num_recent_posts (where .Site.Pages "Type" "blog") }}
+      <li><a href="{{.RelPermalink}}">
+        {{.Title | markdownify }}
+      </a></li>
+    {{ end }}
+  </ul>
+
+  
+  {{ with .Site.Menus.sidebar }}
+    <h4>{{ i18n "links" }}</h4>
+    <ul>
+      {{ range . }}
+        <li><a href="{{ .URL | absURL }}">
+          {{ .Name }}
+        </a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
+  <h4>{{ i18n "categories" }}</h4>
+  
+  {{ range $name, $items := .Site.Taxonomies.categories }}
+  <li><a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize | lower }}">{{ replace $name "-" " " | title}} &nbsp;<span>({{ len $items }})</span></a></li>
+  {{ end }}
+  </div>
+</div>
