@@ -20,13 +20,32 @@ buildFuture = true
   blog = "/:slug"
   page = "/:slug/"
 
-# custom navbar menu entry.   See the custom_navbar parameter below for
-# details.
+# navbar menu entry.
 
-[[menu.navbar]]
-  name = "Link 1"
-  url = "https://example.org"
+[[menu.navbar_left]]
+  name = "Speaking Engagements"
+  url = "/speaking/"
+  weight = 1
 
+[[menu.navbar_left]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 2
+
+[[menu.navbar_right]]
+  name = "About"
+  url = "/about/"
+  weight = 1
+
+[[menu.navbar_right]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 2
+
+[[menu.navbar_right]]
+  name = "Search"
+  url = "/search/"
+  weight = 3
 
 # Theme variables
 #
@@ -49,7 +68,7 @@ buildFuture = true
   #google_verify_meta = "BAi57DROASu4b2mkVNA_EyUsobfA7Mq8BmSg7Rn-Zp9"
 
   # verification string for Bing Webmaster Tools
-  #bing_verify_meta = "3DA353059F945D1AA256B1CD8A3DA847"
+  bing_verify_meta = "E414777C8C1E619FC57F320448FD584A"
 
   # verification string for Yandex Webmaster Tools
   #yandex_verify_meta = "66b077430f35f04a"
@@ -60,15 +79,6 @@ buildFuture = true
   # site or externally, for example:
   #cookie_consent_info_url = "/cookie-information/"
   #cookie_consent_info_url = "http://cookiesandyou.com"
-
-  # customise the contents of the navbar at the top of the page.  The default
-  # behaviour is to list all static pages not in the posts directory. When the
-  # parameter below is set to true you will have to manually add entries to the
-  # navbar, either by adding the following menu variable to the front matter of
-  # the relevant pages
-  #   menu = "navbar"
-  # or by specifying menu entries in a similar way to the sidebar menu above.
-  custom_navbar = true
 
   [params.sidebar]
     # Optional about block for sidebar (can be Markdown)

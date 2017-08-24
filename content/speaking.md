@@ -2,6 +2,7 @@
 title: Speaking
 subheadline: "Combining passion for coding and teaching. "
 permalink: /speaking/
+sidebar: false
 ---
 
 {: #top }

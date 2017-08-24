@@ -4,10 +4,8 @@ date = "2017-05-19T21:49:20+02:00"
 menu = "main"
 disable_comments = true
 url = "/about/"
+sidebar = false
 +++
-
-Add some information about yourself.
-
 
 I have been programming and designing web applications for over 20 years.  I love to share my knowledge with others to help get you to your end goal faster.  I am a frequent speaker at conferences, meetups and community events.  I am also part of the Arizona Give Camp organization where they put on hackathons for developers to code it forward to help Non-Profits with their IT needs.  
 

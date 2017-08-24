@@ -27,39 +27,39 @@
   </head>
   <body>
 
-    <header class="nav">
-      <div class="top-bar">
-        <div class="row column">
-          <div class="top-bar-left">
-            <ul class="menu">
-              <li><a href="{{ .Site.BaseURL | absLangURL }}">
-                  {{ .Site.Title | safeHTML }}
-                </a></li>
-            </ul>
-          </div>
-          <div class="top-bar-right">
-            <ul class="menu">
-              <li class="{{ if .IsHome }}active{{ end }}"><a href="{{ .Site.BaseURL | absLangURL }}">
-                {{ i18n "home" }}
-              </a></li>
-              {{ if .Site.Params.custom_navbar }}
-                {{ range .Site.Menus.navbar }}
-                  <li><a href="{{.URL | absURL }}">
-                    {{ .Name }}
-                  </a></li>
-                {{ end }}
-              {{ else }}
-                {{ range where .Site.Pages "Type" "!=" "blog" }}
-                  <li><a href="{{ .Permalink }}">
-                    {{ .Title }}
-                  </a></li>
-                {{ end }}
+    <div id="navigation" class="sticky">
+      <nav class="top-bar" role="navigation" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1 class="show-for-small-only"><a href="{{ .Site.BaseURL | absLangURL }}" class="icon-tree"> {{ .Site.Title | safeHTML }}</a></h1>
+          </li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="left">
+            <li class="{{ if .IsHome }}active{{ end }}"><a href="{{ .Site.BaseURL | absLangURL }}">
+              {{ i18n "home" }}
+            </a></li>
+            {{ range .Site.Menus.navbar_left }}
+            <li><a href="{{.URL | absURL }}">
+              {{ .Name }}
               {{ end }}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
+            </a></li>
+          </ul>
+  
+          <ul class="right">
+            {{ range .Site.Menus.navbar_right }}
+            <li><a href="{{.URL | absURL }}">
+              {{ .Name }}
+            </a></li>
+            {{ end }}
+            
+          </ul>
+        </section>
+      </nav>
+    </div>
+    
 
     <header class="blog-header">
       <div class="callout large">
@@ -78,7 +78,7 @@
 
     <main>
       <div class="row" id="content">
-        {{ if eq .Params.sidebar "false"}}
+        {{ if eq .Params.sidebar false}}
         <div class="medium-12 columns">
         {{ else }}
         <div class="medium-8 columns">
@@ -87,7 +87,7 @@
             <!-- The part of the page that begins to differ between templates -->
           {{ end }}
         </div>
-        {{ if (not (eq .Params.sidebar "false")) }}
+        {{ if (not (eq .Params.sidebar false)) }}
         {{ partial "sidebar.html" . }}
         {{ end }}
       </div>
