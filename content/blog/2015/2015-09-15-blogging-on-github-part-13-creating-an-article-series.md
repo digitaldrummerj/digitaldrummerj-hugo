@@ -16,11 +16,7 @@ title: 'Jekyll Part 13: Creating an Article Series'
 url: /2015/09/15/blogging-on-github-part-13-creating-an-article-series/
 ---
 
-{% assign imagedir = "/images/BloggingOnGitHub/" | prepend: site.baseurl | prepend: site.url %}
-
 Welcome the continuing series on using Jekyll. In this tutorial we are going to go through how to create the series listing like you see for this blog series.  
-
-
 
 ### Overview
 
@@ -110,11 +106,11 @@ Note: I assume that you have alrady cloned your jekyll repo to your machine.  Th
 
 If you do not have the bootstrap css include in your blog, then you will notice that the series listing does not stand out at all.  
 
-![Series Listing with No Css]({{"ScreenshotOfSeriesWithNoCss.png" | prepend: imagedir}})
+![Series Listing with No Css](/images/BloggingOnGitHub/ScreenshotOfSeriesWithNoCss.png)
 
 In the next section we will add the missing panel css to make it look more like this.
 
- ![Series Listing with Css]({{"ScreenshotOfSeriesWithCss.png" | prepend: imagedir}})
+ ![Series Listing with Css](/images/BloggingOnGitHub/ScreenshotOfSeriesWithCss.png)
 
 ### Section 3: Adding CSS
 
@@ -211,7 +207,7 @@ In this section we will add in the css to make the series listing stand out and 
 1. Save the file
 1. Run jekyll serve and view one of the new blog post.  If should look like this: 
 
-	![Series Listing with Css]({{"ScreenshotOfSeriesWithCss.png" | prepend: imagedir }})
+	![Series Listing with Css](/images/BloggingOnGitHub/ScreenshotOfSeriesWithCss.png)
 
 ### Conclusion
 

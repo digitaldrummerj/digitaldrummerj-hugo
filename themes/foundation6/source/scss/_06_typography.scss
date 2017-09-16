@@ -404,6 +404,9 @@ mark {
 
 .teaser {
     font-size: rem-calc(20);
+    p {
+        font-size: rem-calc(20);        
+    }
 }
 
 .big-teaser {

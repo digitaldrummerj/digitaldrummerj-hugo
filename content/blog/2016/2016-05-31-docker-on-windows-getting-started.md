@@ -22,12 +22,7 @@ title: Docker - Getting Started On Windows
 url: /2016/05/31/docker-on-windows-getting-started/
 ---
 
-{% assign imagedir = "/images//" | prepend: site.baseurl | prepend: site.url %}
-
-
-
 After seeing a Docker presentation recently I decided to finally figure out how to get Docker working correctly on Windows.  Luckily it worked out of the box fairly well but I did run into issues with Windows file path lengths and proxy issues.  This series of article will documented how I got Docker working and overcame those issues.
-
 
 To get started, you will need the docker toolkit.  I followed the instructions on the Docker website to get the Docker Toolkit with Virtualbox installed.  The instructions for Windows are at [https://docs.docker.com/windows/](https://docs.docker.com/windows/).  The instructions also have links to the Linux and Mac instructions.  As I am a Windows user, I can only verify that this tutorial all worked under Windows.  
 

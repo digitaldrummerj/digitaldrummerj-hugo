@@ -419,49 +419,52 @@ img.lazy {
 }
 
 #sharer {
+    p {
+        margin-bottom: 0;
+    }
+    
+    .inline-list li {
+            margin-left: 0;
+            margin-right: 1.375rem;
+    }
+
     margin-left: 0;
-    margin-top: 20px;
+    // margin-top: 20px;
     margin-bottom: $paragraph-margin-bottom;
-    .share-block {
-        padding: 0.25em !important;
-        .share-link {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            border: none;
-            border-radius: 10px;
-        }
-        a:after {
-            content: ''
+    .share-twitter {
+        background: #00aced;
+        color: white;
+        &:hover {
+            color: #baecff;
         }
     }
-    .share-link.share-twitter {
-        background-color: #00aced;
-        color: white
+    .share-linkedin {
+        background: #0077b5;
+        color: white;
+        &:hover {
+            color: #ddd;
+        }
     }
-    .share-link.share-twitter:hover {
-        color: #baecff
+    .share-email {
+        background: #777777;
+        color: white;
+        &:hover {
+            color: #ddd;
+        }
     }
-    .share-link.share-email {
-        background-color: #777777;
-        color: white
-    }
-    .share-link.share-email:hover {
-        color: #ddd
-    }
-    .share-link.share-googleplus {
+    .share-googleplus {
         background-color: #d34836;
-        color: white
+        color: white;
+        &:hover {
+            color: #f8e0dd;
+        }
     }
-    .share-link.share-googleplus:hover {
-        color: #f8e0dd
-    }
-    .share-link.share-facebook {
+    .share-facebook {
         background-color: #3B5998;
-        color: white
-    }
-    .share-link.share-facebook:hover {
-        color: #bbc8e4
+        color: white;
+        &:hover {
+            color: #bbc8e4;
+        }
     }
 }
 

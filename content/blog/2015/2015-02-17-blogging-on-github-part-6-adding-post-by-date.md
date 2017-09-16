@@ -15,7 +15,6 @@ title: 'Jekyll Part 06: Adding Post by Date Page'
 url: /2015/02/17/blogging-on-github-part-6-adding-post-by-date/
 ---
 
-{% assign imagedir = "/images/BloggingOnGitHub/" | prepend: site.baseurl | prepend: site.url %}
 
 Welcome the continuing series on using Jekyll. In this tutorial we will go through creating a page to show blog post by date.
  
@@ -33,11 +32,11 @@ If you have been following along with the other lessons in the series, this shou
 
 1. Click on the + button to add a new file
 
-    ![Github Plus Button]({{"github_add_button.png" | prepend: imagedir}})
+    ![Github Plus Button](/images/BloggingOnGitHub/github_add_button.png)
 
 1.  Name the file archivebydate.md
 
-    ![Github Name the New File archivebydate.md]({{"github_part_6_archivebydate_file_name.png" | prepend: imagedir}})
+    ![Github Name the New File archivebydate.md](/images/BloggingOnGitHub/github_part_6_archivebydate_file_name.png)
 
 
 ## Section 2: Adding the Metadata
@@ -97,13 +96,13 @@ After the front matter, add the following code to display the post by Year and M
 
 1. After you have added the above text, scroll to the bottom of the page, add your commit note, and    click the commit button.
 
-    ![Github Commit archivebydate.md]({{"github_part_6_commit_archivebydate.png" | prepend: imagedir}})
+    ![Github Commit archivebydate.md](/images/BloggingOnGitHub/github_part_6_commit_archivebydate.png)
 
 1. To  view the category page, navigate to http://[username].github.io/monthview
 
 1. Your page should look like the following but with your avatar, site name and description in the header of the page.
 
-    ![month view screenshot]({{ "github_part_6_archivebydate_in_browser.png" | prepend: imagedir}})
+    ![month view screenshot](/images/BloggingOnGitHub/github_part_6_archivebydate_in_browser.png)
 
 1. Right now the page is published but not linked to from anywhere.  In the next section we will add it to the header section of the page.
 
@@ -115,7 +114,7 @@ We are going to add the "show by date" link into the header section next to the 
 
 1. Click on the default.html file to open it.
 
-1. Click on the ![github_edit_button.png]({{"github_edit_button.png" | prepend: imagedir}}) icon to edit the file.
+1. Click on the ![github_edit_button.png](/images/BloggingOnGitHub/github_edit_button.png) icon to edit the file.
 
 1. In the &lt;div id="archives"&gt; tag that we added previously, add the following html snippet after the category view link.
 
@@ -126,15 +125,15 @@ We are going to add the "show by date" link into the header section next to the 
       
      {% endraw %}
 
-    ![GitHub Header Add Html]({{"github_part_6_browse_by_category_in_header_html.png" | prepend: imagedir}})
+    ![GitHub Header Add Html](/images/BloggingOnGitHub/github_part_6_browse_by_category_in_header_html.png)
 
 1. Scroll down to the bottom, add the commit comment, and click on the commit change button.
 
-    ![Commit default.html changes]({{"github_part_6_commit_default.png" | prepend: imagedir}})
+    ![Commit default.html changes](/images/BloggingOnGitHub/github_part_6_commit_default.png)
 
 1. Now go view your blog's home page at http://[username].github.io/.  You should now see the "browse by category or date" link in the header.
 
-    ![Blog's Home Page with Browse By Category or Date Link in Header]({{"github_part_6_browse_by_category_and_date_in_header.png" | prepend: imagedir}})
+    ![Blog's Home Page with Browse By Category or Date Link in Header](/images/BloggingOnGitHub/github_part_6_browse_by_category_and_date_in_header.png)
 
 ## Conclusion
 

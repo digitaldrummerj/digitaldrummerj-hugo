@@ -1,80 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
-  <head>
+  {{ partial "head.html" . }}
+  <body id="top-of-page">
 
-    {{ partial "head-meta.html" . }}
-
-    <base href="{{ .Site.BaseURL }}">
-    <link rel="canonical" href="{{ .Permalink }}">
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-
-    {{ "<!-- CSS -->" | safeHTML }}
-    <link href="{{ .Site.BaseURL }}css/app.css" rel="stylesheet">
-
-    {{ if .RSSLink }}
-      {{ "<!-- RSS 2.0 feed -->" | safeHTML }}
-      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-      <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
-    {{ end }}
-
-    {{ if .Site.Params.cookie_consent_info_url }}
-      {{ partial "cookie-consent.html" . }}
-    {{ end }}
-
-    {{ template "_internal/google_analytics_async.html" . }}
-    {{ partial "head-custom.html" . }}
-
-  </head>
-  <body>
-
-    <div id="navigation" class="sticky">
-      <nav class="top-bar" role="navigation" data-topbar>
-        <ul class="title-area">
-          <li class="name">
-            <h1 class="show-for-small-only"><a href="{{ .Site.BaseURL | absLangURL }}" class="icon-tree"> {{ .Site.Title | safeHTML }}</a></h1>
-          </li>
-          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
-        </ul>
-        <section class="top-bar-section">
-          <ul class="left">
-            <li class="{{ if .IsHome }}active{{ end }}"><a href="{{ .Site.BaseURL | absLangURL }}">
-              {{ i18n "home" }}
-            </a></li>
-            {{ range .Site.Menus.navbar_left }}
-            <li><a href="{{.URL | absURL }}">
-              {{ .Name }}
-              {{ end }}
-            </a></li>
-          </ul>
-  
-          <ul class="right">
-            {{ range .Site.Menus.navbar_right }}
-            <li><a href="{{.URL | absURL }}">
-              {{ .Name }}
-            </a></li>
-            {{ end }}
-            
-          </ul>
-        </section>
-      </nav>
-    </div>
+   {{  partial "navigation.html" . }}
     
 
-    <header class="blog-header">
-      <div class="callout large">
-        <div class="row column text-center">
-          <h1>
-            <a href="{{ .Site.BaseURL }}" rel="home">{{ .Site.Title | safeHTML }}</a>
-          </h1>
-          {{ if .Site.Params.description }}
-            <p>
-              {{ .Site.Params.description | markdownify }}
-            </p>
-          {{ end }}
-        </div>
-      </div>
-    </header>
 
     <main>
       <div class="row" id="content">
@@ -93,25 +24,7 @@
       </div>
     </main>
 
-    <footer class="blog-footer">
-      <div class="row column">
-        <p>
-          {{ if .Site.Copyright }}
-          {{ .Site.Copyright | markdownify }}
-          {{ else }}
-          Blog template created by <a href="hhttps://github.com/zurb">@zurb</a>, ported to Hugo by <a href='https://github.com/htkoca'>github.com/htko89</a>.
-          {{ end }}
-        </p>
-        <p>
-          <a href="{{ .Permalink }}#">{{ i18n "backToTop" }}</a>
-        </p>
-      </div>
-    </footer>
+    {{ partial "footer.html" . }}
 
-  <foot>
-
-    <script src="{{ .Site.BaseURL }}js/app.js"></script>
-
-  </foot>
   </body>
 </html>

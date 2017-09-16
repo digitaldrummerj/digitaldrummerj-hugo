@@ -47,6 +47,23 @@ buildFuture = true
   url = "/search/"
   weight = 3
 
+# workshops
+
+[[menu.workshop]]
+name="Ionic v1 Introduction"
+url="http://digitaldrummerj.me/ionic-v1-workshop"
+weight=2
+
+[[menu.workshop]]
+name="Rapid API Development with SailsJS"
+url="http://digitaldrummerj.me/sails-tutorial"
+weight=2
+
+[[menu.workshop]]
+name="Up and Running with Angular"
+url="http://digitaldrummerj.me/angular-tutorial"
+weight=1
+
 # Theme variables
 #
 [params]
@@ -98,9 +115,10 @@ buildFuture = true
 
     # Optionally, set any of these to false to hide them:
     facebook = true
-    googleplus = false
+    googleplus = true
     linkedin = true
     twitter = true
+    email = true
 
 # Default content language for Hugo 0.17's multilingual support (default is "en")
 # See: https://github.com/spf13/hugo/blob/master/docs/content/content/multilingual.md

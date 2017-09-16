@@ -12,9 +12,6 @@ title: Docker - Running Container As a Service
 url: /2016/06/15/docker-running-container-as-service/
 ---
 
-{% assign imagedir = "/images/docker-toolkit-daemon/" | prepend: site.baseurl | prepend: site.url %}
-
-
 
 In the [previous tutorial](../docker-windows-mounting-directories/) we learned how to mount additional directories within the Docker containers.  In this tutorial we are going to learn how to run a Docker container as a service a.k.a daemon for nginx and mysql.
 

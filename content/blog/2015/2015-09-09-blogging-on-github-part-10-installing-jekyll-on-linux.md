@@ -17,12 +17,7 @@ title: 'Jekyll Part 10: Installing Jekyll On Linux'
 url: /2015/09/09/blogging-on-github-part-10-installing-jekyll-on-linux/
 ---
 
-{% assign imagedir = "/images/BloggingOnGitHub/" | prepend: site.baseurl | prepend: site.url %}
-
 Welcome the continuing series on using Jekyll. In this tutorial we are going to setup your Ubuntu Linux computer to be able to edit your blog on your computer.
-
-
-
 
 ## Overview
 
@@ -143,7 +138,7 @@ Now that we have everything installed for jekyll it is time to test it out.
 
 1. If it build successfully you will see something like this
 
-	![Jekyll Serve Success]({{"jekyllserve.png" | prepend: imagedir}})
+	![Jekyll Serve Success](/images/BloggingOnGitHub/jekyllserve.png)
 
 1. Now if you open up your browser and navigate to http://localhost:4000 you will see you blog.
 
@@ -166,7 +161,7 @@ However, by default your _config.yml file will be set for production which will 
 
 1. 	If it build successfully you will see something like this
 	
-	![Jekyll Serve Success]({{"jekyllserve_multipleconfigs.png" | prepend: imagedir}})
+	![Jekyll Serve Success](/images/BloggingOnGitHub/jekyllserve_multipleconfigs.png)
 
 1. Now if you open up your browser and navigate to http://localhost:4000 you will see you blog and any place that reference site.url will be working..
 

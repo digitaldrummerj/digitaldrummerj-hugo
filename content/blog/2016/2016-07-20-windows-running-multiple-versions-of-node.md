@@ -17,8 +17,6 @@ title: Running Multiple Version of Node On Windows
 url: /2016/07/20/windows-running-multiple-versions-of-node/
 ---
 
-{% assign imagedir = "/images/" | prepend: site.baseurl | prepend: site.url %}
-
 I am sure that many of you are in the same situation that I am in with needing a different version of node for different projects and you don't want to have to create a new virtual machine for each project just because of node.  Luckily with [nvm](https://github.com/coreybutler/nvm-windows/) you can install multiple versions of Node on the same machine and switch between them with a simple command line call.  
 
 The one downside to having multiple versions of Node installed is that you have to install the global packages for each version of node that you want them available to.  There is no ability to share packages between versions.  This means that it will take a bit more disk space but most node packages are fairly small so this should be a none issue.    

@@ -19,13 +19,11 @@ title: Windows 8.1 - Powershell Script to Uninstall Default Programs
 url: /2015/05/27/windows8-script-uninstall-default-programs/
 ---
 
-{% assign imagedir = "/images/vagrant/" | prepend: site.baseurl | prepend: site.url %}
-
 When I am provisioning a new development virtual machine with vagrant, I do not need all of the Windows 8 modern applications such as bing maps, finance, skype, etc to be installed onto the virtual machine.  These applications are nice on a non-virtualized machine but on a virtual machine it just uses extra resources that aren't needed.  
 
 The base install of Windows has all of these programs installed with live tiles turned on that I don't need.  This is a huge amount of clutter.  
 
-!["Windows before removing start menu default programs]({{"Vagrant-Pre-RemoveDefaultProgramsProvisioning.png" | prepend: imagedir}})
+!["Windows before removing start menu default programs](/images/vagrant/Vagrant-Pre-RemoveDefaultProgramsProvisioning.png)
 
 Luckily enough Ben Hunter, wrote a powershell script that we will be going through and setting up as part of the vagrant provisioning process.    [View Original Script](http://blogs.technet.com/b/deploymentguys/archive/2013/10/21/removing-windows-8-1-built-in-applications.aspx).  
 
@@ -190,7 +188,7 @@ The last step is to add the running of the script to the vagrant provisioning pr
 
 After we have run the script, if you used the application list that I had in the script, the start menu will look like this.  
 
-![Windows start menu after removing default programs]({{"Vagrant-Post-RemoveDefaultProgramsProvisioning.png" | prepend: imagedir}})
+![Windows start menu after removing default programs](/images/vagrant/Vagrant-Post-RemoveDefaultProgramsProvisioning.png)
 
 ##Conclusion
 

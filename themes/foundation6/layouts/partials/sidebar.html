@@ -1,38 +1,31 @@
-<div class="medium-3 columns" data-sticky-container>
-  <div class="sticky" data-sticky data-anchor="content">
+<div class="hide-for-small-only medium-4 columns t30" data-sticky-container>
+  <aside class="sidebar">
+    <div class="panel radius">
+      <h3>Subscribe</h3>
+      <ul class="no-bullet">
+        <li><span class="icon-rss"></span><a href="/feed.xml">RSS Feed</a>
+          <li><span class="icon-rss"></span><a href="/atom.xml">Atom Feed</a></ul>
+    </div>
+    <div class="panel radius">
 
-  {{ if isset .Site.Params.sidebar "about" }}
-    <h4>{{ i18n "about" }}</h4>
-    <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
-  {{ end }}
+      {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
 
-  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+      <h3>{{ i18n "recentPosts" }}</h3>
+      <ul class="no-bullet">
+        {{ range first $num_recent_posts (where .Site.Pages "Type" "blog") }}
+        <li><span class="icon-edit"></span><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    
+    <div class="panel radius">
 
-  <h4>{{ i18n "recentPosts" }}</h4>
-  <ul>
-    {{ range first $num_recent_posts (where .Site.Pages "Type" "blog") }}
-      <li><a href="{{.RelPermalink}}">
-        {{.Title | markdownify }}
-      </a></li>
-    {{ end }}
-  </ul>
-
-  
-  {{ with .Site.Menus.sidebar }}
-    <h4>{{ i18n "links" }}</h4>
-    <ul>
-      {{ range . }}
-        <li><a href="{{ .URL | absURL }}">
-          {{ .Name }}
-        </a></li>
-      {{ end }}
-    </ul>
-  {{ end }}
-
-  <h4>{{ i18n "categories" }}</h4>
-  
-  {{ range $name, $items := .Site.Taxonomies.categories }}
-  <li><a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize | lower }}">{{ replace $name "-" " " | title}} &nbsp;<span>({{ len $items }})</span></a></li>
-  {{ end }}
-  </div>
+      <h3>{{ i18n "categories" }}</h3>
+      <ul class="no-bullet">
+        {{ range $name, $items := .Site.Taxonomies.categories }}
+        <li><span class="icon-price-tag"></span><a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize | lower }}">{{ replace $name "-" " " | title}} &nbsp;<span>({{ len $items }})</span></a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </aside>
 </div>

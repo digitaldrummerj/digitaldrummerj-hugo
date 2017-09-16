@@ -11,12 +11,9 @@ title: Ionic - Using Local Notifications
 url: /2015/12/01/ionic-local-notification/
 ---
 
-{% assign imagedir = "/images/IonicLocalNotifications/" | prepend: site.baseurl | prepend: site.url %}
-
 When you are creating a mobile applications there are times where you need to notify users about something such as an upcoming appointment.  If the application is running and the user is using it in the foreground, this is easy to accomplish.  However, if the application is running in the background this can be a challenging task.   You could do push notifications but that takes a decent amount of work to setup with both iOS and Android app stores.  If all you need to do is alert them on their local device you can just use the cordova local notification plugin and skip the headache of setting up push notifications.  
 
-
-In this post we will walk you through creating an ionic application that uses the [ngCordova local notification plugin](http://ngcordova.com/docs/plugins/localNotification/).      
+In this post we will walk you through creating an ionic application that uses the [ngCordova local notification plugin](http://ngcordova.com/docs/plugins/localNotification/).    
 
 ## Environment Setup
 
@@ -41,8 +38,8 @@ Make sure that you meet these requirements:
 
 You can refer to the following articles to configure your environment:
 
-1. [Setup Ionic on Windows]({{"Ionic-Setup-Windows" | prepend: site.baseurl | prepend: site.url}})
-1. [Setup Ionic on Mac]({{"ionic-setup-osx/" | prepend: site.baseurl | prepend: site.url}})
+1. [Setup Ionic on Windows](/images/IonicLocalNotifications/Ionic-Setup-Windows)
+1. [Setup Ionic on Mac](/images/IonicLocalNotifications/ionic-setup-osx/)
 
 ## Creating Project
 

@@ -22,9 +22,6 @@ title: Angular 2 - Your First Project
 url: /2017/01/03/ng2-your-first-project/
 ---
 
-{% assign imagedir = "/images/ng2-getting-started/" | prepend: site.baseurl | prepend: site.url %}
-
-
 Welcome to the series on Getting Started with Angular 2.  Angular 2 was released in September 2016 and and so far I have been enjoying working with it.  I have been using the TypeScript version of Angular 2.  It is has been pretty easy for me so far to pick it up but there have been a few things that have made me scratch me head.  In this series I am going to walk you through creating a simple Angular 2 project that has a header/footer, routing to components/modules, show how to add new components/services, create multiple modules, lock down routes, changing UI configurations based on the environment parameter and adding in the Bootstrap library.  When you are done with the series, you will have a good structure for any project that you want to start.
 
 In this post we will get everything setup on your machine to do Angular 2 developer and then you will create your Angular 2 project that the rest of the series will build on. We will be using the new Angular CLI to generate the project and several of the features such as components, services, modules, and pipes.  
@@ -70,7 +67,7 @@ The ng new command does several things for you:
 
 	ng new angular2-getting-started --style=scss --routing 
  
-	![ng new output]({{ "ng-new-output.png" | prepend: imagedir }})
+	![ng new output](/images/ng2-getting-started/ng-new-output.png)
 
 
 You can view the full documentation for the Angular CLI at [https://github.com/angular/angular-cli](https://github.com/angular/angular-cli)  
@@ -79,7 +76,7 @@ You can view the full documentation for the Angular CLI at [https://github.com/a
 
 Now that we have our project generated, we can view it in a web browser by running `ng serve` to build it and start up a web server with live reload.  Once `ng serve` has completed, open a web browser and navigate to [http://localhost:4200/](http://localhost:4200).  You should be looking a page that says: 
 
-![App Works]({{ "app-works.png" | prepend: imagedir }})
+![App Works](/images/ng2-getting-started/app-works.png)
 
 ## Project layout
 
@@ -87,7 +84,7 @@ If you look at the project directory and file layout there are some key pieces o
 
 <div class="row">
 	<div class="medium-12 large-6 columns">
-		<p class="solidborder"><img src="{{ "ng-project-layout.png" | prepend: imagedir }}" alt="Project Layout"></p>
+		<p class="solidborder"><img src="/images/ng2-getting-started/ng-project-layout.png" alt="Project Layout"></p>
 	</div>
 	<div class="medium-12 large-6 columns">
 		<ul>

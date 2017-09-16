@@ -92,6 +92,7 @@ body.video cite {
 
 #masthead-no-image-header {
     background-color: $primary-color;
+    margin-bottom: 50px;
 }
 
 #masthead-with-text {
@@ -356,9 +357,22 @@ body.video cite {
     }
 }
 
+#subfooter-right {
+    .inline-list li a {
+        color: $subfooter-bg;
+        background: $subfooter-color;
+        &:hover {
+            background: $subfooter-bg;
+            color: #fff;
+        }  
+    }
+}
+
+
 .social-icons {
     margin-bottom: 10px !important;
     // Beware of SCSS-Syntax here
+   
     li {
         padding: 0 0 20px 0;
         a {
@@ -366,13 +380,7 @@ body.video cite {
             display: block;
             width: 36px;
             border-radius: 50%;
-            color: $subfooter-bg;
-            background: $subfooter-color;
             text-align: center;
-            &:hover {
-                background: $subfooter-bg;
-                color: #fff;
-            }
             &:after {
                 display: none;
             }

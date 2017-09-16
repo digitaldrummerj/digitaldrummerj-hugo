@@ -19,12 +19,7 @@ title: 'Jekyll Part 09: Installing Jekyll On Windows'
 url: /2015/09/09/blogging-on-github-part-9-installing-jekyll-on-windows/
 ---
 
-{% assign imagedir = "/images/BloggingOnGitHub/" | prepend: site.baseurl | prepend: site.url %}
-
 Welcome the continuing series on using Jekyll. In this tutorial we are going to setup your Windows computer to be able to edit your blog on your computer.
-
-
-
 
 ## Overview
 
@@ -78,7 +73,7 @@ We are going to be installing Ruby, Ruby DevKit, and Python using Chocolatey and
 
 Now that you have Boxstarter installed, you will notice on your desktop a new icon called Boxstarter Shell.  
 
-![Boxstarter Shell Icon]({{"BoxStarterShellIcon.png" | prepend: imagedir}})
+![Boxstarter Shell Icon](/images/BloggingOnGitHub/BoxStarterShellIcon.png)
 
 
 1. Run the Boxstarter Shell
@@ -141,7 +136,7 @@ Now that we have everything installed for jekyll it is time to test it out.
 1. If it build successfully you will see something like this
 	
 	
-	![Jekyll Serve Success]({{"jekyllserve.png" | prepend: imagedir}})
+	![Jekyll Serve Success](/images/BloggingOnGitHub/jekyllserve.png)
 
 1. Now if you open up your browser and navigate to http://localhost:4000 you will see you blog.
 
@@ -167,7 +162,7 @@ However, by default your _config.yml file will be set for production which will 
 1. 	If it build successfully you will see something like this	
 
 
-	![Jekyll Serve Success]({{"jekyllserve_multipleconfigs.png" | prepend: imagedir}})
+	![Jekyll Serve Success](/images/BloggingOnGitHub/jekyllserve_multipleconfigs.png)
  
 1. Now if you open up your browser and navigate to http://localhost:4000 you will see you blog and any place that reference site.url will be working..
 

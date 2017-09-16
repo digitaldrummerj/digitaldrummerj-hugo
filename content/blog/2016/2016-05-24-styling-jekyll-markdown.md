@@ -17,8 +17,6 @@ title: 'Jekyll Tip: Adding Styling To Html Output'
 url: /2016/05/24/styling-jekyll-markdown/
 ---
 
-{% assign imagedir = "/images/" | prepend: site.baseurl | prepend: site.url %}
-
 As I was writing some tutorials recently I wanted to be able to style the html elements that Jekyll outputs with different css classes without having to write the actually html in the markdown.    
 
 For example I wanted to use a blockquote for items to be aware of that has a blue highlight as well as warnings to watch out for that has a red highlight.  Here is the output of the blockquote with the different styles.  

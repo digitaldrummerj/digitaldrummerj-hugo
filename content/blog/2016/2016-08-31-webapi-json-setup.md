@@ -16,8 +16,6 @@ title: ASP.NET Web Api - Setup JSON Camel Cased Fields
 url: /2016/08/31/webapi-json-setup/
 ---
 
-{% assign imagedir = "/images/web-api-getting-started/" | prepend: site.baseurl | prepend: site.url %}
-
 Welcome to the continuing series on getting started with ASP.NET Web Api.  In the last post, we created our ASP.NET Web Api project, created our 1st controller and enabled Windows authentication.  In this article we will learn how to set the JSON response to convert the .NET pascal cased properties into camel cased properties.
 
 The naming convention between .NET and JSON is different but we should present our Api users the naming convention that they expect without having to write all kinds of conversion code.  Luckily  this is very easy to accomplish with a few lines of code in ASP.NET Web Api.  
@@ -38,11 +36,11 @@ The first thing that we are going to do is create a C# class to hold the informa
 1. Select Add
 1. Select Class
 
-![Add New Class to Model Folder in Visual Studio]({{"webapi-add-new-model.png" | prepend: imagedir }})
+![Add New Class to Model Folder in Visual Studio](/images/web-api-getting-started/webapi-add-new-model.png)
 
 In the "Add New Item" dialog that comes up, name the file UserModel.cs and click ok
 
-![Set new model file name to UserModel.cs]({{"webapi-add-new-model-filename.png" | prepend: imagedir }}) 
+![Set new model file name to UserModel.cs](/images/web-api-getting-started/webapi-add-new-model-filename.png) 
 
 
 In the UserModel.cs replace the contents with the following code:

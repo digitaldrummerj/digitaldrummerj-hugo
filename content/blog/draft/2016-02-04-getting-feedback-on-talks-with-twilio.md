@@ -17,8 +17,6 @@ title: Better Way To Get Talk Feedback
 url: /2016/02/04/getting-feedback-on-talks-with-twilio/
 ---
 
-{% assign imagedir = "/images/feedbackwithtwilio/" | prepend: site.baseurl | prepend: site.url %}
-
 As a public speaker one of the most important things for me is getting feedback from attendees.  The feedback helps me get better as a presenter as well as figuring out what is working in a talk and what is not. 
 
 When I started speaking I tried several different speaker feedback sites but the number of people that actually have feedback was extremely low (like 1 out of a hundred).  It wasn't until one of the attendees gave me feedback in person and told that they wanted to leave feedback but just didn't want to register for another online account.  
@@ -47,11 +45,11 @@ Once you have an account you need to purchase a phone number.  The number of pho
 
 Sending a text message through Twilio does cost money but it is really inexpensive.  It is $1 per month for each phone number and $.0075 per message.  That is less than a penny per message.  
 
-![cost table]({{ "pricing.png" | prepend: imagedir }}) 
+![cost table](/images/feedbackwithtwilio/pricing.png) 
 
 To purchase a phone number go under your account, select phone numbers, and click the buy a new Twilio phone  number llink.
 
-![buy phone number]({{ "buy-phone-number.png" | prepend: imagedir }})
+![buy phone number](/images/feedbackwithtwilio/buy-phone-number.png)
 
 ## Setup Twimlbin
 Now that we have a phone number we need to configure it to have an automated response when it gets SMS messages. 
@@ -60,11 +58,11 @@ To do this we are going to use [Twimlbin](http://twimlbin.com/)   which is a web
 
 To create a Twinlbin, click on the "Create a new Twimlbin" button on the home page. 
 
-![Twinlbin home page]({{ "twimlbin-home.png" | prepend: imagedir }})
+![Twinlbin home page](/images/feedbackwithtwilio/twimlbin-home.png)
 
 When you create a Twimlbin.com you will be presented with a box to type in the TwiML, a public url that  is read only and a private url to edit the twimlbin. 
 
-![Create twimlbin page]({{ "twimlbin-create.png" | prepend: imagedir }})
+![Create twimlbin page](/images/feedbackwithtwilio/twimlbin-create.png)
 
 On the Twimlbin text area you need to out valid TwiML markup which it will attempt to validate it for you.  For our purposes we have a basic reply that gives the url to the slides, demos and any other relevant links.  Try not to make the message to long since you are sending it back as a text message.  If the number is links becomes too much, just put them in a blog post or gist and give them that url.
 

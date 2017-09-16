@@ -10,13 +10,13 @@
   translation: "Categories" 
   
 - id: readMore
-  translation: "Read more →"
+  translation: "Read More ›"
 
 - id: translations
   translation: "Translations"
 
 - id: share
-  translation: "Share"
+  translation: "Share Post:"
 
 - id: paginatorPrevious
   translation: "Previous page"

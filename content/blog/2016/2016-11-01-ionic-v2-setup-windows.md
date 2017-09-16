@@ -18,8 +18,6 @@ title: Ionic v2 - How to setup on Windows
 url: /2016/11/01/ionic-v2-setup-windows/
 ---
 
-{% assign imagedir = "/images/ionic2-windows/" | prepend: site.baseurl | prepend: site.url %}
-
 In order to work with the Ionic framework version 2 there is a bit of software installs and configuration that needs to happen in order to deploy to devices.  However, many of the guides out there leave out a number of steps that tripped me up when I first started using Ionic.  
 
 This guide will go through all of the steps needed for deploying to an Android device using a Windows machine.  Note that deploying to an iOS device requires a Mac.  

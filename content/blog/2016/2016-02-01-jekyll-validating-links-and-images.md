@@ -9,13 +9,9 @@ title: 'Jekyll Part 14: How To Validate Links and Images'
 url: /2016/02/01/jekyll-validating-links-and-images/
 ---
 
-{% assign imagedir = "/images/BloggingOnGitHub/" | prepend: site.baseurl | prepend: site.url %}
-
 Welcome the continuing series on using Jekyll. In this tutorial we are going to go through how you can validate your link and image references. 
 
 As your blog grows and you get more posts, it becomes harder to validate images and links are still valid on older post.  On new post it is pretty easy since you only have one last to look for.  However, this  is a process that can be fully automated so  got don't even have to worry about it anymore. 
-
-
 
 Since Jekyll is Ruby based we  are going to use a ruby gem called [html-proofer](https://github.com/gjtorikian/html-proofer/).   Html-proofer is a command line utility that will  run a set of tests to validate your HTML output. These tests check if your image references are legitimate, if they have alt tags, if your internal links are working, and so on. It's intended to be an all-in-one checker for your output.
 

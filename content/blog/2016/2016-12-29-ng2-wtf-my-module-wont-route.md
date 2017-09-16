@@ -16,8 +16,6 @@ title: Angular - WTF Module Won't Route
 url: /2016/12/29/ng2-wtf-my-module-wont-route/
 ---
 
-{% assign imagedir = "/images/ng2-module-wont-route" | prepend: site.baseurl | prepend: site.url %}
-
 I have been really enjoying working with Angular 2 over the last few months but the other day I spent well over an hour cursing Angular wondering why my new module would not route.  I didn't have this much trouble when I created my other modules a few weeks before.  However, this time when I navigated to my new module route it kept going to my catch all route.
 
 I verified that I had spelled everything correctly in the routing configuration and in the browser url.  I verified that I had imported the new module in the app module.  I swore everything was setup correctly.  WTF. What was going on?  What did I miss.  

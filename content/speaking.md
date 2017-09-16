@@ -4,15 +4,13 @@ subheadline: "Combining passion for coding and teaching. "
 permalink: /speaking/
 sidebar: false
 ---
-
-{: #top }
-
-I have a passion for teaching and sharing my knowledge to help get you to your end goal faster.  If you'd like me to speak at your event, [drop me a line]({{ "/contact/" | prepend: site.baseurl }}).  I can cover pretty much any topic you see me blog about but feel free to request just about anything.  
-{:.teaser}
+<a name="#top"></a><div class="teaser">
+I have a passion for teaching and sharing my knowledge to help get you to your end goal faster.  If you'd like me to speak at your event, <a href="/contact/">drop me a line</a>.  I can cover pretty much any topic you see me blog about but feel free to request just about anything.  
 
 If you've attended one of my sessions, please send me your feedback or suggestions.
 
 If you see me at an event, please be sure to come up and say "Hi".  The best part of the events is hanging out with other developers.
+</div>
 
 ## My Next Events
 
@@ -97,7 +95,7 @@ If you would like me to given any of these talks you are meetings, please let me
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ----
 
@@ -118,7 +116,7 @@ This talk will walk through getting started unit testing your Angular components
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ---
 
@@ -146,7 +144,7 @@ Slides: [https://www.slideshare.net/digitaldrummerj/visual-studio-tools-for-apac
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ---
 
@@ -176,7 +174,6 @@ Demo: [https://github.com/digitaldrummerj/ChocolateyTalk](https://github.com/dig
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
 
 ---
 
@@ -198,11 +195,8 @@ My TravisCI: [https://travis-ci.org/digitaldrummerj/digitaldrummerj.github.io](h
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
 
 ---
-
-
 
 ### <a name="backand"></a>Designing a Restful Api in Minutes with Backand
 
@@ -223,7 +217,7 @@ Slides: [http://slides.com/digitaldrummerj/backand-intro](http://slides.com/digi
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ---
 
@@ -241,7 +235,7 @@ Slides: [http://slides.com/digitaldrummerj/data-driven-restful-api-creation-made
 * [Ionic Denmark Meetup<span>- Denmark Copenhagen (Giving Remotely) (May 11th, 2016)</span>](http://www.meetup.com/ionicdenmark/events/229123265/)
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ---
 
@@ -259,7 +253,7 @@ Slides: [https://www.slideshare.net/digitaldrummerj/everyone-is-a-public-speaker
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ----
 
@@ -280,7 +274,7 @@ Slides and Source Code: [https://github.com/digitaldrummerj/GulpForNetDevelopers
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ----
 
@@ -349,7 +343,7 @@ Are you already a web developer and want to create a mobile application?  Then c
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ---
 
@@ -374,7 +368,7 @@ Slides: [http://digitaldrummerj.me/version-control-intro/#/](http://digitaldrumm
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ---
 
@@ -408,7 +402,7 @@ Demos: [https://github.com/digitaldrummerj/NugetTalk](https://github.com/digital
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ---
 
@@ -440,7 +434,7 @@ Code: [github.com//digitaldrummerj/sailstalk](github.com//digitaldrummerj/sailst
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ----
 
@@ -462,7 +456,7 @@ Demo: [https://github.com/digitaldrummerj/SideWaffleTalks](https://github.com/di
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ----
 
@@ -492,7 +486,7 @@ Demo: [https://github.com/digitaldrummerj/DeveloperProductivityTalk](https://git
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ----
 
@@ -548,7 +542,7 @@ Labs: [http://digitaldrummerj.me/angular-tutorial](http://digitaldrummerj.me/ang
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ----
 
@@ -580,7 +574,7 @@ Examples: [https://github.com/digitaldrummerj/VagrantTalk](https://github.com/di
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
+
 
 ----
 
@@ -598,6 +592,3 @@ Slides: [http://slides.com/digitaldrummerj/blogging/](http://slides.com/digitald
 <p>&nbsp;</p>
 
 <small>[back to top](#top)</small>
-{: .text-right }
-
----

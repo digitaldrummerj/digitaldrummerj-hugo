@@ -12,12 +12,6 @@ title: Angular 2 - Adding Bootstrap Library
 url: /2017/01/05/ng2-add-bootstrap/
 ---
 
-{% assign imagedir = "/images/angular2-add-bootstrap/" | prepend: site.baseurl | prepend: site.url %}
-
-[previous post]: {{ "/ng2-your-first-project" | prepend: site.baseurl | prepend: site.url }}
-
-
-
 Welcome to the continuing series on Getting Started with Angular 2.  In the [previous post][], we created our project using the Angular CLI.  In this post, we will be adding the [Bootstrap](https://getbootstrap.com/) library to the project to make it easier to style our application.  
 
 To make [Bootstrap](https://getbootstrap.com/) play nice with Angular we are going to use the [ng2-bootstrap](https://valor-software.com/ng2-bootstrap/) library which rewrites the [Bootstrap](https://getbootstrap.com/) components to be powered by Angular instead of JQuery.  The [ng2-bootstrap](https://valor-software.com/ng2-bootstrap/) library also works with both Bootstrap [v3](https://getbootstrap.com) and [v4](http://v4-alpha.getbootstrap.com/) which means when [v4](http://v4-alpha.getbootstrap.com/) is finally released to production you will only have to change the Bootstrap css reference and fix any breaking changes listed in the [v4 migration guide](http://v4-alpha.getbootstrap.com/migration/).  [Bootstrap v4](http://v4-alpha.getbootstrap.com/) is not yet recommend for production.  The rest of this article is going to focus on using [Bootstrap v3](https://getbootstrap.com/).
@@ -63,13 +57,12 @@ Now that we have told the Angular CLI to include the bootstrap library, we are r
         </div>
         {% endraw %}
         
-1. We are now ready run `ng serve` and view our home page at [http://localhost:4200][http://localhost:4300]
+1. We are now ready run `ng serve` and view our home page at [http://localhost:4200](http://localhost:4200)
   * Note: If you already have ng serve running, you will need to stop it using ctrl+c and run ng serve again. Anytime you make changes to the angular-cli.json file, they will not take effect until ng serve is restarted.
 
 1. The page should now look like
 
-    ![Page with Bootstrap]({{ "view-page.png" | prepend: imagedir }})
-    {:.solidborder}
+    ![Page with Bootstrap](/images/angular2-add-bootstrap/view-page.png)
 
 
 ## Wrapping up

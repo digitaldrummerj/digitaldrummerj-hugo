@@ -13,11 +13,9 @@ title: Ionic - Stop Icons from Overlapping in Ion List
 url: /2016/01/19/ionic-ion-item-multiple-icon-inline/
 ---
 
-{% assign imagedir = "/images/ionic-ion-list-inline-icons/" | prepend: site.baseurl | prepend: site.url %}
-
 Today I ran into an issue using Ionic, where I was trying to put two icons on the right side of an ion list item.  There is really easy to do with the item-icon-right css class.  Unfortunately, when you have multiple icons, it overlaps instead of showing them side by side.  I was not expecting this as I had only used 1 icon before and assumed that item-icon-right would just put them side by side.  
 
-![Overlapped Icons]({{ "icons-overlapped.png" | prepend: imagedir }})
+![Overlapped Icons](/images/ionic-ion-list-inline-icons/icons-overlapped.png)
 
 Here is the code that causes the overlapped icons.
 
@@ -57,7 +55,7 @@ Also, to make the buttons still look like icons and not give them a border, we c
     </ion-list>
 
 
-![Not Overlapped Icons]({{ "icons-not-overlapped.png" | prepend: imagedir }})
+![Not Overlapped Icons](/images/ionic-ion-list-inline-icons/icons-not-overlapped.png)
 
 
 

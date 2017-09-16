@@ -22,8 +22,6 @@ title: Javascript Debugging Made Easier with Sourcemaps
 url: /2015/05/17/javascript-sourcemaps/
 ---
 
-{% assign imagedir = "/images/ChromeDevTools/" | prepend: site.baseurl | prepend: site.url %}
-
 Updated: Add clean task that uses rimraf to delete the bundle.min.js file if it already exist.  Without this it would just append to the existing bundle.min.js file.
 
 When you release your web site to production, you should minify and concatenate your javascript files.  You will have much better performance by doing this but unfortunately debugging becomes difficult with the minified code as it shortens all of the variable and method names.  Luckily there is a simple solution to tell the browser developer tools to use the original javascript files when debugging the code, called source maps. 
@@ -112,15 +110,15 @@ Now that we have the source maps generated, we have to tell the Chrome Developer
 1. Open Google Chrome.
 1. Open the Developer Tools.
 
-    ![Open Chrome Developer Tools]({{"ChromeDevTools-Open.png" | prepend: imagedir}})
+    ![Open Chrome Developer Tools](/images/ChromeDevTools/ChromeDevTools-Open.png)
     
 1.  Click on the Setting Cog.
 
-    ![Open Settings]({{"ChromeDevTools-SettingsCog.png" | prepend: imagedir}})
+    ![Open Settings](/images/ChromeDevTools/ChromeDevTools-SettingsCog.png)
 
 1. Scroll down in the General Settings under you see the Sources section and ensure that the "Enable JavaScript source maps" is checked.
 
-    ![Enable Javascript Source Maps]({{"ChromeDevTools-JavascriptSourcemapsEnabled.png" | prepend: imagedir}})
+    ![Enable Javascript Source Maps](/images/ChromeDevTools/ChromeDevTools-JavascriptSourcemapsEnabled.png)
   
 1. Click on the X in the upper right of the Settings windows to close it.
 1. Now view your web site in the browser to make sure everything is still working.  

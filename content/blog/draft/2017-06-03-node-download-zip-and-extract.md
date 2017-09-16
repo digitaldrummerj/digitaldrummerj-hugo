@@ -23,6 +23,6 @@ The first thing I tried was using the https module built into Node to download t
 
 Now that I had the file downloaded I could focus on  unzipping the files.  
 
-To unzip the files I decided to use [AdmZip]().  AdmZip had  functions for  the entire the zip file or  a single file/directory.  I my case all of my files were contained within a directory in the zip file and I wanted to extract the files contained within that directory.
+To unzip the files I decided to use [AdmZip](https://www.npmjs.com/package/adm-zip).  AdmZip had  functions for  the entire the zip file or  a single file/directory.  I my case all of my files were contained within a directory in the zip file and I wanted to extract the files contained within that directory.
 
 

@@ -1,32 +1,16 @@
-{{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
 {{ define "main" }}
-{{ if .Params.page_template }}
-  {{ partial .Params.page_template }}
-{{ else }}
-
-{{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
-
-
-  <div class="blog-post">
-    <h3>
-      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-    </h3>
-    <p>
+{{ if .Title }}
+<header>
+    <div itemprop="name">
+        
+<h1>{{ .Title }}</h1>
+    </div>
+</header>
+{{end }}
+   
+<div itemprop="articleSection">
+          
       {{ .Content }}
-    </p>
-    {{ if .IsTranslated }}
-      <h4>{{ i18n "translations" }}</h4>
-      <ul>
-        {{ range .Translations }}
-          <li><a href="{{ .Permalink }}">
-            {{ .Lang }}: {{ .Title }}{{ if .IsPage }}{{ end }}
-          </a></li>
-        {{ end }}
-      </ul>
-    {{ end }}
-    <hr>
-  </div>
+</div>
 
 {{ end }}
-{{ end }}
-

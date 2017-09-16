@@ -15,8 +15,6 @@ title: 'Jekyll Part 07: Adding a custom Google search'
 url: /2015/02/21/blogging-on-github-part-7-adding-a-custom-google-search/
 ---
 
-{% assign imagedir = "/images/BloggingOnGitHub/" | prepend: site.baseurl | prepend: site.url %}
-
 Welcome the continuing series on using Jekyll. In this tutorial we are going to add the ability to search your blog using google.
 
 
@@ -33,11 +31,11 @@ If you have been following along with the other lessons in the series, this shou
 
 1. Click on the + button to add a new file
 
-    ![Github Plus Button]({{"github_add_button.png" | prepend: imagedir}}   )
+    ![Github Plus Button](/images/BloggingOnGitHub/github_add_button.png)
 
 1.  Name the file search.html
 
-    ![Github Name New File search.html]({{"github_part_7_add_search_html_file.png" | prepend: imagedir}})
+    ![Github Name New File search.html](/images/BloggingOnGitHub/github_part_7_add_search_html_file.png)
 
 1. Add the following front matter
 
@@ -74,7 +72,7 @@ If you have been following along with the other lessons in the series, this shou
 
 1. Click on the default.html file to open it.
 
-1. Click on the ![github_edit_button.png]({{"github_edit_button.png" | prepend: imagedir}}) icon to edit the file.
+1. Click on the ![github_edit_button.png](/images/BloggingOnGitHub/github_edit_button.png) icon to edit the file.
 
 1. Before the &lt;div id="archives"&gt; tag that we added previously, add the following html snippet.
 
@@ -121,7 +119,7 @@ If you have been following along with the other lessons in the series, this shou
 
 1. Scroll down to the bottom, add the commit comment, and click on the commit change button.
 
-    ![Commit default.html changes]({{"github_part_7_commit_search_html.png" | prepend: imagedir}})
+    ![Commit default.html changes](/images/BloggingOnGitHub/github_part_7_commit_search_html.png)
 
 1. Next we need to update the theme so that the search box shows up in the correct spot on the page.
 
@@ -131,7 +129,7 @@ If you have been following along with the other lessons in the series, this shou
 
 1. Click on the style.scss file to open it.
 
-1. Click on the ![github_edit_button.png]({{"github_edit_button.png" | prepend: imagedir}}) icon to edit the file.
+1. Click on the ![github_edit_button.png](/images/BloggingOnGitHub/github_edit_button.png) icon to edit the file.
 
 1. Add the following to the bottom of the file before the two @import statements.
 
@@ -175,11 +173,11 @@ If you have been following along with the other lessons in the series, this shou
 
 1. Scroll down to the bottom, add the commit comment, and click on the commit change button.
 
-    ![Commit default.html changes]({{"github_part_7_commit_style.png" | prepend: imagedir}})
+    ![Commit default.html changes](/images/BloggingOnGitHub/github_part_7_commit_style.png)
 
 1. Now go view your blog's home page at http://[username].github.io/.  You should now see the search box in the header along with the "browse by category or date" links.
 
-    ![Blog's Home Page with Search and Browse By Category or Date Link in Header]({{"github_part_7_browse_search_in_header.png" | prepend: imagedir}})
+    ![Blog's Home Page with Search and Browse By Category or Date Link in Header](/images/BloggingOnGitHub/github_part_7_browse_search_in_header.png)
 
 1.  Now that the search box and search pages are done, we need to setup Google to actually search our blog.
 
@@ -189,35 +187,35 @@ If you have been following along with the other lessons in the series, this shou
 1. If you do not have a Google account, you will need to create one.
 1. If you already have a Google account, please login to it now.
 
-    ![Signin to Google Custom Search]({{"github_part_7_signin_to_cse.png" | prepend: imagedir}})
+    ![Signin to Google Custom Search](/images/BloggingOnGitHub/github_part_7_signin_to_cse.png)
 
 1. Once signed in, click the Add button
 
-    ![Add Button]({{"github_part_7_add_cse_button.png" | prepend: imagedir}})
+    ![Add Button](/images/BloggingOnGitHub/github_part_7_add_cse_button.png)
 
 1. Fill in your web site url.  Should be http://[username].github.io/*
 
-    ![Url to Search Textbox]({{"github_part_7_add_cse_url.png" | prepend: imagedir}})
+    ![Url to Search Textbox](/images/BloggingOnGitHub/github_part_7_add_cse_url.png)
 
 1. Give the search a name that you will remember.
 
-    ![Name of the Search]({{"github_part_7_add_cse_name.png" | prepend: imagedir}})
+    ![Name of the Search](/images/BloggingOnGitHub/github_part_7_add_cse_name.png)
 
 1. Click the create button
 
-    ![Create Button]({{"github_part_7_add_cse_create.png" | prepend: imagedir}})
+    ![Create Button](/images/BloggingOnGitHub/github_part_7_add_cse_create.png)
 
 1.  You search should now be created
 
-    ![Search Created]({{"github_part_7_add_cse_done.png" | prepend: imagedir}})
+    ![Search Created](/images/BloggingOnGitHub/github_part_7_add_cse_done.png)
 
 1. Click the Get Code button
 
-    ![Click Get Code Button]({{"github_part_7_get_cse_code.png" | prepend: imagedir}})
+    ![Click Get Code Button](/images/BloggingOnGitHub/github_part_7_get_cse_code.png)
 
 1. Copy the var cx = line
 
-    ![Copy the code]({{"github_part_7_cse_code.png" | prepend: imagedir}})
+    ![Copy the code](/images/BloggingOnGitHub/github_part_7_cse_code.png)
 
 1. Go back to github and edit the search.html page.  Replace the var cx = line with the line that you just copied.
 
@@ -231,11 +229,11 @@ If you have been following along with the other lessons in the series, this shou
 
 1.  Type some text into the search box and click Search
 
-    ![Type in Search text and click search button]({{"github_part_7_search_term.png" | prepend: imagedir}})
+    ![Type in Search text and click search button](/images/BloggingOnGitHub/github_part_7_search_term.png)
 
 1.  It should take you to your search page and then do a Google search
 
-    ![Search View]({{"github_part_7_search_in_browser.png" | prepend: imagedir}})
+    ![Search View](/images/BloggingOnGitHub/github_part_7_search_in_browser.png)
 
 
 ## Conclusion
