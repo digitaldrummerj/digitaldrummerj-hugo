@@ -5,25 +5,24 @@
 
    {{  partial "navigation.html" . }}
     
-
-
-    <main>
-      <div class="row" id="content">
+      <div class="row t30">
         {{ if eq .Params.sidebar false}}
-        <div class="medium-12 columns">
+          <div class="small-12 columns medium-12">
         {{ else }}
-        <div class="medium-8 columns">
+          <div class="small-12 columns medium-8">
         {{ end }}
+        
+        <article itemscope itemtype="http://schema.org/Article">      
           {{ block "main" . }}
             <!-- The part of the page that begins to differ between templates -->
           {{ end }}
+        </article>
         </div>
         {{ if (not (eq .Params.sidebar false)) }}
         {{ partial "sidebar.html" . }}
         {{ end }}
       </div>
-    </main>
-
+  
     {{ partial "footer.html" . }}
 
   </body>

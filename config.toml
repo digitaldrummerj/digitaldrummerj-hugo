@@ -50,19 +50,14 @@ buildFuture = true
 # workshops
 
 [[menu.workshop]]
-name="Ionic v1 Introduction"
-url="http://digitaldrummerj.me/ionic-v1-workshop"
-weight=2
-
-[[menu.workshop]]
 name="Rapid API Development with SailsJS"
 url="http://digitaldrummerj.me/sails-tutorial"
-weight=2
+weight=1
 
 [[menu.workshop]]
 name="Up and Running with Angular"
 url="http://digitaldrummerj.me/angular-tutorial"
-weight=1
+weight=2
 
 # Theme variables
 #

@@ -1,16 +1,16 @@
 {{ define "main" }}
-{{ if .Title }}
 <header>
     <div itemprop="name">
-        
-<h1>{{ .Title }}</h1>
+        {{ if .Params.subheadline }}
+          <p class="subheadline">{{ .Params.subheadline }}</p>
+        {{ end }}
+        {{ if .Title }}
+          <h1>{{ .Title }}</h1>
+        {{end }}
     </div>
 </header>
-{{end }}
    
-<div itemprop="articleSection">
-          
+<div itemprop="articleSection">  
       {{ .Content }}
 </div>
-
 {{ end }}

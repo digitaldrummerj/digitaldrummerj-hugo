@@ -38,23 +38,6 @@ If you'd like me to speak at your event, [drop me a line]({{ "/contact/" | prepe
 - [Mobile Development For Web Developers](#taco)
 - [Conference Home Page](http://www.kcdc.info/)
 
-### MidwestJS <span> - Minneapolis, MN (August 16th-18th, 2017)</span>
-
-- [Angular Unit Testing from the Trenches](#angulartesting)
-- [Conference Home Page](http://midwestjs.com/)
-
-### Angular Mix <span> - Orlando, FL (October 8th-13th, 2017)</span>
-
-- [Rapid API Development with Node and SailsJS](#sails)
-
-### Desert Code Camp <span> - Phoenix, AZ (October 14, 2017)</span>
-
-- [Rapid API Development with Node and SailsJS](#sails)
-- [Mobile Development For Web Developers](#taco)
-- [Intro to Git and Github](#introgit)
-- [Everyone is a Public Speaker](#publicspeaker)
-- [Conference Home Page](https://oct2017.desertcodecamp.com)
-
 <!--
 ### Music City Code <span> - Nashville, TN (August 18th-20th, 2016)</span>
 
@@ -78,12 +61,12 @@ If you would like me to given any of these talks you are meetings, please let me
 * [Build mobile apps for iOS, Android, and Windows using JavaScript](#taco)
 * [Chocolatey - making the process of installing software on windows easy as pie](#chocolatey)
 * [Continuous Integration with Github and TravisCI](#travisci)
-* [Cross Platform Mobile Apps with Ionic](#ionic)
 * [Designing a Restful Api in Minutes with Backand](#backand)
 * [Data Driven Restful Api Creation Made Easy Breezy](#cloudapishootout)
-* [Everyone Is a Public Speaker](#publicspeaker)
+* [Public Speaking Is Yor Competitive Advantage](#publicspeaker)
 * [Gulp for the .Net Developer](#gulp)
 * [Intro to Version Control with Git and Github](#introgit)
+* [Mobile Dev for Web Devs](#ionic)
 * [Nuget is easier than you think and you should be using it as both a consumer and creator of packages](#nuget)
 * [Rapid Api Development With Node and Sails](#sails)
 * [Side Waffle - The easiest way to build templates for Visual Studio](#sidewaffle)
@@ -109,6 +92,7 @@ This talk will walk through getting started unit testing your Angular components
 
 #### Past Presentations
 
+* [Desert Code Camp <span> - Phoenix, AZ (October 14th, 2017)</span>](https://desertcodecamp.com)
 * [MidwestJS <span> - Minneapolis, MN (August 16th-18th, 2017)</span>](http://midwestjs.com/)
 * [Angular Phoenix Meetup <span> - Phoenix, AZ (July 25th, 2017)</span>](https://www.meetup.com/ng-phx/events/241184083/)
 
@@ -135,7 +119,6 @@ Slides: [https://www.slideshare.net/digitaldrummerj/visual-studio-tools-for-apac
 
 #### Past Presentations
 
-* [Desert Code Camp <span> - Phoenix, AZ (October 14, 2017)</span>](https://oct2017.desertcodecamp.com/)
 * [KCDC <span> - Kansas City, MO (August 3rd-5th, 2017)</span>](http://www.kcdc.info/)
 * [Detroit.Code() <span> - Detroit, MI (July 10-12, 2017)</span>](https://detroitcode.amegala.com/)
 * [San Diego Code Camp <span> - San Diego, CA (June 24th, 2017)</span>](http://socalcodecamp.com)
@@ -239,7 +222,7 @@ Slides: [http://slides.com/digitaldrummerj/data-driven-restful-api-creation-made
 
 ---
 
-### <a name="publicspeaker"></a>Everyone is a Public Speaker
+### <a name="publicspeaker"></a>Public Speaking Is Your Competitive Advantage
 
 You may not realize it but we are all public speakers.  Public speaking is all about effectively communicating and we have all been training our whole lives to be better communicators.  Being an effective communicator is a critical skill in today’s job market.   I will share with you what I have learned on my journey to becoming a professional speaker who has given over 100 talks since 2014.  With the tips that I will share you will instantly become a more effectively communicator and presenter.   
  
@@ -278,7 +261,7 @@ Slides and Source Code: [https://github.com/digitaldrummerj/GulpForNetDevelopers
 
 ----
 
-### <a name="ionic"></a>Cross Platform Mobile Apps with Ionic
+### <a name="ionic"></a>Mobile Dev for Web Devs
 
 
 Are you already a web developer and want to create a mobile application?  Then come learn all about the Ionic mobile framework.  Using technologies that we already know and love with Html 5, Javascript, and CSS 3, you can easily create a mobile application that targets Android, iOS, and Windows 10 Phone.  Your application will look, feel and perform like a native application without you having to do anything special.  Ionic takes care of all of the hard work of making it look right on the mobile devices so that you can focus on your application.  After seeing the Ionic framework, you will be excited to deliver mobile applications.  We will walk through the features of Ionic, getting it setup, and then create a fully working application that is ready to release in the app store.
@@ -320,6 +303,7 @@ Are you already a web developer and want to create a mobile application?  Then c
 
 #### Past Presentations
 
+* [DevUp) <span>St. Louis, MO (Octber 16-18))](http://dev)
 * [MidwestJS <span> - Minneapolis, MN (August 10th-12th 2016)</span>](http://midwestjs.com/)
 * [That Conference <span>- Wisconsin Dells, Wisconsin (August 8th-10th, 2016)</span>](http://thatconference.com)
 * [Las Vegas .NET User Group<span>- Las Vegas, Nv (July 28th, 2016)</span>](http://www.dotnetgroup.org/)
@@ -423,7 +407,6 @@ Code: [github.com//digitaldrummerj/sailstalk](github.com//digitaldrummerj/sailst
 
 #### Past Presentations
 
-* [Desert Code Camp <span> - Phoenix, AZ (October 14, 2017)</span>](https://oct2017.desertcodecamp.com/)
 * [Angular Mix <span> - Orlando, FL (October 8th-13th, 2017)</span>](https://angularmix.com/)
 * [KCDC (Half-Day Workshop) <span> - Kansas City, MO (August 3rd-5th, 2017)</span>](http://www.kcdc.info/)
 * [Detroit.Code() <span> - Detroit, MI (July 10-12, 2017)</span>](https://detroitcode.amegala.com/)
@@ -491,7 +474,6 @@ Demo: [https://github.com/digitaldrummerj/DeveloperProductivityTalk](https://git
 ----
 
 ### <a name="uprunangular"></a>Up and Running with Angular
-
 
 If you have ever wanted to code an application with Angular this is your chance. Join us for a fun filled day of learning Angular in this hands-on workshop. You will go from 0 to 60 with your Angular knowledge and be able to create our own Angular applications by the end of this workshop. We will start with a new project and continue to build up the project until we have a full application at the end.
 

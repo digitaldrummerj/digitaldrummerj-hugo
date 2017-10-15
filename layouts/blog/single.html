@@ -3,10 +3,15 @@
 
 
   {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }} 
+<header>
+    <div itemprop="name">
+        {{ if .Params.subheadline }}
+        <p class="subheadline">{{ .Params.subheadline }}</p>
+      {{ end }}
+      <h1>{{ .Title | markdownify }}</h1>
+    </div>
 
-  <div class="blog-post">
-    <h1>{{ .Title | markdownify }}</h1>
-<div id="page-meta" class="t10">
+      <div id="page-meta" class="t10">
   {{ if .Params.Date }}
   <span class="pr20"><span class="icon-calendar"></span>
     <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
