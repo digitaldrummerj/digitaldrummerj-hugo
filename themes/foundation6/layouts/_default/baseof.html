@@ -13,8 +13,8 @@
         {{ end }}
         
         <article itemscope itemtype="http://schema.org/Article">      
-          {{ block "main" . }}
             <!-- The part of the page that begins to differ between templates -->
+          {{ block "main" . }}
           {{ end }}
         </article>
         </div>
@@ -22,7 +22,8 @@
         {{ partial "sidebar.html" . }}
         {{ end }}
       </div>
-  
+    </div>
+    
     {{ partial "footer.html" . }}
 
   </body>
