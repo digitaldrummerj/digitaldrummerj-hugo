@@ -13,7 +13,7 @@
         </span>
     {{ end }}
     {{ if (.Params.categories) }}{{ partial "meta-categories.html" . }}{{ end }}
-    {{ if (.Params.draft ) }}Not Published {{ end }}
+    {{ if (.Params.draft ) }} DRAFT {{ end }}
     
     </div>
   <p>
