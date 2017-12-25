@@ -16,32 +16,32 @@ If you see me at an event, please be sure to come up and say "Hi".  The best par
 
 <!--### Nothing Scheduled.  
 
-If you'd like me to speak at your event, [drop me a line]({{ "/contact/" | prepend: site.baseurl }}) and lets make it happen.  I can cover pretty much any topic you see me blog about but feel free to request just about anything.  -->
+If you'd like me to speak at your event, [drop me a line]({{ "/contact/" | prepend: site.baseurl >}}) and lets make it happen.  I can cover pretty much any topic you see me blog about but feel free to request just about anything.  -->
 
 
 
 ### Detroit.Code() <span> - Detroit, MI (July 10-12, 2017)</span>
 
-- [Rapid API Development with Node and SailsJS](#sails)
-- [Build mobile apps for iOS, Android, and Windows using JavaScript](#taco)
-- [Up and Running with Angular Full-Day Workshop](#uprunangular)
+- [Rapid API Development with Node and SailsJS]({{< ref "speaking.md#sails" >}})
+- [Build mobile apps for iOS, Android, and Windows using JavaScript]({{< ref "speaking.md#taco" >}})
+- [Up and Running with Angular Full-Day Workshop]({{< ref"speaking.md#uprunangular" >}})
 - [Conference Home Page](https://detroitcode.amegala.com/)
 
 ### Angular Phoenix Meetup <span> - Phoenix, AZ (July 25th, 2017)</span>
 
-- [Angular Unit Testing from the Trenches](#angulartesting)
+- [Angular Unit Testing from the Trenches]({{< ref"speaking.md#angulartesting" >}})
 - [Meetup Page](https://www.meetup.com/ng-phx/events/241184083/)
 
 ### KCDC <span> - Kansas City, MO (August 3rd-5th, 2017)</span>
 
-- [Rapid API Development with Node and SailsJS](#sails)
-- [Mobile Development For Web Developers](#taco)
+- [Rapid API Development with Node and SailsJS]({{< ref"speaking.md#sails" >}})
+- [Mobile Development For Web Developers]({{< ref"speaking.md#taco" >}})
 - [Conference Home Page](http://www.kcdc.info/)
 
 <!--
 ### Music City Code <span> - Nashville, TN (August 18th-20th, 2016)</span>
 
-- [Gulp for the .Net Developer](#gulp)
+- [Gulp for the .Net Developer]({{< ref"speaking.md#gulp" >}})
 - [Conference Home Page](http://www.musiccitycode.com)
 -->
 
@@ -57,27 +57,27 @@ If you would like me to given any of these talks you are meetings, please let me
 
 ### Topics 
 
-* [Angular Unit Testing from the Trenches](#angulartesting)
-* [Build mobile apps for iOS, Android, and Windows using JavaScript](#taco)
-* [Chocolatey - making the process of installing software on windows easy as pie](#chocolatey)
-* [Continuous Integration with Github and TravisCI](#travisci)
-* [Designing a Restful Api in Minutes with Backand](#backand)
-* [Data Driven Restful Api Creation Made Easy Breezy](#cloudapishootout)
-* [Public Speaking Is Yor Competitive Advantage](#publicspeaker)
-* [Gulp for the .Net Developer](#gulp)
-* [Intro to Version Control with Git and Github](#introgit)
-* [Mobile Dev for Web Devs](#ionic)
-* [Nuget is easier than you think and you should be using it as both a consumer and creator of packages](#nuget)
-* [Rapid Api Development With Node and Sails](#sails)
-* [Side Waffle - The easiest way to build templates for Visual Studio](#sidewaffle)
-* [Tips and Tricks to Maximize Your Productivity in Visual Studio](#vsprod)
-* [Up and Running with Angular](#uprunangular)
-* [Vagrant - Devops Yourself: Fast-Track Your Dev Environment Setup.](#vagrant)
-* [Why You Need A Blog and How to Create a Successful One](#blogging)
+* [Angular Unit Testing from the Trenches]({{< ref"speaking.md#angulartesting" >}})
+* [Build mobile apps for iOS, Android, and Windows using JavaScript]({{< ref"speaking.md#taco" >}})
+* [Chocolatey - making the process of installing software on windows easy as pie]({{< ref"speaking.md#chocolatey" >}})
+* [Continuous Integration with Github and TravisCI]({{< ref"speaking.md#travisci" >}})
+* [Designing a Restful Api in Minutes with Backand]({{< ref"speaking.md#backand" >}})
+* [Data Driven Restful Api Creation Made Easy Breezy]({{< ref"speaking.md#cloudapishootout" >}})
+* [Public Speaking Is Yor Competitive Advantage]({{< ref"speaking.md#publicspeaker" >}})
+* [Gulp for the .Net Developer]({{< ref"speaking.md#gulp" >}})
+* [Intro to Version Control with Git and Github]({{< ref"speaking.md#introgit" >}})
+* [Mobile Dev for Web Devs]({{< ref"speaking.md#ionic" >}})
+* [Nuget is easier than you think and you should be using it as both a consumer and creator of packages]({{< ref"speaking.md#nuget" >}})
+* [Rapid Api Development With Node and Sails]({{< ref"speaking.md#sails" >}})
+* [Side Waffle - The easiest way to build templates for Visual Studio]({{< ref"speaking.md#sidewaffle" >}})
+* [Tips and Tricks to Maximize Your Productivity in Visual Studio]({{< ref"speaking.md#vsprod" >}})
+* [Up and Running with Angular]({{< ref"speaking.md#uprunangular" >}})
+* [Vagrant - Devops Yourself: Fast-Track Your Dev Environment Setup.]({{< ref"speaking.md#vagrant" >}})
+* [Why You Need A Blog and How to Create a Successful One]({{< ref"speaking.md#blogging" >}})
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ----
@@ -99,7 +99,7 @@ This talk will walk through getting started unit testing your Angular components
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ---
@@ -126,7 +126,7 @@ Slides: [https://www.slideshare.net/digitaldrummerj/visual-studio-tools-for-apac
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ---
@@ -156,7 +156,7 @@ Demo: [https://github.com/digitaldrummerj/ChocolateyTalk](https://github.com/dig
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 ---
 
@@ -177,7 +177,7 @@ My TravisCI: [https://travis-ci.org/digitaldrummerj/digitaldrummerj.github.io](h
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 ---
 
@@ -199,7 +199,7 @@ Slides: [http://slides.com/digitaldrummerj/backand-intro](http://slides.com/digi
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ---
@@ -217,7 +217,7 @@ Slides: [http://slides.com/digitaldrummerj/data-driven-restful-api-creation-made
 * [Ionic Denmark Meetup <span>- Denmark Arhus (Giving Remotely) (April 27th, 2016)</span>](http://www.meetup.com/ionicdenmark/events/228676467/)
 * [Ionic Denmark Meetup<span>- Denmark Copenhagen (Giving Remotely) (May 11th, 2016)</span>](http://www.meetup.com/ionicdenmark/events/229123265/)
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ---
@@ -235,7 +235,7 @@ Slides: [https://www.slideshare.net/digitaldrummerj/everyone-is-a-public-speaker
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ----
@@ -256,7 +256,7 @@ Slides and Source Code: [https://github.com/digitaldrummerj/GulpForNetDevelopers
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ----
@@ -326,7 +326,7 @@ Are you already a web developer and want to create a mobile application?  Then c
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ---
@@ -351,7 +351,7 @@ Slides: [http://digitaldrummerj.me/version-control-intro/#/](http://digitaldrumm
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ---
@@ -385,7 +385,7 @@ Demos: [https://github.com/digitaldrummerj/NugetTalk](https://github.com/digital
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ---
@@ -416,7 +416,7 @@ Code: [github.com//digitaldrummerj/sailstalk](github.com//digitaldrummerj/sailst
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ----
@@ -438,7 +438,7 @@ Demo: [https://github.com/digitaldrummerj/SideWaffleTalks](https://github.com/di
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ----
@@ -468,7 +468,7 @@ Demo: [https://github.com/digitaldrummerj/DeveloperProductivityTalk](https://git
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ----
@@ -523,7 +523,7 @@ Labs: [http://digitaldrummerj.me/angular-tutorial](http://digitaldrummerj.me/ang
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ----
@@ -555,7 +555,7 @@ Examples: [https://github.com/digitaldrummerj/VagrantTalk](https://github.com/di
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
 
 
 ----
@@ -573,4 +573,4 @@ Slides: [http://slides.com/digitaldrummerj/blogging/](http://slides.com/digitald
 
 <p>&nbsp;</p>
 
-<small>[back to top](#top)</small>
+<small>[back to top]({{< ref"speaking.md#top" >}})</small>
