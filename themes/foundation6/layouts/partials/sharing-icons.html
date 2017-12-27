@@ -5,7 +5,7 @@
                 <ul class="inline-list">
                         {{ if not (eq .Site.Params.sharingicons.twitter false) }}
                         <li>
-                                <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ .Title }}&via=digitaldrummerj"
+                                <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ .Title }}&via={{ .Site.Params.twitter }}"
                                         title="Tweet this"></a>
                         </li>
                         {{ end }} {{ if not (eq .Site.Params.sharingicons.facebook false) }}
