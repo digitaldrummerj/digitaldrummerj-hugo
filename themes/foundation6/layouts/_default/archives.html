@@ -1,0 +1,18 @@
+{{ define "main" }}
+    <div class="inner">
+        {{ range ((where .Site.Pages "Section" "blog").GroupByDate "2006")  }}
+            
+        <h2 class="archivetitle">Archive for {{ .Key }}</h2>
+            <ul class="side-nav archive-list">
+                {{ range (where .Pages "Section" "blog") }}
+                    <li>
+                         
+                        <a href="{{ .RelPermalink }}">{{ .PublishDate.Format "02 Jan" }} : {{ .Title }}</a>
+                    </li>
+                {{ end }}
+
+                </ul>
+        {{ end }}
+    </div>
+
+    {{ end }}
