@@ -12,11 +12,11 @@
           <div class="small-12 columns medium-8">
         {{ end }}
         
-        <article itemscope itemtype="http://schema.org/Article">      
+        
             <!-- The part of the page that begins to differ between templates -->
           {{ block "main" . }}
           {{ end }}
-        </article>
+        
         </div>
         {{ if (not (eq .Params.sidebar false)) }}
         {{ partial "sidebar.html" . }}
