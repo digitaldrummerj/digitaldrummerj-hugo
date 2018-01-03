@@ -13,7 +13,7 @@ excerpt: "If you are like me and just starting to work with the [Ionic Framework
   requires a Mac in order to do iOS development.\n"
 published: true
 title: Ionic - How to setup on Windows
-url: /2015/01/11/Ionic-Setup-Windows/
+
 ---
 
 Updates:

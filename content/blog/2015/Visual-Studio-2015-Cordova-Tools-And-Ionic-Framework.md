@@ -18,7 +18,7 @@ excerpt: "I am doing an [Ionic Framework](http://www.ionicframework.com) present
   for my presentation.\n"
 published: true
 title: Getting Visual Studio Cordova Tooling Working with the Ionic Framework
-url: /2015/09/17/Visual-Studio-2015-Cordova-Tools-And-Ionic-Framework/
+
 ---
 
 I am doing an [Ionic Framework](http://www.ionicframework.com) presentation and I wanted to use the Visual Studio 2015 Cordova Tooling.  

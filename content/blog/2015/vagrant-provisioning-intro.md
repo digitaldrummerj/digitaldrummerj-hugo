@@ -17,7 +17,7 @@ excerpt: "Welcome to the Vagrant lesson on what Vagrant provisioning is.\n\nProv
 published: true
 series: ["vagrant getting started"]
 title: Vagrant Part 2 - Provisioning Introduction
-url: /2015/06/18/vagrant-provisioning-intro/
+
 ---
 
 Welcome to the Vagrant lesson on what Vagrant provisioning is.  

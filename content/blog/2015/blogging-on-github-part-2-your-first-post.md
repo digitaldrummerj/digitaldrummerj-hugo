@@ -6,7 +6,6 @@ date: 2015-02-05T00:00:00Z
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 02: Your First Post'
-url: /2015/02/05/blogging-on-github-part-2-your-first-post/
 ---
 
 Welcome the continuing series on using Jekyll.  In this tutorial we will go through making your first blog post.

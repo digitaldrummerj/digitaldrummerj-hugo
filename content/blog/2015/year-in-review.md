@@ -11,7 +11,7 @@ excerpt: "2015 was a great year with lots of new adventures.  I started a blog, 
   goals for this year for speaking, blogging, and dev community.\n"
 published: true
 title: 2015 Year In Review
-url: /2015/12/31/2015-year-in-review/
+
 ---
 
 2015 was a great year with lots of new adventures.   I did a bunch of travelling, started a new position at work, competed in my first hackathon (and win), and started a couple of meetups.  At the beginning of 2015 I set a few goals for myself: 

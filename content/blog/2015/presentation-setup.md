@@ -10,7 +10,7 @@ excerpt: "One of the first things that you learn when giving presentations is th
   to leave a comment on the font settings that you use.\n"
 published: true
 title: Presentation Environment Setup
-url: /2015/07/09/presentation-setup/
+
 ---
 
 One of the first things that you learn when giving presentations is that fonts and font size matters just as much as the content.  Below is a listing of the various font settings that I have found to be effective and how to set them in the programs that I use.  

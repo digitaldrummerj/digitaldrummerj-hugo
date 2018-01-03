@@ -6,7 +6,7 @@ excerpt: |
   Gulp 4 is not released yet but if you have a need to install it here is how to do it.  I will cover how to globally install it as well as how to update your package.json for your projects.
 published: true
 title: Installing Gulp 4.x
-url: /2015/10/29/installing-gulp-4/
+
 ---
 
 Gulp 4 is not released yet but if you have a need to install it here is how to do it.  I will cover how to globally install it as well as how to update your package.json for your projects.

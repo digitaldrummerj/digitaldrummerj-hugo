@@ -10,7 +10,7 @@ excerpt: "Welcome to the continuing series on using Jekyll.  In this tutorial yo
   post is published.  \n"
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 15: Automatically Tweet New Post'
-url: /2016/02/08/jekyll-automatically-tweeting-new-post/
+
 ---
 
 Welcome to the continuing series on using Jekyll.  In this tutorial you will learn how to automatically send out a tweet when a new blog post is published.

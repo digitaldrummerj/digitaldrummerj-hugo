@@ -14,7 +14,7 @@ excerpt: "Welcome to the series on getting started with .NET Web Api.  In this a
 published: true
 series: ["web-api-getting-started"]
 title: ASP.NET Web Api - Getting Started
-url: /2016/08/23/webapi-getting-started/
+
 ---
 
 Welcome to the series on getting started with ASP.NET Web Api.  In this article we will create a basic C# Web Api with Windows Integrated Authentication and create our first Web Api endpoint.      

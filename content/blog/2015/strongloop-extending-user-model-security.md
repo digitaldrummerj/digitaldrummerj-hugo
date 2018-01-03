@@ -18,7 +18,7 @@ excerpt: "After following Raymond Camden's [Strongloop Introduction](http://www.
 published: true
 series: ["Strongloop Todo"]
 title: Strongloop - Fixing Security When Extending User Model
-url: /2015/10/30/strongloop-extending-user-model-security/
+
 ---
 
 After following Raymond Camden's [Strongloop Introduction](http://www.raymondcamden.com/tags/strongloop/), I was ready to update the [todo demo application](https://github.com/Ionic-AZ/Todo-Lab1-LocalStorage) that I have been using for the [Ionic Arizona Meetup](http://meetup.com/ionic-az).  So I created a models for projects and app users. The app users model base class was User.  Then within the project model I associated a project to an app users with a belongsTo and in the app users model I associated multiple projects to a single user with a hasMany.  At this point, when I examined the API explorer I could see that it can me a rest endpoint to get the projects associated to a user.  However, I ran into an issue with getting 401 Unauthorized errors when I tried to query any of the rest endpoints to get the projects associated to the user. 

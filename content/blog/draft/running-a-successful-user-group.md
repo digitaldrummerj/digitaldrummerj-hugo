@@ -6,7 +6,7 @@ date: 2016-02-18T00:00:00Z
 draft: true
 excerpt: ""
 title: Running a Successful  User Group
-url: /2016/02/18/running-a-successful-user-group/
+
 ---
 
 239

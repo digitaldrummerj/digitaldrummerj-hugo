@@ -12,7 +12,7 @@ excerpt: If you are working behind a proxy server you will need to configure bot
 published: true
 series: ["vagrant getting started"]
 title: Vagrant Part 6 - Behind A Proxy Server
-url: /2015/07/06/vagrant-behind-proxy-server/
+
 ---
 
 ## Overview

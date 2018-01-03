@@ -12,7 +12,6 @@ excerpt: |
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 06: Adding Post by Date Page'
-url: /2015/02/17/blogging-on-github-part-6-adding-post-by-date/
 ---
 
 

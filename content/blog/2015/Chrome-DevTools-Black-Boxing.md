@@ -17,7 +17,6 @@ excerpt: "The Chrome Developer tools are an amazing set of tools for debugging a
   when stepping through the code.  \n"
 published: true
 title: Chrome DevTools - Hiding Vendor Scripts
-url: /2015/05/15/Chrome-DevTools-Black-Boxing/
 ---
 
 The Chrome Developer tools are an amazing set of tools for debugging and trobuleshooting web sites.  If you are a web developer and have not tried out these tools, you have been missing out.  As amazing as the developer tools are, one of the most annoying features to me was not being able to skip over vendor javascript like jquery or angular.  Getting stuck in a minified version of a angular or jquery takes you down a deep rabbit hole that you never wanted to go down and is a annoying to climb out of.  

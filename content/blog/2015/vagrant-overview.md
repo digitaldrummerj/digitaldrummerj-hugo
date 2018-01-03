@@ -16,7 +16,7 @@ excerpt: "Welcome to an overview of Vagrant and creating of your first Vagrant m
 published: true
 series: ["vagrant getting started"]
 title: Vagrant Part 1 - Easy Virtual Machine Management
-url: /2015/06/16/vagrant-overview/
+
 ---
 
 Welcome to an overview of Vagrant and creating of your first Vagrant machine.  

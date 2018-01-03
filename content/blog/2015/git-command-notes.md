@@ -10,7 +10,6 @@ excerpt: |
 published: true
 redirect_from: /git/
 title: Git Command Notes
-url: /2015/01/14/git-command-notes/
 ---
 
 I am finally making myself learn the git command line instead of just using a UI so that I can actually understand what git is really doing.  Plus I have started playing a lot with the IonicBox and running a Ubuntu vagrant controlled VM for this blog and both of those are just linux shell command prompt only machines.

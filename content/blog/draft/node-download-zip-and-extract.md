@@ -8,7 +8,7 @@ excerpt: |-
   I found a few libraries that looked like they would work but I didn't want to add a dependency for a task that seemed like Node could easily do  out of the box.
   Before wiring about unzipping the file, I focused on getting the zip file downloaded and making sure it was a valid zip file that I could open manually.
 title: Download and Extract Zip File with Node
-url: /2017/06/03/node-download-zip-and-extract/
+
 ---
 
 I had a requirement for a Node based Cli that I was working  to download a zip and extract  it to a directory.  This seemed like a pretty easy requirement but took me several hours to figure out. 

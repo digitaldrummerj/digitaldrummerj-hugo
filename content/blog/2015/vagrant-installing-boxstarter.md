@@ -17,7 +17,7 @@ excerpt: "Welcome to the Vagrant lesson on installing Boxstarter as part of the 
 published: true
 series: ["vagrant getting started"]
 title: Vagrant Part 4 - Install Boxstarter
-url: /2015/06/18/vagrant-installing-boxstarter/
+
 ---
 
 Welcome to the Vagrant lesson on installing Boxstarter as part of the Vagrant provisioning process.

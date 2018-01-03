@@ -8,7 +8,7 @@ excerpt: "Welcome to the continuing series on getting started with ASP.NET Web A
 published: true
 series: ["web-api-getting-started"]
 title: ASP.NET Web Api - Setup Generic Response Handler
-url: /2016/09/29/webapi-standard-response/
+
 ---
 
 Welcome to the continuing series on getting started with ASP.NET Web Api.  In the previous post, we created our ASP.NET Web Api project, created our 1st controller, enabled Windows authentication and configured JSON to be camel cased for our returned C# class.  In this article we will learn how to setup a generic response handler for all of Api calls.  This will allow us to consolidate the logic needed to create a proper response as well as it will allow us to consolidate the exception handling logic.     

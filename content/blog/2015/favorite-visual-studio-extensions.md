@@ -9,7 +9,6 @@ excerpt: In the Visual Studio Extension Gallery there are hundreds of extensions
 published: true
 series: ["developer-productivity"]
 title: Favorite Visual Studio Extensions
-url: /2015/08/11/favorite-visual-studio-extensions/
 ---
 
 In the Visual Studio Extension Gallery there are hundreds of extensions that are available.  The extensions add additional functionality to Visual Studio.  Below are the extensions that I typically have installed.

@@ -22,7 +22,6 @@ published: true
 redirect_from: /blogging-on-github-part-1/
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 01: Getting Started'
-url: /2015/01/30/blogging-on-github-part-1-Getting-Started/
 ---
 
 

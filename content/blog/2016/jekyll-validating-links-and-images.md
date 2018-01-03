@@ -6,7 +6,7 @@ date: 2016-02-01T00:00:00Z
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 14: How To Validate Links and Images'
-url: /2016/02/01/jekyll-validating-links-and-images/
+
 ---
 
 Welcome the continuing series on using Jekyll. In this tutorial we are going to go through how you can validate your link and image references. 

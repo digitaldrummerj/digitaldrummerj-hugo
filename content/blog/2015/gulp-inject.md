@@ -12,7 +12,6 @@ excerpt: As you work on an Ionic based project or for that matter any web projec
   and css tags onto the page.
 published: true
 title: Automatically Add JS/CSS Files to Your Ionic Projects
-url: /2015/04/30/gulp-inject/
 ---
 
 As you work on an Ionic based project or for that matter any web projects that have javascript or css file, you will at some point forget to add your new javascript or css file to the page and wonder why the page is broken.  This is really annoying when it happens as many times you spend quite a bit of time troubleshooting before you realize that you just forgot to add the script or css tag.  You can fix this problem using gulp and the gulp inject module to automatically add the script and css tags onto the page.

@@ -9,7 +9,7 @@ excerpt: |
 published: true
 series: ["docker-toolkit-windows"]
 title: Docker - Running Container As a Service
-url: /2016/06/15/docker-running-container-as-service/
+
 ---
 
 

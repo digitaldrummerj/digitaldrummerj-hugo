@@ -6,7 +6,7 @@ date: 2016-09-01T00:00:00Z
 draft: true
 excerpt: ""
 title: WebApi Cors Solved
-url: /2016/09/01/webapi-cors-solved/
+
 ---
 
 >Note: If you are using Windows Authentication and expecting the caller to pass credentials to use your WebApi you need to follow the instructions in the [WebApi Cors with Credentials/](../webapi-cors-with-credentials/) post.

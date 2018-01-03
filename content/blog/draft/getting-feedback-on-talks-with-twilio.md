@@ -14,7 +14,7 @@ excerpt: "As a public speaker one of the most important things for me is getting
   same issue of low response rate. \n\nLearned how I solved this issue and went from
   < 5% of attendees providing feedback to > 75%.\n"
 title: Better Way To Get Talk Feedback
-url: /2016/02/04/getting-feedback-on-talks-with-twilio/
+
 ---
 
 As a public speaker one of the most important things for me is getting feedback from attendees.  The feedback helps me get better as a presenter as well as figuring out what is working in a talk and what is not. 

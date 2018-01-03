@@ -11,7 +11,7 @@ excerpt: "So I brought up a new machine and tried to run my ASP.NET web site in 
   a location tag with overrideMode=\"Deny\" or the legacy allowOverride=\"false\".\n"
 published: true
 title: IIS Express - Turning on Windows Authentication
-url: /2015/02/04/iis-express-windows-authentication/
+
 ---
 
 So I brought up a new machine and tried to run my ASP.NET web site in IIS Express that uses Windows Authentication and was greeted with the following error: 

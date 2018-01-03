@@ -9,7 +9,7 @@ excerpt: "Welcome to the continuing series on Getting Started with Angular 2.  I
 published: true
 series: ["angular2-getting-started"]
 title: Angular 2 - Adding Bootstrap Library
-url: /2017/01/05/ng2-add-bootstrap/
+
 ---
 
 Welcome to the continuing series on Getting Started with Angular 2.  In the [previous post][], we created our project using the Angular CLI.  In this post, we will be adding the [Bootstrap](https://getbootstrap.com/) library to the project to make it easier to style our application.  

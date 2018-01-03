@@ -8,7 +8,7 @@ excerpt: |
   In this post we will walk you through creating an ionic application that uses the [ngCordova local notification plugin](http://ngcordova.com/docs/plugins/localNotification/).
 published: true
 title: Ionic - Using Local Notifications
-url: /2015/12/01/ionic-local-notification/
+
 ---
 
 When you are creating a mobile applications there are times where you need to notify users about something such as an upcoming appointment.  If the application is running and the user is using it in the foreground, this is easy to accomplish.  However, if the application is running in the background this can be a challenging task.   You could do push notifications but that takes a decent amount of work to setup with both iOS and Android app stores.  If all you need to do is alert them on their local device you can just use the cordova local notification plugin and skip the headache of setting up push notifications.  

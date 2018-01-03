@@ -18,7 +18,6 @@ excerpt: "Welcome the continuing series on using Jekyll. In this tutorial we are
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 12: Editing Locally'
-url: /2015/09/11/blogging-on-github-part-12-editing-locally/
 ---
 
 Welcome the continuing series on using Jekyll. In this tutorial we are going to set it up so that we can do draft posts that we can check into our repo but not have them show up on the production site.

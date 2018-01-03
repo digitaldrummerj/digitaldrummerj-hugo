@@ -9,7 +9,7 @@ excerpt: I am keyboard person and like shortcut keys.  There are lot of availabl
 published: true
 series: ["developer-productivity"]
 title: Favorite Visual Studio Shortcuts
-url: /2015/08/13/visual-studio-shortcuts/
+
 ---
 
 Here is a list of  Visual Studio Community Edition shortcuts that I use.  

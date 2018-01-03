@@ -12,7 +12,6 @@ excerpt: "Welcome the continuing series on using Jekyll. In this tutorial we wil
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 04: Adding Additional Pages'
-url: /2015/02/11/blogging-on-github-part-4-creating-additional-pages/
 ---
 
 

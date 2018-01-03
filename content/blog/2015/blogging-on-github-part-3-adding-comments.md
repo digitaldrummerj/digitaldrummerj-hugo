@@ -16,7 +16,6 @@ excerpt: "Welcome the continuing series on using Jekyll.  In this tutorial you w
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 03: Adding Commenting to Post'
-url: /2015/02/07/blogging-on-github-part-3-adding-comments/
 ---
 
 Welcome the continuing series on using Jekyll.  In this tutorial you will learn how to add the ability for users to comment on your blog post.

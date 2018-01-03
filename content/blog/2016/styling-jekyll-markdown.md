@@ -14,7 +14,7 @@ excerpt: "As I was writing some tutorials recently I wanted to be able to style 
   without having to write out the html code.  \n"
 published: true
 title: 'Jekyll Tip: Adding Styling To Html Output'
-url: /2016/05/24/styling-jekyll-markdown/
+
 ---
 
 As I was writing some tutorials recently I wanted to be able to style the html elements that Jekyll outputs with different css classes without having to write the actually html in the markdown.    

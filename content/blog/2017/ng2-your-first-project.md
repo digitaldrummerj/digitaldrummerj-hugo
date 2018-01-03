@@ -19,7 +19,7 @@ excerpt: "Welcome to the series on Getting Started with Angular 2.  Angular 2 wa
 published: true
 series: ["angular2-getting-started"]
 title: Angular 2 - Your First Project
-url: /2017/01/03/ng2-your-first-project/
+
 ---
 
 Welcome to the series on Getting Started with Angular 2.  Angular 2 was released in September 2016 and and so far I have been enjoying working with it.  I have been using the TypeScript version of Angular 2.  It is has been pretty easy for me so far to pick it up but there have been a few things that have made me scratch me head.  In this series I am going to walk you through creating a simple Angular 2 project that has a header/footer, routing to components/modules, show how to add new components/services, create multiple modules, lock down routes, changing UI configurations based on the environment parameter and adding in the Bootstrap library.  When you are done with the series, you will have a good structure for any project that you want to start.

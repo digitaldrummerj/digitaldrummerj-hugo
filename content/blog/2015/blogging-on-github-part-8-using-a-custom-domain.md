@@ -14,7 +14,6 @@ excerpt: "Welcome the continuing series on using Jekyll. In this tutorial we are
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 08: Using a Custom Domain'
-url: /2015/03/10/blogging-on-github-part-8-using-a-custom-domain/
 ---
 
 Welcome the continuing series on using Jekyll. In this tutorial we are going to setup a custom domain for your blog.

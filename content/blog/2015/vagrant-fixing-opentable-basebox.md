@@ -12,7 +12,7 @@ excerpt: "As part of my [demo](https://github.com/digitaldrummerj/VagrantTalk/tr
   you have to do some prework before running a vagrant up using this base box.       \n"
 published: true
 title: Vagrant - Fixing Opentable Basebox looking for Windows Plugin
-url: /2015/10/04/vagrant-fixing-opentable-basebox/
+
 ---
 
 ## Overview

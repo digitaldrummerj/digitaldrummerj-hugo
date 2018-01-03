@@ -9,7 +9,7 @@ excerpt: |
   Instead, to include liquid markup in the code snippet you need to surround the code snippet with the raw and endraw tags like so
 published: true
 title: 'Jekyll Tip: Showing Liquid Code in Code Snippets'
-url: /2016/05/26/jekyll-show-liquid-in-code-snippet/
+
 ---
 
 

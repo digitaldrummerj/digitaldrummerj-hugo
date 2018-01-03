@@ -11,7 +11,7 @@ excerpt: When you are building nuget packages that are not directly using the As
   script.
 published: true
 title: Nuget - Incrementing Version Before Building
-url: /2015/05/04/Nuget-Auto-Incrementing-Version/
+
 ---
 
 When you are building nuget packages that are not directly using the AssemblyInfo.cs for the version number, you need to make sure to increment the nuget version number before building the package.  Inevitable though you will forget to increment the version number and have to build the package a 2nd time.  Wouldn't it be great if you could automatically increment the version number before calling nuget pack.  Well I have written a powershell script to do just this.  Below are the details out the script.

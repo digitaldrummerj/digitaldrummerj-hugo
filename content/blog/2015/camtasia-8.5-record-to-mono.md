@@ -4,7 +4,6 @@ categories:
 date: 2015-08-25T00:00:00Z
 published: true
 title: Camtasia 8.5 - How to Record to Mono
-url: /2015/08/25/camtasia-8.5-record-to-mono/
 ---
 
 Today I upgraded from Camtasia 8.3 to Camtasia 8.5 and ran into an issue with my audio settings only recording to the left speaker.  I know that my microphone only records in mono so this was not surprising.

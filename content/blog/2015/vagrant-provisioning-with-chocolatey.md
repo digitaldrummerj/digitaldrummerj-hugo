@@ -10,7 +10,7 @@ excerpt: "Welcome to the Vagrant lesson on installing Chocolatey as part of the 
 published: true
 series: ["vagrant getting started"]
 title: Vagrant Part 3 - Provisioning With Chocolatey
-url: /2015/06/18/vagrant-provisioning-with-chocolatey/
+
 ---
 
 Welcome to the Vagrant lesson on installing Chocolatey as part of the Vagrant provisioning process.

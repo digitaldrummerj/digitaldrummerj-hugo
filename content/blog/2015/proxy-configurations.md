@@ -13,7 +13,7 @@ excerpt: "When you are using npm, bower, and git behind a proxy server you have 
   server.  \n"
 published: true
 title: Npm, Bower, Git, and Bash Proxy Configurations
-url: /2015/01/16/proxy-configurations/
+
 ---
 
 When you are using npm, bower, and git behind a proxy server you have to do a little bit of configuration.  Luckily it is super easy to do these configurations.  Almost all of the programs have command line commands to set and unset the proxy server.  

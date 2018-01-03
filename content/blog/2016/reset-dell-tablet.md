@@ -10,7 +10,7 @@ excerpt: "I rarely use my Dell tablet and when I went to use it again I couldn't
   \ After much searching I figured it out.  \n"
 published: true
 title: Factory Reset Dell Venue 7 x86 Android Tablet
-url: /2016/04/13/reset-dell-tablet/
+
 ---
 
 I rarely use my Dell tablet and when I went to use it again I couldn't remember the lock pattern.  No problem I thought I will just reset it but I had since changed or my router and the tablet wasn't able to connect to the Internet.  

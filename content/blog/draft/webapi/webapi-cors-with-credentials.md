@@ -7,7 +7,7 @@ draft: true
 excerpt: ""
 series: ["web-api-getting-started"]
 title: ASP.NET Web Api with Credentials CORS Issues Solved
-url: /2016/08/31/webapi-cors-with-credentials/
+
 ---
 
 Welcome to the continuing series on getting started with ASP.NET Web Api.  At this point we have created a ASP.NET Web Api project, created our 1st controller, enabled Windows authentication, set the JSON format, and created a generic response handler.  In this article we will learn how to solve in an issue that many enterprise developers have run across when called your ASP.NET Web Api with Windows Authentication client-side code such as Angular.  When you try to make this access the endpoints for your Api from Angular when using credentials, you will get a Cross-Origin Resource Sharing (CORS) error. 

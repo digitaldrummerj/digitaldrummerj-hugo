@@ -12,7 +12,7 @@ excerpt: "Welcome to the Vagrant lesson on how to use Boxstarter to configure Wi
 published: true
 series: ["vagrant getting started"]
 title: Vagrant Part 5 - Installing Your Software
-url: /2015/06/18/vagrant-installing-your-software/
+
 ---
 
 Welcome to the Vagrant lesson on how to use Boxstarter to configure Windows and install software as part of the Vagrant provisioning process.

@@ -13,7 +13,6 @@ excerpt: "Welcome the continuing series on using Jekyll. In this tutorial we are
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 13: Creating an Article Series'
-url: /2015/09/15/blogging-on-github-part-13-creating-an-article-series/
 ---
 
 Welcome the continuing series on using Jekyll. In this tutorial we are going to go through how to create the series listing like you see for this blog series.  

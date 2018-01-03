@@ -11,7 +11,6 @@ excerpt: |
   Instead you need to purchase professionally printed cards.  You might be thinking, having to purchase business cards is going to be expensive but this is no longer the case.  You can easily get 100 business cards and a holder for under $30.
 published: true
 title: Purchasing Business Cards
-url: /2015/05/04/business-cards/
 ---
 
 If you are planning on going to any professional networking events, user groups, or speaking at events, you should have business cards with you.  Many times people think, I only need to have business cards if I am looking for a job.  This is far from the truth.  You should have business cards so that you can connect with the people that you have met.  People tend to meet lots of people at events and without a business card, it is difficult for people to remember who you are.  It is also a good way for people to be able to follow up with you.

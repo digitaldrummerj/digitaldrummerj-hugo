@@ -16,7 +16,6 @@ excerpt: "Syncing your forked repository to the original repository is an import
   to Github.  \n"
 published: true
 title: Sync your Git Fork to the Original Repo
-url: /2015/10/27/git-sync-fork-to-master/
 ---
 
 Syncing your forked repository to the original repository is an important step before submitting any pull request to the original repository for the changes in your forked repository.  Even if you are not going to submit a pull request to the original repository, there are times that you want the additional features and/or bug fixes that have been done since you forked the original repository.  

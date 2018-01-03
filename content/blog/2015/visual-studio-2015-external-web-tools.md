@@ -19,7 +19,7 @@ excerpt: "I ran into an issue with an npm package mis-behaving in Visual Studio 
   Visual Studio which versions to use.\n"
 published: true
 title: Visual Studio 2015 - External Web Tools
-url: /2015/08/20/visual-studio-2015-external-web-tools/
+
 ---
 
 I ran into an issue with an npm package mis-behaving in Visual Studio 2015 but working just fine from the command line.  

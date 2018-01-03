@@ -16,7 +16,7 @@ excerpt: "When I am provisioning a new development virtual machine with vagrant,
   you initially run vagrant up  \n"
 published: true
 title: Windows 8.1 - Powershell Script to Uninstall Default Programs
-url: /2015/05/27/windows8-script-uninstall-default-programs/
+
 ---
 
 When I am provisioning a new development virtual machine with vagrant, I do not need all of the Windows 8 modern applications such as bing maps, finance, skype, etc to be installed onto the virtual machine.  These applications are nice on a non-virtualized machine but on a virtual machine it just uses extra resources that aren't needed.  

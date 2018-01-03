@@ -14,7 +14,7 @@ excerpt: "I am sure that many of you are in the same situation that I am in with
   so this should be a none issue.    \n"
 published: true
 title: Running Multiple Version of Node On Windows
-url: /2016/07/20/windows-running-multiple-versions-of-node/
+
 ---
 
 I am sure that many of you are in the same situation that I am in with needing a different version of node for different projects and you don't want to have to create a new virtual machine for each project just because of node.  Luckily with [nvm](https://github.com/coreybutler/nvm-windows/) you can install multiple versions of Node on the same machine and switch between them with a simple command line call.  

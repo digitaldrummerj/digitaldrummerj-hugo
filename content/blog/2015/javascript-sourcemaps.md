@@ -19,7 +19,7 @@ excerpt: "When you release your web site to production, you should minify and co
   write code to automate tasks.  \n"
 published: true
 title: Javascript Debugging Made Easier with Sourcemaps
-url: /2015/05/17/javascript-sourcemaps/
+
 ---
 
 Updated: Add clean task that uses rimraf to delete the bundle.min.js file if it already exist.  Without this it would just append to the existing bundle.min.js file.

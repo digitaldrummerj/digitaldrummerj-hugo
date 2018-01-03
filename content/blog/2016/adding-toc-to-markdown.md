@@ -9,7 +9,7 @@ excerpt: |
   When you are writing tutorials that are broken up by sections it is nice to have a table of contents at the top to help the users navigate.  However, maintaining this by hand is a no go.  Luckily there is a great npm package called doctoc that will look at the headings in your markdown file and generated a table of contents for you.
 published: true
 title: Add Table of Contents to Markdown
-url: /2016/05/10/adding-toc-to-markdown/
+
 ---
 
 When you are writing tutorials that are broken up by sections it is nice to have a table of contents at the top to help the users navigate.  However, maintaining this by hand is a no go.  Luckily there is a great npm package called doctoc that will look at the headings in your markdown file and generated a table of contents for you.

@@ -16,7 +16,6 @@ excerpt: "Welcome the continuing series on using Jekyll. In this tutorial we are
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 09: Installing Jekyll On Windows'
-url: /2015/09/09/blogging-on-github-part-9-installing-jekyll-on-windows/
 ---
 
 Welcome the continuing series on using Jekyll. In this tutorial we are going to setup your Windows computer to be able to edit your blog on your computer.

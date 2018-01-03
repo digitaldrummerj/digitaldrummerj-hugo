@@ -10,7 +10,7 @@ excerpt: "If you are like me and just starting to work with the Ionic Framework 
   setup and the OSx setup is that you can build for an iOS device on a Mac.    \n"
 published: true
 title: Ionic - Setup on OSx
-url: /2015/01/11/ionic-setup-osx/
+
 ---
 
 Updates:

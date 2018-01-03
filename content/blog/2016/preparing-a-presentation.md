@@ -17,7 +17,7 @@ excerpt: |
   There is no set time for how long each phase takes. It all depends on the presentation and the length of it. I have had talks where I spent several weeks working on it while other talks were done in less than a day.
 published: true
 title: Preparing A Conference Talk
-url: /2016/01/14/preparing-a-presentation/
+
 ---
 
 I have done a bunch of conference talks and brown bag sessions this year (~45 in the past 2 years) and here is how I prepare for those talks. Sorry that the reply is a little long but I wanted to make sure you had a process to get started with. Remember that this is my process and you have to find what works best for you.

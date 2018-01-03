@@ -12,7 +12,6 @@ excerpt: "Welcome the continuing series on using Jekyll. In this tutorial we wil
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 05: Adding Category Page'
-url: /2015/02/15/blogging-on-github-part-5-adding-a-category-page/
 ---
 
 

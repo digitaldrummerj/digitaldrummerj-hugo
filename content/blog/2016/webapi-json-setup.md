@@ -13,7 +13,7 @@ excerpt: |
 published: true
 series: ["web-api-getting-started"]
 title: ASP.NET Web Api - Setup JSON Camel Cased Fields
-url: /2016/08/31/webapi-json-setup/
+
 ---
 
 Welcome to the continuing series on getting started with ASP.NET Web Api.  In the last post, we created our ASP.NET Web Api project, created our 1st controller and enabled Windows authentication.  In this article we will learn how to set the JSON response to convert the .NET pascal cased properties into camel cased properties.

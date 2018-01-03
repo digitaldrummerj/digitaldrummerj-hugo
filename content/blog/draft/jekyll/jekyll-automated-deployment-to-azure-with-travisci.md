@@ -7,7 +7,7 @@ draft: true
 excerpt: ""
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 16: Automated Deployment to Azure'
-url: /2016/02/15/jekyll-automated-deployment-to-azure-with-travisci/
+
 ---
 
 Welcome to the continuing series on using Jekyll.  In this tutorial we are going to setup Travis CI to automatically build your Jekyll site and then deploy it to an Azure Web App.  

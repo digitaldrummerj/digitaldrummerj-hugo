@@ -12,7 +12,6 @@ excerpt: "Welcome to part 7 of the series on Blogging on Github.  In this lesson
 published: true
 series: ["blogging-with-jekyll"]
 title: 'Jekyll Part 07: Adding a custom Google search'
-url: /2015/02/21/blogging-on-github-part-7-adding-a-custom-google-search/
 ---
 
 Welcome the continuing series on using Jekyll. In this tutorial we are going to add the ability to search your blog using google.
