@@ -43,7 +43,6 @@ a:visited {
 
 a:hover {
     color: darken( $ci-1, 10%);
-    text-decoration: underline;
 }
 
 a:focus {
@@ -75,7 +74,7 @@ article a {
 }
 
 p a:hover,
-article a:hover {
+article a:hover, h2 a:hover{
     border-bottom: 2px solid;
 }
 
@@ -283,6 +282,9 @@ ol {
 
 li {
     margin-left: 0;
+    a:hover {
+        border-bottom: 2px solid;
+    }
 }
 
 .no-bullet {

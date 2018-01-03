@@ -482,3 +482,22 @@ p.dashedborder {
         border: 1px dashed $grey-16;
     }
 }
+
+/* Latest Post Cloud
+------------------------------------------------------------------- */
+
+
+.latePost {
+    ul {
+       li {
+            list-style: none;
+            padding: 0.2em 0;
+            margin: 0;
+            // a {
+            //     white-space: nowrap;
+            //     text-overflow: ellipsis;
+            //     overflow: hidden;
+            // }
+        }
+    }
+}
