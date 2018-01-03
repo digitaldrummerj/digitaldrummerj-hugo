@@ -1,4 +1,4 @@
-<div class="hide-for-small-only medium-4 columns t30" data-sticky-container>
+<div class="hide-for-small-only medium-4 columns" data-sticky-container>
   <aside class="sidebar">
       {{ if .Site.Params.sidebar.feed}}
       <div class="panel radius">
@@ -9,14 +9,14 @@
     </div>
     {{ end }}
     {{ if .Site.Params.sidebar.recent_articles}}
-    <div class="panel radius">
+    <div class="panel radius latePost">
 
       {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
 
       <h3>{{ i18n "recentPosts" }} <span style="float: right"><small>(<a href="{{ $.Site.BaseURL }}/blog/">All Posts</a>)</small></span></h3>
-      <ul class="no-bullet">
+      <ul class="no-bullet ">
         {{ range first $num_recent_posts (where .Site.Pages "Type" "blog") }}
-        <li><a href="{{ .RelPermalink }}"><span class="icon-edit"></span>{{ .Title | markdownify }}</a></li>
+        <li><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
         {{ end }}
       </ul>
     </div>
