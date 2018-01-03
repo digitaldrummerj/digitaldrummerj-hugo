@@ -38,4 +38,21 @@
 @import "09_elements.scss";
 
 @import "11_syntax-highlighting.scss";
-@import "workshop.scss"
+@import "workshop.scss";
+
+.archive-title {
+    margin: 0.5em;
+}
+
+.archive-list li {
+    a:not(.button) {
+        text-decoration: none;
+        border-bottom: 0;
+        padding: 0.4375rem 0rem;
+    }
+
+    a:not(.button):hover,
+    a:not(.button):focus {
+        background: $grey-1;
+    }
+}

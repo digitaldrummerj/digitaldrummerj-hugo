@@ -1,0 +1,20 @@
+{{ define "main" }}
+    {{ .Content }}
+    <div class="inner">
+        {{ range (.Site.RegularPages.GroupByDate "January 2006")  }}
+        {{ if (where .Pages "Section" "blog") }}
+                <h2 class="archive-title">{{ .Key }}</h2>
+            <ul class="no-bullet archive-list">
+                {{ range ((where .Pages "Section" "blog")) }}
+                    <li>
+                         
+                        <a href="{{ .RelPermalink }}"><span class="icon-edit"></span>{{ .PublishDate.Format "Jan 02" }} : {{ .Title }}</a>
+                    </li>
+                {{ end }}
+
+                </ul>
+        {{ end }}
+        {{ end }}
+    </div>
+
+    {{ end }}
