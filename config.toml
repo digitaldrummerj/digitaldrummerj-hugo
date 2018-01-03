@@ -13,8 +13,8 @@ buildFuture = true
 
 # optionally override the site's footer with custom copyright text
 # copyright = "Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/)."
-#googleAnalytics = "UA-123-45"
-#disqusShortname = "XYW"
+#googleAnalytics = "UA-58457343-1"
+#disqusShortname = "digitaldrummerj"
 
 [permalinks]
   blog = "/:filename/"
@@ -93,11 +93,12 @@ weight=2
   #cookie_consent_info_url = "http://cookiesandyou.com"
 
   [params.sidebar]
-    # Optional about block for sidebar (can be Markdown)
-    about = "A simple Hugo theme based on the [Foundation 6 blog (w/ sidebar) example](http://foundation.zurb.com/templates-previews-sites-f6/blog.html)."
-
     # How many posts to show on the sidebar (Default: 5)
-    #num_recent_posts = 2
+    num_recent_posts = 5
+    recent_articles = true
+    categories = true
+    archive = true
+    feed = true
 
   [params.sharingicons]
     # Hide the sharing icons on posts? (Default: false)
@@ -123,12 +124,7 @@ weight=2
   tag = "tags"
   category = "categories"
 
-# Enable and disable widgets for the right sidebar
-[params.widgets]
-    recent_articles = true
-    categories = true
-    tags = true
-    tag_cloud = true
+
 
 [outputs]
 home = ["HTML","FEED", "ATOM"]
