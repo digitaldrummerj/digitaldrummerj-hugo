@@ -17,7 +17,7 @@ buildFuture = true
 #disqusShortname = "XYW"
 
 [permalinks]
-  blog = "/:slug"
+  blog = "/:filename/"
   page = "/:slug/"
 
 # navbar menu entry.
