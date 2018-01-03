@@ -13,7 +13,7 @@
       <h3>{{ i18n "recentPosts" }}</h3>
       <ul class="no-bullet">
         {{ range first $num_recent_posts (where .Site.Pages "Type" "blog") }}
-        <li><span class="icon-edit"></span><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+        <li><a href="{{ .RelPermalink }}"><span class="icon-edit"></span>{{ .Title | markdownify }}</a></li>
         {{ end }}
       </ul>
     </div>
