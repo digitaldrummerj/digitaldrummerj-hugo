@@ -37,6 +37,7 @@
     "build:css": "gulp css",
     "build:js": "gulp js",
     "build:hugo": "gulp public",
+    "build:hugo-prod": "gulp public --production",
     "server": "gulp server"
   },
   "babel": {
