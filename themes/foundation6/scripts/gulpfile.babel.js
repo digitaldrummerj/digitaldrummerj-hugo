@@ -103,5 +103,5 @@
   gulp.task('build', gulp.series( gulp.parallel(sass, javascript) ));           // Build the 'static' folder
   gulp.task('css', gulp.series( sass ));                                        // Build the 'static' folder
   gulp.task('js', gulp.series( javascript ));                                   // Build the 'static' folder
-  gulp.task('public', gulp.series( 'build', clean, 'hugo-build', `lint` ));     // Build the site, run the server, and watch for file changes
-  gulp.task('server', gulp.series( 'build', clean, gulp.parallel('hugo-server', watch) ));  // Build the site, run the server, and watch for file changes
+  gulp.task('public', gulp.series( 'build', 'hugo-build', `lint` ));     // Build the site, run the server, and watch for file changes
+  gulp.task('server', gulp.series( 'build', gulp.parallel('hugo-server', watch) ));  // Build the site, run the server, and watch for file changes
