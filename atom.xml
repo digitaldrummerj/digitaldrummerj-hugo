@@ -1,5 +1,5 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://digitaldrummerj.me/</id>
+    <id>http://digitaldrummerj.me/digitaldrummerj-hugo/</id>
     <title>Justin James</title>
     
     <updated>Tue, 03 Oct 2017 00:00:00 +0000</updated>
@@ -8,11 +8,11 @@
     
 		<entry>
       <title>Download and Extract Zip File with Node</title>
-      <id>http://digitaldrummerj.me/node-download-zip-and-extract/</id>
-      <link href="http://digitaldrummerj.me/node-download-zip-and-extract/" rel="alternate" type="text/html" title="Download and Extract Zip File with Node" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/node-download-zip-and-extract/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/node-download-zip-and-extract/" rel="alternate" type="text/html" title="Download and Extract Zip File with Node" />
       <updated>Tue, 03 Oct 2017 00:00:00 +0000</updated>
       <published>Tue, 03 Oct 2017 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/node-download-zip-and-extract/">&lt;p&gt;I had a requirement for a Node based Cli that I was working  to download a zip and extract  it to a directory.  This seemed like a pretty easy requirement but took me several hours to figure out.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/node-download-zip-and-extract/">&lt;p&gt;I had a requirement for a Node based Cli that I was working  to download a zip and extract  it to a directory.  This seemed like a pretty easy requirement but took me several hours to figure out.&lt;/p&gt;
 
 &lt;p&gt;I found a few libraries that looked like they would work but I didn&amp;rsquo;t want to add a dependency for a task that seemed like Node could easily do  out of the box.&lt;/p&gt;
 
@@ -33,11 +33,11 @@
     
 		<entry>
       <title>Angular 2 - No  Test Found</title>
-      <id>http://digitaldrummerj.me/ng2-karma-not-finding-tests/</id>
-      <link href="http://digitaldrummerj.me/ng2-karma-not-finding-tests/" rel="alternate" type="text/html" title="Angular 2 - No  Test Found" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-karma-not-finding-tests/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-karma-not-finding-tests/" rel="alternate" type="text/html" title="Angular 2 - No  Test Found" />
       <updated>Fri, 06 Jan 2017 00:00:00 +0000</updated>
       <published>Fri, 06 Jan 2017 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ng2-karma-not-finding-tests/">&lt;p&gt;Are you trying to run your Angular 2 unit test and the Karma test runner is not finding any tests to execute?  This is exactly what happened to me when I tried to run the unit tests that are included as part of the project that the Angular CLI generates.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-karma-not-finding-tests/">&lt;p&gt;Are you trying to run your Angular 2 unit test and the Karma test runner is not finding any tests to execute?  This is exactly what happened to me when I tried to run the unit tests that are included as part of the project that the Angular CLI generates.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;/images/ng2-karma-not-finding-test/no-test-found.png&#34; alt=&#34;Karma 0 test found&#34; /&gt;&lt;/p&gt;
 
@@ -69,11 +69,11 @@
     
 		<entry>
       <title>Angular 2 - Adding Bootstrap Library</title>
-      <id>http://digitaldrummerj.me/ng2-add-bootstrap/</id>
-      <link href="http://digitaldrummerj.me/ng2-add-bootstrap/" rel="alternate" type="text/html" title="Angular 2 - Adding Bootstrap Library" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-add-bootstrap/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-add-bootstrap/" rel="alternate" type="text/html" title="Angular 2 - Adding Bootstrap Library" />
       <updated>Thu, 05 Jan 2017 00:00:00 +0000</updated>
       <published>Thu, 05 Jan 2017 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ng2-add-bootstrap/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-add-bootstrap/">
 
 &lt;p&gt;Welcome to the continuing series on Getting Started with Angular 2.  In the [previous post][], we created our project using the Angular CLI.  In this post, we will be adding the &lt;a href=&#34;https://getbootstrap.com/&#34;&gt;Bootstrap&lt;/a&gt; library to the project to make it easier to style our application.&lt;/p&gt;
 
@@ -156,11 +156,11 @@
     
 		<entry>
       <title>Angular 2 - Your First Project</title>
-      <id>http://digitaldrummerj.me/ng2-your-first-project/</id>
-      <link href="http://digitaldrummerj.me/ng2-your-first-project/" rel="alternate" type="text/html" title="Angular 2 - Your First Project" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-your-first-project/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-your-first-project/" rel="alternate" type="text/html" title="Angular 2 - Your First Project" />
       <updated>Tue, 03 Jan 2017 00:00:00 +0000</updated>
       <published>Tue, 03 Jan 2017 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ng2-your-first-project/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-your-first-project/">
 
 &lt;p&gt;Welcome to the series on Getting Started with Angular 2.  Angular 2 was released in September 2016 and and so far I have been enjoying working with it.  I have been using the TypeScript version of Angular 2.  It is has been pretty easy for me so far to pick it up but there have been a few things that have made me scratch me head.  In this series I am going to walk you through creating a simple Angular 2 project that has a header/footer, routing to components/modules, show how to add new components/services, create multiple modules, lock down routes, changing UI configurations based on the environment parameter and adding in the Bootstrap library.  When you are done with the series, you will have a good structure for any project that you want to start.&lt;/p&gt;
 
@@ -266,11 +266,11 @@
     
 		<entry>
       <title>Angular - WTF Module Won&#39;t Route</title>
-      <id>http://digitaldrummerj.me/ng2-wtf-my-module-wont-route/</id>
-      <link href="http://digitaldrummerj.me/ng2-wtf-my-module-wont-route/" rel="alternate" type="text/html" title="Angular - WTF Module Won&#39;t Route" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-wtf-my-module-wont-route/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-wtf-my-module-wont-route/" rel="alternate" type="text/html" title="Angular - WTF Module Won&#39;t Route" />
       <updated>Thu, 29 Dec 2016 00:00:00 +0000</updated>
       <published>Thu, 29 Dec 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ng2-wtf-my-module-wont-route/">&lt;p&gt;I have been really enjoying working with Angular 2 over the last few months but the other day I spent well over an hour cursing Angular wondering why my new module would not route.  I didn&amp;rsquo;t have this much trouble when I created my other modules a few weeks before.  However, this time when I navigated to my new module route it kept going to my catch all route.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ng2-wtf-my-module-wont-route/">&lt;p&gt;I have been really enjoying working with Angular 2 over the last few months but the other day I spent well over an hour cursing Angular wondering why my new module would not route.  I didn&amp;rsquo;t have this much trouble when I created my other modules a few weeks before.  However, this time when I navigated to my new module route it kept going to my catch all route.&lt;/p&gt;
 
 &lt;p&gt;I verified that I had spelled everything correctly in the routing configuration and in the browser url.  I verified that I had imported the new module in the app module.  I swore everything was setup correctly.  WTF. What was going on?  What did I miss.&lt;/p&gt;
 
@@ -347,11 +347,11 @@ export class AppModule { }
     
 		<entry>
       <title>Ionic v2 - How to setup on Windows</title>
-      <id>http://digitaldrummerj.me/ionic-v2-setup-windows/</id>
-      <link href="http://digitaldrummerj.me/ionic-v2-setup-windows/" rel="alternate" type="text/html" title="Ionic v2 - How to setup on Windows" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-v2-setup-windows/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-v2-setup-windows/" rel="alternate" type="text/html" title="Ionic v2 - How to setup on Windows" />
       <updated>Tue, 01 Nov 2016 00:00:00 +0000</updated>
       <published>Tue, 01 Nov 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ionic-v2-setup-windows/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-v2-setup-windows/">
 
 &lt;p&gt;In order to work with the Ionic framework version 2 there is a bit of software installs and configuration that needs to happen in order to deploy to devices.  However, many of the guides out there leave out a number of steps that tripped me up when I first started using Ionic.&lt;/p&gt;
 
@@ -501,11 +501,11 @@ export class AppModule { }
     
 		<entry>
       <title>Ionic v2 - Setup on OSx</title>
-      <id>http://digitaldrummerj.me/ionic-v2-setup-osx/</id>
-      <link href="http://digitaldrummerj.me/ionic-v2-setup-osx/" rel="alternate" type="text/html" title="Ionic v2 - Setup on OSx" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-v2-setup-osx/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-v2-setup-osx/" rel="alternate" type="text/html" title="Ionic v2 - Setup on OSx" />
       <updated>Tue, 01 Nov 2016 00:00:00 +0000</updated>
       <published>Tue, 01 Nov 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ionic-v2-setup-osx/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-v2-setup-osx/">
 
 &lt;p&gt;In order to work with the Ionic framework there is a bit of software installs and configuration that needs to happen in order to deploy to devices.  However, many of the guides out there leave out a number of steps that tripped me up when I first started using Ionic.&lt;/p&gt;
 
@@ -1149,11 +1149,11 @@ npm -v
     
 		<entry>
       <title>ASP.NET Web Api - Setup Generic Response Handler</title>
-      <id>http://digitaldrummerj.me/webapi-standard-response/</id>
-      <link href="http://digitaldrummerj.me/webapi-standard-response/" rel="alternate" type="text/html" title="ASP.NET Web Api - Setup Generic Response Handler" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-standard-response/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-standard-response/" rel="alternate" type="text/html" title="ASP.NET Web Api - Setup Generic Response Handler" />
       <updated>Thu, 29 Sep 2016 00:00:00 +0000</updated>
       <published>Thu, 29 Sep 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/webapi-standard-response/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-standard-response/">
 
 &lt;p&gt;Welcome to the continuing series on getting started with ASP.NET Web Api.  In the previous post, we created our ASP.NET Web Api project, created our 1st controller, enabled Windows authentication and configured JSON to be camel cased for our returned C# class.  In this article we will learn how to setup a generic response handler for all of Api calls.  This will allow us to consolidate the logic needed to create a proper response as well as it will allow us to consolidate the exception handling logic.&lt;/p&gt;
 
@@ -1302,11 +1302,11 @@ public WrapResponseResult(Func&amp;lt;T&amp;gt; func, HttpRequestMessage request
     
 		<entry>
       <title>WebApi Cors Solved</title>
-      <id>http://digitaldrummerj.me/webapi-cors-solved/</id>
-      <link href="http://digitaldrummerj.me/webapi-cors-solved/" rel="alternate" type="text/html" title="WebApi Cors Solved" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-solved/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-solved/" rel="alternate" type="text/html" title="WebApi Cors Solved" />
       <updated>Thu, 01 Sep 2016 00:00:00 +0000</updated>
       <published>Thu, 01 Sep 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/webapi-cors-solved/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-solved/">
 
 &lt;blockquote&gt;
 &lt;p&gt;Note: If you are using Windows Authentication and expecting the caller to pass credentials to use your WebApi you need to follow the instructions in the &lt;a href=&#34;../webapi-cors-with-credentials/&#34;&gt;WebApi Cors with Credentials/&lt;/a&gt; post.&lt;/p&gt;
@@ -1364,11 +1364,11 @@ config.EnableCors(cors);
     
 		<entry>
       <title>ASP.NET Web Api - Setup JSON Camel Cased Fields</title>
-      <id>http://digitaldrummerj.me/webapi-json-setup/</id>
-      <link href="http://digitaldrummerj.me/webapi-json-setup/" rel="alternate" type="text/html" title="ASP.NET Web Api - Setup JSON Camel Cased Fields" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-json-setup/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-json-setup/" rel="alternate" type="text/html" title="ASP.NET Web Api - Setup JSON Camel Cased Fields" />
       <updated>Wed, 31 Aug 2016 00:00:00 +0000</updated>
       <published>Wed, 31 Aug 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/webapi-json-setup/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-json-setup/">
 
 &lt;p&gt;Welcome to the continuing series on getting started with ASP.NET Web Api.  In the last post, we created our ASP.NET Web Api project, created our 1st controller and enabled Windows authentication.  In this article we will learn how to set the JSON response to convert the .NET pascal cased properties into camel cased properties.&lt;/p&gt;
 
@@ -1488,11 +1488,11 @@ json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractRes
     
 		<entry>
       <title>ASP.NET Web Api with Credentials CORS Issues Solved</title>
-      <id>http://digitaldrummerj.me/webapi-cors-with-credentials/</id>
-      <link href="http://digitaldrummerj.me/webapi-cors-with-credentials/" rel="alternate" type="text/html" title="ASP.NET Web Api with Credentials CORS Issues Solved" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-with-credentials/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-with-credentials/" rel="alternate" type="text/html" title="ASP.NET Web Api with Credentials CORS Issues Solved" />
       <updated>Wed, 31 Aug 2016 00:00:00 +0000</updated>
       <published>Wed, 31 Aug 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/webapi-cors-with-credentials/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-with-credentials/">
 
 &lt;p&gt;Welcome to the continuing series on getting started with ASP.NET Web Api.  At this point we have created a ASP.NET Web Api project, created our 1st controller, enabled Windows authentication, set the JSON format, and created a generic response handler.  In this article we will learn how to solve in an issue that many enterprise developers have run across when called your ASP.NET Web Api with Windows Authentication client-side code such as Angular.  When you try to make this access the endpoints for your Api from Angular when using credentials, you will get a Cross-Origin Resource Sharing (CORS) error.&lt;/p&gt;
 
@@ -1570,11 +1570,11 @@ config.EnableCors(cors);
     
 		<entry>
       <title>ASP.NET Web Api - Getting Started</title>
-      <id>http://digitaldrummerj.me/webapi-getting-started/</id>
-      <link href="http://digitaldrummerj.me/webapi-getting-started/" rel="alternate" type="text/html" title="ASP.NET Web Api - Getting Started" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-getting-started/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-getting-started/" rel="alternate" type="text/html" title="ASP.NET Web Api - Getting Started" />
       <updated>Tue, 23 Aug 2016 00:00:00 +0000</updated>
       <published>Tue, 23 Aug 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/webapi-getting-started/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-getting-started/">
 
 &lt;p&gt;Welcome to the series on getting started with ASP.NET Web Api.  In this article we will create a basic C# Web Api with Windows Integrated Authentication and create our first Web Api endpoint.&lt;/p&gt;
 
@@ -1737,11 +1737,11 @@ namespace Web Api_Demo.Controllers
     
 		<entry>
       <title>Running Multiple Version of Node On Windows</title>
-      <id>http://digitaldrummerj.me/windows-running-multiple-versions-of-node/</id>
-      <link href="http://digitaldrummerj.me/windows-running-multiple-versions-of-node/" rel="alternate" type="text/html" title="Running Multiple Version of Node On Windows" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/windows-running-multiple-versions-of-node/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/windows-running-multiple-versions-of-node/" rel="alternate" type="text/html" title="Running Multiple Version of Node On Windows" />
       <updated>Wed, 20 Jul 2016 00:00:00 +0000</updated>
       <published>Wed, 20 Jul 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/windows-running-multiple-versions-of-node/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/windows-running-multiple-versions-of-node/">
 
 &lt;p&gt;I am sure that many of you are in the same situation that I am in with needing a different version of node for different projects and you don&amp;rsquo;t want to have to create a new virtual machine for each project just because of node.  Luckily with &lt;a href=&#34;https://github.com/coreybutler/nvm-windows/&#34;&gt;nvm&lt;/a&gt; you can install multiple versions of Node on the same machine and switch between them with a simple command line call.&lt;/p&gt;
 
@@ -1877,11 +1877,11 @@ $ nvm use 4.4.5 64
     
 		<entry>
       <title>Docker - Running Container As a Service</title>
-      <id>http://digitaldrummerj.me/docker-running-container-as-service/</id>
-      <link href="http://digitaldrummerj.me/docker-running-container-as-service/" rel="alternate" type="text/html" title="Docker - Running Container As a Service" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/docker-running-container-as-service/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/docker-running-container-as-service/" rel="alternate" type="text/html" title="Docker - Running Container As a Service" />
       <updated>Wed, 15 Jun 2016 00:00:00 +0000</updated>
       <published>Wed, 15 Jun 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/docker-running-container-as-service/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/docker-running-container-as-service/">
 
 &lt;p&gt;In the &lt;a href=&#34;../docker-windows-mounting-directories/&#34;&gt;previous tutorial&lt;/a&gt; we learned how to mount additional directories within the Docker containers.  In this tutorial we are going to learn how to run a Docker container as a service a.k.a daemon for nginx and mysql.&lt;/p&gt;
 
@@ -2011,11 +2011,11 @@ $ nvm use 4.4.5 64
     
 		<entry>
       <title>Docker - Mounting Windows Directories in Containers</title>
-      <id>http://digitaldrummerj.me/docker-windows-mounting-directories/</id>
-      <link href="http://digitaldrummerj.me/docker-windows-mounting-directories/" rel="alternate" type="text/html" title="Docker - Mounting Windows Directories in Containers" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/docker-windows-mounting-directories/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/docker-windows-mounting-directories/" rel="alternate" type="text/html" title="Docker - Mounting Windows Directories in Containers" />
       <updated>Fri, 03 Jun 2016 00:00:00 +0000</updated>
       <published>Fri, 03 Jun 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/docker-windows-mounting-directories/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/docker-windows-mounting-directories/">
 
 &lt;p&gt;In the &lt;a href=&#34;../docker-on-windows-getting-started/&#34;&gt;previous tutorial&lt;/a&gt; we learned how to install Docker and get our first container running.  In this tutorial we are going to learn how to mount additional directories within our Docker container that are outside of the c:\Users directory.  By default, Docker only mounts the c:\Users directory inside the docker machine and containers.  For myself, I have all of my project files two places: c:\projects and c:\personal.  I didn&amp;rsquo;t want to change my standard configuration just for Docker.  Luckily, it is really easy to mount additional directories.&lt;/p&gt;
 
@@ -2199,11 +2199,11 @@ $ ls /c/personal
     
 		<entry>
       <title>Docker - Getting Started On Windows</title>
-      <id>http://digitaldrummerj.me/docker-on-windows-getting-started/</id>
-      <link href="http://digitaldrummerj.me/docker-on-windows-getting-started/" rel="alternate" type="text/html" title="Docker - Getting Started On Windows" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/docker-on-windows-getting-started/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/docker-on-windows-getting-started/" rel="alternate" type="text/html" title="Docker - Getting Started On Windows" />
       <updated>Tue, 31 May 2016 00:00:00 +0000</updated>
       <published>Tue, 31 May 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/docker-on-windows-getting-started/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/docker-on-windows-getting-started/">
 
 &lt;p&gt;After seeing a Docker presentation recently I decided to finally figure out how to get Docker working correctly on Windows.  Luckily it worked out of the box fairly well but I did run into issues with Windows file path lengths and proxy issues.  This series of article will documented how I got Docker working and overcame those issues.&lt;/p&gt;
 
@@ -2358,11 +2358,11 @@ $ ls /c/personal
     
 		<entry>
       <title>Jekyll Tip: Showing Liquid Code in Code Snippets</title>
-      <id>http://digitaldrummerj.me/jekyll-show-liquid-in-code-snippet/</id>
-      <link href="http://digitaldrummerj.me/jekyll-show-liquid-in-code-snippet/" rel="alternate" type="text/html" title="Jekyll Tip: Showing Liquid Code in Code Snippets" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-show-liquid-in-code-snippet/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-show-liquid-in-code-snippet/" rel="alternate" type="text/html" title="Jekyll Tip: Showing Liquid Code in Code Snippets" />
       <updated>Thu, 26 May 2016 00:00:00 +0000</updated>
       <published>Thu, 26 May 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/jekyll-show-liquid-in-code-snippet/">&lt;p&gt;When blogging with Jekyll there are times when you want to be able to output a code snippet that contains what Jekyll thinks is liquid code.  This especially happens when you are doing Angular tutorials since using the double brackets (&amp;#123;&amp;#123;  &amp;#125;&amp;#125;) for data binding.  Since the code snippets are enclosed in a pre tag, you are not able to html encode the brackets.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-show-liquid-in-code-snippet/">&lt;p&gt;When blogging with Jekyll there are times when you want to be able to output a code snippet that contains what Jekyll thinks is liquid code.  This especially happens when you are doing Angular tutorials since using the double brackets (&amp;#123;&amp;#123;  &amp;#125;&amp;#125;) for data binding.  Since the code snippets are enclosed in a pre tag, you are not able to html encode the brackets.&lt;/p&gt;
 
 &lt;p&gt;Instead, to include liquid markup in the code snippet you need to surround the code snippet with the raw and endraw tags like so&lt;/p&gt;
 
@@ -2383,11 +2383,11 @@ $ ls /c/personal
     
 		<entry>
       <title>Jekyll Tip: Adding Styling To Html Output</title>
-      <id>http://digitaldrummerj.me/styling-jekyll-markdown/</id>
-      <link href="http://digitaldrummerj.me/styling-jekyll-markdown/" rel="alternate" type="text/html" title="Jekyll Tip: Adding Styling To Html Output" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/styling-jekyll-markdown/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/styling-jekyll-markdown/" rel="alternate" type="text/html" title="Jekyll Tip: Adding Styling To Html Output" />
       <updated>Tue, 24 May 2016 00:00:00 +0000</updated>
       <published>Tue, 24 May 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/styling-jekyll-markdown/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/styling-jekyll-markdown/">
 
 &lt;p&gt;As I was writing some tutorials recently I wanted to be able to style the html elements that Jekyll outputs with different css classes without having to write the actually html in the markdown.&lt;/p&gt;
 
@@ -2487,11 +2487,11 @@ A &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt; &lt;span styl
     
 		<entry>
       <title>Add Table of Contents to Markdown</title>
-      <id>http://digitaldrummerj.me/adding-toc-to-markdown/</id>
-      <link href="http://digitaldrummerj.me/adding-toc-to-markdown/" rel="alternate" type="text/html" title="Add Table of Contents to Markdown" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/adding-toc-to-markdown/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/adding-toc-to-markdown/" rel="alternate" type="text/html" title="Add Table of Contents to Markdown" />
       <updated>Tue, 10 May 2016 00:00:00 +0000</updated>
       <published>Tue, 10 May 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/adding-toc-to-markdown/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/adding-toc-to-markdown/">
 
 &lt;p&gt;When you are writing tutorials that are broken up by sections it is nice to have a table of contents at the top to help the users navigate.  However, maintaining this by hand is a no go.  Luckily there is a great npm package called doctoc that will look at the headings in your markdown file and generated a table of contents for you.&lt;/p&gt;
 
@@ -2663,11 +2663,11 @@ $ doctoc CONTRIBUTING.MD LICENSE.MD
     
 		<entry>
       <title>Factory Reset Dell Venue 7 x86 Android Tablet</title>
-      <id>http://digitaldrummerj.me/reset-dell-tablet/</id>
-      <link href="http://digitaldrummerj.me/reset-dell-tablet/" rel="alternate" type="text/html" title="Factory Reset Dell Venue 7 x86 Android Tablet" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/reset-dell-tablet/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/reset-dell-tablet/" rel="alternate" type="text/html" title="Factory Reset Dell Venue 7 x86 Android Tablet" />
       <updated>Wed, 13 Apr 2016 00:00:00 +0000</updated>
       <published>Wed, 13 Apr 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/reset-dell-tablet/">&lt;p&gt;I rarely use my Dell tablet and when I went to use it again I couldn&amp;rsquo;t remember the lock pattern.  No problem I thought I will just reset it but I had since changed or my router and the tablet wasn&amp;rsquo;t able to connect to the Internet.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/reset-dell-tablet/">&lt;p&gt;I rarely use my Dell tablet and when I went to use it again I couldn&amp;rsquo;t remember the lock pattern.  No problem I thought I will just reset it but I had since changed or my router and the tablet wasn&amp;rsquo;t able to connect to the Internet.&lt;/p&gt;
 
 &lt;p&gt;So my  only option was to figure out to do a factory reset of the device.  This device does not have a reset button on it.  So off to Google I went.&lt;/p&gt;
 
@@ -2697,11 +2697,11 @@ $ doctoc CONTRIBUTING.MD LICENSE.MD
     
 		<entry>
       <title>Running a Successful  User Group</title>
-      <id>http://digitaldrummerj.me/running-a-successful-user-group/</id>
-      <link href="http://digitaldrummerj.me/running-a-successful-user-group/" rel="alternate" type="text/html" title="Running a Successful  User Group" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/running-a-successful-user-group/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/running-a-successful-user-group/" rel="alternate" type="text/html" title="Running a Successful  User Group" />
       <updated>Thu, 18 Feb 2016 00:00:00 +0000</updated>
       <published>Thu, 18 Feb 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/running-a-successful-user-group/">&lt;p&gt;239&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/running-a-successful-user-group/">&lt;p&gt;239&lt;/p&gt;
 
 &lt;p&gt;Running a user group or meetup takes a good amount of work to make it successful.   At a minimum you need to worry about figuring out topics, finding speakers, finding a venue, and  getting people to attend.&lt;/p&gt;
 
@@ -2751,11 +2751,11 @@ $ doctoc CONTRIBUTING.MD LICENSE.MD
     
 		<entry>
       <title>Jekyll Part 16: Automated Deployment to Azure</title>
-      <id>http://digitaldrummerj.me/jekyll-automated-deployment-to-azure-with-travisci/</id>
-      <link href="http://digitaldrummerj.me/jekyll-automated-deployment-to-azure-with-travisci/" rel="alternate" type="text/html" title="Jekyll Part 16: Automated Deployment to Azure" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-automated-deployment-to-azure-with-travisci/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-automated-deployment-to-azure-with-travisci/" rel="alternate" type="text/html" title="Jekyll Part 16: Automated Deployment to Azure" />
       <updated>Mon, 15 Feb 2016 00:00:00 +0000</updated>
       <published>Mon, 15 Feb 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/jekyll-automated-deployment-to-azure-with-travisci/">&lt;p&gt;Welcome to the continuing series on using Jekyll.  In this tutorial we are going to setup Travis CI to automatically build your Jekyll site and then deploy it to an Azure Web App.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-automated-deployment-to-azure-with-travisci/">&lt;p&gt;Welcome to the continuing series on using Jekyll.  In this tutorial we are going to setup Travis CI to automatically build your Jekyll site and then deploy it to an Azure Web App.&lt;/p&gt;
 
 &lt;p&gt;{% include series.html %}&lt;/p&gt;
 
@@ -2789,11 +2789,11 @@ $ doctoc CONTRIBUTING.MD LICENSE.MD
     
 		<entry>
       <title>Jekyll Part 15: Automatically Tweet New Post</title>
-      <id>http://digitaldrummerj.me/jekyll-automatically-tweeting-new-post/</id>
-      <link href="http://digitaldrummerj.me/jekyll-automatically-tweeting-new-post/" rel="alternate" type="text/html" title="Jekyll Part 15: Automatically Tweet New Post" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-automatically-tweeting-new-post/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-automatically-tweeting-new-post/" rel="alternate" type="text/html" title="Jekyll Part 15: Automatically Tweet New Post" />
       <updated>Mon, 08 Feb 2016 00:00:00 +0000</updated>
       <published>Mon, 08 Feb 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/jekyll-automatically-tweeting-new-post/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-automatically-tweeting-new-post/">
 
 &lt;p&gt;Welcome to the continuing series on using Jekyll.  In this tutorial you will learn how to automatically send out a tweet when a new blog post is published.&lt;/p&gt;
 
@@ -2844,11 +2844,11 @@ $ doctoc CONTRIBUTING.MD LICENSE.MD
     
 		<entry>
       <title>Better Way To Get Talk Feedback</title>
-      <id>http://digitaldrummerj.me/getting-feedback-on-talks-with-twilio/</id>
-      <link href="http://digitaldrummerj.me/getting-feedback-on-talks-with-twilio/" rel="alternate" type="text/html" title="Better Way To Get Talk Feedback" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/getting-feedback-on-talks-with-twilio/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/getting-feedback-on-talks-with-twilio/" rel="alternate" type="text/html" title="Better Way To Get Talk Feedback" />
       <updated>Thu, 04 Feb 2016 00:00:00 +0000</updated>
       <published>Thu, 04 Feb 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/getting-feedback-on-talks-with-twilio/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/getting-feedback-on-talks-with-twilio/">
 
 &lt;p&gt;As a public speaker one of the most important things for me is getting feedback from attendees.  The feedback helps me get better as a presenter as well as figuring out what is working in a talk and what is not.&lt;/p&gt;
 
@@ -2952,11 +2952,11 @@ Once the application is created you need to update the phone number to use it.&l
     
 		<entry>
       <title>Jekyll Part 14: How To Validate Links and Images</title>
-      <id>http://digitaldrummerj.me/jekyll-validating-links-and-images/</id>
-      <link href="http://digitaldrummerj.me/jekyll-validating-links-and-images/" rel="alternate" type="text/html" title="Jekyll Part 14: How To Validate Links and Images" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-validating-links-and-images/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-validating-links-and-images/" rel="alternate" type="text/html" title="Jekyll Part 14: How To Validate Links and Images" />
       <updated>Mon, 01 Feb 2016 00:00:00 +0000</updated>
       <published>Mon, 01 Feb 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/jekyll-validating-links-and-images/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-validating-links-and-images/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we are going to go through how you can validate your link and image references.&lt;/p&gt;
 
@@ -3012,11 +3012,11 @@ Once the application is created you need to update the phone number to use it.&l
     
 		<entry>
       <title>Calling Filters in Your Angular Controller</title>
-      <id>http://digitaldrummerj.me/angular-calling-filters-in-your-controller/</id>
-      <link href="http://digitaldrummerj.me/angular-calling-filters-in-your-controller/" rel="alternate" type="text/html" title="Calling Filters in Your Angular Controller" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/angular-calling-filters-in-your-controller/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/angular-calling-filters-in-your-controller/" rel="alternate" type="text/html" title="Calling Filters in Your Angular Controller" />
       <updated>Thu, 28 Jan 2016 00:00:00 +0000</updated>
       <published>Thu, 28 Jan 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/angular-calling-filters-in-your-controller/">&lt;p&gt;Here is a quick tip for how to call a filter from within your Angular controller.  This example assumes that you already know what a filter is and have one created.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/angular-calling-filters-in-your-controller/">&lt;p&gt;Here is a quick tip for how to call a filter from within your Angular controller.  This example assumes that you already know what a filter is and have one created.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Inject $filter into your controller&lt;/p&gt;
@@ -3052,11 +3052,11 @@ function SampleController($filter) {
     
 		<entry>
       <title>Angular - Communicating Between Parent And Child Scopes</title>
-      <id>http://digitaldrummerj.me/angular-communication-between-parent-and-child-scopes/</id>
-      <link href="http://digitaldrummerj.me/angular-communication-between-parent-and-child-scopes/" rel="alternate" type="text/html" title="Angular - Communicating Between Parent And Child Scopes" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/angular-communication-between-parent-and-child-scopes/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/angular-communication-between-parent-and-child-scopes/" rel="alternate" type="text/html" title="Angular - Communicating Between Parent And Child Scopes" />
       <updated>Mon, 25 Jan 2016 00:00:00 +0000</updated>
       <published>Mon, 25 Jan 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/angular-communication-between-parent-and-child-scopes/">&lt;p&gt;Here is a quick tip in Angular on how to communicate between parent and child scopes.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/angular-communication-between-parent-and-child-scopes/">&lt;p&gt;Here is a quick tip in Angular on how to communicate between parent and child scopes.&lt;/p&gt;
 
 &lt;p&gt;If you have a need to send notification of an event from a parent scope to a child scope, you use $scope.$broadcast to send the event.&lt;/p&gt;
 
@@ -3084,11 +3084,11 @@ $scope.$on(&amp;quot;child event name&amp;quot;, function(){
     
 		<entry>
       <title>Angular In Action Book Review</title>
-      <id>http://digitaldrummerj.me/angular-in-action-book-review/</id>
-      <link href="http://digitaldrummerj.me/angular-in-action-book-review/" rel="alternate" type="text/html" title="Angular In Action Book Review" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/angular-in-action-book-review/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/angular-in-action-book-review/" rel="alternate" type="text/html" title="Angular In Action Book Review" />
       <updated>Thu, 21 Jan 2016 00:00:00 +0000</updated>
       <published>Thu, 21 Jan 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/angular-in-action-book-review/">&lt;p&gt;&lt;img style=&#34;float: left;&#34; src=&#34;/images/bookreviews/angular_in_action_cover.jpg&#34;&gt; At the &lt;a href=&#34;http://holidayjs.com&#34;&gt;HolidayJs&lt;/a&gt; event I won a book and I picked a copy of &lt;a href=&#34;https://www.manning.com/books/angularjs-in-action&#34;&gt;Angular In Action&lt;/a&gt; by &lt;a href=&#34;http://onehungrymind.com/&#34;&gt;Lukas Ruebbelke&lt;/a&gt;.  I had already been using Angular for a few projects and wasn&amp;rsquo;t expecting to get much out of the book.  Honestly I got it to use as more of a give away at one of my talks but figured I would at least glance through a few chapters of it first.  Needless to say I ended up reading the whole book and plan to keep it.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/angular-in-action-book-review/">&lt;p&gt;&lt;img style=&#34;float: left;&#34; src=&#34;/images/bookreviews/angular_in_action_cover.jpg&#34;&gt; At the &lt;a href=&#34;http://holidayjs.com&#34;&gt;HolidayJs&lt;/a&gt; event I won a book and I picked a copy of &lt;a href=&#34;https://www.manning.com/books/angularjs-in-action&#34;&gt;Angular In Action&lt;/a&gt; by &lt;a href=&#34;http://onehungrymind.com/&#34;&gt;Lukas Ruebbelke&lt;/a&gt;.  I had already been using Angular for a few projects and wasn&amp;rsquo;t expecting to get much out of the book.  Honestly I got it to use as more of a give away at one of my talks but figured I would at least glance through a few chapters of it first.  Needless to say I ended up reading the whole book and plan to keep it.&lt;/p&gt;
 
 &lt;p&gt;This book is one of the best introductions to Angular that I have read.  Lukas does a fantastic jobs of explaining how it all works with lots of good code examples in a way that is very easy to understand.  The book walks you through building a Trello clone with a pre-built backend so that you can stay focused on Angular and not worry about the data storage.  After reading this book and going through the code examples you will be well on your way to being able to create your own Angular application.&lt;/p&gt;
 
@@ -3117,11 +3117,11 @@ $scope.$on(&amp;quot;child event name&amp;quot;, function(){
     
 		<entry>
       <title>Ionic - Stop Icons from Overlapping in Ion List</title>
-      <id>http://digitaldrummerj.me/ionic-ion-item-multiple-icon-inline/</id>
-      <link href="http://digitaldrummerj.me/ionic-ion-item-multiple-icon-inline/" rel="alternate" type="text/html" title="Ionic - Stop Icons from Overlapping in Ion List" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-ion-item-multiple-icon-inline/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-ion-item-multiple-icon-inline/" rel="alternate" type="text/html" title="Ionic - Stop Icons from Overlapping in Ion List" />
       <updated>Tue, 19 Jan 2016 00:00:00 +0000</updated>
       <published>Tue, 19 Jan 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ionic-ion-item-multiple-icon-inline/">&lt;p&gt;Today I ran into an issue using Ionic, where I was trying to put two icons on the right side of an ion list item.  There is really easy to do with the item-icon-right css class.  Unfortunately, when you have multiple icons, it overlaps instead of showing them side by side.  I was not expecting this as I had only used 1 icon before and assumed that item-icon-right would just put them side by side.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-ion-item-multiple-icon-inline/">&lt;p&gt;Today I ran into an issue using Ionic, where I was trying to put two icons on the right side of an ion list item.  There is really easy to do with the item-icon-right css class.  Unfortunately, when you have multiple icons, it overlaps instead of showing them side by side.  I was not expecting this as I had only used 1 icon before and assumed that item-icon-right would just put them side by side.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;/images/ionic-ion-list-inline-icons/icons-overlapped.png&#34; alt=&#34;Overlapped Icons&#34; /&gt;&lt;/p&gt;
 
@@ -3172,11 +3172,11 @@ $scope.$on(&amp;quot;child event name&amp;quot;, function(){
     
 		<entry>
       <title>Preparing A Conference Talk</title>
-      <id>http://digitaldrummerj.me/preparing-a-presentation/</id>
-      <link href="http://digitaldrummerj.me/preparing-a-presentation/" rel="alternate" type="text/html" title="Preparing A Conference Talk" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/preparing-a-presentation/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/preparing-a-presentation/" rel="alternate" type="text/html" title="Preparing A Conference Talk" />
       <updated>Thu, 14 Jan 2016 00:00:00 +0000</updated>
       <published>Thu, 14 Jan 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/preparing-a-presentation/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/preparing-a-presentation/">
 
 &lt;p&gt;I have done a bunch of conference talks and brown bag sessions this year (~45 in the past 2 years) and here is how I prepare for those talks. Sorry that the reply is a little long but I wanted to make sure you had a process to get started with. Remember that this is my process and you have to find what works best for you.&lt;/p&gt;
 
@@ -3288,11 +3288,11 @@ $scope.$on(&amp;quot;child event name&amp;quot;, function(){
     
 		<entry>
       <title>Angular - Calling Service Methods from Console</title>
-      <id>http://digitaldrummerj.me/angular-running-service-in-console/</id>
-      <link href="http://digitaldrummerj.me/angular-running-service-in-console/" rel="alternate" type="text/html" title="Angular - Calling Service Methods from Console" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/angular-running-service-in-console/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/angular-running-service-in-console/" rel="alternate" type="text/html" title="Angular - Calling Service Methods from Console" />
       <updated>Mon, 11 Jan 2016 00:00:00 +0000</updated>
       <published>Mon, 11 Jan 2016 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/angular-running-service-in-console/">&lt;p&gt;Here is a quick tip for how you can run your Angular service and factory methods within the Chrome Dev Tools console.  No longer will you have to go through the process of navigating through the UI to trigger a Service/Factory method to run.  Now you can just load up the web site and do all of your debugging through the Chrome console.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/angular-running-service-in-console/">&lt;p&gt;Here is a quick tip for how you can run your Angular service and factory methods within the Chrome Dev Tools console.  No longer will you have to go through the process of navigating through the UI to trigger a Service/Factory method to run.  Now you can just load up the web site and do all of your debugging through the Chrome console.&lt;/p&gt;
 
 &lt;p&gt;If your service/factory was called &amp;ldquo;YourFactory&amp;rdquo; and the ng-app attribute is on the body tag, you can get a reference to the &amp;ldquo;YourFactory&amp;rdquo; with the following line in the console.&lt;/p&gt;
 
@@ -3313,11 +3313,11 @@ $scope.$on(&amp;quot;child event name&amp;quot;, function(){
     
 		<entry>
       <title>2015 Year In Review</title>
-      <id>http://digitaldrummerj.me/year-in-review/</id>
-      <link href="http://digitaldrummerj.me/year-in-review/" rel="alternate" type="text/html" title="2015 Year In Review" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/year-in-review/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/year-in-review/" rel="alternate" type="text/html" title="2015 Year In Review" />
       <updated>Thu, 31 Dec 2015 00:00:00 +0000</updated>
       <published>Thu, 31 Dec 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/year-in-review/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/year-in-review/">
 
 &lt;p&gt;2015 was a great year with lots of new adventures.   I did a bunch of travelling, started a new position at work, competed in my first hackathon (and win), and started a couple of meetups.  At the beginning of 2015 I set a few goals for myself:&lt;/p&gt;
 
@@ -3447,11 +3447,11 @@ $scope.$on(&amp;quot;child event name&amp;quot;, function(){
     
 		<entry>
       <title>Ionic - Using Local Notifications</title>
-      <id>http://digitaldrummerj.me/ionic-local-notification/</id>
-      <link href="http://digitaldrummerj.me/ionic-local-notification/" rel="alternate" type="text/html" title="Ionic - Using Local Notifications" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-local-notification/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-local-notification/" rel="alternate" type="text/html" title="Ionic - Using Local Notifications" />
       <updated>Tue, 01 Dec 2015 00:00:00 +0000</updated>
       <published>Tue, 01 Dec 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ionic-local-notification/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-local-notification/">
 
 &lt;p&gt;When you are creating a mobile applications there are times where you need to notify users about something such as an upcoming appointment.  If the application is running and the user is using it in the foreground, this is easy to accomplish.  However, if the application is running in the background this can be a challenging task.   You could do push notifications but that takes a decent amount of work to setup with both iOS and Android app stores.  If all you need to do is alert them on their local device you can just use the cordova local notification plugin and skip the headache of setting up push notifications.&lt;/p&gt;
 
@@ -3796,11 +3796,11 @@ cd ionic-local-notifications
     
 		<entry>
       <title>Running Gulp Task in Visual Studio</title>
-      <id>http://digitaldrummerj.me/running-gulp-task-in-visual-studio/</id>
-      <link href="http://digitaldrummerj.me/running-gulp-task-in-visual-studio/" rel="alternate" type="text/html" title="Running Gulp Task in Visual Studio" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/running-gulp-task-in-visual-studio/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/running-gulp-task-in-visual-studio/" rel="alternate" type="text/html" title="Running Gulp Task in Visual Studio" />
       <updated>Sun, 15 Nov 2015 00:00:00 +0000</updated>
       <published>Sun, 15 Nov 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/running-gulp-task-in-visual-studio/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/running-gulp-task-in-visual-studio/">
 
 &lt;p&gt;When I am working in an code editor such as Visual Studio, I do not want to have to have to leave the editor to run command line programs such as Gulp task.  I want to be able to run the gulp task right from instead the editor.  Starting with Visual Studio 2013, you could do this with the &lt;a href=&#34;https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708&#34;&gt;Task Runner Explorer extension&lt;/a&gt;.  Microsoft then integrated the Task Runner Explorer into Visual Studio 2015 so you no longer have to install an extension.&lt;/p&gt;
 
@@ -3883,11 +3883,11 @@ cd ionic-local-notifications
     
 		<entry>
       <title>Strongloop - Fixing Security When Extending User Model</title>
-      <id>http://digitaldrummerj.me/strongloop-extending-user-model-security/</id>
-      <link href="http://digitaldrummerj.me/strongloop-extending-user-model-security/" rel="alternate" type="text/html" title="Strongloop - Fixing Security When Extending User Model" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/strongloop-extending-user-model-security/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/strongloop-extending-user-model-security/" rel="alternate" type="text/html" title="Strongloop - Fixing Security When Extending User Model" />
       <updated>Fri, 30 Oct 2015 00:00:00 +0000</updated>
       <published>Fri, 30 Oct 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/strongloop-extending-user-model-security/">&lt;p&gt;After following Raymond Camden&amp;rsquo;s &lt;a href=&#34;http://www.raymondcamden.com/tags/strongloop/&#34;&gt;Strongloop Introduction&lt;/a&gt;, I was ready to update the &lt;a href=&#34;https://github.com/Ionic-AZ/Todo-Lab1-LocalStorage&#34;&gt;todo demo application&lt;/a&gt; that I have been using for the &lt;a href=&#34;http://meetup.com/ionic-az&#34;&gt;Ionic Arizona Meetup&lt;/a&gt;.  So I created a models for projects and app users. The app users model base class was User.  Then within the project model I associated a project to an app users with a belongsTo and in the app users model I associated multiple projects to a single user with a hasMany.  At this point, when I examined the API explorer I could see that it can me a rest endpoint to get the projects associated to a user.  However, I ran into an issue with getting 401 Unauthorized errors when I tried to query any of the rest endpoints to get the projects associated to the user.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/strongloop-extending-user-model-security/">&lt;p&gt;After following Raymond Camden&amp;rsquo;s &lt;a href=&#34;http://www.raymondcamden.com/tags/strongloop/&#34;&gt;Strongloop Introduction&lt;/a&gt;, I was ready to update the &lt;a href=&#34;https://github.com/Ionic-AZ/Todo-Lab1-LocalStorage&#34;&gt;todo demo application&lt;/a&gt; that I have been using for the &lt;a href=&#34;http://meetup.com/ionic-az&#34;&gt;Ionic Arizona Meetup&lt;/a&gt;.  So I created a models for projects and app users. The app users model base class was User.  Then within the project model I associated a project to an app users with a belongsTo and in the app users model I associated multiple projects to a single user with a hasMany.  At this point, when I examined the API explorer I could see that it can me a rest endpoint to get the projects associated to a user.  However, I ran into an issue with getting 401 Unauthorized errors when I tried to query any of the rest endpoints to get the projects associated to the user.&lt;/p&gt;
 
 &lt;p&gt;I could not find anything in the Strongloop docs that told me how to get around the 401 errors or what was causing them except that the ACL security was causing the issue and that I should be able to set the ACL security for appuser.   However, after much research, it turns out that the built-in user model has security (ACL) on it to restrict everyone from being able to query the user endpoints that do not have an explictly defined security setup.  This is great except for the fact that even if you add additional ACLs in your extended user model the default security has already denied the user before it gets to the security you setup.&lt;/p&gt;
 
@@ -4011,11 +4011,11 @@ cd ionic-local-notifications
     
 		<entry>
       <title>Installing Gulp 4.x</title>
-      <id>http://digitaldrummerj.me/installing-gulp-4/</id>
-      <link href="http://digitaldrummerj.me/installing-gulp-4/" rel="alternate" type="text/html" title="Installing Gulp 4.x" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/installing-gulp-4/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/installing-gulp-4/" rel="alternate" type="text/html" title="Installing Gulp 4.x" />
       <updated>Thu, 29 Oct 2015 00:00:00 +0000</updated>
       <published>Thu, 29 Oct 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/installing-gulp-4/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/installing-gulp-4/">
 
 &lt;p&gt;Gulp 4 is not released yet but if you have a need to install it here is how to do it.  I will cover how to globally install it as well as how to update your package.json for your projects.&lt;/p&gt;
 
@@ -4075,11 +4075,11 @@ $ npm install git+https://git@github.com/gulpjs/gulp.git#4.0  --save
     
 		<entry>
       <title>Sync your Git Fork to the Original Repo</title>
-      <id>http://digitaldrummerj.me/git-sync-fork-to-master/</id>
-      <link href="http://digitaldrummerj.me/git-sync-fork-to-master/" rel="alternate" type="text/html" title="Sync your Git Fork to the Original Repo" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/git-sync-fork-to-master/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/git-sync-fork-to-master/" rel="alternate" type="text/html" title="Sync your Git Fork to the Original Repo" />
       <updated>Tue, 27 Oct 2015 00:00:00 +0000</updated>
       <published>Tue, 27 Oct 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/git-sync-fork-to-master/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/git-sync-fork-to-master/">
 
 &lt;p&gt;Syncing your forked repository to the original repository is an important step before submitting any pull request to the original repository for the changes in your forked repository.  Even if you are not going to submit a pull request to the original repository, there are times that you want the additional features and/or bug fixes that have been done since you forked the original repository.&lt;/p&gt;
 
@@ -4177,11 +4177,11 @@ Fast-forward
     
 		<entry>
       <title>Do Not Swallow The Exceptions</title>
-      <id>http://digitaldrummerj.me/dont-swallow-the-exceptions/</id>
-      <link href="http://digitaldrummerj.me/dont-swallow-the-exceptions/" rel="alternate" type="text/html" title="Do Not Swallow The Exceptions" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/dont-swallow-the-exceptions/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/dont-swallow-the-exceptions/" rel="alternate" type="text/html" title="Do Not Swallow The Exceptions" />
       <updated>Mon, 05 Oct 2015 00:00:00 +0000</updated>
       <published>Mon, 05 Oct 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/dont-swallow-the-exceptions/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/dont-swallow-the-exceptions/">
 
 &lt;p&gt;Throwing away exceptions in your code is just a bad practice and makes it harder to support your application.  It may make it easier for you as a developer to get something working but in the long run it cost way more money to do the maintenance and troubleshooting then if you had just put in proper exception handling to start with.&lt;/p&gt;
 
@@ -4313,11 +4313,11 @@ Fast-forward
     
 		<entry>
       <title>Vagrant - Fixing Opentable Basebox looking for Windows Plugin</title>
-      <id>http://digitaldrummerj.me/vagrant-fixing-opentable-basebox/</id>
-      <link href="http://digitaldrummerj.me/vagrant-fixing-opentable-basebox/" rel="alternate" type="text/html" title="Vagrant - Fixing Opentable Basebox looking for Windows Plugin" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-fixing-opentable-basebox/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-fixing-opentable-basebox/" rel="alternate" type="text/html" title="Vagrant - Fixing Opentable Basebox looking for Windows Plugin" />
       <updated>Sun, 04 Oct 2015 00:00:00 +0000</updated>
       <published>Sun, 04 Oct 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/vagrant-fixing-opentable-basebox/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-fixing-opentable-basebox/">
 
 &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 
@@ -4385,11 +4385,11 @@ config.vm.network :forwarded_port, guest: 5985, host: 5985, auto_correct: true
     
 		<entry>
       <title>Sync your Git Fork to the Original Repo</title>
-      <id>http://digitaldrummerj.me/git-syncing-fork-with-original-repo/</id>
-      <link href="http://digitaldrummerj.me/git-syncing-fork-with-original-repo/" rel="alternate" type="text/html" title="Sync your Git Fork to the Original Repo" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/git-syncing-fork-with-original-repo/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/git-syncing-fork-with-original-repo/" rel="alternate" type="text/html" title="Sync your Git Fork to the Original Repo" />
       <updated>Mon, 28 Sep 2015 00:00:00 +0000</updated>
       <published>Mon, 28 Sep 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/git-syncing-fork-with-original-repo/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/git-syncing-fork-with-original-repo/">
 
 &lt;p&gt;Syncing your forked repository to the original repository is an important step before submitting any pull request to the original repository for the changes in your forked repository.  Even if you are not going to submit a pull request to the original repository, there are times that you want the additional features and/or bug fixes that have been done since you forked the original repository.&lt;/p&gt;
 
@@ -4487,11 +4487,11 @@ Fast-forward
     
 		<entry>
       <title>Getting Visual Studio Cordova Tooling Working with the Ionic Framework</title>
-      <id>http://digitaldrummerj.me/visual-studio-2015-cordova-tools-and-ionic-framework/</id>
-      <link href="http://digitaldrummerj.me/visual-studio-2015-cordova-tools-and-ionic-framework/" rel="alternate" type="text/html" title="Getting Visual Studio Cordova Tooling Working with the Ionic Framework" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-2015-cordova-tools-and-ionic-framework/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-2015-cordova-tools-and-ionic-framework/" rel="alternate" type="text/html" title="Getting Visual Studio Cordova Tooling Working with the Ionic Framework" />
       <updated>Thu, 17 Sep 2015 00:00:00 +0000</updated>
       <published>Thu, 17 Sep 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/visual-studio-2015-cordova-tools-and-ionic-framework/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-2015-cordova-tools-and-ionic-framework/">
 
 &lt;p&gt;I am doing an &lt;a href=&#34;http://www.ionicframework.com&#34;&gt;Ionic Framework&lt;/a&gt; presentation and I wanted to use the Visual Studio 2015 Cordova Tooling.&lt;/p&gt;
 
@@ -4719,11 +4719,11 @@ This issue actually had nothing to do with Visual Studio itself but with the ang
     
 		<entry>
       <title>Jekyll Part 13: Creating an Article Series</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/" rel="alternate" type="text/html" title="Jekyll Part 13: Creating an Article Series" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-13-creating-an-article-series/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-13-creating-an-article-series/" rel="alternate" type="text/html" title="Jekyll Part 13: Creating an Article Series" />
       <updated>Tue, 15 Sep 2015 00:00:00 +0000</updated>
       <published>Tue, 15 Sep 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-13-creating-an-article-series/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we are going to go through how to create the series listing like you see for this blog series.&lt;/p&gt;
 
@@ -4955,11 +4955,11 @@ series: &amp;quot;Intro to Series&amp;quot;
     
 		<entry>
       <title>Jekyll Part 12: Editing Locally</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-12-editing-locally/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-12-editing-locally/" rel="alternate" type="text/html" title="Jekyll Part 12: Editing Locally" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-12-editing-locally/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-12-editing-locally/" rel="alternate" type="text/html" title="Jekyll Part 12: Editing Locally" />
       <updated>Fri, 11 Sep 2015 00:00:00 +0000</updated>
       <published>Fri, 11 Sep 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-12-editing-locally/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-12-editing-locally/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we are going to set it up so that we can do draft posts that we can check into our repo but not have them show up on the production site.&lt;/p&gt;
 
@@ -5016,11 +5016,11 @@ date: 2015-09-11 06:00
     
 		<entry>
       <title>Jekyll Part 09: Installing Jekyll On Windows</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-9-installing-jekyll-on-windows/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-9-installing-jekyll-on-windows/" rel="alternate" type="text/html" title="Jekyll Part 09: Installing Jekyll On Windows" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-9-installing-jekyll-on-windows/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-9-installing-jekyll-on-windows/" rel="alternate" type="text/html" title="Jekyll Part 09: Installing Jekyll On Windows" />
       <updated>Wed, 09 Sep 2015 00:00:00 +0000</updated>
       <published>Wed, 09 Sep 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-9-installing-jekyll-on-windows/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-9-installing-jekyll-on-windows/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we are going to setup your Windows computer to be able to edit your blog on your computer.&lt;/p&gt;
 
@@ -5206,11 +5206,11 @@ google_search:
     
 		<entry>
       <title>Jekyll Part 10: Installing Jekyll On Linux</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-10-installing-jekyll-on-linux/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-10-installing-jekyll-on-linux/" rel="alternate" type="text/html" title="Jekyll Part 10: Installing Jekyll On Linux" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-10-installing-jekyll-on-linux/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-10-installing-jekyll-on-linux/" rel="alternate" type="text/html" title="Jekyll Part 10: Installing Jekyll On Linux" />
       <updated>Wed, 09 Sep 2015 00:00:00 +0000</updated>
       <published>Wed, 09 Sep 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-10-installing-jekyll-on-linux/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-10-installing-jekyll-on-linux/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we are going to setup your Ubuntu Linux computer to be able to edit your blog on your computer.&lt;/p&gt;
 
@@ -5395,11 +5395,11 @@ gem &#39;jekyll-redirect-from&#39;
     
 		<entry>
       <title>Jekyll Part 11: Installing Jekyll On OSx</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-11-installing-jekyll-osx/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-11-installing-jekyll-osx/" rel="alternate" type="text/html" title="Jekyll Part 11: Installing Jekyll On OSx" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-11-installing-jekyll-osx/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-11-installing-jekyll-osx/" rel="alternate" type="text/html" title="Jekyll Part 11: Installing Jekyll On OSx" />
       <updated>Wed, 09 Sep 2015 00:00:00 +0000</updated>
       <published>Wed, 09 Sep 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-11-installing-jekyll-osx/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-11-installing-jekyll-osx/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we are going to setup your MAC (OSx) computer to be able to edit your blog on your computer.&lt;/p&gt;
 
@@ -5546,11 +5546,11 @@ google_search:
     
 		<entry>
       <title>Camtasia 8.5 - How to Record to Mono</title>
-      <id>http://digitaldrummerj.me/camtasia-8.5-record-to-mono/</id>
-      <link href="http://digitaldrummerj.me/camtasia-8.5-record-to-mono/" rel="alternate" type="text/html" title="Camtasia 8.5 - How to Record to Mono" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/camtasia-8.5-record-to-mono/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/camtasia-8.5-record-to-mono/" rel="alternate" type="text/html" title="Camtasia 8.5 - How to Record to Mono" />
       <updated>Tue, 25 Aug 2015 00:00:00 +0000</updated>
       <published>Tue, 25 Aug 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/camtasia-8.5-record-to-mono/">&lt;p&gt;Today I upgraded from Camtasia 8.3 to Camtasia 8.5 and ran into an issue with my audio settings only recording to the left speaker.  I know that my microphone only records in mono so this was not surprising.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/camtasia-8.5-record-to-mono/">&lt;p&gt;Today I upgraded from Camtasia 8.3 to Camtasia 8.5 and ran into an issue with my audio settings only recording to the left speaker.  I know that my microphone only records in mono so this was not surprising.&lt;/p&gt;
 
 &lt;p&gt;What was surprising is that the audio settings for the Camtasia Recorder were greyed out when using the TREC format.&lt;/p&gt;
 
@@ -5573,11 +5573,11 @@ google_search:
     
 		<entry>
       <title>Visual Studio 2015 - External Web Tools</title>
-      <id>http://digitaldrummerj.me/visual-studio-2015-external-web-tools/</id>
-      <link href="http://digitaldrummerj.me/visual-studio-2015-external-web-tools/" rel="alternate" type="text/html" title="Visual Studio 2015 - External Web Tools" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-2015-external-web-tools/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-2015-external-web-tools/" rel="alternate" type="text/html" title="Visual Studio 2015 - External Web Tools" />
       <updated>Thu, 20 Aug 2015 00:00:00 +0000</updated>
       <published>Thu, 20 Aug 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/visual-studio-2015-external-web-tools/">&lt;p&gt;I ran into an issue with an npm package mis-behaving in Visual Studio 2015 but working just fine from the command line.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-2015-external-web-tools/">&lt;p&gt;I ran into an issue with an npm package mis-behaving in Visual Studio 2015 but working just fine from the command line.&lt;/p&gt;
 
 &lt;p&gt;After scratching my head for awhile trying to figure out what was going on, I discovered that Visual Studio was pointing to its own version of npm and node and not that ones that were available in my path that the command line was using. Visual Studio 2015 ships with:&lt;/p&gt;
 
@@ -5612,11 +5612,11 @@ google_search:
     
 		<entry>
       <title>Visual Studio Code Snippets</title>
-      <id>http://digitaldrummerj.me/visual-studio-code-snippets/</id>
-      <link href="http://digitaldrummerj.me/visual-studio-code-snippets/" rel="alternate" type="text/html" title="Visual Studio Code Snippets" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-code-snippets/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-code-snippets/" rel="alternate" type="text/html" title="Visual Studio Code Snippets" />
       <updated>Tue, 18 Aug 2015 00:00:00 +0000</updated>
       <published>Tue, 18 Aug 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/visual-studio-code-snippets/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-code-snippets/">
 
 &lt;p&gt;There are a bunch of built-in Visual Studio code snippets that will generate code for you with a short keyword and then a tab key press.  These shortcuts will make you more efficient when writing code such as creating properties, loops, exceptions, etc.&lt;/p&gt;
 
@@ -5808,11 +5808,11 @@ public int MyProperty
     
 		<entry>
       <title>Favorite Visual Studio Shortcuts</title>
-      <id>http://digitaldrummerj.me/visual-studio-shortcuts/</id>
-      <link href="http://digitaldrummerj.me/visual-studio-shortcuts/" rel="alternate" type="text/html" title="Favorite Visual Studio Shortcuts" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-shortcuts/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-shortcuts/" rel="alternate" type="text/html" title="Favorite Visual Studio Shortcuts" />
       <updated>Thu, 13 Aug 2015 00:00:00 +0000</updated>
       <published>Thu, 13 Aug 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/visual-studio-shortcuts/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-shortcuts/">
 
 &lt;p&gt;Here is a list of  Visual Studio Community Edition shortcuts that I use.&lt;/p&gt;
 
@@ -6008,11 +6008,11 @@ public int MyProperty
     
 		<entry>
       <title>Favorite Visual Studio Extensions</title>
-      <id>http://digitaldrummerj.me/favorite-visual-studio-extensions/</id>
-      <link href="http://digitaldrummerj.me/favorite-visual-studio-extensions/" rel="alternate" type="text/html" title="Favorite Visual Studio Extensions" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/favorite-visual-studio-extensions/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/favorite-visual-studio-extensions/" rel="alternate" type="text/html" title="Favorite Visual Studio Extensions" />
       <updated>Tue, 11 Aug 2015 00:00:00 +0000</updated>
       <published>Tue, 11 Aug 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/favorite-visual-studio-extensions/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/favorite-visual-studio-extensions/">
 
 &lt;p&gt;In the Visual Studio Extension Gallery there are hundreds of extensions that are available.  The extensions add additional functionality to Visual Studio.  Below are the extensions that I typically have installed.&lt;/p&gt;
 
@@ -6232,11 +6232,11 @@ public int MyProperty
     
 		<entry>
       <title>Favorite Windows Shortcuts</title>
-      <id>http://digitaldrummerj.me/windows-shortcuts/</id>
-      <link href="http://digitaldrummerj.me/windows-shortcuts/" rel="alternate" type="text/html" title="Favorite Windows Shortcuts" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/windows-shortcuts/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/windows-shortcuts/" rel="alternate" type="text/html" title="Favorite Windows Shortcuts" />
       <updated>Thu, 06 Aug 2015 00:00:00 +0000</updated>
       <published>Thu, 06 Aug 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/windows-shortcuts/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/windows-shortcuts/">
 
 &lt;p&gt;So many times I watch Windows users spending lots of time doing task that should just take a few seconds but instead are taking several minutes because they are taking the long way around to get the task completed.&lt;/p&gt;
 
@@ -6308,11 +6308,11 @@ public int MyProperty
     
 		<entry>
       <title>Favorite Windows Programs</title>
-      <id>http://digitaldrummerj.me/favorite-windows-software/</id>
-      <link href="http://digitaldrummerj.me/favorite-windows-software/" rel="alternate" type="text/html" title="Favorite Windows Programs" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/favorite-windows-software/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/favorite-windows-software/" rel="alternate" type="text/html" title="Favorite Windows Programs" />
       <updated>Tue, 28 Jul 2015 08:00:00 +0000</updated>
       <published>Tue, 28 Jul 2015 08:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/favorite-windows-software/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/favorite-windows-software/">
 
 &lt;p&gt;Developer productivity is not just about maximizing your speed in editor.  It also includes additional software to help you be more productive.    Below is some of my favorite Windows software that I use.&lt;/p&gt;
 
@@ -6360,11 +6360,11 @@ public int MyProperty
     
 		<entry>
       <title>Presentation Environment Setup</title>
-      <id>http://digitaldrummerj.me/presentation-setup/</id>
-      <link href="http://digitaldrummerj.me/presentation-setup/" rel="alternate" type="text/html" title="Presentation Environment Setup" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/presentation-setup/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/presentation-setup/" rel="alternate" type="text/html" title="Presentation Environment Setup" />
       <updated>Thu, 09 Jul 2015 00:00:00 +0000</updated>
       <published>Thu, 09 Jul 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/presentation-setup/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/presentation-setup/">
 
 &lt;p&gt;One of the first things that you learn when giving presentations is that fonts and font size matters just as much as the content.  Below is a listing of the various font settings that I have found to be effective and how to set them in the programs that I use.&lt;/p&gt;
 
@@ -6587,11 +6587,11 @@ public int MyProperty
     
 		<entry>
       <title>Vagrant Part 6 - Behind A Proxy Server</title>
-      <id>http://digitaldrummerj.me/vagrant-behind-proxy-server/</id>
-      <link href="http://digitaldrummerj.me/vagrant-behind-proxy-server/" rel="alternate" type="text/html" title="Vagrant Part 6 - Behind A Proxy Server" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-behind-proxy-server/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-behind-proxy-server/" rel="alternate" type="text/html" title="Vagrant Part 6 - Behind A Proxy Server" />
       <updated>Mon, 06 Jul 2015 00:00:00 +0000</updated>
       <published>Mon, 06 Jul 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/vagrant-behind-proxy-server/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-behind-proxy-server/">
 
 &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 
@@ -6685,11 +6685,11 @@ end
     
 		<entry>
       <title>Vagrant Part 2 - Provisioning Introduction</title>
-      <id>http://digitaldrummerj.me/vagrant-provisioning-intro/</id>
-      <link href="http://digitaldrummerj.me/vagrant-provisioning-intro/" rel="alternate" type="text/html" title="Vagrant Part 2 - Provisioning Introduction" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-provisioning-intro/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-provisioning-intro/" rel="alternate" type="text/html" title="Vagrant Part 2 - Provisioning Introduction" />
       <updated>Thu, 18 Jun 2015 00:00:00 +0000</updated>
       <published>Thu, 18 Jun 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/vagrant-provisioning-intro/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-provisioning-intro/">
 
 &lt;p&gt;Welcome to the Vagrant lesson on what Vagrant provisioning is.&lt;/p&gt;
 
@@ -6738,11 +6738,11 @@ end
     
 		<entry>
       <title>Vagrant Part 3 - Provisioning With Chocolatey</title>
-      <id>http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/</id>
-      <link href="http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/" rel="alternate" type="text/html" title="Vagrant Part 3 - Provisioning With Chocolatey" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-provisioning-with-chocolatey/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-provisioning-with-chocolatey/" rel="alternate" type="text/html" title="Vagrant Part 3 - Provisioning With Chocolatey" />
       <updated>Thu, 18 Jun 2015 00:00:00 +0000</updated>
       <published>Thu, 18 Jun 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-provisioning-with-chocolatey/">
 
 &lt;p&gt;Welcome to the Vagrant lesson on installing Chocolatey as part of the Vagrant provisioning process.&lt;/p&gt;
 
@@ -6798,11 +6798,11 @@ if (!(Test-Path $ChocoInstallPath)) {
     
 		<entry>
       <title>Vagrant Part 4 - Install Boxstarter</title>
-      <id>http://digitaldrummerj.me/vagrant-installing-boxstarter/</id>
-      <link href="http://digitaldrummerj.me/vagrant-installing-boxstarter/" rel="alternate" type="text/html" title="Vagrant Part 4 - Install Boxstarter" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-installing-boxstarter/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-installing-boxstarter/" rel="alternate" type="text/html" title="Vagrant Part 4 - Install Boxstarter" />
       <updated>Thu, 18 Jun 2015 00:00:00 +0000</updated>
       <published>Thu, 18 Jun 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/vagrant-installing-boxstarter/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-installing-boxstarter/">
 
 &lt;p&gt;Welcome to the Vagrant lesson on installing Boxstarter as part of the Vagrant provisioning process.&lt;/p&gt;
 
@@ -6863,11 +6863,11 @@ chocolatey feature disable -n=allowGlobalConfirmation
     
 		<entry>
       <title>Vagrant Part 5 - Installing Your Software</title>
-      <id>http://digitaldrummerj.me/vagrant-installing-your-software/</id>
-      <link href="http://digitaldrummerj.me/vagrant-installing-your-software/" rel="alternate" type="text/html" title="Vagrant Part 5 - Installing Your Software" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-installing-your-software/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-installing-your-software/" rel="alternate" type="text/html" title="Vagrant Part 5 - Installing Your Software" />
       <updated>Thu, 18 Jun 2015 00:00:00 +0000</updated>
       <published>Thu, 18 Jun 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/vagrant-installing-your-software/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-installing-your-software/">
 
 &lt;p&gt;Welcome to the Vagrant lesson on how to use Boxstarter to configure Windows and install software as part of the Vagrant provisioning process.&lt;/p&gt;
 
@@ -7021,11 +7021,11 @@ git clone https://github.com/digitaldrummerj/VagrantTalk
     
 		<entry>
       <title>Vagrant Part 1 - Easy Virtual Machine Management</title>
-      <id>http://digitaldrummerj.me/vagrant-overview/</id>
-      <link href="http://digitaldrummerj.me/vagrant-overview/" rel="alternate" type="text/html" title="Vagrant Part 1 - Easy Virtual Machine Management" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-overview/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-overview/" rel="alternate" type="text/html" title="Vagrant Part 1 - Easy Virtual Machine Management" />
       <updated>Tue, 16 Jun 2015 00:00:00 +0000</updated>
       <published>Tue, 16 Jun 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/vagrant-overview/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-overview/">
 
 &lt;p&gt;Welcome to an overview of Vagrant and creating of your first Vagrant machine.&lt;/p&gt;
 
@@ -7248,11 +7248,11 @@ git clone https://github.com/digitaldrummerj/VagrantTalk
     
 		<entry>
       <title>Add Git Branch Name to Bash Prompt</title>
-      <id>http://digitaldrummerj.me/add-git-branch-to-bash-shell/</id>
-      <link href="http://digitaldrummerj.me/add-git-branch-to-bash-shell/" rel="alternate" type="text/html" title="Add Git Branch Name to Bash Prompt" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/add-git-branch-to-bash-shell/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/add-git-branch-to-bash-shell/" rel="alternate" type="text/html" title="Add Git Branch Name to Bash Prompt" />
       <updated>Thu, 11 Jun 2015 00:00:00 +0000</updated>
       <published>Thu, 11 Jun 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/add-git-branch-to-bash-shell/">&lt;p&gt;When I am working on a git repository and using the git command line, one of the things that I often end up checking it which git branch I am on and if there are any pending changes.  How awesome would it be if the bash shell prompt, told you the branch name if the directory is part of a git repository and if there are any changes.  Well, thankfully someone has done this work already and with a little bit of configuration on your part, you can implement the changes.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/add-git-branch-to-bash-shell/">&lt;p&gt;When I am working on a git repository and using the git command line, one of the things that I often end up checking it which git branch I am on and if there are any pending changes.  How awesome would it be if the bash shell prompt, told you the branch name if the directory is part of a git repository and if there are any changes.  Well, thankfully someone has done this work already and with a little bit of configuration on your part, you can implement the changes.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;mkdir ~/.bash&lt;/li&gt;
@@ -7298,11 +7298,11 @@ source $GITAWAREPROMPT/main.sh
     
 		<entry>
       <title>Windows 8.1 - Powershell Script to Uninstall Default Programs</title>
-      <id>http://digitaldrummerj.me/windows8-script-uninstall-default-programs/</id>
-      <link href="http://digitaldrummerj.me/windows8-script-uninstall-default-programs/" rel="alternate" type="text/html" title="Windows 8.1 - Powershell Script to Uninstall Default Programs" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/windows8-script-uninstall-default-programs/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/windows8-script-uninstall-default-programs/" rel="alternate" type="text/html" title="Windows 8.1 - Powershell Script to Uninstall Default Programs" />
       <updated>Wed, 27 May 2015 00:00:00 +0000</updated>
       <published>Wed, 27 May 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/windows8-script-uninstall-default-programs/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/windows8-script-uninstall-default-programs/">
 
 &lt;p&gt;When I am provisioning a new development virtual machine with vagrant, I do not need all of the Windows 8 modern applications such as bing maps, finance, skype, etc to be installed onto the virtual machine.  These applications are nice on a non-virtualized machine but on a virtual machine it just uses extra resources that aren&amp;rsquo;t needed.&lt;/p&gt;
 
@@ -7504,11 +7504,11 @@ Stop-Transcript
     
 		<entry>
       <title>Javascript Debugging Made Easier with Sourcemaps</title>
-      <id>http://digitaldrummerj.me/javascript-sourcemaps/</id>
-      <link href="http://digitaldrummerj.me/javascript-sourcemaps/" rel="alternate" type="text/html" title="Javascript Debugging Made Easier with Sourcemaps" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/javascript-sourcemaps/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/javascript-sourcemaps/" rel="alternate" type="text/html" title="Javascript Debugging Made Easier with Sourcemaps" />
       <updated>Sun, 17 May 2015 00:00:00 +0000</updated>
       <published>Sun, 17 May 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/javascript-sourcemaps/">&lt;p&gt;Updated: Add clean task that uses rimraf to delete the bundle.min.js file if it already exist.  Without this it would just append to the existing bundle.min.js file.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/javascript-sourcemaps/">&lt;p&gt;Updated: Add clean task that uses rimraf to delete the bundle.min.js file if it already exist.  Without this it would just append to the existing bundle.min.js file.&lt;/p&gt;
 
 &lt;p&gt;When you release your web site to production, you should minify and concatenate your javascript files.  You will have much better performance by doing this but unfortunately debugging becomes difficult with the minified code as it shortens all of the variable and method names.  Luckily there is a simple solution to tell the browser developer tools to use the original javascript files when debugging the code, called source maps.&lt;/p&gt;
 
@@ -7687,11 +7687,11 @@ myApp.factory(&amp;#39;factoryName&amp;#39;,
     
 		<entry>
       <title>Chrome DevTools - Hiding Vendor Scripts</title>
-      <id>http://digitaldrummerj.me/chrome-devtools-black-boxing/</id>
-      <link href="http://digitaldrummerj.me/chrome-devtools-black-boxing/" rel="alternate" type="text/html" title="Chrome DevTools - Hiding Vendor Scripts" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/chrome-devtools-black-boxing/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/chrome-devtools-black-boxing/" rel="alternate" type="text/html" title="Chrome DevTools - Hiding Vendor Scripts" />
       <updated>Fri, 15 May 2015 00:00:00 +0000</updated>
       <published>Fri, 15 May 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/chrome-devtools-black-boxing/">&lt;p&gt;The Chrome Developer tools are an amazing set of tools for debugging and trobuleshooting web sites.  If you are a web developer and have not tried out these tools, you have been missing out.  As amazing as the developer tools are, one of the most annoying features to me was not being able to skip over vendor javascript like jquery or angular.  Getting stuck in a minified version of a angular or jquery takes you down a deep rabbit hole that you never wanted to go down and is a annoying to climb out of.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/chrome-devtools-black-boxing/">&lt;p&gt;The Chrome Developer tools are an amazing set of tools for debugging and trobuleshooting web sites.  If you are a web developer and have not tried out these tools, you have been missing out.  As amazing as the developer tools are, one of the most annoying features to me was not being able to skip over vendor javascript like jquery or angular.  Getting stuck in a minified version of a angular or jquery takes you down a deep rabbit hole that you never wanted to go down and is a annoying to climb out of.&lt;/p&gt;
 
 &lt;p&gt;Luckily, there is a super simple solution that I learned from &lt;a href=&#34;http://twitter.com/jaredthenerd&#34;&gt;Jared Farris&lt;/a&gt; during his Chrome Developer Tools talk at the &lt;a href=&#34;http://www.codepalousa.com&#34;&gt;Codepalousa Conference&lt;/a&gt; called Black Boxing.  Black boxing allows you to tell the javascript debugger to skip over the file when stepping through the code.&lt;/p&gt;
 
@@ -7725,11 +7725,11 @@ myApp.factory(&amp;#39;factoryName&amp;#39;,
     
 		<entry>
       <title>Removing the NPM spinner</title>
-      <id>http://digitaldrummerj.me/remove-npm-spinner/</id>
-      <link href="http://digitaldrummerj.me/remove-npm-spinner/" rel="alternate" type="text/html" title="Removing the NPM spinner" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/remove-npm-spinner/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/remove-npm-spinner/" rel="alternate" type="text/html" title="Removing the NPM spinner" />
       <updated>Thu, 07 May 2015 00:00:00 +0000</updated>
       <published>Thu, 07 May 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/remove-npm-spinner/">&lt;p&gt;One of the most annoying features of npm for me is the spinner.  Many times it runs long enough that I am wondering if it is still working or hung.  Thankfully you can easily change this with the .npmrc file.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/remove-npm-spinner/">&lt;p&gt;One of the most annoying features of npm for me is the spinner.  Many times it runs long enough that I am wondering if it is still working or hung.  Thankfully you can easily change this with the .npmrc file.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;On Linux/OSx, create the file ~/.npmrc&lt;/li&gt;
@@ -7755,11 +7755,11 @@ loglevel=http
     
 		<entry>
       <title>Nuget - Incrementing Version Before Building</title>
-      <id>http://digitaldrummerj.me/nuget-auto-incrementing-version/</id>
-      <link href="http://digitaldrummerj.me/nuget-auto-incrementing-version/" rel="alternate" type="text/html" title="Nuget - Incrementing Version Before Building" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/nuget-auto-incrementing-version/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/nuget-auto-incrementing-version/" rel="alternate" type="text/html" title="Nuget - Incrementing Version Before Building" />
       <updated>Mon, 04 May 2015 00:00:00 +0000</updated>
       <published>Mon, 04 May 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/nuget-auto-incrementing-version/">&lt;p&gt;When you are building nuget packages that are not directly using the AssemblyInfo.cs for the version number, you need to make sure to increment the nuget version number before building the package.  Inevitable though you will forget to increment the version number and have to build the package a 2nd time.  Wouldn&amp;rsquo;t it be great if you could automatically increment the version number before calling nuget pack.  Well I have written a powershell script to do just this.  Below are the details out the script.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/nuget-auto-incrementing-version/">&lt;p&gt;When you are building nuget packages that are not directly using the AssemblyInfo.cs for the version number, you need to make sure to increment the nuget version number before building the package.  Inevitable though you will forget to increment the version number and have to build the package a 2nd time.  Wouldn&amp;rsquo;t it be great if you could automatically increment the version number before calling nuget pack.  Well I have written a powershell script to do just this.  Below are the details out the script.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;In your project directory, create a file called IncrementNugetVersionNumber.ps1&lt;/li&gt;
@@ -8046,11 +8046,11 @@ nuget pack -OUTPUTDIR %OUTPUTDIR%
     
 		<entry>
       <title>Purchasing Business Cards</title>
-      <id>http://digitaldrummerj.me/business-cards/</id>
-      <link href="http://digitaldrummerj.me/business-cards/" rel="alternate" type="text/html" title="Purchasing Business Cards" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/business-cards/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/business-cards/" rel="alternate" type="text/html" title="Purchasing Business Cards" />
       <updated>Mon, 04 May 2015 00:00:00 +0000</updated>
       <published>Mon, 04 May 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/business-cards/">&lt;p&gt;If you are planning on going to any professional networking events, user groups, or speaking at events, you should have business cards with you.  Many times people think, I only need to have business cards if I am looking for a job.  This is far from the truth.  You should have business cards so that you can connect with the people that you have met.  People tend to meet lots of people at events and without a business card, it is difficult for people to remember who you are.  It is also a good way for people to be able to follow up with you.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/business-cards/">&lt;p&gt;If you are planning on going to any professional networking events, user groups, or speaking at events, you should have business cards with you.  Many times people think, I only need to have business cards if I am looking for a job.  This is far from the truth.  You should have business cards so that you can connect with the people that you have met.  People tend to meet lots of people at events and without a business card, it is difficult for people to remember who you are.  It is also a good way for people to be able to follow up with you.&lt;/p&gt;
 
 &lt;p&gt;You may be tempted to make your own business cards and print them off on your home printer but please don&amp;rsquo;t.  At first this sounds like a great idea but almost never works out right.  If you don&amp;rsquo;t get the right card stock they will feel cheap.  If you don&amp;rsquo;t get them exactly aligned when printing, they will look unprofessional.  When cutting the cards then need to be straight clean cuts which is not easy to do.&lt;/p&gt;
 
@@ -8067,11 +8067,11 @@ nuget pack -OUTPUTDIR %OUTPUTDIR%
     
 		<entry>
       <title>Automatically Add JS/CSS Files to Your Ionic Projects</title>
-      <id>http://digitaldrummerj.me/gulp-inject/</id>
-      <link href="http://digitaldrummerj.me/gulp-inject/" rel="alternate" type="text/html" title="Automatically Add JS/CSS Files to Your Ionic Projects" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/gulp-inject/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/gulp-inject/" rel="alternate" type="text/html" title="Automatically Add JS/CSS Files to Your Ionic Projects" />
       <updated>Thu, 30 Apr 2015 00:00:00 +0000</updated>
       <published>Thu, 30 Apr 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/gulp-inject/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/gulp-inject/">
 
 &lt;p&gt;As you work on an Ionic based project or for that matter any web projects that have javascript or css file, you will at some point forget to add your new javascript or css file to the page and wonder why the page is broken.  This is really annoying when it happens as many times you spend quite a bit of time troubleshooting before you realize that you just forgot to add the script or css tag.  You can fix this problem using gulp and the gulp inject module to automatically add the script and css tags onto the page.&lt;/p&gt;
 
@@ -8218,11 +8218,11 @@ nuget pack -OUTPUTDIR %OUTPUTDIR%
     
 		<entry>
       <title>Jekyll Part 08: Using a Custom Domain</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-8-using-a-custom-domain/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-8-using-a-custom-domain/" rel="alternate" type="text/html" title="Jekyll Part 08: Using a Custom Domain" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-8-using-a-custom-domain/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-8-using-a-custom-domain/" rel="alternate" type="text/html" title="Jekyll Part 08: Using a Custom Domain" />
       <updated>Tue, 10 Mar 2015 00:00:00 +0000</updated>
       <published>Tue, 10 Mar 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-8-using-a-custom-domain/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-8-using-a-custom-domain/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we are going to setup a custom domain for your blog.&lt;/p&gt;
 
@@ -8335,11 +8335,11 @@ nuget pack -OUTPUTDIR %OUTPUTDIR%
     
 		<entry>
       <title>Jekyll Part 07: Adding a custom Google search</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-7-adding-a-custom-google-search/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-7-adding-a-custom-google-search/" rel="alternate" type="text/html" title="Jekyll Part 07: Adding a custom Google search" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-7-adding-a-custom-google-search/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-7-adding-a-custom-google-search/" rel="alternate" type="text/html" title="Jekyll Part 07: Adding a custom Google search" />
       <updated>Sat, 21 Feb 2015 00:00:00 +0000</updated>
       <published>Sat, 21 Feb 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-7-adding-a-custom-google-search/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-7-adding-a-custom-google-search/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we are going to add the ability to search your blog using google.&lt;/p&gt;
 
@@ -8586,11 +8586,11 @@ sitemap: false
     
 		<entry>
       <title>Jekyll Part 06: Adding Post by Date Page</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-6-adding-post-by-date/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-6-adding-post-by-date/" rel="alternate" type="text/html" title="Jekyll Part 06: Adding Post by Date Page" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-6-adding-post-by-date/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-6-adding-post-by-date/" rel="alternate" type="text/html" title="Jekyll Part 06: Adding Post by Date Page" />
       <updated>Tue, 17 Feb 2015 00:00:00 +0000</updated>
       <published>Tue, 17 Feb 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-6-adding-post-by-date/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-6-adding-post-by-date/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we will go through creating a page to show blog post by date.&lt;/p&gt;
 
@@ -8727,11 +8727,11 @@ sitemap: false
     
 		<entry>
       <title>Jekyll Part 05: Adding Category Page</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-5-adding-a-category-page/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-5-adding-a-category-page/" rel="alternate" type="text/html" title="Jekyll Part 05: Adding Category Page" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-5-adding-a-category-page/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-5-adding-a-category-page/" rel="alternate" type="text/html" title="Jekyll Part 05: Adding Category Page" />
       <updated>Sun, 15 Feb 2015 00:00:00 +0000</updated>
       <published>Sun, 15 Feb 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-5-adding-a-category-page/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-5-adding-a-category-page/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we will go through creating a page to show blog post by category.&lt;/p&gt;
 
@@ -8876,11 +8876,11 @@ sitemap: false
     
 		<entry>
       <title>Jekyll Part 04: Adding Additional Pages</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-4-creating-additional-pages/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-4-creating-additional-pages/" rel="alternate" type="text/html" title="Jekyll Part 04: Adding Additional Pages" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-4-creating-additional-pages/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-4-creating-additional-pages/" rel="alternate" type="text/html" title="Jekyll Part 04: Adding Additional Pages" />
       <updated>Wed, 11 Feb 2015 00:00:00 +0000</updated>
       <published>Wed, 11 Feb 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-4-creating-additional-pages/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-4-creating-additional-pages/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll. In this tutorial we will go through how to add an additional page such as the &lt;a href=&#34;/speaking&#34;&gt;speaking&lt;/a&gt; page on this blog.&lt;/p&gt;
 
@@ -9011,11 +9011,11 @@ sitemap: false
     
 		<entry>
       <title>Jekyll Part 03: Adding Commenting to Post</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-3-adding-comments/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-3-adding-comments/" rel="alternate" type="text/html" title="Jekyll Part 03: Adding Commenting to Post" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-3-adding-comments/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-3-adding-comments/" rel="alternate" type="text/html" title="Jekyll Part 03: Adding Commenting to Post" />
       <updated>Sat, 07 Feb 2015 00:00:00 +0000</updated>
       <published>Sat, 07 Feb 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-3-adding-comments/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-3-adding-comments/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll.  In this tutorial you will learn how to add the ability for users to comment on your blog post.&lt;/p&gt;
 
@@ -9096,11 +9096,11 @@ sitemap: false
     
 		<entry>
       <title>Jekyll Part 02: Your First Post</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-2-your-first-post/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-2-your-first-post/" rel="alternate" type="text/html" title="Jekyll Part 02: Your First Post" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-2-your-first-post/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-2-your-first-post/" rel="alternate" type="text/html" title="Jekyll Part 02: Your First Post" />
       <updated>Thu, 05 Feb 2015 00:00:00 +0000</updated>
       <published>Thu, 05 Feb 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-2-your-first-post/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-2-your-first-post/">
 
 &lt;p&gt;Welcome the continuing series on using Jekyll.  In this tutorial we will go through making your first blog post.&lt;/p&gt;
 
@@ -9289,11 +9289,11 @@ published: true
     
 		<entry>
       <title>IIS Express - Turning on Windows Authentication</title>
-      <id>http://digitaldrummerj.me/iis-express-windows-authentication/</id>
-      <link href="http://digitaldrummerj.me/iis-express-windows-authentication/" rel="alternate" type="text/html" title="IIS Express - Turning on Windows Authentication" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/iis-express-windows-authentication/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/iis-express-windows-authentication/" rel="alternate" type="text/html" title="IIS Express - Turning on Windows Authentication" />
       <updated>Wed, 04 Feb 2015 20:45:35 +0000</updated>
       <published>Wed, 04 Feb 2015 20:45:35 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/iis-express-windows-authentication/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/iis-express-windows-authentication/">
 
 &lt;p&gt;So I brought up a new machine and tried to run my ASP.NET web site in IIS Express that uses Windows Authentication and was greeted with the following error:&lt;/p&gt;
 
@@ -9350,11 +9350,11 @@ published: true
     
 		<entry>
       <title>Jekyll Part 01: Getting Started</title>
-      <id>http://digitaldrummerj.me/blogging-on-github-part-1-getting-started/</id>
-      <link href="http://digitaldrummerj.me/blogging-on-github-part-1-getting-started/" rel="alternate" type="text/html" title="Jekyll Part 01: Getting Started" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-1-getting-started/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-1-getting-started/" rel="alternate" type="text/html" title="Jekyll Part 01: Getting Started" />
       <updated>Fri, 30 Jan 2015 00:00:00 +0000</updated>
       <published>Fri, 30 Jan 2015 00:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/blogging-on-github-part-1-getting-started/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-1-getting-started/">
 
 &lt;p&gt;Welcome to the first tutorial of a multi part series on blogging using Jekyll on Github.  Github has an awesome free option for hosting a blog for you and you can get a blog up and running in 10 minutes or less.  This series will cover everything that you to know to host, manage and customized a Jekyll blog that is hosted on Github.&lt;/p&gt;
 
@@ -9419,11 +9419,11 @@ published: true
     
 		<entry>
       <title>Ionic - Using behind a proxy server</title>
-      <id>http://digitaldrummerj.me/ionic-behind-a-proxy/</id>
-      <link href="http://digitaldrummerj.me/ionic-behind-a-proxy/" rel="alternate" type="text/html" title="Ionic - Using behind a proxy server" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-behind-a-proxy/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-behind-a-proxy/" rel="alternate" type="text/html" title="Ionic - Using behind a proxy server" />
       <updated>Tue, 20 Jan 2015 20:45:35 +0000</updated>
       <published>Tue, 20 Jan 2015 20:45:35 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ionic-behind-a-proxy/">&lt;p&gt;I ran into an issue today on the vagrant IonicBox when I tried to create a new Ionic project at work behind the firewall/proxy even with all of the configurations for npm, git, bower, and bash setup for the proxy as detailed at &lt;a href=&#34;{{&amp;quot;proxy-configurations&amp;quot; | prepend: site.baseurl | prepend: site.url}}&#34;&gt;{{&amp;ldquo;proxy-configurations&amp;rdquo; | prepend: site.baseurl | prepend: site.url}}&lt;/a&gt;.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-behind-a-proxy/">&lt;p&gt;I ran into an issue today on the vagrant IonicBox when I tried to create a new Ionic project at work behind the firewall/proxy even with all of the configurations for npm, git, bower, and bash setup for the proxy as detailed at &lt;a href=&#34;{{&amp;quot;proxy-configurations&amp;quot; | prepend: site.baseurl | prepend: site.url}}&#34;&gt;{{&amp;ldquo;proxy-configurations&amp;rdquo; | prepend: site.baseurl | prepend: site.url}}&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Luckily, Ionic had a fix for this already.&lt;/p&gt;
 
@@ -9448,11 +9448,11 @@ published: true
     
 		<entry>
       <title>Ionic - The Ionicbox and How To Use It</title>
-      <id>http://digitaldrummerj.me/ionicbox-notes/</id>
-      <link href="http://digitaldrummerj.me/ionicbox-notes/" rel="alternate" type="text/html" title="Ionic - The Ionicbox and How To Use It" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ionicbox-notes/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ionicbox-notes/" rel="alternate" type="text/html" title="Ionic - The Ionicbox and How To Use It" />
       <updated>Sat, 17 Jan 2015 20:45:35 +0000</updated>
       <published>Sat, 17 Jan 2015 20:45:35 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ionicbox-notes/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ionicbox-notes/">
 
 &lt;p&gt;If you have looked at setting up the &lt;a href=&#34;http://www.ionicframework.com&#34;&gt;Ionic Framework&lt;/a&gt; or have it done it before, you know on much of a pain it can be, especially when something doesn&amp;rsquo;t work.  Luckily, Ionic offers a free virtual machine called &lt;a href=&#34;https://github.com/driftyco/ionic-box&#34;&gt;Ionicbox&lt;/a&gt; that is already configured with all of the software that you need.&lt;/p&gt;
 
@@ -9684,11 +9684,11 @@ vagrant destroy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     
 		<entry>
       <title>Npm, Bower, Git, and Bash Proxy Configurations</title>
-      <id>http://digitaldrummerj.me/proxy-configurations/</id>
-      <link href="http://digitaldrummerj.me/proxy-configurations/" rel="alternate" type="text/html" title="Npm, Bower, Git, and Bash Proxy Configurations" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/proxy-configurations/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/proxy-configurations/" rel="alternate" type="text/html" title="Npm, Bower, Git, and Bash Proxy Configurations" />
       <updated>Fri, 16 Jan 2015 20:00:00 +0000</updated>
       <published>Fri, 16 Jan 2015 20:00:00 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/proxy-configurations/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/proxy-configurations/">
 
 &lt;p&gt;When you are using npm, bower, and git behind a proxy server you have to do a little bit of configuration.  Luckily it is super easy to do these configurations.  Almost all of the programs have command line commands to set and unset the proxy server.&lt;/p&gt;
 
@@ -9954,11 +9954,11 @@ systemProp.https.nonProxyHosts=*.nonproxyrepos.com|localhost
     
 		<entry>
       <title>Git Command Notes</title>
-      <id>http://digitaldrummerj.me/git-command-notes/</id>
-      <link href="http://digitaldrummerj.me/git-command-notes/" rel="alternate" type="text/html" title="Git Command Notes" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/git-command-notes/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/git-command-notes/" rel="alternate" type="text/html" title="Git Command Notes" />
       <updated>Wed, 14 Jan 2015 20:45:35 +0000</updated>
       <published>Wed, 14 Jan 2015 20:45:35 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/git-command-notes/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/git-command-notes/">
 
 &lt;p&gt;I am finally making myself learn the git command line instead of just using a UI so that I can actually understand what git is really doing.  Plus I have started playing a lot with the IonicBox and running a Ubuntu vagrant controlled VM for this blog and both of those are just linux shell command prompt only machines.&lt;/p&gt;
 
@@ -10224,11 +10224,11 @@ git config -l --local
     
 		<entry>
       <title>Ionic - How to setup on Windows</title>
-      <id>http://digitaldrummerj.me/ionic-setup-windows/</id>
-      <link href="http://digitaldrummerj.me/ionic-setup-windows/" rel="alternate" type="text/html" title="Ionic - How to setup on Windows" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-setup-windows/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-setup-windows/" rel="alternate" type="text/html" title="Ionic - How to setup on Windows" />
       <updated>Sun, 11 Jan 2015 20:45:35 +0000</updated>
       <published>Sun, 11 Jan 2015 20:45:35 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ionic-setup-windows/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-setup-windows/">
 
 &lt;p&gt;Updates:&lt;/p&gt;
 
@@ -10349,11 +10349,11 @@ git config -l --local
     
 		<entry>
       <title>Ionic - Setup on OSx</title>
-      <id>http://digitaldrummerj.me/ionic-setup-osx/</id>
-      <link href="http://digitaldrummerj.me/ionic-setup-osx/" rel="alternate" type="text/html" title="Ionic - Setup on OSx" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-setup-osx/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-setup-osx/" rel="alternate" type="text/html" title="Ionic - Setup on OSx" />
       <updated>Sun, 11 Jan 2015 20:45:35 +0000</updated>
       <published>Sun, 11 Jan 2015 20:45:35 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/ionic-setup-osx/">
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-setup-osx/">
 
 &lt;p&gt;Updates:&lt;/p&gt;
 
@@ -10585,11 +10585,11 @@ sudo npm install -g Bower
     
 		<entry>
       <title>Ionic - Using Android x86 Virtual Machine Instead of Emulator</title>
-      <id>http://digitaldrummerj.me/android-x86-virtual-machine-instead-of-emulator/</id>
-      <link href="http://digitaldrummerj.me/android-x86-virtual-machine-instead-of-emulator/" rel="alternate" type="text/html" title="Ionic - Using Android x86 Virtual Machine Instead of Emulator" />
+      <id>http://digitaldrummerj.me/digitaldrummerj-hugo/android-x86-virtual-machine-instead-of-emulator/</id>
+      <link href="http://digitaldrummerj.me/digitaldrummerj-hugo/android-x86-virtual-machine-instead-of-emulator/" rel="alternate" type="text/html" title="Ionic - Using Android x86 Virtual Machine Instead of Emulator" />
       <updated>Sun, 11 Jan 2015 20:45:35 +0000</updated>
       <published>Sun, 11 Jan 2015 20:45:35 +0000</published>
-      <content type="html" xml:base="http://digitaldrummerj.me/android-x86-virtual-machine-instead-of-emulator/">&lt;p&gt;The Android emulator is super super slow and I could never get it working on my development virtual machine.  I thought no problem I will just use Genymotion but due to a video card driver issue on my laptop (not Genymotion&amp;rsquo;s fault), I couldn&amp;rsquo;t use it either.  I was thinking ok I will just have to use a real device and always have it on me when I do Android development work.  This wouldn&amp;rsquo;t have been ideal though since Android development work is just a side project and who wants to carry an extra device just in case you get a few minutes to work on the project.&lt;/p&gt;
+      <content type="html" xml:base="http://digitaldrummerj.me/digitaldrummerj-hugo/android-x86-virtual-machine-instead-of-emulator/">&lt;p&gt;The Android emulator is super super slow and I could never get it working on my development virtual machine.  I thought no problem I will just use Genymotion but due to a video card driver issue on my laptop (not Genymotion&amp;rsquo;s fault), I couldn&amp;rsquo;t use it either.  I was thinking ok I will just have to use a real device and always have it on me when I do Android development work.  This wouldn&amp;rsquo;t have been ideal though since Android development work is just a side project and who wants to carry an extra device just in case you get a few minutes to work on the project.&lt;/p&gt;
 
 &lt;p&gt;Well then I ran across someone that mentioned that Android x86 project.  This project allows you to run Android on a pc and virtualbox machine.  So I follow the guide at  &lt;a href=&#34;http://www.android-x86.org/documents/virtualboxhowto&#34;&gt;Android x86 virtualbox install&lt;/a&gt; and was up and running in no time.&lt;/p&gt;
 
