@@ -75,6 +75,11 @@
       .on('close', code);
   })
 
+  gulp.task('hugo-build-prod', (code) => {
+    return cp.spawn('hugo', ['--config', PATHS.prodconfig, '-t', THEME.name, '-s',HUGO.root, ''], { stdio: 'inherit' })
+      .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
+      .on('close', code);
+  })
 // 0.6 - Hugo server task
   gulp.task('hugo-server', (code) => {
     return cp.spawn('hugo', ['server', '-p', PORT, '-t', THEME.name, '-s',HUGO.root], { stdio: 'inherit' })
@@ -82,6 +87,11 @@
       .on('close', code);
   })
 
+  gulp.task('hugo-server-prod', (code) => {
+    return cp.spawn('hugo', ['--config', PATHS.prodconfig,'server', '-p', PORT, '-t', THEME.name, '-s',HUGO.root], { stdio: 'inherit' })
+      .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
+      .on('close', code);
+  })
 // 0.7 - Html5 lint task
   gulp.task('lint', function() {
     return gulp.src( path.join(HUGO.public, '/**/*.html') )
@@ -100,8 +110,19 @@
   }
 
 // 1.0 - `Package.json` -> Gulp tasks
-  gulp.task('build', gulp.series( gulp.parallel(sass, javascript) ));           // Build the 'static' folder
-  gulp.task('css', gulp.series( sass ));                                        // Build the 'static' folder
-  gulp.task('js', gulp.series( javascript ));                                   // Build the 'static' folder
-  gulp.task('public', gulp.series( 'build', 'hugo-build', `lint` ));     // Build the site, run the server, and watch for file changes
-  gulp.task('server', gulp.series( 'build', gulp.parallel('hugo-server', watch) ));  // Build the site, run the server, and watch for file changes
+  gulp.task('build', gulp.series( gulp.parallel(sass, javascript) ));           
+  // Build the 'static' folder
+  
+  gulp.task('css', gulp.series( sass ));                                        
+  // Build the 'static' folder
+  
+  gulp.task('js', gulp.series( javascript ));                                   
+  // Build the 'static' folder
+  
+  gulp.task('public', gulp.series( 'build', 'hugo-build', 'lint' ));  
+  gulp.task('public-prod', gulp.series( 'build', 'hugo-build-prod', 'lint' )); 
+  // Build the site, run the server, and watch for file changes
+
+  gulp.task('server', gulp.series( 'build', gulp.parallel('hugo-server', watch) ));
+  gulp.task('server-prod', gulp.series( 'build', gulp.parallel('hugo-server-prod', watch) ));
+  // Build the site, run the server, and watch for file changes
