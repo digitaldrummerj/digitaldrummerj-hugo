@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Running Multiple Version of Node On Windows" />
+  <meta property="og:description" content="I am sure that many of you are in the same situation that I am in with needing a different version of node for different projects and you don&rsquo;t want to have to create a new virtual machine for each project just because of node. Luckily with nvm you can install multiple versions of Node on the same machine and switch between them with a simple command line call."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/windows-running-multiple-versions-of-node/" />
+  <meta property="article:published_time" content="2016-07-20T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2016-07-20T00:00:00&#43;00:00" />
+  <meta itemprop="name" content="Running Multiple Version of Node On Windows">
+  <meta itemprop="description" content="I am sure that many of you are in the same situation that I am in with needing a different version of node for different projects and you don&rsquo;t want to have to create a new virtual machine for each project just because of node. Luckily with nvm you can install multiple versions of Node on the same machine and switch between them with a simple command line call.">
+  <meta itemprop="datePublished" content="2016-07-20T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2016-07-20T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="563">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Running Multiple Version of Node On Windows" />
+  <meta name="twitter:description" content="I am sure that many of you are in the same situation that I am in with needing a different version of node for different projects and you don&rsquo;t want to have to create a new virtual machine for each project just because of node. Luckily with nvm you can install multiple versions of Node on the same machine and switch between them with a simple command line call."
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/windows-running-multiple-versions-of-node/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Running Multiple Version of Node On Windows</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2016-07-20T00:00:00Z">
+        Wed Jul 20, 2016
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/nodejs">nodejs</a>
+</span></span>
+        </div>
+        <p> </p>
+        <p>
+          <p>I am sure that many of you are in the same situation that I am in with needing a different version of node for different projects and you don&rsquo;t want to have to create a new virtual machine for each project just because of node. Luckily
+            with <a href="https://github.com/coreybutler/nvm-windows/">nvm</a> you can install multiple versions of Node on the same machine and switch between them with a simple command line call.</p>
+          <p>The one downside to having multiple versions of Node installed is that you have to install the global packages for each version of node that you want them available to. There is no ability to share packages between versions. This means that
+            it will take a bit more disk space but most node packages are fairly small so this should be a none issue.</p>
+          <h2 id="installing-nvm">Installing NVM</h2>
+          <p>The first thing that we need to do is install NVM.</p>
+          <ol>
+            <li>Uninstall existing version of node since we won&rsquo;t be using it anymore</li>
+            <li>Delete any existing nodejs installation directories. e.g. &ldquo;C:\Program Files\nodejs&rdquo;) that might remain. NVM&rsquo;s generated symlink will not overwrite an existing (even empty) installation directory.</li>
+            <li>Delete the npm install directory at C:\Users[Your User]\AppData\Roaming\npm</li>
+          </ol>
+          <p>We are now ready to install nvm. Download the installer from <a href="https://github.com/coreybutler/nvm/releases">https://github.com/coreybutler/nvm/releases</a></p>
+          <p><strong>To upgrade</strong>, run the new installer. It will safely overwrite the files it needs to update without touching your node.js installations. Make sure you use the same installation and symlink folder. If you originally installed to
+            the default locations, you just need to click &ldquo;next&rdquo; on each window until it finishes.</p>
+          <h2 id="installing-and-picking-a-node-version">Installing and Picking a node version</h2>
+          <ol>
+            <li>
+              <p>Get a the list so you can see what is available</p>
+              <pre><code>$ nvm list available
+</code></pre>
+            </li>
+            <li>
+              <p>Pick the one you want to install. Below we are installing 4.4.5 and 5.10.1. You can pick any version that you want.</p>
+              <pre><code>$ nvm install 4.4.5
+$ nvm install 5.10.1
+</code></pre>
+            </li>
+            <li>
+              <p>Select the node version to use. Note that only 1 node version can be activate at a time.</p>
+              <pre><code>$ nvm use 4.4.5
+$ nvm use 5.10.1
+</code></pre>
+            </li>
+          </ol>
+          <p><strong>Reminder!</strong> Any global npm modules you may have installed are not shared between the various versions of node.js you have installed. Additionally, some npm modules may not be supported in the version of node you&rsquo;re using,
+            so be aware of your environment as you work.</p>
+          <h2 id="installing-packages">Installing Packages</h2>
+          <p>Installing Node packages is the same as you are used to. Nvm just switches out which version is referenced in your path variables.</p>
+          <pre><code>npm install [package name] [--save or --save-dev]
+npm install -g [package name]
+</code></pre>
+          <h2 id="other-commands">Other Commands</h2>
+          <p><strong>View Default Node Architecture Being Used</strong></p>
+          <pre><code>$ nvm arch
+</code></pre>
+          <p><strong>Change Default Node Architecture</strong></p>
+          <pre><code>$ nvm arch 32
+$ nvm arch 64
+</code></pre>
+          <p><strong>Install Node Version</strong></p>
+          <pre><code>$ nvm install 4.4.5
+$ nvm install 4.4.5 64
+$ nvm install 4.4.5 32
+</code></pre>
+          <p><strong>Get Installed Versions</strong></p>
+          <pre><code>$ nvm list
+</code></pre>
+          <p><strong>Get Available Versions to Install</strong></p>
+          <pre><code>$ nvm list available
+</code></pre>
+          <p><strong>Turn On nvm</strong></p>
+          <pre><code>$ nvm on
+</code></pre>
+          <p><strong>Turn Off nvm</strong></p>
+          <pre><code>$ nvm off
+</code></pre>
+          <p><strong>Set Proxy</strong></p>
+          <pre><code>$ nvm proxy [url]
+</code></pre>
+          <p><strong>Remove Proxy</strong></p>
+          <pre><code>$ nvm proxy none
+</code></pre>
+          <p><strong>View Proxy Setting</strong></p>
+          <pre><code>$ nvm proxy
+</code></pre>
+          <p><strong>Uninstall Node Version</strong></p>
+          <pre><code>$ nvm uninstall [version number]
+$ nvm uninstall 4.4.5
+</code></pre>
+          <p><strong>Select Node Version to Use</strong></p>
+          <blockquote>
+            <p>Note: The [arch] parameter below is optional</p>
+          </blockquote>
+          <pre><code>$ nvm use [version] [arch]
+$ nvm use 4.4.5 64
+</code></pre>
+          <p><strong>Get the Nvm Version</strong></p>
+          <pre><code>$ nvm version
+</code></pre>
+          <p>Now you can easily switch between Node versions and don&rsquo;t have to worry about compatibility with your code not working on your installed Node version.</p>
+        </p>
+        <p> </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Running%20Multiple%20Version%20of%20Node%20On%20Windows&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fwindows-running-multiple-versions-of-node%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Running%20Multiple%20Version%20of%20Node%20On%20Windows&http://digitaldrummerj.me/windows-running-multiple-versions-of-node/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fwindows-running-multiple-versions-of-node%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fwindows-running-multiple-versions-of-node%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

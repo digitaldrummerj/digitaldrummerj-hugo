@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Vagrant Part 1 - Easy Virtual Machine Management" />
+  <meta property="og:description" content="Welcome to an overview of Vagrant and creating of your first Vagrant machine.
+What is Vagrant? Vagrant allows you to create and manage lightweight reproducible virtual machines.
+Essentially, all of the configurations to create and configure a virtual machine are kept separate from the virtual machine. This allows you to delete the virtual machine and then re-create it with all of the same configurations at any point.
+No longer do you have to be afraid to delete a virtual machine for a project that isn&rsquo;t active." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/vagrant-overview/" />
+  <meta property="article:published_time" content="2015-06-16T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2015-06-16T00:00:00&#43;00:00" />
+  <meta itemprop="name" content="Vagrant Part 1 - Easy Virtual Machine Management">
+  <meta itemprop="description" content="Welcome to an overview of Vagrant and creating of your first Vagrant machine.
+What is Vagrant? Vagrant allows you to create and manage lightweight reproducible virtual machines.
+Essentially, all of the configurations to create and configure a virtual machine are kept separate from the virtual machine. This allows you to delete the virtual machine and then re-create it with all of the same configurations at any point.
+No longer do you have to be afraid to delete a virtual machine for a project that isn&rsquo;t active.">
+  <meta itemprop="datePublished" content="2015-06-16T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-06-16T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="1180">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Vagrant Part 1 - Easy Virtual Machine Management" />
+  <meta name="twitter:description" content="Welcome to an overview of Vagrant and creating of your first Vagrant machine.
+What is Vagrant? Vagrant allows you to create and manage lightweight reproducible virtual machines.
+Essentially, all of the configurations to create and configure a virtual machine are kept separate from the virtual machine. This allows you to delete the virtual machine and then re-create it with all of the same configurations at any point.
+No longer do you have to be afraid to delete a virtual machine for a project that isn&rsquo;t active." />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/vagrant-overview/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Vagrant Part 1 - Easy Virtual Machine Management</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-06-16T00:00:00Z">
+        Tue Jun 16, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/vagrant">vagrant</a>/ <a href="/categories/virtualbox">virtualbox</a>
+</span></span>
+        </div>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li class="current"><span>Part 1 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/vagrant-provisioning-intro/">Part 2 - Vagrant Part 2 - Provisioning Introduction</a></li>
+                <li><a href="http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/">Part 3 - Vagrant Part 3 - Provisioning With Chocolatey</a></li>
+                <li><a href="http://digitaldrummerj.me/vagrant-installing-boxstarter/">Part 4 - Vagrant Part 4 - Install Boxstarter</a></li>
+                <li><a href="http://digitaldrummerj.me/vagrant-installing-your-software/">Part 5 - Vagrant Part 5 - Installing Your Software</a></li>
+                <li><a href="http://digitaldrummerj.me/vagrant-behind-proxy-server/">Part 6 - Vagrant Part 6 - Behind A Proxy Server</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <p>Welcome to an overview of Vagrant and creating of your first Vagrant machine.</p>
+          <h2 id="what-is-vagrant">What is Vagrant?</h2>
+          <p>Vagrant allows you to create and manage lightweight reproducible virtual machines.</p>
+          <p>Essentially, all of the configurations to create and configure a virtual machine are kept separate from the virtual machine. This allows you to delete the virtual machine and then re-create it with all of the same configurations at any point.</p>
+          <p>No longer do you have to be afraid to delete a virtual machine for a project that isn&rsquo;t active. You can also give the Vagrant configuration to a co-worker or move it to another machine and be assured that everything will get setup correctly
+            when you create the virtual machine on the new machine.</p>
+          <p>Before, we can see Vagrant in action, we first need to install a little bit of software onto your machine.</p>
+          <h2 id="getting-started">Getting Started</h2>
+          <p>In this section, we will install all of the software needed to be able to Vagrant.</p>
+          <p>There are 3 pieces of software that we need:</p>
+          <ol>
+            <li>Chocolatey</li>
+            <li>Virtualbox</li>
+            <li>Vagrant</li>
+          </ol>
+          <h2 id="chocolatey">Chocolatey</h2>
+          <p>Chocolatey is a Windows software install manager. It solves several common issues with software installed:</p>
+          <ul>
+            <li>Where do I find the installer for software?</li>
+            <li>How do I find the 64 bit vs 32 bit version?</li>
+            <li>What default options should I select?</li>
+            <li>Where should I install the software to?</li>
+            <li>etc</li>
+            <li>etc</li>
+          </ul>
+          <p>To install Chocolatey, open an administrative command prompt and run the command below or get the command right on the home for Chocolatey at <a href="http://chocolatey.org">http://chocolatey.org</a> .</p>
+          <pre><code>@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))&quot; &amp;&amp; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+</code></pre>
+          <p>Go ahead and close the command prompt that you used to install Chocolatey. This is needed so that all of the environment variables get refresh that are part of the Chocolatey installer.</p>
+          <p>Now that we have Chocolatey installed, we can start installing software or as Chocolatey calls them, packages.</p>
+          <p>To install a package, you would run the command:</p>
+          <pre><code>choco install [package name]
+</code></pre>
+          <p>You can find the package names on the Chocolatey Gallery at <a href="http://chocolatey.org">http://chocolatey.org</a>.</p>
+          <p>Next we are going to install Virtualbox using Chocolatey.</p>
+          <h2 id="virtualbox">Virtualbox</h2>
+          <p>For this tutorial, I am using Virtualbox as the virtual machine provider. You could also use Hyper-V (free) or VMWare (paid). If you are using Hyper-V already, you can not use Virtualbox at the same as they conflict with each other.</p>
+          <p>If you already have Virtualbox installed, you can skip this step.</p>
+          <p>Open an administrative command prompt and run the following Chocolatey command.</p>
+          <pre><code>choco install virtualbox.extensionpack
+</code></pre>
+          <p>The command above will also instal Virtualbox as it is listed as a dependency for the virtualbox.extensionpack package.</p>
+          <h2 id="vagrant">Vagrant</h2>
+          <p>To install Vagrant, from the administrative command prompt, run the following Chocolatey command.</p>
+          <pre><code>choco install vagrant
+</code></pre>
+          <p>We are now ready to create our first virtual machine using Vagrant.</p>
+          <h2 id="your-first-machine">Your First Machine</h2>
+          <p>Vagrant create a file called VagrantFile for each virtual machine, The VagrantFile contains the information about the box the virtual machine is based off of, how to setup the network, the virtualization provider (virtualbox, vmare, hyper-v,
+            azure, etc), and any provisioning scripts to run (shell , puppet, chef, etc) .</p>
+          <p>Vagrant starts with a base box which nothing more than the a portable skelton for building virtual machine. There are 2 types of boxes for Vagrant.</p>
+          <ol>
+            <li><strong>Pre-Build:</strong> meaning that everything that you need is installed on the box. You just create the vagrant machine and are ready to start developing.</li>
+            <li><strong>Base OS:</strong> just the OS is installed and as part of the creation of the vagrant machine, you install all of the needed software.</li>
+          </ol>
+          <p>For this tutorial, we are going to use the Base OS box and build out the box with all of the software we need.</p>
+          <h2 id="creating-vagrantfile">Creating VagrantFile</h2>
+          <p>The first step is to create a directory to hold the VagrantFile. I use c:\VagrantBoxes to hold all of the my Vagrant machines configurations.</p>
+          <ol>
+            <li>
+              <p>Within c:\VagrantBoxes, create a directory called MyFirstMachine.</p>
+            </li>
+            <li>
+              <p>Open up a command prompt and navigate to the MyFirstMachine directory that you just created.</p>
+            </li>
+            <li>
+              <p>To initalize the Vagrant box, you need to run the vagrant init command. This command will initialize the directory to hold Vagrant information and creates the VagrantFile.</p>
+            </li>
+            <li>
+              <p>For this tutorial, we are going to use the box &ldquo;opentable/win-8.1-enterprise-amd64-nocm&rdquo;. The command below will initalize the MyFirstMachine directory.</p>
+              <p>vagrant init &ldquo;opentable/win-8.1-enterprise-amd64-nocm&rdquo;</p>
+            </li>
+          </ol>
+          <p>Additional boxes can be from the cloud at <a href="https://atlas.hashicorp.com/boxes/search">https://atlas.hashicorp.com/boxes/search</a></p>
+          <h2 id="configuring-the-vagrantfile">Configuring the VagrantFile</h2>
+          <p>In the MyFirstMachine directory there is now a file called VagrantFile. Open this file up in your favorite text editor.</p>
+          <p>Within the VagrantFile, there is a basic configuration already setup and a lot of very useful comments that explain the different possible configurations.</p>
+          <h3 id="vagrant-general-configurations">Vagrant general configurations</h3>
+          <ol>
+            <li>
+              <p>config.vm.box is the name of the Vagrant base box to use to start up the machine with. If this base box does not already exist on your machine it will attempt to download it from the Vagrant cloud.</p>
+              <pre><code>config.vm.box = &quot;opentable/win-8.1-enterprise-amd64-nocm&quot;
+</code></pre>
+            </li>
+            <li>
+              <p>Configure the actual machine name of the virtual machine</p>
+              <pre><code>config.vm.hostname = &quot;MyFirstMachine&quot;   
+</code></pre>
+            </li>
+            <li>
+              <p>How long Vagrant will keep trying to connect to the virtual machine before it assume something went wrong and times out.</p>
+              <pre><code>config.vm.boot_timeout = 600
+</code></pre>
+            </li>
+            <li>
+              <p>How to commumicate with the machine. The two options are SSH and WinRM. Typically SSH is used for Linux and WinRM for Windows machines.</p>
+              <pre><code>config.vm.communicator = &quot;winrm&quot;
+</code></pre>
+            </li>
+          </ol>
+          <h3 id="virtualbox-configurations">Virtualbox Configurations</h3>
+          <p>In the configuration below, it will configure the virtual machine with:</p>
+          <ul>
+            <li>4 gigs of RAM</li>
+            <li>Set it to use 2 CPUs</li>
+            <li>Make the video ram 128 megs</li>
+            <li>Set the clipboard as bidirectional so you can copy and paste from the host machine to virtual machine as well as from the virtual machine to host machine.</li>
+            <li>
+              <p>Name the machine in the Virtualbox Manager UI.</p>
+              <pre><code>config.vm.provider &quot;virtualbox&quot; do |vb|
+        vb.memory = &quot;4096&quot;
+        vb.cpus = 2
+        vb.customize [&quot;modifyvm&quot;, :id, &quot;--vram&quot;, &quot;128&quot;]
+        vb.customize [&quot;modifyvm&quot;, :id, &quot;--clipboard&quot;, &quot;bidirectional&quot;]
+        vb.name = &quot;My First Machine&quot;   
+    end     
+</code></pre>
+            </li>
+          </ul>
+          <p>Now we are ready to start up the machine and start using it.</p>
+          <ol>
+            <li>Open a command prompt.</li>
+            <li>Navigate to the MyFirstMachine folder.</li>
+            <li>Run vagrant up to start up the machine.
+              <ul>
+                <li>The first time you run this command using a new base box, it will take a bit as it has to download the box from the cloud.<br /></li>
+              </ul>
+            </li>
+          </ol>
+          <p>Now that the machine is started up, there are some additional Vagrant commands that you will need to know to be able to hibernate, reboot, shutdown, and delete the virtual machine</p>
+          <h2 id="vagrant-commands">Vagrant Commands</h2>
+          <p>The commands below all need to run from the command line from within the MyFirstMachine folder.</p>
+          <p><strong>See Status of Machine</strong></p>
+          <pre><code>vagrant status
+</code></pre>
+          <p><strong>Hibernate Machine</strong></p>
+          <pre><code>vagrant suspend
+</code></pre>
+          <p><strong>Reboot Machine</strong></p>
+          <pre><code>vagrant reload
+</code></pre>
+          <p><strong>Shutdown Machine</strong></p>
+          <pre><code>vagrant shutdown
+</code></pre>
+          <p><strong>Remove Virtual Machine</strong></p>
+          <pre><code>vagrant destroy
+</code></pre>
+          <p><strong>Re-Create Machine after Destroying it</strong></p>
+          <pre><code>vagrant up
+</code></pre>
+          <h2 id="next-steps">Next Steps</h2>
+          <p>You have just create and started up your first Vagrant managed Virtual machine. This is only the beginning of what you can do with Vagrant. In future lessons in this series we will install software and configure the OS as part of the vagrant
+            up command, we will create multiple machine with a single vagrant command, create azure virtual machines, and create own own base boxes.</p>
+          <p>The next lesson, will cover the start of provisioning. We will install Chocolatey as part of the vagrant up command.</p>
+        </p>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li class="current"><span>Part 1 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/vagrant-provisioning-intro/">Part 2 - Vagrant Part 2 - Provisioning Introduction</a></li>
+                <li><a href="http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/">Part 3 - Vagrant Part 3 - Provisioning With Chocolatey</a></li>
+                <li><a href="http://digitaldrummerj.me/vagrant-installing-boxstarter/">Part 4 - Vagrant Part 4 - Install Boxstarter</a></li>
+                <li><a href="http://digitaldrummerj.me/vagrant-installing-your-software/">Part 5 - Vagrant Part 5 - Installing Your Software</a></li>
+                <li><a href="http://digitaldrummerj.me/vagrant-behind-proxy-server/">Part 6 - Vagrant Part 6 - Behind A Proxy Server</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Vagrant%20Part%201%20-%20Easy%20Virtual%20Machine%20Management&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fvagrant-overview%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Vagrant%20Part%201%20-%20Easy%20Virtual%20Machine%20Management&http://digitaldrummerj.me/vagrant-overview/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fvagrant-overview%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fvagrant-overview%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Npm, Bower, Git, and Bash Proxy Configurations" />
+  <meta property="og:description" content="When you are using npm, bower, and git behind a proxy server you have to do a little bit of configuration. Luckily it is super easy to do these configurations. Almost all of the programs have command line commands to set and unset the proxy server.
+Updates:  Updated 2015-Feb-01: Added running source command for Bash and Ruby Gems section Updated 2015-May-07: Added the Ionic Start command Updated 2015-May-08: Added the Android SDK Updated 2015-Aug-03: Added command lines to set proxy Updated 2015-Oct-20: Added Gradle  Windows Command Prompt Current Command Prompt Only set http_proxy=[Your Proxy]:[Proxy Port] set https_proxy=[Your Proxy]:[Proxy Port]  Unset Current Session set http_proxy= set https_proxy=  Globally as a System Environment Variable Run from an administrative command prompt"
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/proxy-configurations/" />
+  <meta property="article:published_time" content="2015-01-16T20:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2015-01-16T20:00:00&#43;00:00" />
+  <meta itemprop="name" content="Npm, Bower, Git, and Bash Proxy Configurations">
+  <meta itemprop="description" content="When you are using npm, bower, and git behind a proxy server you have to do a little bit of configuration. Luckily it is super easy to do these configurations. Almost all of the programs have command line commands to set and unset the proxy server.
+Updates:  Updated 2015-Feb-01: Added running source command for Bash and Ruby Gems section Updated 2015-May-07: Added the Ionic Start command Updated 2015-May-08: Added the Android SDK Updated 2015-Aug-03: Added command lines to set proxy Updated 2015-Oct-20: Added Gradle  Windows Command Prompt Current Command Prompt Only set http_proxy=[Your Proxy]:[Proxy Port] set https_proxy=[Your Proxy]:[Proxy Port]  Unset Current Session set http_proxy= set https_proxy=  Globally as a System Environment Variable Run from an administrative command prompt">
+  <meta itemprop="datePublished" content="2015-01-16T20:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-01-16T20:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="719">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Npm, Bower, Git, and Bash Proxy Configurations" />
+  <meta name="twitter:description" content="When you are using npm, bower, and git behind a proxy server you have to do a little bit of configuration. Luckily it is super easy to do these configurations. Almost all of the programs have command line commands to set and unset the proxy server.
+Updates:  Updated 2015-Feb-01: Added running source command for Bash and Ruby Gems section Updated 2015-May-07: Added the Ionic Start command Updated 2015-May-08: Added the Android SDK Updated 2015-Aug-03: Added command lines to set proxy Updated 2015-Oct-20: Added Gradle  Windows Command Prompt Current Command Prompt Only set http_proxy=[Your Proxy]:[Proxy Port] set https_proxy=[Your Proxy]:[Proxy Port]  Unset Current Session set http_proxy= set https_proxy=  Globally as a System Environment Variable Run from an administrative command prompt"
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/proxy-configurations/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Npm, Bower, Git, and Bash Proxy Configurations</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-01-16T20:00:00Z">
+        Fri Jan 16, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/proxy">proxy</a>/ <a href="/categories/nodejs">nodejs</a>/ <a href="/categories/npm">npm</a>/ <a href="/categories/bash">bash</a>/ <a href="/categories/bower">bower</a>/ <a href="/categories/ionic">ionic</a>
+</span></span>
+        </div>
+        <p> </p>
+        <p>
+          <p>When you are using npm, bower, and git behind a proxy server you have to do a little bit of configuration. Luckily it is super easy to do these configurations. Almost all of the programs have command line commands to set and unset the proxy
+            server.</p>
+          <h2 id="updates">Updates:</h2>
+          <ul>
+            <li><strong>Updated 2015-Feb-01</strong>: Added running source command for Bash and Ruby Gems section</li>
+            <li><strong>Updated 2015-May-07</strong>: Added the Ionic Start command</li>
+            <li><strong>Updated 2015-May-08</strong>: Added the Android SDK</li>
+            <li><strong>Updated 2015-Aug-03</strong>: Added command lines to set proxy</li>
+            <li><strong>Updated 2015-Oct-20</strong>: Added Gradle</li>
+          </ul>
+          <h2 id="windows-command-prompt">Windows Command Prompt</h2>
+          <h3 id="current-command-prompt-only">Current Command Prompt Only</h3>
+          <pre><code>set http_proxy=[Your Proxy]:[Proxy Port]
+set https_proxy=[Your Proxy]:[Proxy Port]
+</code></pre>
+          <h3 id="unset-current-session">Unset Current Session</h3>
+          <pre><code>set http_proxy=
+set https_proxy=
+</code></pre>
+          <h3 id="globally-as-a-system-environment-variable">Globally as a System Environment Variable</h3>
+          <p>Run from an administrative command prompt</p>
+          <pre><code>setx http_proxy=[Your Proxy]:[Proxy Port] /M
+setx https_proxy=[Your Proxy]:[Proxy Port] /M
+</code></pre>
+          <p>You will need to close and re-open command prompt for settings to take effect</p>
+          <h3 id="globally-as-a-user-environment-variable">Globally as a User Environment Variable</h3>
+          <p>Run from a non-administrative command prompt</p>
+          <pre><code>setx http_proxy=[Your Proxy]:[Proxy Port] 
+setx https_proxy=[Your Proxy]:[Proxy Port]
+</code></pre>
+          <p>You will need to close and re-open command prompt for settings to take effect</p>
+          <h3 id="unset-globally-system-environment-variable">Unset Globally System Environment Variable</h3>
+          <p>Run from an administrative command prompt</p>
+          <pre><code>setx http_proxy=&quot;&quot; /M
+setx https_proxy=&quot;&quot; /M
+</code></pre>
+          <p>Need to close and re-open command prompt for settings to take effect</p>
+          <h3 id="unset-globally-user-environment-variable">Unset Globally User Environment Variable</h3>
+          <p>Run from a non-administrative command prompt</p>
+          <pre><code>setx http_proxy=&quot;&quot; 
+setx https_proxy=&quot;&quot;
+</code></pre>
+          <p>Need to close and re-open command prompt for settings to take effect</p>
+          <h3 id="view-proxy-settings">View Proxy Settings</h3>
+          <p>If the commands below just echo out the text instead of the actual proxy server, it means that the proxy server is not set.</p>
+          <pre><code>echo %http_proxy%
+echo %https_proxy%
+</code></pre>
+          <hr />
+          <h2 id="bash-shell">Bash Shell</h2>
+          <p>File Name: .bash_profile or .bashrc</p>
+          <pre><code>export http_proxy=[Your Proxy]:[Proxy Port]
+export https_proxy=[Your Proxy]:[Proxy Port]
+export npm_config_proxy=[Your Proxy]:[Proxy Port]
+export npm_config_https_proxy=[Your Proxy]:[Proxy Port]
+</code></pre>
+          <p>Note: After updated the .bash_profile or .bashrc, you should run one of the following commands to make the configuration active for the current session.</p>
+          <pre><code>source ~/.bashrc
+or
+source ~/.bash_profile
+</code></pre>
+          <hr />
+          <h2 id="bower">Bower</h2>
+          <p>There is no command line that I found for configuring bower. Instead you need to create a .bowerrc file in the users home directory.</p>
+          <p>On Windows: %userprofile% directory.</p>
+          <p>On Linux: ~/</p>
+          <h3 id="creating-bowerrc-file-on-windows">Creating .bowerrc file on Windows</h3>
+          <p>Windows Explorer unfortunately does not allow you to create files without extensions but using notepad you can create a file without an extension.</p>
+          <ol>
+            <li>Open Notepad</li>
+            <li>Ctrl + S to save the file</li>
+            <li>Navigate to the %UserProfile% directory</li>
+            <li>Change the &ldquo;Save as Type&rdquo; to &ldquo;All Files (<em>.</em>)</li>
+            <li>Name the file .bowerrc</li>
+            <li>Click the Save button</li>
+            <li>Now you can edit the file in your text editor of choice <br /></li>
+          </ol>
+          <h3 id="proxy-setting-in-bowerrc">Proxy Setting in .bowerrc.</h3>
+          <pre><code>{
+    &quot;proxy&quot;:&quot;http://[Your Proxy]:[Proxy Port]&quot;,
+    &quot;https-proxy&quot;:&quot;http://[Your Proxy]:[Proxy Port]&quot;
+}
+</code></pre>
+          <hr />
+          <h2 id="git">Git</h2>
+          <p>You can also set the proxy settings below to be system wide with the &ndash;system switch.</p>
+          <h3 id="set-proxy">Set Proxy:</h3>
+          <pre><code>git config --add http.proxy http://[Your Proxy]:[Proxy Port]
+git config --add https.proxy http://[Your Proxy]:[Proxy Port]
+</code></pre>
+          <h3 id="unset-proxy">Unset Proxy:</h3>
+          <pre><code>git config --unset http.proxy
+git config --unset https.proxy
+</code></pre>
+          <h3 id="view-configuration">View Configuration</h3>
+          <p><strong>Just Proxy Configs</strong></p>
+          <pre><code>git config --get http.proxy
+git config --get https.proxy
+</code></pre>
+          <p><strong>All Configs</strong></p>
+          <pre><code>git config --list
+</code></pre>
+          <h3 id="manually-update-gitconfig-not-recommended">Manually Update .gitconfig (not recommended)</h3>
+          <pre><code>[http]
+    proxy = http://[Your Proxy]:[Proxy Port]
+[https]
+    proxy = http://[Your Proxy]:[Proxy Port]
+</code></pre>
+          <hr />
+          <h2 id="npm">NPM</h2>
+          <h3 id="set-proxy-1">Set Proxy:</h3>
+          <pre><code>npm config set https-proxy http://[Your Proxy]:[Proxy Port]
+npm config set proxy http://[Your Proxy]:[Proxy Port]
+</code></pre>
+          <h3 id="unset-proxy-1">Unset Proxy:</h3>
+          <pre><code>npm config delete https-proxy
+npm config delete proxy
+</code></pre>
+          <h3 id="view-proxy-configurations">View Proxy Configurations:</h3>
+          <pre><code>npm config get https-proxy
+npm config get proxy
+</code></pre>
+          <h3 id="manually-update-npmrc-not-recommended">Manually Update .npmrc (not recommended)</h3>
+          <pre><code>proxy=http://[Your Proxy]:[Proxy Port]
+https-proxy=http://[Your Proxy]:[Proxy Port]
+</code></pre>
+          <hr />
+          <h2 id="ruby-gem-install">Ruby Gem Install</h2>
+          <p>If you have set the proxy in the .bash_profile or .bashrc, then Ruby should pick it up.</p>
+          <p>If you need to manually set it</p>
+          <h3 id="linux">Linux</h3>
+          <p>export http_proxy=[Your Proxy]:[Proxy Port] sudo gem install [your gem name]</p>
+          <h3 id="windows">Windows</h3>
+          <pre><code>setx http_proxy &quot;[Your Proxy Server]:[Proxy Port]&quot; /M
+gem install [your gem name]
+</code></pre>
+          <hr />
+          <h2 id="ionic-start-command">Ionic Start Command</h2>
+          <p>In order to run the ionic start command behind a proxy, you need start the command out with the Proxy information.</p>
+          <h3 id="linux-1">Linux</h3>
+          <pre><code>PROXY=http://[Your Proxy]:[Proxy Port] ionic start [App Name] [Template Name]
+</code></pre>
+          <h3 id="windows-1">Windows</h3>
+          <pre><code>setx http_proxy &quot;[Your Proxy Server]:[Proxy Port]&quot; /M
+ionic start [App Name] [Template Name]
+</code></pre>
+          <hr />
+          <h2 id="android-sdk">Android SDK</h2>
+          <p>The android SDK uses ~/.android/androidtool.cfg file to define the proxy information. If the file does not exist, go ahead and create it.</p>
+          <pre><code>http.proxyHost=[Your Proxy]
+http.proxyPort=[Proxy Port]
+</code></pre>
+          <hr />
+          <h2 id="gradle">Gradle</h2>
+          <p>When trying to build an Android project that uses Gradle, you may need to configure the proxy for it.</p>
+          <p>On Windows: %userprofile%/.gradle.properties</p>
+          <pre><code>systemProp.http.proxyHost=[Your Proxy]
+systemProp.http.proxyPort=[Proxy Port]
+systemProp.http.nonProxyHosts=*.nonproxyrepos.com|localhost    
+
+systemProp.https.proxyHost=[Your Https Proxy]
+systemProp.https.proxyPort=[Https Proxy Port] 
+systemProp.https.nonProxyHosts=*.nonproxyrepos.com|localhost
+</code></pre> </p>
+        <p> </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Npm%2c%20Bower%2c%20Git%2c%20and%20Bash%20Proxy%20Configurations&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fproxy-configurations%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Npm,%20Bower,%20Git,%20and%20Bash%20Proxy%20Configurations&http://digitaldrummerj.me/proxy-configurations/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fproxy-configurations%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fproxy-configurations%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

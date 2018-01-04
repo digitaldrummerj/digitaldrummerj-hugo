@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Docker - Getting Started On Windows" />
+  <meta property="og:description" content="After seeing a Docker presentation recently I decided to finally figure out how to get Docker working correctly on Windows. Luckily it worked out of the box fairly well but I did run into issues with Windows file path lengths and proxy issues. This series of article will documented how I got Docker working and overcame those issues.
+To get started, you will need the docker toolkit. I followed the instructions on the Docker website to get the Docker Toolkit with Virtualbox installed." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/docker-on-windows-getting-started/" />
+  <meta property="article:published_time" content="2016-05-31T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2016-05-31T00:00:00&#43;00:00" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/docker-running-container-as-service/" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/docker-windows-mounting-directories/" />
+  <meta itemprop="name" content="Docker - Getting Started On Windows">
+  <meta itemprop="description" content="After seeing a Docker presentation recently I decided to finally figure out how to get Docker working correctly on Windows. Luckily it worked out of the box fairly well but I did run into issues with Windows file path lengths and proxy issues. This series of article will documented how I got Docker working and overcame those issues.
+To get started, you will need the docker toolkit. I followed the instructions on the Docker website to get the Docker Toolkit with Virtualbox installed.">
+  <meta itemprop="datePublished" content="2016-05-31T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2016-05-31T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="861">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Docker - Getting Started On Windows" />
+  <meta name="twitter:description" content="After seeing a Docker presentation recently I decided to finally figure out how to get Docker working correctly on Windows. Luckily it worked out of the box fairly well but I did run into issues with Windows file path lengths and proxy issues. This series of article will documented how I got Docker working and overcame those issues.
+To get started, you will need the docker toolkit. I followed the instructions on the Docker website to get the Docker Toolkit with Virtualbox installed." />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/docker-on-windows-getting-started/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Docker - Getting Started On Windows</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2016-05-31T00:00:00Z">
+        Tue May 31, 2016
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/docker">docker</a>
+</span></span>
+        </div>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li class="current"><span>Part 1 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/docker-windows-mounting-directories/">Part 2 - Docker - Mounting Windows Directories in Containers</a></li>
+                <li><a href="http://digitaldrummerj.me/docker-running-container-as-service/">Part 3 - Docker - Running Container As a Service</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <p>After seeing a Docker presentation recently I decided to finally figure out how to get Docker working correctly on Windows. Luckily it worked out of the box fairly well but I did run into issues with Windows file path lengths and proxy issues.
+            This series of article will documented how I got Docker working and overcame those issues.</p>
+          <p>To get started, you will need the docker toolkit. I followed the instructions on the Docker website to get the Docker Toolkit with Virtualbox installed. The instructions for Windows are at <a href="https://docs.docker.com/windows/">https://docs.docker.com/windows/</a>.
+            The instructions also have links to the Linux and Mac instructions. As I am a Windows user, I can only verify that this tutorial all worked under Windows.</p>
+          <p>Once you get the Docker toolkit installed you are probably wondering now what do I do. On the desktop, it installed a shortcut to the &ldquo;Docker Quickstart Terminal&rdquo;. This terminal will ensure that you have the base image that Docker
+            uses for Virtualbox on Windows and you can run all of the Docker commands from this terminal.</p>
+          <p>The reason that we need Virtualbox is because Windows does not yet natively support Docker containers. All of the containers run within a Linux virtual machine that Docker is using.</p>
+          <p>Below are a few examples to help get you started with usage of Docker.</p>
+          <h2 id="example-1-basic-hello-world">Example 1: Basic Hello World</h2>
+          <p>This will download the hello-world image if it is not already one your machine. Then is will create a container, run hello-world and finally remove the container (&ndash;rm).</p>
+          <pre><code> docker run --rm  hello-world
+</code></pre>
+          <h2 id="example-2-nginx">Example 2: nginx</h2>
+          <p>This example will start up an nginx web server.</p>
+          <p>When you run the docker run command, it will pull down the nginx image if you do not already have it, the -d will leave the container running in the background, and the -p will set port forwarding of port 8000 to port 80 in the container.</p>
+          <pre><code> docker run -d -p 8000:80 nginx
+</code></pre>
+          <p>Once the nginx container is up and running we can see that it is running with</p>
+          <pre><code> docker ps
+</code></pre>
+          <p>To connect to the nginx web page, we need to know the ip address of the docker machine.</p>
+          <pre><code> docker-machine ip
+</code></pre>
+          <p>In my case it is 192.168.99.100. To navigate to the web page, open up a browser and navigate to <a href="http://192.168.99.100:8000/">http://192.168.99.100:8000/</a></p>
+          <p>Since the container is running behind the scenes, to stop the container you need to issues the</p>
+          <pre><code> docker stop command. 
+
+ docker stop [Container ID from docker ps command]
+</code></pre>
+          <h2 id="example-3-ubuntu-bash-shell">Example 3: Ubuntu Bash Shell</h2>
+          <p>This example will download the ubuntu docker image and start up an interactive bash shell that will allow you to make changes to the image.</p>
+          <pre><code> docker run -it ubuntu bash
+</code></pre>
+          <blockquote>
+            <p>If you want to interact with files on the host system you can do this as long as they are in the c:\Users directory. Docker auto mounts this directory for you. In a future post will cover the ins and outs of mounting other directories. {:.warning}</p>
+            <p>Also, in a future post, we will cover how to save the change made to a container to a new image that you can use as the base for future containers.</p>
+          </blockquote>
+          <h2 id="finding-additional-docker-images">Finding Additional Docker Images</h2>
+          <p>So far we have used a few basic images but there are many more Docker images available in the Docker Hub at <a href="http://hub.docker.com">http://hub.docker.com</a>. The Docker Hub host a number of common containers that you might use for your
+            application such as node, mysql, postgres, couchbase, plus many more.</p>
+          <p>Once you find an image that you want to get run</p>
+          <pre><code> $ docker pull [Image Name]
+</code></pre>
+          <p>If you want to pull only a specific version of any image which is common with the nodejs so that you can get the version of node that you need versus the latest version of node, run the following</p>
+          <pre><code> $ docker pull [image name]:[tag or version]               
+</code></pre>
+          <h2 id="common-docker-commands">Common Docker Commands</h2>
+          <p>Below is a list of common commands that you will get you started using Docker.</p>
+          <p><strong>List Docker Images</strong></p>
+          <pre><code> $ docker images
+</code></pre>
+          <p><strong>Get Docker image from Docker Hub</strong></p>
+          <pre><code> $ docker pull [image name]
+</code></pre>
+          <p><strong>Get Docker Image from at specific version</strong></p>
+          <pre><code> $ docker pull [image name]:[tag or version]               
+</code></pre>
+          <p><strong>Update an existing image</strong></p>
+          <pre><code> $ docker pull [image name]
+</code></pre>
+          <p><strong>list of running containers</strong></p>
+          <pre><code> $ docker ps
+</code></pre>
+          <p><strong>Seeing Existing Containers</strong></p>
+          <pre><code> $ docker ps -a
+</code></pre>
+          <p><strong>See last nth Container Created</strong></p>
+          <pre><code> $ docker ps -n=1
+</code></pre>
+          <blockquote>
+            <p>Will pull last container created. -n says how many back to pull</p>
+          </blockquote>
+          <p><strong>Connect to Existing Container</strong></p>
+          <pre><code> $ docker start -i [Container ID]
+</code></pre>
+          <blockquote>
+            <p>-i connects to the standard in/out.</p>
+          </blockquote>
+          <p><strong>Delete image</strong></p>
+          <pre><code> $ docker rmi [image id]
+</code></pre>
+          <blockquote>
+            <p>It will warn you if you have a container based on the image {:.warning}</p>
+          </blockquote>
+          <p><strong>Delete container</strong></p>
+          <pre><code> $ docker rm [container id]       
+</code></pre>
+          <h2 id="wrap-up">Wrap-up</h2>
+          <p>Docker is a powerful tool to have in your arsenal. Once you get it working on Windows, you will never install services that can run within Docker locally again. With Docker you can run light-weight containers for services such as mysql, postgres,
+            mongodb, redis, node, plus many more.</p>
+          <p>This is the first of several post on using Docker. In future post we will cover mounting additional directories, saving changes to a container into an image, saving our image to the Docker Hub and creating our own Docker image from scratch.</p>
+        </p>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li class="current"><span>Part 1 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/docker-windows-mounting-directories/">Part 2 - Docker - Mounting Windows Directories in Containers</a></li>
+                <li><a href="http://digitaldrummerj.me/docker-running-container-as-service/">Part 3 - Docker - Running Container As a Service</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Docker%20-%20Getting%20Started%20On%20Windows&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fdocker-on-windows-getting-started%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Docker%20-%20Getting%20Started%20On%20Windows&http://digitaldrummerj.me/docker-on-windows-getting-started/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fdocker-on-windows-getting-started%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fdocker-on-windows-getting-started%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

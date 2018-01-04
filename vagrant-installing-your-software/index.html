@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Vagrant Part 5 - Installing Your Software" />
+  <meta property="og:description" content="Welcome to the Vagrant lesson on how to use Boxstarter to configure Windows and install software as part of the Vagrant provisioning process.
+Overview We have all of the needed software in place to start configuring and installing software onto our virtual machine.
+In this lesson, we will create an file with all of the install and configuration commands that will be executed with Boxstarter.
+Can I only install Chocolatey Packages?" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/vagrant-installing-your-software/" />
+  <meta property="article:published_time" content="2015-06-18T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2015-06-18T00:00:00&#43;00:00" />
+  <meta itemprop="name" content="Vagrant Part 5 - Installing Your Software">
+  <meta itemprop="description" content="Welcome to the Vagrant lesson on how to use Boxstarter to configure Windows and install software as part of the Vagrant provisioning process.
+Overview We have all of the needed software in place to start configuring and installing software onto our virtual machine.
+In this lesson, we will create an file with all of the install and configuration commands that will be executed with Boxstarter.
+Can I only install Chocolatey Packages?">
+  <meta itemprop="datePublished" content="2015-06-18T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-06-18T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="958">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Vagrant Part 5 - Installing Your Software" />
+  <meta name="twitter:description" content="Welcome to the Vagrant lesson on how to use Boxstarter to configure Windows and install software as part of the Vagrant provisioning process.
+Overview We have all of the needed software in place to start configuring and installing software onto our virtual machine.
+In this lesson, we will create an file with all of the install and configuration commands that will be executed with Boxstarter.
+Can I only install Chocolatey Packages?" />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/vagrant-installing-your-software/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Vagrant Part 5 - Installing Your Software</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-06-18T00:00:00Z">
+        Thu Jun 18, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/virtualbox">virtualbox</a>/ <a href="/categories/vagrant">vagrant</a>/ <a href="/categories/chocolatey">chocolatey</a>
+</span></span>
+        </div>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/vagrant-overview/">Part 1 - Vagrant Part 1 - Easy Virtual Machine Management</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-provisioning-intro/">Part 2 - Vagrant Part 2 - Provisioning Introduction</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/">Part 3 - Vagrant Part 3 - Provisioning With Chocolatey</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-installing-boxstarter/">Part 4 - Vagrant Part 4 - Install Boxstarter</a></li>
+              <li class="current"><span>Part 5 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/vagrant-behind-proxy-server/">Part 6 - Vagrant Part 6 - Behind A Proxy Server</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <p>Welcome to the Vagrant lesson on how to use Boxstarter to configure Windows and install software as part of the Vagrant provisioning process.</p>
+          <h2 id="overview">Overview</h2>
+          <p>We have all of the needed software in place to start configuring and installing software onto our virtual machine.</p>
+          <p>In this lesson, we will create an file with all of the install and configuration commands that will be executed with Boxstarter.</p>
+          <h2 id="can-i-only-install-chocolatey-packages">Can I only install Chocolatey Packages?</h2>
+          <p>Even though Boxstarter is a Chocolatey package, you can install and configure more than just Chocolatey packages. At the end of the day it is running a Powershell script, so anything that you can do with Powershell you can put into your file
+            to execute through Boxstarter.</p>
+          <h2 id="example-file">Example File</h2>
+          <ol>
+            <li>In the shell directory for MyFirstMachine, create a file called BoxStarterGist.txt.</li>
+            <li>In the shell directory for MyFirstMachine, create a 2nd file called RunBoxStarterGist.bat.</li>
+            <li>
+              <p>Open the RunBoxStarterGist.bat file and add the following command to copy the file to the temp directory and execute it with Boxstarter.</p>
+              <ul>
+                <li>
+                  <p>The reason to copy the BoxStarterGist.txt file to a temp directory is that sometimes when Boxstarter reboots, the vagrant synced folder for Virtualbox is not mounted until after Boxstarter tries to continue executing the bat file, so
+                    it then fails.</p>
+                  <pre><code>copy &quot;%systemdrive%\vagrant\shell\BoxStarterGist.txt&quot; &quot;%temp%\BoxStarterGist.txt&quot;
+
+@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;Install-BoxStarterPackage -PackageName %temp%\\BoxstarterGist.txt&quot;  
+</code></pre>
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <h2 id="populating-the-boxstartergist-txt-file">Populating the BoxstarterGist.txt file</h2>
+          <p>We are going to do several things in the BoxstarterGist.txt file:</p>
+          <ul>
+            <li>Set some Windows configurations such as taskbar size, Windows explorer show extensions/protected OS file/hidden files, and enable rdp.</li>
+            <li>Install some Chocolatey packages such as Visual Studio Code, nodejs, git, and Google Chrome.</li>
+            <li>Install some npm packages such as Ionic and Cordova</li>
+            <li>Run a git clone to pull down source code for a project</li>
+          </ul>
+          <p>These are all examples of things that you can do. At the end of the day it is just a Powershell script so that options are nearly limitless. I encourage you to read up on Boxstarter at <a href="http://boxstarter.org">http://boxstarter.org</a>            to see all of options that you have.</p>
+          <p>Open up the BoxstarterGist.txt file in your favorite text editor and proceed to the configuration sections. I have the sections in the order that I like to install/configure but you can have them in any order in the BoxstarterGist.txt file.</p>
+          <h3 id="windows-configurations">Windows Configurations</h3>
+          <p>This section is the Windows configuration options that we want to set. The full Windows configuration documentation for Boxstarter is available at <a href="http://boxstarter.org/WinConfig">http://boxstarter.org/WinConfig</a>.</p>
+          <ol>
+            <li>
+              <p>Enable Remote Desktop</p>
+              <pre><code>Enable-RemoteDesktop
+</code></pre>
+            </li>
+            <li>
+              <p>Tell Windows that you want to use Powershell instead of a command prompt when you use the corner navigation.</p>
+              <pre><code>Set-CornerNavigationOptions -EnableUsePowerShellOnWinX
+</code></pre>
+            </li>
+            <li>
+              <p>In Windows exploer turn on hidden files, protected operating system files, show file extensions, and show the full path in the title bar.</p>
+              <pre><code>Set-ExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions   -EnableShowFullPathInTitlebar
+</code></pre>
+            </li>
+            <li>
+              <p>Set the taskbar size to small and lock it in place.</p>
+              <pre><code>Set-TaskbarOptions -Size Small -Lock
+</code></pre>
+            </li>
+          </ol>
+          <h3 id="chocolatey-installs">Chocolatey Installs</h3>
+          <p>Now it is time to install all of our Chocolatey Packages.</p>
+          <p>The first step is to turn off the prompting from Chocolatey asking if you are sure you want to install this package. Don&rsquo;t worry will turn it back on in a few lines after the Chocolatey package installs are completed.</p>
+          <pre><code>chocolatey feature enable -n=allowGlobalConfirmation
+</code></pre>
+          <p>Next we are going to install the Chocolatey packages that you want. I picked a few but go to the Chocolatey gallery at <a href="http://chocolatey.org">http://chocolatey.org</a> and find the packages that meet your needs.</p>
+          <pre><code>choco install git 
+choco install nodejs 
+choco install visualstudiocode 
+choco install GoogleChrome 
+</code></pre>
+          <p>Now that we are done installing Chocolatey packages we are going to turn back on the prompting for confirmation that you wanted to install the packages.</p>
+          <pre><code>chocolatey feature disable -n=allowGlobalConfirmation
+</code></pre>
+          <p>Last thing we are going to do is pin a couple of items that we installs to the taskbar using a built-in helper from Chocolatey called Install-ChocolateyPinnedTaskBarItem.</p>
+          <pre><code>Install-ChocolateyPinnedTaskBarItem &quot;${env:UserProfile}\Desktop\code.lnk&quot;
+
+Install-ChocolateyPinnedTaskBarItem &quot;${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe&quot;
+</code></pre>
+          <h3 id="npm-installs">npm installs</h3>
+          <p>I play around with npm a lot and don&rsquo;t like the spinner when running an npm command, so I turn that off and set the log level that I like. I then install the Ionic framework and Cordova npm packages.</p>
+          <pre><code>npm config set loglevel http
+npm config set spin false
+
+npm install -g ionic
+npm install -g cordova
+</code></pre>
+          <h3 id="git-clone-repositories">git clone repositories</h3>
+          <p>The last thing that I do as part of the BoxStarterGist.txt file is to create c:\projects which is where I store my project source code at and pull it down from Github.</p>
+          <pre><code>$projectDir = &quot;${env:systemdrive}\projects&quot;
+
+If (!(Test-Path $projectDir)) {
+    New-Item -Path $projectDir -ItemType Directory
+}
+
+cd $projectDir
+
+git clone https://github.com/digitaldrummerj/VagrantTalk
+</code></pre>
+          <h2 id="how-to-install-your-software-part-of-vagrant-provision">How to install your software part of Vagrant provision?</h2>
+          <p>Now that we have the BoxStarterGist.txt file configured the way that we want it, we need to tell Vagrant what to do with it.</p>
+          <p>For this one we are using the file provision which copies the files to the virutal machine but does not execute it. The reason for this is that when Boxstarter reboots the machine, Vagrant thinks the script is done and proceeds to the next provision
+            call which sometimes interfers with the Boxstarter run. So instead I put it on the desktop and manually login to the machine and execute the RunBoxStarterGist.bat file.</p>
+          <pre><code>  config.vm.provision &quot;file&quot;,
+           source: &quot;shell/RunBoxStarterGist.bat&quot;,
+           destination: &quot;desktop\\RunBoxStarterGist.bat&quot; 
+</code></pre>
+          <h2 id="running-the-runboxstartergist-bat-file">Running the RunBoxStarterGist.bat file</h2>
+          <p>After you do vagrant up and all of the provisioners runs, you will see the RunBoxstarterGist.bat on the desktop for the vagrant user. You will just need to manually execute this file. Once you kick it off you can walk away and let it do all
+            of the installs.</p>
+          <h2 id="next-steps">Next Steps</h2>
+          <p>The next lesson will cover the different networking options that vagrant supports. By default Vagrant sets up the virtual machine with a NAT network so that you can only get to the machine from the host. You an however setup both a public and
+            private network. We will dive into how to do this.</p>
+        </p>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/vagrant-overview/">Part 1 - Vagrant Part 1 - Easy Virtual Machine Management</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-provisioning-intro/">Part 2 - Vagrant Part 2 - Provisioning Introduction</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/">Part 3 - Vagrant Part 3 - Provisioning With Chocolatey</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-installing-boxstarter/">Part 4 - Vagrant Part 4 - Install Boxstarter</a></li>
+              <li class="current"><span>Part 5 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/vagrant-behind-proxy-server/">Part 6 - Vagrant Part 6 - Behind A Proxy Server</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Vagrant%20Part%205%20-%20Installing%20Your%20Software&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fvagrant-installing-your-software%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Vagrant%20Part%205%20-%20Installing%20Your%20Software&http://digitaldrummerj.me/vagrant-installing-your-software/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fvagrant-installing-your-software%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fvagrant-installing-your-software%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

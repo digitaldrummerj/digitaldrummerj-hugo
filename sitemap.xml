@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://digitaldrummerj.me/node-download-zip-and-extract/</loc>
+    <lastmod>2017-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/about/</loc>
+    <lastmod>2017-05-19T21:49:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ng2-karma-not-finding-tests/</loc>
+    <lastmod>2017-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ng2-add-bootstrap/</loc>
+    <lastmod>2017-01-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ng2-your-first-project/</loc>
+    <lastmod>2017-01-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ng2-wtf-my-module-wont-route/</loc>
+    <lastmod>2016-12-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ionic-v2-setup-windows/</loc>
+    <lastmod>2016-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ionic-v2-setup-osx/</loc>
+    <lastmod>2016-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/webapi-standard-response/</loc>
+    <lastmod>2016-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/webapi-cors-solved/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/webapi-json-setup/</loc>
+    <lastmod>2016-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/webapi-cors-with-credentials/</loc>
+    <lastmod>2016-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/webapi-getting-started/</loc>
+    <lastmod>2016-08-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/windows-running-multiple-versions-of-node/</loc>
+    <lastmod>2016-07-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/docker-running-container-as-service/</loc>
+    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/docker-windows-mounting-directories/</loc>
+    <lastmod>2016-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/docker-on-windows-getting-started/</loc>
+    <lastmod>2016-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/jekyll-show-liquid-in-code-snippet/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/styling-jekyll-markdown/</loc>
+    <lastmod>2016-05-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/adding-toc-to-markdown/</loc>
+    <lastmod>2016-05-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/reset-dell-tablet/</loc>
+    <lastmod>2016-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/running-a-successful-user-group/</loc>
+    <lastmod>2016-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/jekyll-automated-deployment-to-azure-with-travisci/</loc>
+    <lastmod>2016-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/jekyll-automatically-tweeting-new-post/</loc>
+    <lastmod>2016-02-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/getting-feedback-on-talks-with-twilio/</loc>
+    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/jekyll-validating-links-and-images/</loc>
+    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/angular-calling-filters-in-your-controller/</loc>
+    <lastmod>2016-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/angular-communication-between-parent-and-child-scopes/</loc>
+    <lastmod>2016-01-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/angular-in-action-book-review/</loc>
+    <lastmod>2016-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ionic-ion-item-multiple-icon-inline/</loc>
+    <lastmod>2016-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/preparing-a-presentation/</loc>
+    <lastmod>2016-01-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/angular-running-service-in-console/</loc>
+    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/year-in-review/</loc>
+    <lastmod>2015-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ionic-local-notification/</loc>
+    <lastmod>2015-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/running-gulp-task-in-visual-studio/</loc>
+    <lastmod>2015-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/strongloop-extending-user-model-security/</loc>
+    <lastmod>2015-10-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/installing-gulp-4/</loc>
+    <lastmod>2015-10-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/git-sync-fork-to-master/</loc>
+    <lastmod>2015-10-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/dont-swallow-the-exceptions/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/vagrant-fixing-opentable-basebox/</loc>
+    <lastmod>2015-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/git-syncing-fork-with-original-repo/</loc>
+    <lastmod>2015-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/visual-studio-2015-cordova-tools-and-ionic-framework/</loc>
+    <lastmod>2015-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/</loc>
+    <lastmod>2015-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-12-editing-locally/</loc>
+    <lastmod>2015-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-9-installing-jekyll-on-windows/</loc>
+    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-10-installing-jekyll-on-linux/</loc>
+    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-11-installing-jekyll-osx/</loc>
+    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/camtasia-8.5-record-to-mono/</loc>
+    <lastmod>2015-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/visual-studio-2015-external-web-tools/</loc>
+    <lastmod>2015-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/visual-studio-code-snippets/</loc>
+    <lastmod>2015-08-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/visual-studio-shortcuts/</loc>
+    <lastmod>2015-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/favorite-visual-studio-extensions/</loc>
+    <lastmod>2015-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/windows-shortcuts/</loc>
+    <lastmod>2015-08-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/favorite-windows-software/</loc>
+    <lastmod>2015-07-28T08:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/presentation-setup/</loc>
+    <lastmod>2015-07-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/vagrant-behind-proxy-server/</loc>
+    <lastmod>2015-07-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/vagrant-provisioning-intro/</loc>
+    <lastmod>2015-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/</loc>
+    <lastmod>2015-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/vagrant-installing-boxstarter/</loc>
+    <lastmod>2015-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/vagrant-installing-your-software/</loc>
+    <lastmod>2015-06-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/vagrant-overview/</loc>
+    <lastmod>2015-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/add-git-branch-to-bash-shell/</loc>
+    <lastmod>2015-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/windows8-script-uninstall-default-programs/</loc>
+    <lastmod>2015-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/javascript-sourcemaps/</loc>
+    <lastmod>2015-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/chrome-devtools-black-boxing/</loc>
+    <lastmod>2015-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/remove-npm-spinner/</loc>
+    <lastmod>2015-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/nuget-auto-incrementing-version/</loc>
+    <lastmod>2015-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/business-cards/</loc>
+    <lastmod>2015-05-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/gulp-inject/</loc>
+    <lastmod>2015-04-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-8-using-a-custom-domain/</loc>
+    <lastmod>2015-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-7-adding-a-custom-google-search/</loc>
+    <lastmod>2015-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-6-adding-post-by-date/</loc>
+    <lastmod>2015-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-5-adding-a-category-page/</loc>
+    <lastmod>2015-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-4-creating-additional-pages/</loc>
+    <lastmod>2015-02-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-3-adding-comments/</loc>
+    <lastmod>2015-02-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-2-your-first-post/</loc>
+    <lastmod>2015-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/iis-express-windows-authentication/</loc>
+    <lastmod>2015-02-04T20:45:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blogging-on-github-part-1-getting-started/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ionic-behind-a-proxy/</loc>
+    <lastmod>2015-01-20T20:45:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ionicbox-notes/</loc>
+    <lastmod>2015-01-17T20:45:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/proxy-configurations/</loc>
+    <lastmod>2015-01-16T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/git-command-notes/</loc>
+    <lastmod>2015-01-14T20:45:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ionic-setup-windows/</loc>
+    <lastmod>2015-01-11T20:45:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/ionic-setup-osx/</loc>
+    <lastmod>2015-01-11T20:45:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/android-x86-virtual-machine-instead-of-emulator/</loc>
+    <lastmod>2015-01-11T20:45:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/android/</loc>
+    <lastmod>2016-04-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/angular/</loc>
+    <lastmod>2017-01-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/series/angular2-getting-started/</loc>
+    <lastmod>2017-01-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blog/archive/categoryview/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blog/archive/monthview/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blog/archive/tagcloudview/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/bash/</loc>
+    <lastmod>2015-01-16T20:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blog/archive/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/blogging/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/series/blogging-with-jekyll/</loc>
+    <lastmod>2016-02-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/blog/</loc>
+    <lastmod>2017-10-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/book-reviews/</loc>
+    <lastmod>2016-01-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/bower/</loc>
+    <lastmod>2015-08-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/c#/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/camtasia/</loc>
+    <lastmod>2015-08-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/</loc>
+    <lastmod>2016-04-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/chocolatey/</loc>
+    <lastmod>2015-07-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/chrome/</loc>
+    <lastmod>2015-05-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/community/</loc>
+    <lastmod>2016-02-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/cors/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/debugging/</loc>
+    <lastmod>2015-05-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/series/developer-productivity/</loc>
+    <lastmod>2015-08-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/docker/</loc>
+    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/series/docker-toolkit-windows/</loc>
+    <lastmod>2016-06-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/git/</loc>
+    <lastmod>2015-10-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/github/</loc>
+    <lastmod>2016-05-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/gulp/</loc>
+    <lastmod>2015-11-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/how-to/</loc>
+    <lastmod>2015-05-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/iis/</loc>
+    <lastmod>2015-02-04T20:45:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/ionic/</loc>
+    <lastmod>2016-11-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/series/ionic2-setup/</loc>
+    <lastmod>2016-11-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/jekyll/</loc>
+    <lastmod>2016-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/</loc>
+    <lastmod>2017-10-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/markdown/</loc>
+    <lastmod>2016-05-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/meetup/</loc>
+    <lastmod>2016-02-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/node/</loc>
+    <lastmod>2017-10-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/nodejs/</loc>
+    <lastmod>2016-07-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/npm/</loc>
+    <lastmod>2016-05-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/nuget/</loc>
+    <lastmod>2015-05-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/powershell/</loc>
+    <lastmod>2015-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/productivity/</loc>
+    <lastmod>2015-08-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/programming/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/proxy/</loc>
+    <lastmod>2015-01-20T20:45:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/search/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/series/</loc>
+    <lastmod>2017-01-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/speaking/</loc>
+    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/speaking/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/strongloop/</loc>
+    <lastmod>2015-10-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/series/strongloop-todo/</loc>
+    <lastmod>2015-10-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/thankyou/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/vagrant/</loc>
+    <lastmod>2015-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/series/vagrant-getting-started/</loc>
+    <lastmod>2015-07-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/videos/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/virtualbox/</loc>
+    <lastmod>2015-06-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/visual-studio/</loc>
+    <lastmod>2015-11-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/web-api/</loc>
+    <lastmod>2016-09-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/series/web-api-getting-started/</loc>
+    <lastmod>2016-09-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/webapi/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/windows/</loc>
+    <lastmod>2015-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/workshops/</loc>
+  </url>
+  
+  <url>
+    <loc>http://digitaldrummerj.me/categories/year-in-review/</loc>
+    <lastmod>2015-12-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Nuget - Incrementing Version Before Building" />
+  <meta property="og:description" content="When you are building nuget packages that are not directly using the AssemblyInfo.cs for the version number, you need to make sure to increment the nuget version number before building the package. Inevitable though you will forget to increment the version number and have to build the package a 2nd time. Wouldn&rsquo;t it be great if you could automatically increment the version number before calling nuget pack. Well I have written a powershell script to do just this."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/nuget-auto-incrementing-version/" />
+  <meta property="article:published_time" content="2015-05-04T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2015-05-04T00:00:00&#43;00:00" />
+  <meta itemprop="name" content="Nuget - Incrementing Version Before Building">
+  <meta itemprop="description" content="When you are building nuget packages that are not directly using the AssemblyInfo.cs for the version number, you need to make sure to increment the nuget version number before building the package. Inevitable though you will forget to increment the version number and have to build the package a 2nd time. Wouldn&rsquo;t it be great if you could automatically increment the version number before calling nuget pack. Well I have written a powershell script to do just this.">
+  <meta itemprop="datePublished" content="2015-05-04T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-05-04T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="1074">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Nuget - Incrementing Version Before Building" />
+  <meta name="twitter:description" content="When you are building nuget packages that are not directly using the AssemblyInfo.cs for the version number, you need to make sure to increment the nuget version number before building the package. Inevitable though you will forget to increment the version number and have to build the package a 2nd time. Wouldn&rsquo;t it be great if you could automatically increment the version number before calling nuget pack. Well I have written a powershell script to do just this."
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/nuget-auto-incrementing-version/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Nuget - Incrementing Version Before Building</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-05-04T00:00:00Z">
+        Mon May 04, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/nuget">nuget</a>
+</span></span>
+        </div>
+        <p> </p>
+        <p>
+          <p>When you are building nuget packages that are not directly using the AssemblyInfo.cs for the version number, you need to make sure to increment the nuget version number before building the package. Inevitable though you will forget to increment
+            the version number and have to build the package a 2nd time. Wouldn&rsquo;t it be great if you could automatically increment the version number before calling nuget pack. Well I have written a powershell script to do just this. Below are the
+            details out the script.</p>
+          <ol>
+            <li>In your project directory, create a file called IncrementNugetVersionNumber.ps1</li>
+            <li>Add the following parameters to the top of the file to take in the nuget spec file location and any version parameters.</li>
+          </ol>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">param</span>($NuSpecFile = $(<span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;Mandatory parameter -NuSpecFile not supplied&#34;</span>),
+    $MajorVersion,
+    $MinorVersion,
+    $RevisionVersion)</code></pre>
+          </div>
+          <p>Next we are going to add a bunch of helper functions right under the param code from above. These helper functions will make it easier to deal with the xml queries of the nuget spec document.</p>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> AssignVersionValue(
+    <span style="color:#66d9ef">[string]</span>$oldValue,
+    <span style="color:#66d9ef">[string]</span>$newValue)
+{
+    <span style="color:#66d9ef">if</span> ($newValue <span style="color:#f92672">-eq</span> $null <span style="color:#f92672">-or</span> $newValue <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#34;&#34;</span>) {
+        $oldValue
+    } <span style="color:#66d9ef">else</span> {
+        $newValue
+    }
+}</code></pre>
+          </div>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> Get-XmlNamespaceManager(
+    <span style="color:#66d9ef">[xml]</span>$XmlDocument,
+    <span style="color:#66d9ef">[string]</span>$NamespaceURI = <span style="color:#e6db74">&#34;&#34;</span>)
+{
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">[string]</span>::IsNullOrEmpty($NamespaceURI))
+    {
+        $NamespaceURI = $XmlDocument.DocumentElement.NamespaceURI
+     }
+
+    <span style="color:#66d9ef">[System.Xml.XmlNamespaceManager]</span>$xmlNsManager = New-Object System.Xml.XmlNamespaceManager($XmlDocument.NameTable)
+    $xmlNsManager.AddNamespace(<span style="color:#e6db74">&#34;ns&#34;</span>, $NamespaceURI)
+    <span style="color:#66d9ef">return</span> ,$xmlNsManager
+}</code></pre>
+          </div>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> Get-FullyQualifiedXmlNodePath(
+    <span style="color:#66d9ef">[string]</span>$NodePath,
+    <span style="color:#66d9ef">[string]</span>$NodeSeparatorCharacter = <span style="color:#e6db74">&#39;.&#39;</span>)
+{
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;/ns:</span>$($NodePath.Replace($($NodeSeparatorCharacter), <span style="color:#e6db74">&#39;/ns:&#39;</span>))<span style="color:#e6db74">&#34;</span>
+}</code></pre>
+          </div>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> Get-XmlNode(
+    <span style="color:#66d9ef">[xml]</span>$XmlDocument,
+    <span style="color:#66d9ef">[string]</span>$NodePath,
+    <span style="color:#66d9ef">[string]</span>$NamespaceURI = <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#66d9ef">[string]</span>$NodeSeparatorCharacter = <span style="color:#e6db74">&#39;.&#39;</span>)
+{
+    $xmlNsManager = Get-XmlNamespaceManager -XmlDocument $XmlDocument -NamespaceURI $NamespaceURI
+    <span style="color:#66d9ef">[string]</span>$fullyQualifiedNodePath = Get-FullyQualifiedXmlNodePath -NodePath $NodePath -NodeSeparatorCharacter $NodeSeparatorCharacter
+
+    $node = $XmlDocument.SelectSingleNode($fullyQualifiedNodePath, $xmlNsManager)
+    <span style="color:#66d9ef">return</span> $node
+}</code></pre>
+          </div>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> Get-XmlNodes(
+    <span style="color:#66d9ef">[xml]</span>$XmlDocument,
+    <span style="color:#66d9ef">[string]</span>$NodePath,
+    <span style="color:#66d9ef">[string]</span>$NamespaceURI = <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#66d9ef">[string]</span>$NodeSeparatorCharacter = <span style="color:#e6db74">&#39;.&#39;</span>)
+{
+    $xmlNsManager = Get-XmlNamespaceManager -XmlDocument $XmlDocument -NamespaceURI $NamespaceURI
+    <span style="color:#66d9ef">[string]</span>$fullyQualifiedNodePath = Get-FullyQualifiedXmlNodePath -NodePath $NodePath -NodeSeparatorCharacter $NodeSeparatorCharacter
+
+    $nodes = $XmlDocument.SelectNodes($fullyQualifiedNodePath, $xmlNsManager)
+    <span style="color:#66d9ef">return</span> $nodes
+}</code></pre>
+          </div>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> Get-XmlElementsTextValue(
+    <span style="color:#66d9ef">[xml]</span>$XmlDocument,
+    <span style="color:#66d9ef">[string]</span>$ElementPath,
+    <span style="color:#66d9ef">[string]</span>$NamespaceURI = <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#66d9ef">[string]</span>$NodeSeparatorCharacter = <span style="color:#e6db74">&#39;.&#39;</span>)
+{
+    $node = Get-XmlNode -XmlDocument $XmlDocument -NodePath $ElementPath -NamespaceURI $NamespaceURI -NodeSeparatorCharacter $NodeSeparatorCharacter
+
+    <span style="color:#66d9ef">if</span> ($node) {
+        <span style="color:#66d9ef">return</span> $node.InnerText
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">return</span> $null
+    }
+}</code></pre>
+          </div>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> Set-XmlElementsTextValue(
+    <span style="color:#66d9ef">[xml]</span>$XmlDocument,
+    <span style="color:#66d9ef">[string]</span>$ElementPath,
+    <span style="color:#66d9ef">[string]</span>$TextValue,
+    <span style="color:#66d9ef">[string]</span>$NamespaceURI = <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#66d9ef">[string]</span>$NodeSeparatorCharacter = <span style="color:#e6db74">&#39;.&#39;</span>)
+{
+    $node = Get-XmlNode -XmlDocument $XmlDocument -NodePath $ElementPath -NamespaceURI $NamespaceURI -NodeSeparatorCharacter $NodeSeparatorCharacter
+
+    <span style="color:#66d9ef">if</span> ($node)
+    {
+        $node.InnerText = $TextValue
+    }
+    <span style="color:#66d9ef">else</span>
+    {
+        $elementName = $ElementPath.Substring($ElementPath.LastIndexOf($NodeSeparatorCharacter) + 1)
+        $element = $XmlDocument.CreateElement($elementName, $XmlDocument.DocumentElement.NamespaceURI)
+        $textNode = $XmlDocument.CreateTextNode($TextValue)
+        $element.AppendChild($textNode) &gt; $null
+
+        $parentNodePath = $ElementPath.Substring(0, $ElementPath.LastIndexOf($NodeSeparatorCharacter))
+        $parentNode = Get-XmlNode -XmlDocument $XmlDocument -NodePath $parentNodePath -NamespaceURI $NamespaceURI -NodeSeparatorCharacter $NodeSeparatorCharacter
+
+        <span style="color:#66d9ef">if</span> ($parentNode)
+        {
+            $parentNode.AppendChild($element) &gt; $null
+        }
+        <span style="color:#66d9ef">else</span>
+        {
+            <span style="color:#66d9ef">throw</span> <span style="color:#e6db74">&#34;$parentNodePath does not exist in the xml.&#34;</span>
+        }
+    }
+}</code></pre>
+          </div>
+          <p>Now that the helper functions are added, it is time to create the meat of the script where you will update the version number and write it back to the file.</p>
+          <ol>
+            <li>
+              <p>Get the Full Path of the Nuget spec file from parameter $NuSpecFile</p>
+              <pre><code>$NuSpecFile = Resolve-Path $NuSpecFile
+</code></pre>
+            </li>
+            <li>
+              <p>Once we have the full path, we need to get the contents of the files as an Xml document so that we can run xpath queries on it.</p>
+              <pre><code>[ xml ]$fileContents = Get-Content -Path $NuSpecFile
+</code></pre>
+            </li>
+            <li>
+              <p>Then we need to get the current version number</p>
+              <pre><code>$originalVersion = Get-XmlElementsTextValue -XmlDocument $fileContents -ElementPath &quot;package.metadata.version&quot;
+</code></pre>
+            </li>
+            <li>
+              <p>Set a default version number</p>
+              <pre><code>$newVersion = &quot;1.0.0&quot;
+</code></pre>
+            </li>
+            <li>
+              <p>If there is an existing version number, then we can update it. If not, then use the default version number. This bit of code will break apart the version number into individual segments that we can then update.</p>
+              <pre><code>if ($originalVersion -ne $null)
+{
+    $segments=$originalVersion.Split(&quot;.&quot;)
+    $v1=&quot;1&quot;
+    $v2=&quot;0&quot;
+    $v3=&quot;0&quot;
+
+    if ($segments.Length -gt 0) { $v1=$segments[0] }
+    if ($segments.Length -gt 1) { $v2=$segments[1] }
+    if ($segments.Length -eq 3) { $v3=$segments[2] }
+
+    $v1 = AssignVersionValue $v1 $MajorVersion
+    $v2 = AssignVersionValue $v2 $MinorVersion
+    $v3 = AssignVersionValue $v3 $RevisionVersion
+
+    if ($v1 -eq $null) { $v1 = 1 }
+    if ($v2 -eq $null) { $v2 = 0 }
+    if ($v3 -eq $null) { $v3 = 0 }
+
+
+    $newVersion = &quot;$v1.$v2&quot;
+        #Write-Host &quot;REV: $RevisionVersion&quot;
+    if ($v3 -ne $null -and ($RevisionVersion -eq $null -or $RevisionVersion -eq &quot;&quot;)) {
+        $v3 = ($v3 -as [int]) + 1
+    }
+
+    $newVersion = &quot;$newVersion.$v3&quot;
+}
+</code></pre>
+            </li>
+            <li>
+              <p>Lastly, we need to set the new version number and save the file.</p>
+              <pre><code>write-host &quot;Setting Version to $newVersion&quot;
+
+Set-XmlElementsTextValue -XmlDocument $fileContents -ElementPath &quot;package.metadata.version&quot; -TextValue $newVersion
+$fileContents.Save($NuSpecFile)
+</code></pre>
+            </li>
+          </ol>
+          <p>Now that we have the powershell script built to increment the version number, the next piece is to create the batch file that calls the script and nuget pack.</p>
+          <p>For the batch file you can pass in /major, /minor, /revision, and /outputdir. If any of these are not passed in, it will use the existing values from the nuget spec and output into the current directory.</p>
+          <ol>
+            <li>Create a file called build.cmd</li>
+            <li>
+              <p>Setup the parameters</p>
+              <pre><code>@echo off
+SET OUTPUTDIR=&quot;&quot;
+SET REVISION=&quot;&quot;
+SET MAJOR=&quot;&quot;
+SET MINOR=&quot;&quot;
+</code></pre>
+            </li>
+            <li>
+              <p>Next we need to check the parameters and set each of the individual values.</p>
+              <pre><code>:checkparameters
+:: REM Grab the first variable supplied as a whole. Ex. /action:start
+set SWITCHPARSE=%1
+
+:: REM Check to see if there are no more switches, if so goto end of
+:: parsing, prevents endless loop
+IF [%SWITCHPARSE%] == [] goto end
+
+:: REM Reset variables as clean up.
+set SWITCH=
+set VALUE=
+
+:: In the SWITCHPARSE variable, grab the two tokens separated
+:: by a : and assign the first to SWITCH and the second to VALUE
+for /F &quot;tokens=1,2 delims=:&quot; %%a IN (&quot;%SWITCHPARSE%&quot;) DO (
+    SET SWITCH=%%a
+    set VALUE=%%b
+)
+
+:: Check which action to perform based on the switch
+IF [%SWITCH%] == [/revision] goto setrevision
+IF [%SWITCH%] == [/major] goto setmajorversion
+IF [%SWITCH%] == [/minor] goto setminorversion
+IF [%SWITCH%] == [/outputdir] goto setoutputdir
+:: Perform the action by setting the variable for later use and
+:: shift the command line parameters so the next in line is
+:: ready to be processed
+
+goto end
+
+:setrevision
+set REVISION=%VALUE%
+SHIFT
+goto checkparameters
+
+:setmajorversion
+set MAJOR=%VALUE%
+SHIFT
+goto checkparameters
+
+:setminorversion
+set MINOR=%VALUE%
+SHIFT
+goto checkparameters
+
+:setoutputdir
+set OUTPUTDIR=%VALUE%
+SHIFT
+goto checkparameters
+</code></pre>
+            </li>
+            <li>
+              <p>Finally we need to call the powershell script we created above and increment the version number in the nuget spec.</p>
+              <pre><code>:end
+echo.
+
+echo PowerShell -NoProfile -ExecutionPolicy Bypass -File &quot;..\IncrementNugetVersionNumber.ps1&quot; -NuspecFile &quot;log4net.blank.config.nuspec&quot; -RevisionVersion %REVISION% -MajorVersion %MAJOR% -MinorVersion %MINOR%
+
+PowerShell -NoProfile -ExecutionPolicy Bypass -File &quot;..\IncrementNugetVersionNumber.ps1&quot; -NuspecFile &quot;log4net.appender.console.nuspec&quot; -RevisionVersion %REVISION% -MajorVersion %MAJOR% -MinorVersion %MINOR%
+</code></pre>
+            </li>
+            <li>
+              <p>Finally, we need to call nuget pack to build the nuget package</p>
+              <pre><code>echo.
+echo nuget pack -OUTPUTDIR &quot;%OUTPUTDIR%&quot;
+nuget pack -OUTPUTDIR %OUTPUTDIR%
+</code></pre>
+            </li>
+          </ol>
+          <p>Now anytime that you need to build the nuget package, you just have to call build.cmd and it will spit out an new package with an incremented version number.</p>
+          <p>I know this post was a lot of code. Both of the files that we create can be downloaded at:</p>
+          <p><a href="{{&quot;/Downloads/2015-05-03-Nuget-Auto-Incrementing-Version/IncrementNugetVersionNumber.ps1&quot; | prepend: site.baseurl}}">IncrementNugetVersionNumber.ps1</a></p>
+          <p><a href="{{&quot;/Downloads/2015-05-03-Nuget-Auto-Incrementing-Version/build.cmd&quot; | prepend: site.baseurl }}">build.cmd</a></p>
+        </p>
+        <p> </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Nuget%20-%20Incrementing%20Version%20Before%20Building&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fnuget-auto-incrementing-version%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Nuget%20-%20Incrementing%20Version%20Before%20Building&http://digitaldrummerj.me/nuget-auto-incrementing-version/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fnuget-auto-incrementing-version%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fnuget-auto-incrementing-version%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

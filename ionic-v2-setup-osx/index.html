@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Ionic v2 - Setup on OSx" />
+  <meta property="og:description" content="In order to work with the Ionic framework there is a bit of software installs and configuration that needs to happen in order to deploy to devices. However, many of the guides out there leave out a number of steps that tripped me up when I first started using Ionic.
+This guide will go through all of the steps needed for deploying to an Android and iOS device using a Mac." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/ionic-v2-setup-osx/" />
+  <meta property="article:published_time" content="2016-11-01T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2016-11-01T00:00:00&#43;00:00" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/ionic-v2-setup-windows/" />
+  <meta itemprop="name" content="Ionic v2 - Setup on OSx">
+  <meta itemprop="description" content="In order to work with the Ionic framework there is a bit of software installs and configuration that needs to happen in order to deploy to devices. However, many of the guides out there leave out a number of steps that tripped me up when I first started using Ionic.
+This guide will go through all of the steps needed for deploying to an Android and iOS device using a Mac.">
+  <meta itemprop="datePublished" content="2016-11-01T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2016-11-01T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="2532">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ionic v2 - Setup on OSx" />
+  <meta name="twitter:description" content="In order to work with the Ionic framework there is a bit of software installs and configuration that needs to happen in order to deploy to devices. However, many of the guides out there leave out a number of steps that tripped me up when I first started using Ionic.
+This guide will go through all of the steps needed for deploying to an Android and iOS device using a Mac." />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/ionic-v2-setup-osx/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Ionic v2 - Setup on OSx</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2016-11-01T00:00:00Z">
+        Tue Nov 01, 2016
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/ionic">ionic</a>
+</span></span>
+        </div>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/ionic-v2-setup-windows/">Part 1 - Ionic v2 - How to setup on Windows</a></li>
+              <li class="current"><span>Part 2 - This Article</span> </ul>
+          </div>
+        </p>
+        <p>
+          <p>In order to work with the Ionic framework there is a bit of software installs and configuration that needs to happen in order to deploy to devices. However, many of the guides out there leave out a number of steps that tripped me up when I first
+            started using Ionic.</p>
+          <p>This guide will go through all of the steps needed for deploying to an Android and iOS device using a Mac.</p>
+          <ul>
+            <li>TOC {:toc}</li>
+          </ul>
+          <h2 id="general-install-steps">General Install Steps</h2>
+          <p>For the first part of this tutorial, we will be installing everything to do Ionic development and test your application in Google Chrome. This will be how you will do about 80% of your development since deploying to a device or emulator can
+            be time consuming.</p>
+          <h3 id="node">Node</h3>
+          <blockquote>
+            <p>If you already have Node installed, you can skip this section. {:.warning}</p>
+          </blockquote>
+          <ol>
+            <li>
+              <p>Download the LTS version of node from <a href="https://www.nodejs.org">https://www.nodejs.org</a></p>
+              <ul>
+                <li>If you are using Chrome to download, it may tell you that a file with a pkg extension could be harmful to your computer and ask if you want to keep the file. Make sure to click on the keep button.</li>
+              </ul>
+              <p><img src="/images/ionic2-osx/node-0.png" alt="NodeJs LTS download link" /></p>
+            </li>
+            <li>
+              <p>After the download completes, double-click on the pkg file to run it</p>
+            </li>
+            <li>
+              <p>Click Continue</p>
+              <p><img src="/images/ionic2-osx/node-1.png" alt="NodeJs Install Screen 1" /></p>
+            </li>
+            <li>
+              <p>Click Continue</p>
+              <p><img src="/images/ionic2-osx/node-2.png" alt="NodeJs Install Screen 2" /></p>
+            </li>
+            <li>
+              <p>Click Agree</p>
+              <p><img src="/images/ionic2-osx/node-3.png" alt="NodeJs Install Screen 3" /></p>
+            </li>
+            <li>
+              <p>Click Install</p>
+              <p><img src="/images/ionic2-osx/node-4.png" alt="NodeJs Install Screen 4" /></p>
+            </li>
+            <li>
+              <p>Fill in your login user name and password and click &ldquo;Install Software&rdquo;</p>
+              <p><img src="/images/ionic2-osx/node-5.png" alt="NodeJs Install Screen 5" /></p>
+            </li>
+            <li>
+              <p>It will take a few minutes for NodeJs to install. Once it does, click the Close button</p>
+              <p><img src="/images/ionic2-osx/node-6.png" alt="NodeJs Install Screen 6" /></p>
+            </li>
+            <li>
+              <p>Open a terminal and run the following to verify that node and npm was installed and is available from the command line</p>
+              <pre><code>node -v
+npm -v
+</code></pre>
+            </li>
+          </ol>
+          <blockquote>
+            <p>As of the writing of this post, you should have gotten node v6.9.1 and npm 3.10.8</p>
+          </blockquote>
+          <h3 id="npm-packages">Npm Packages</h3>
+          <p>Next we need to install 3 npm packages for cordova, gulp and ionic. At the time of this publication, ionic is on release candidate 0.</p>
+          <ol>
+            <li>
+              <p>Open a terminal and run the following commands to install the Global NPM packages that we need:</p>
+              <pre><code>sudo npm install -g cordova ionic
+</code></pre>
+            </li>
+            <li>
+              <p>In the terminal run the following to verify that Cordova install correctly. As of the writing of this post, you should get Cordova version 6.4.0</p>
+              <pre><code>cordova -v
+</code></pre>
+              <blockquote>
+                <p>When prompted with &ldquo;May Cordova anonymously report usage statistics to improve the tool over time?&rdquo;, answer Yes or No depending on your preference.</p>
+              </blockquote>
+            </li>
+            <li>
+              <p>In the terminal run the following to verify that Ionic install correctly. As of the writing of this post, you should get Ionic version 2.1.4</p>
+              <pre><code>ionic -v
+</code></pre>
+            </li>
+          </ol>
+          <h3 id="google-chrome">Google Chrome</h3>
+          <blockquote>
+            <p>If you already have Google Chrome installed, you can skip this section. {:.warning}</p>
+          </blockquote>
+          <ol>
+            <li>Download from <a href="https://www.google.com/chrome/browser/desktop/">https://www.google.com/chrome/browser/desktop/</a></li>
+            <li>Double click the dmg file to run it</li>
+            <li>
+              <p>Drag the Google Chrome icon to the Application folder</p>
+              <p><img src="/images/ionic2-osx/chrome-1.png" alt="Google Chrome drag to Application folder" /></p>
+            </li>
+          </ol>
+          <h3 id="visual-studio-code">Visual Studio Code</h3>
+          <blockquote>
+            <p>If you already have Visual Studio Code installed, you can skip to step 5. {:.warning}</p>
+          </blockquote>
+          <ol>
+            <li>
+              <p>Download from <a href="https://code.visualstudio.com">https://code.visualstudio.com/</a></p>
+              <p><img src="/images/ionic2-osx/vscode-download.png" alt="VS Code Download" /></p>
+            </li>
+            <li>
+              <p>Double-click on the downloaded archive to expand the contents.</p>
+            </li>
+            <li>
+              <p>Drag Visual Studio Code.app to the Applications folder, making it available in the Launchpad.</p>
+            </li>
+            <li>
+              <p>Add VS Code to your Dock by right-clicking on the icon and choosing Options, Keep in Dock.</p>
+            </li>
+            <li>
+              <p>Open Visual Studio Code</p>
+            </li>
+            <li>
+              <p>Open the Command Palette (⇧⌘P) and type shell command to find the Shell Command: Install &lsquo;code&rsquo; command in PATH command and double-click on it.</p>
+              <p><img src="/images/ionic2-osx/vscode-cli.png" alt="VSCode install code shell command" /></p>
+            </li>
+            <li>
+              <p>Open the Command Palette (⇧⌘P) and type ext command to find the Extensions: Install Extensions and double-click on it.</p>
+              <p><img src="/images/ionic2-osx/vscode-ext.png" alt="VSCode Open Extensions: Install Extensions" /></p>
+            </li>
+            <li>
+              <p>Enter Cordova into the search box, find the Cordova Tools from Microsoft, and click the Install button</p>
+              <p><img src="/images/ionic2-osx/vscode-ext-cordova.png" alt="VSCode Install Cordova Extensions" /></p>
+            </li>
+            <li>
+              <p>When the install is completed, the Enable button will be available and will restart Visual Studio Code to make the extension after.</p>
+              <p><img src="/images/ionic2-osx/vscode-ext-enable.png" alt="VSCode Install Cordova Tools Enable" /></p>
+            </li>
+            <li>
+              <p>Click Ok on the confirmation prompt</p>
+              <p><img src="/images/ionic2-osx/vscode-ext-enable-confirm.png" alt="VSCode Extension Enable Confirmation" /></p>
+            </li>
+            <li>
+              <p>Visual Studio Code will restart and the extensions will be enabled</p>
+            </li>
+          </ol>
+          <h3 id="validating-general-install-steps">Validating General Install Steps</h3>
+          <ol>
+            <li>Open terminal</li>
+            <li>Navigate the directory where you store you development projects (I use ~/projects)</li>
+            <li>
+              <p>Run the following command to generate an ionic v2 project based on the tabs template</p>
+              <pre><code>ionic start todo tabs --v2
+</code></pre>
+            </li>
+            <li>
+              <p>cd into todo (directory was created by the ionic start command)</p>
+            </li>
+            <li>
+              <p>We are going to run is to make sure that we can run the todo app in the web browser by running:</p>
+              <pre><code>ionic serve --lab
+</code></pre>
+            </li>
+            <li>
+              <p>This will start up a node based web server and the &ndash;lab will tell it to launch a page that shows what the app would look like on an iOS, Android and Windows phone. Granted the node based serve is about 80% accurate but good enough
+                to do a majority of our testing. Ultimately you should test on a device before releasing into the app stores.</p>
+            </li>
+          </ol>
+          <p>At this point, we can create ionic projects and test them in a web browser. However, you have some more steps to complete in order to deploy to Android and iOS devices.</p>
+          <h2 id="android-setup-steps">Android Setup Steps</h2>
+          <p>In this section, we will be installing everything that is needed in order to deploy your application to an Android device or emulator. We will be installing JDK8, Android Studio, Android SDK, Gradle, and Genymotion.</p>
+          <h3 id="jdk-8">JDK 8</h3>
+          <ol>
+            <li>Open a web brower and navigate to <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></li>
+            <li>Download the Java SE Development Kit 8u101 for Mac OSx</li>
+            <li>Open the dmg file after it downloads</li>
+            <li>
+              <p>Double Click on the icon</p>
+              <p><img src="/images/ionic2-osx/jdk8-1.png" alt="JDK8 Install Screen 1" /></p>
+            </li>
+            <li>
+              <p>Click continue</p>
+              <p><img src="/images/ionic2-osx/jdk8-2.png" alt="JDK8 Install Screen 2" /></p>
+            </li>
+            <li>
+              <p>Click Install</p>
+              <p><img src="/images/ionic2-osx/jdk8-3.png" alt="JDK8 Install Screen 3" /></p>
+            </li>
+            <li>
+              <p>Fill in your login user name and password and click &ldquo;Install Software&rdquo;</p>
+              <p><img src="/images/ionic2-osx/jdk8-4.png" alt="JDK8 Install Screen 4" /></p>
+            </li>
+            <li>
+              <p>Once the install completes, click the Close button</p>
+              <p><img src="/images/ionic2-osx/jdk8-6.png" alt="JDK8 Install Screen 6" /></p>
+            </li>
+            <li>
+              <p>Open a terminal and run the following to verify that you can run java from the command line. As of this writing it should return javac 1.8.0_101</p>
+              <pre><code>javac -version
+</code></pre>
+            </li>
+            <li>
+              <p>Open up the vi editor and edit your bash profile. We need to add in the JAVA_HOME environment variable</p>
+              <pre><code>vi ~/.bash_profile
+</code></pre>
+            </li>
+            <li>
+              <p>To edit in vi hit <code>i</code> to enter edit mode and add the text below to the .bash_profile</p>
+              <pre><code>export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home
+</code></pre>
+            </li>
+            <li>
+              <p>Press the <code>esc</code> key to exit edit mode</p>
+            </li>
+            <li>
+              <p>Press <code>:</code> (colon key) to enter command mode.</p>
+            </li>
+            <li>
+              <p>type <code>wq</code> and press enter to save and exit vi</p>
+            </li>
+            <li>
+              <p>Run the following to make the change active in your existing session</p>
+              <pre><code>source ~/.bash_profile
+</code></pre>
+            </li>
+            <li>
+              <p>Test that the $JAVA_HOME variable was set. If should return /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home</p>
+              <pre><code>echo $JAVA_HOME
+</code></pre>
+            </li>
+          </ol>
+          <h3 id="android-sdk">Android SDK</h3>
+          <ol>
+            <li>
+              <p>If you are using Safari to download files you need to change the preference to &ldquo;open safe files after downloading&rdquo; else Safari will automatically unzip the downloaded file into the Download folder and delete the zip file. You
+                can change this option by going into the preferences and unchecking the &ldquo;Open safe files after downloading&rdquo; box</p>
+              <p><img src="/images/ionic2-osx/safari-2-uncheck.png" alt="uncheck open safe files after downloading" /></p>
+            </li>
+            <li>
+              <p>Download from <a href="https://developer.android.com/studio/index.html#downloads">https://developer.android.com/studio/index.html#downloads</a></p>
+              <ul>
+                <li>Version 24.4.1 as of this writing</li>
+              </ul>
+              <p><img src="/images/ionic2-osx/android-sdk-1.png" alt="android sdk download" /></p>
+            </li>
+            <li>
+              <p>When prompt for the license agreement, check the &ldquo;I have read and agree withthe above terms and conditions&rdquo; box and then click on the &ldquo;Download Android-SDK_R24.4.1-MACOSX.zip&rdquo; button</p>
+              <p><img src="/images/ionic2-osx/android-sdk-2.png" alt="android sdk license agreement" /></p>
+            </li>
+            <li>
+              <p>You can close the next dialog as it just tells you there is nothing else to do. Close it by clicking on the X in the upper right of the dialog</p>
+              <p><img src="{{ &quot;android-sdk-3.png" alt="nothing else to do dialog" /></p>
+            </li>
+            <li>
+              <p>Open a terminal</p>
+            </li>
+            <li>
+              <p>Run the following to unzip the android sdk to the Development directory that is under your user home directory</p>
+              <pre><code>mkdir ~/Library/Android &amp;&amp; unzip ~/Downloads/android-sdk_r24.4.1-macosx.zip -d ~/Library/Android/sdk &amp;&amp; mv ~/Library/Android/sdk/android-sdk-macosx/* ~/Library/Android/sdk &amp;&amp; rmdir ~/Library/Android/sdk/android-sdk-macosx
+</code></pre>
+            </li>
+            <li>
+              <p>Open up the vi editor and edit your bash profile. We need to add in the JAVA_HOME environment variable</p>
+              <pre><code>vi ~/.bash_profile
+</code></pre>
+            </li>
+            <li>
+              <p>To edit in vi hit <code>i</code> to enter edit mode and add the text below to the .bash_profile</p>
+              <pre><code>export PATH=${PATH}:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools
+</code></pre>
+            </li>
+            <li>
+              <p>Press the <code>esc</code> key to exit edit mode</p>
+            </li>
+            <li>
+              <p>Press <code>:</code> (colon key) to enter command mode.</p>
+            </li>
+            <li>
+              <p>type <code>wq</code> and press enter to save and exit vi</p>
+            </li>
+            <li>
+              <p>Run the following to make the change active in your existing session</p>
+              <pre><code>source ~/.bash_profile
+</code></pre>
+            </li>
+            <li>
+              <p>Test that the $PATH variable was updated. The command below will return the $PATH variable and the end of the output should include the android-sdk-macosx/tools and android-sdk-macosx/platforms-tools directories.</p>
+              <pre><code>echo $PATH
+</code></pre>
+            </li>
+            <li>
+              <p>Now that the Android SDK manager is installed we need to install the Android SDKs that we will be using</p>
+              <pre><code>echo 'y' | android update sdk --filter tools,platform-tools,build-tools-24.0.3,android-19,android-20,android-21,android-22,android-23,android-24,source-24 --all --no-ui
+</code></pre>
+              <blockquote>
+                <p>Keep an eye on the output from this command. I had it error downloading one of the packages a time or two and had to run the command a 2nd time. {:.warning}</p>
+              </blockquote>
+            </li>
+          </ol>
+          <h3 id="android-studio">Android Studio</h3>
+          <ol>
+            <li>
+              <p>Download from <a href="https://developer.android.com/studio/index.html#downloads">https://developer.android.com/studio/index.html#downloads</a></p>
+              <ul>
+                <li>Version 2.2.2.0 as of this writing.</li>
+              </ul>
+              <p><img src="/images/ionic2-osx/android-studio-download.png" alt="Android Studio Download" /></p>
+            </li>
+            <li>
+              <p>Double-click on the dmg file after it downloads</p>
+            </li>
+            <li>
+              <p>Drag the Android Studio Icon to the Applications folder</p>
+              <p><img src="/images/ionic2-osx/android-studio-1.png" alt="Android Studio icon drag to Applications" /></p>
+            </li>
+            <li>
+              <p>In the Applications folder, launch the Android Studio Application</p>
+              <p><img src="/images/ionic2-osx/android-studio-2.png" alt="Android Studio icon in Applications folder" /></p>
+            </li>
+            <li>
+              <p>In the Complete installation dialog, select &ldquo;I do not have a previous version of Studio or I do not want to import my settings&rdquo;</p>
+              <p><img src="/images/ionic2-osx/android-studio-3.png" alt="Complete Installation selection" /></p>
+            </li>
+            <li>
+              <p>Click Next</p>
+              <p><img src="/images/ionic2-osx/android-studio-4.png" alt="Android Studio Setup Wizard Step 1" /></p>
+            </li>
+            <li>
+              <p>Select Standard for the setup type</p>
+            </li>
+          </ol>
+          <p><img src="/images/ionic2-osx/android-studio-5.png" alt="Android Setup type.  select Standard" /></p>
+          <ol>
+            <li>
+              <p>Most of the Android SDK items were installed as part of the Android SDK isntall but Android Studio has a couple of additional ones that it wants to install. Click the Finish button to install them.</p>
+              <p><img src="/images/ionic2-osx/android-studio-6.png" alt="Android Studio Verify Settings" /></p>
+            </li>
+            <li>
+              <p>It will take a few minutes to download the components</p>
+              <p><img src="/images/ionic2-osx/android-studio-7.png" alt="Android Studio download components" /></p>
+            </li>
+            <li>
+              <p>When prompted for the HAXM installation, enter your user name and password then click Ok</p>
+              <p><img src="/images/ionic2-osx/android-studio-8.png" alt="HAXM installation user credential prompt" /></p>
+            </li>
+            <li>
+              <p>When the install is completed, click the Finish button</p>
+            </li>
+          </ol>
+          <h3 id="virtualbox">Virtualbox</h3>
+          <p>In order to run the Genymotion emulator, we need to install Virtualbox.</p>
+          <ol>
+            <li>
+              <p>Navigate to <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a> and click on the install link for OSx and the extension package. Version 5.1.4 as of this writing.</p>
+              <p><img src="/images/ionic2-osx/virtualbox-download.png" alt="Virtualbox Download Page" /></p>
+            </li>
+            <li>
+              <p>Click on the Virtualbox dmg file after it downloads</p>
+            </li>
+            <li>
+              <p>Double-click on the Virtualbox Icon</p>
+              <p><img src="/images/ionic2-osx/virtualbox-1.png" alt="Virtualbox Icon" /></p>
+            </li>
+            <li>
+              <p>Click the Continue button to determine if it can install Virtualbox</p>
+              <p><img src="/images/ionic2-osx/virtualbox-3.png" alt="Virtualbox Install dialog to see if you can proceed with install" /></p>
+            </li>
+            <li>
+              <p>Click Continue</p>
+              <p><img src="/images/ionic2-osx/virtualbox-4.png" alt="Virtualbox Install Intro" /></p>
+            </li>
+            <li>
+              <p>Click Install</p>
+              <p><img src="/images/ionic2-osx/virtualbox-5.png" alt="Virtualbox Install Space Needed" /></p>
+            </li>
+            <li>
+              <p>Fill in your login user name and password and click &ldquo;Install Software&rdquo;</p>
+              <p><img src="/images/ionic2-osx/virtualbox-6.png" alt="Virtualbox Install Username and Password Dialog" /></p>
+            </li>
+            <li>
+              <p>Click Close</p>
+              <p><img src="/images/ionic2-osx/virtualbox-8.png" alt="Virtualbox Install Completed" /></p>
+            </li>
+          </ol>
+          <p>Now that Virtualbox is installed, we need to install the extension pack.</p>
+          <ol>
+            <li>Double click on the extension pack file that you downloaded earlier.</li>
+            <li>
+              <p>Once Virtualbox is launched, it will ask you if you want to install the extension pack. Click Install</p>
+              <p><img src="/images/ionic2-osx/virtualbox-ext-1.png" alt="vritualbox extension pack" /></p>
+            </li>
+            <li>
+              <p>When the license agreement comes up, once you get to the bottom of it the &ldquo;I Agree&rdquo; button is enable for you to click it.</p>
+              <p><img src="/images/ionic2-osx/virtualbox-ext-2.png" alt="virtualbox license agreement" /></p>
+            </li>
+            <li>
+              <p>When prompted input your username and password then click Ok</p>
+              <p><img src="/images/ionic2-osx/virtualbox-ext-3.png" alt="username and password prompt" /></p>
+            </li>
+            <li>
+              <p>Once the install is completed, click the Ok button</p>
+              <p><img src="/images/ionic2-osx/virtualbox-ext-4.png" alt="virtualbox extension installed" /></p>
+            </li>
+          </ol>
+          <h3 id="genymotion">Genymotion</h3>
+          <ol>
+            <li>Download Genymotion from [<a href="https://www.genymotion.com/fun-zone/)[https://www.genymotion.com/fun-zone/])">https://www.genymotion.com/fun-zone/)[https://www.genymotion.com/fun-zone/])</a>.<br />
+              <ul>
+                <li>Version 2.7.2 as of this writing.</li>
+              </ul>
+            </li>
+            <li>
+              <p>Click the &ldquo;Download Genymotion Personal Edition&rdquo; button</p>
+              <p><img src="/images/ionic2-osx/genymotion-download.png" alt="Genymotion Download Genymotion package button" /></p>
+            </li>
+            <li>
+              <p>Sign in to your Genymotion Account if you have one. If not, then click on the Create Account button</p>
+              <p><img src="/images/ionic2-osx/genymotion-download-signin.png" alt="Genymotion Account signin" /></p>
+            </li>
+            <li>
+              <p>After creating the account and logging in, click on the &ldquo;Download the Mac OSX&rdquo; button</p>
+              <p><img src="/images/ionic2-osx/genymotion-download-osx.png" alt="Genymotion download osx" /></p>
+            </li>
+            <li>
+              <p>Once Genymotion is downloaded, double click the genymotion-2.8.0.dmg file to launch the installer</p>
+            </li>
+            <li>
+              <p>Drag Genymotion and Genymotion Shell to the Applications folder</p>
+              <p><img src="/images/ionic2-osx/genymotion-install-1.png" alt="Genymotion copy to Applications folder" /></p>
+            </li>
+            <li>
+              <p>After Genymotion is installed, open up the Applicaton folder and launch the Genymotion UI</p>
+              <p><img src="/images/ionic2-osx/genymotion-app-icon.png" alt="Genymotion Application Icon" /></p>
+            </li>
+            <li>
+              <p>On the Usage notice dialog click Accept</p>
+              <p><img src="/images/ionic2-osx/genymotion-app-license-agree.png" alt="Genymotion Usage Agreement Dialog" /></p>
+            </li>
+            <li>
+              <p>Click on the Yes button on the &ldquo;You don&rsquo;t have any devices dialog&rdquo;</p>
+              <p><img src="/images/ionic2-osx/genymotion-app-add-new.png" alt="Genymotion Yes to add a new device" /></p>
+            </li>
+            <li>
+              <p>Click the Sign in button</p>
+              <p><img src="/images/ionic2-osx/genymotion-app-sign-in.png" alt="Genymotion Signin button" /></p>
+            </li>
+            <li>
+              <p>Input your account information that you create as part of the Genymotion download.</p>
+              <p><img src="/images/ionic2-osx/genymotion-app-add-new-signin.png" alt="Genymotion add new device accoun sign in" /></p>
+            </li>
+            <li>
+              <p>After you are logged in, from the Android Version drop down select 6.0.0</p>
+              <p><img src="/images/ionic2-osx/genymotion-app-android-version.png" alt="Android Version Dropdown" /></p>
+            </li>
+            <li>
+              <p>Then select a device from the available list and click next. In this case I selected the &ldquo;Custom Phone - 6.0.0 - 768x1280&rdquo;</p>
+              <p><img src="/images/ionic2-osx/genymotion-app-download-device.png" alt="Genymotion Available Virtual devices" /></p>
+            </li>
+            <li>
+              <p>It will take several minutes to download the virtual device. When the download is done, click the Finish button</p>
+              <p><img src="/images/ionic2-osx/genymotion-app-add-new-finished.png" alt="Genymotion Virtual device install finished" /></p>
+            </li>
+          </ol>
+          <h3 id="gradle">Gradle</h3>
+          <ol>
+            <li>
+              <p>If you are using Safari to download files and you didn&rsquo;t change the preference to &ldquo;open safe files after downloading&rdquo; when you downloaded the Android SDK, you need to change it before downloading Gradle. Go into the Safari
+                preferences and uncheck the &ldquo;Open safe files after downloading&rdquo; box. Without doing this, Safari will automatically unzip the downloaded file into the Download folder and delete the zip file.</p>
+              <p><img src="/images/ionic2-osx/safari-2-uncheck.png" alt="uncheck open safe files after downloading" /></p>
+            </li>
+            <li>
+              <p>Download the Gradle Binary Only Distribution from <a href="https://gradle.org/gradle-download/">https://gradle.org/gradle-download/</a></p>
+              <p><img src="/images/ionic2-osx/gradle-1-download.png" alt="gradle download" /></p>
+            </li>
+            <li>
+              <p>Open a terminal</p>
+            </li>
+            <li>
+              <p>Run the following to unzip the android sdk to the Development directory that is under your user home directory</p>
+              <pre><code>unzip ~/Downloads/gradle-3.1-bin.zip -d ~/Development
+</code></pre>
+            </li>
+            <li>
+              <p>Open up the vi editor and edit your bash profile. We need to add in the GRADLE_HOME environment variable</p>
+              <pre><code>vi ~/.bash_profile
+</code></pre>
+            </li>
+            <li>
+              <p>To edit in vi hit <code>i</code> to enter edit mode and add the text below to the .bash_profile</p>
+              <pre><code>export GRADLE_HOME=~/Development/gradle-3.1/bin
+</code></pre>
+            </li>
+            <li>
+              <p>Press the <code>esc</code> key to exit edit mode</p>
+            </li>
+            <li>
+              <p>Press <code>:</code> (colon key) to enter command mode.</p>
+            </li>
+            <li>
+              <p>type <code>wq</code> and press enter to save and exit vi</p>
+            </li>
+            <li>
+              <p>Run the following to make the change active in your existing session</p>
+              <pre><code>source ~/.bash_profile
+</code></pre>
+            </li>
+            <li>
+              <p>Test it by running</p>
+              <pre><code>echo $GRADLE_HOME
+</code></pre>
+            </li>
+          </ol>
+          <h3 id="verify-android-setup">Verify Android Setup</h3>
+          <p>Next we are going to test our Android device setup. The first thing we need to do is tell ionic that we want to add the Android platform to our todo application that we created earlier.</p>
+          <ol>
+            <li>Open a terminal and navigate to ~/projects/todo</li>
+            <li>
+              <p>Add the android platform</p>
+              <pre><code>ionic platform add android
+</code></pre>
+            </li>
+          </ol>
+          <p>Now we need to validate that we can build for Android, run the following:</p>
+          <pre><code>    ionic build android
+</code></pre>
+          <p>The last thing we need to verify is that we can deploy the todo app to the Genymotion Emulator. Before we can deploy the application, we need to start up Genymotion Device that we want to deploy to.</p>
+          <ol>
+            <li>
+              <p>Once the Genymotion device is started, you can deploy to it by running:</p>
+              <pre><code>ionic run android
+</code></pre>
+            </li>
+          </ol>
+          <p>You are now ready to go create your ionic applications for the Android platform. Continue with the guide to setup for developing for the iOS platform.</p>
+          <h2 id="ios-setup-steps">iOS Setup Steps</h2>
+          <h3 id="xcode">XCode</h3>
+          <ol>
+            <li>Install Xcode from app store. This will take awhile since it is ~2 gigs in size.</li>
+            <li>
+              <p>Once install is completed, open xcode and accept the license</p>
+              <ul>
+                <li>
+                  <p>If prompted to install additional required components, click Install</p>
+                  <p><img src="/images/ionic2-osx/xcode-1.png" alt="xcode additional components prompt" /></p>
+                </li>
+                <li>
+                  <p>When prompted for credentials, enter username and password then click Ok</p>
+                  <p><img src="/images/ionic2-osx/xcode-2.png" alt="credentials for xcode install" /></p>
+                </li>
+                <li>
+                  <p>It will take a few minutes to complete the install</p>
+                  <p><img src="/images/ionic2-osx/xcode-3.png" alt="installing xcode additional components" /></p>
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <h3 id="ios-simulator">iOS Simulator</h3>
+          <ol>
+            <li>
+              <p>Install the iOS Simulator that Ionic will use.</p>
+              <p>npm install -g ios-sim</p>
+              <blockquote>
+                <p>You may need to start the npm install command with sudo depending on your node setup.</p>
+              </blockquote>
+            </li>
+          </ol>
+          <h3 id="ios-deploy-package">iOS Deploy Package</h3>
+          <ol>
+            <li>
+              <p>Install the iOS Deploy npm package</p>
+              <p>npm install -g ios-deploy</p>
+              <blockquote>
+                <p>You may need to start the npm install command with sudo depending on your node setup.</p>
+              </blockquote>
+            </li>
+          </ol>
+          <h3 id="verifying-ios-setup">Verifying iOS Setup</h3>
+          <ol>
+            <li>Open terminal</li>
+            <li>Navigate the directory where you store you development projects (I use ~/projects)</li>
+            <li>
+              <p>Run the following command to generate an ionic v2 project based on the tabs template</p>
+              <p>ionic start todo tabs &ndash;v2</p>
+            </li>
+            <li>
+              <p>cd into todo (directory was created by the ionic start command)</p>
+            </li>
+          </ol>
+          <p>The first test that we are going to run is to make sure that we can test the todo app that we generated in the web browser by running:</p>
+          <pre><code>    ionic serve --lab
+</code></pre>
+          <p>This will start up a node based web server and the &ndash;lab will tell it to launch a page that shows what the app would look like on an iOS, Android and Windows phone. Granted the node based serve is about 80% accurate but good enough to do
+            a majority of our testing. Ultimately you should test on a device before releasing into the app stores.</p>
+          <p>Next we are going to test our iOS device setup. The first thing we need to do is tell ionic that we want to add the iOS platform to our todo app by running:</p>
+          <pre><code>    ionic platform add ios
+</code></pre>
+          <p>This sets up the todo app to be able to be build and deployed to an iOS device. To validate that we can build for iOS, run the following:</p>
+          <pre><code>    ionic build ios
+</code></pre>
+          <p>The last thing we need to verify is that we can deploy the todo app to the iOS Simulator.</p>
+          <ol>
+            <li>
+              <p>For the iOS Simulator, run the following:</p>
+              <p>ionic run ios</p>
+            </li>
+          </ol>
+          <h2 id="congratulations">Congratulations</h2>
+          <p>Congratulations, you made it through the guide and have everything setup to create your ionic applications for both Android and Ionic.</p>
+        </p>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/ionic-v2-setup-windows/">Part 1 - Ionic v2 - How to setup on Windows</a></li>
+              <li class="current"><span>Part 2 - This Article</span> </ul>
+          </div>
+        </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Ionic%20v2%20-%20Setup%20on%20OSx&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fionic-v2-setup-osx%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Ionic%20v2%20-%20Setup%20on%20OSx&http://digitaldrummerj.me/ionic-v2-setup-osx/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fionic-v2-setup-osx%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fionic-v2-setup-osx%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Ionic - Setup on OSx" />
+  <meta property="og:description" content="Updates:
+ 2016-08-13: Added Gradle and VS Code. Changed from JDK7 to JDK8. Removed Ant.
+  If you are like me and just starting to work with the Ionic Framework and don’t already have a machine setup to do Android, iOS, Node, etc development then many of the guides out there leave out a number of steps that you need to do in order to get everything working."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/ionic-setup-osx/" />
+  <meta property="article:published_time" content="2015-01-11T20:45:35&#43;00:00" />
+  <meta property="article:modified_time" content="2015-01-11T20:45:35&#43;00:00" />
+  <meta itemprop="name" content="Ionic - Setup on OSx">
+  <meta itemprop="description" content="Updates:
+ 2016-08-13: Added Gradle and VS Code. Changed from JDK7 to JDK8. Removed Ant.
+  If you are like me and just starting to work with the Ionic Framework and don’t already have a machine setup to do Android, iOS, Node, etc development then many of the guides out there leave out a number of steps that you need to do in order to get everything working.">
+  <meta itemprop="datePublished" content="2015-01-11T20:45:35&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-01-11T20:45:35&#43;00:00" />
+  <meta itemprop="wordCount" content="990">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ionic - Setup on OSx" />
+  <meta name="twitter:description" content="Updates:
+ 2016-08-13: Added Gradle and VS Code. Changed from JDK7 to JDK8. Removed Ant.
+  If you are like me and just starting to work with the Ionic Framework and don’t already have a machine setup to do Android, iOS, Node, etc development then many of the guides out there leave out a number of steps that you need to do in order to get everything working."
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/ionic-setup-osx/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Ionic - Setup on OSx</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-01-11T20:45:35Z">
+        Sun Jan 11, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/ionic">ionic</a>
+</span></span>
+        </div>
+        <p> </p>
+        <p>
+          <p>Updates:</p>
+          <ul>
+            <li>2016-08-13: Added Gradle and VS Code. Changed from JDK7 to JDK8. Removed Ant.<br /></li>
+          </ul>
+          <p>If you are like me and just starting to work with the Ionic Framework and don’t already have a machine setup to do Android, iOS, Node, etc development then many of the guides out there leave out a number of steps that you need to do in order
+            to get everything working.</p>
+          <p>Even being a Windows user I was able to pretty easily get Ionic working on a Mac. The only difference between the Windows setup and the OSx setup is that you can build for an iOS device on a Mac.</p>
+          <h2 id="software-to-be-installed">Software to be installed</h2>
+          <ul>
+            <li><a href="https://nodejs.org">NodeJS</a></li>
+            <li><a href="https://docs.gradle.org/current/userguide/installation.html">Gradle</a></li>
+            <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK8</a></li>
+            <li><a href="http://developer.android.com/sdk/index.html#Other">Android SDK</a></li>
+            <li><a href="http://developer.android.com/sdk/index.html#Other">Android Studio</a></li>
+            <li><a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a></li>
+            <li>Global Npm Modules:
+              <ul>
+                <li><a href="https://www.npmjs.com/package/cordova">cordova</a></li>
+                <li><a href="https://www.npmjs.com/package/gulp-cli">gulp cli</a></li>
+                <li><a href="https://www.npmjs.com/package/bower">bower</a></li>
+                <li><a href="https://www.npmjs.com/package/ionic">ionic</a></li>
+                <li><a href="https://www.npmjs.com/package/ios-sim">ios-sim</a><br /></li>
+              </ul>
+            </li>
+            <li><a href="https://www.genymotion.com/">Genymotion</a> (Android emulator replacement) `- XCode</li>
+            <li>XCode Command Line Tools</li>
+          </ul>
+          <h2 id="general-install-steps">General Install Steps</h2>
+          <h3 id="google-chrome">Google Chrome</h3>
+          <p>We need Google Chrome in order to debug our application when it is running on a device. The device emulation and developer tools are also extremely useful to have.</p>
+          <p>Download from <a href="https://www.google.com/chrome/browser/desktop/">https://www.google.com/chrome/browser/desktop/</a></p>
+          <h3 id="node">Node</h3>
+          <ol>
+            <li>Install the LTS version of node from <a href="https://www.nodejs.org">https://www.nodejs.org</a></li>
+          </ol>
+          <h3 id="npm-packages">Npm Packages</h3>
+          <ol>
+            <li>
+              <p>Open a terminal and run the following commands to install the Global NPM packages that we need:</p>
+              <pre><code>sudo npm install -g cordova
+sudo npm install -g ionic
+sudo npm install -g gulp
+sudo npm install -g Bower
+</code></pre>
+            </li>
+          </ol>
+          <p>At this point, we can create ionic projects and test them in a web browser. To make sure that functionality is working:</p>
+          <h3 id="verifying-general-install">Verifying General Install</h3>
+          <ol>
+            <li>In your open terminal, navigate to the directory where you store your development projects (I use ~/projects)</li>
+            <li>
+              <p>From ~/projects run:</p>
+              <p>ionic start todo blank</p>
+            </li>
+            <li>
+              <p>cd into todo (directory was created by the ionic start command)</p>
+            </li>
+            <li>
+              <p>Run the following command to run the todo app we generated in a web browser</p>
+              <p>ionic serve &ndash;lab</p>
+            </li>
+          </ol>
+          <p>In the next section, we will install everything needed to deploy to an Android device.</p>
+          <h2 id="android-setup-steps">Android Setup Steps</h2>
+          <p>In order to deploy to an Android device you need to install the Java JDK, Android Studio, and Android SDK. We will walk through installing all of the required software setup.</p>
+          <h3 id="jdk-8">JDK 8</h3>
+          <p>Download from <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+          <p>After the install, launch a terminal and create a ~/.bash_profile if it doesn&rsquo;t already exist. You can use touch ~/.bash_profile to create the file. - Open up either vi or nano and add the following line:</p>
+          <p>export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_72.jdk/Contents/Home</p>
+          <h3 id="android-studio">Android Studio</h3>
+          <p>Download from <a href="http://developer.android.com/sdk/index.html#Other">http://developer.android.com/sdk/index.html#Other</a></p>
+          <h3 id="android-sdk">Android SDK</h3>
+          <p>Download the Android SDK from [<a href="http://developer.android.com/sdk/index.html#Other](http://developer.android.com/sdk/index.html#Other_">http://developer.android.com/sdk/index.html#Other](http://developer.android.com/sdk/index.html#Other_</a></p>
+          <p>Unzip the downloaded SDK to to ~/Development</p>
+          <p>Open ~/.bash_profile and add the following line:</p>
+          <pre><code>export PATH=${PATH}:/users/[Your UserName]/Development/android-sdk-macosx/tools:/users/[Your Username]/Development/android-sdk-macosx/platform-tools
+</code></pre>
+          <p>In the terminal type source ~/.bash_profile to load the ~/.bash_profile changes.</p>
+          <p>Now we need to download the Android APIs versions that we care about. In this case, we are only going to install the API 23 Android SDK Tools and Android SDK Build-Tools</p>
+          <p>In the terminal window, type android to launch the Android SDK Manager.</p>
+          <p>Install the the following</p>
+          <ul>
+            <li>Tools -&gt; Android SDK Tools</li>
+            <li>Tools -&gt; Android SDK Build-Tools</li>
+            <li>Tools -&gt; Android Platform-Tools</li>
+            <li>API 23 -&gt; SDK Platform</li>
+          </ul>
+          <h3 id="genymotion-setup">Genymotion Setup</h3>
+          <p>Download Genymotion from <a href="https://www.genymotion.com/">https://www.genymotion.com/</a>.</p>
+          <blockquote>
+            <p>The Genymotion installer will also install VirtualBox if it is not already installed.</p>
+          </blockquote>
+          <p>Once Genymotion is installed, we need to download a device.</p>
+          <ul>
+            <li>Open up the Genymotion UI and click on the Add Button.</li>
+            <li>Then click the Sign in button and follow the login instructions to login with the account that you create as part of the Genymotion download.</li>
+            <li>After you are logged in, select from the Android Version drop down 4.4.4</li>
+            <li>From the Device model drop down select a device type</li>
+            <li>Then select a device from the available list</li>
+            <li>Click the Next button.</li>
+            <li>Click the Next button and wait for the device to download</li>
+            <li>Click the Finish button.</li>
+          </ul>
+          <h3 id="verify-the-android-setup">Verify the Android Setup</h3>
+          <ol>
+            <li>Open terminal</li>
+            <li>Navigate to the todo app that we create as part of the general install verification. (I used ~/projects/todo)</li>
+            <li>
+              <p>If you need to ceate the todo app run the following from ~/projects:</p>
+              <p>ionic start todo blank</p>
+            </li>
+            <li>
+              <p>cd into todo (directory was created by the ionic start command)</p>
+            </li>
+            <li>
+              <p>The todo app is now setup to be able to deploy to an Android device. To validate that we can build for Android, run the following:</p>
+              <pre><code>ionic platform add android
+</code></pre>
+            </li>
+            <li>
+              <p>The todo app is now setup to be able to deploy to an Android device. To validate that we can build for Android, run the following:</p>
+              <pre><code>ionic build android
+</code></pre>
+            </li>
+            <li>
+              <p>The last thing we need to verify is that we can deploy the todo app to the Genymotion Emulator. Before we can deploy the application, we need to start up the emulator.</p>
+            </li>
+            <li>
+              <p>Start the Genymotion device you downloaded and run:</p>
+              <p>ionic run android</p>
+            </li>
+          </ol>
+          <p>You are now ready to go create ionic applications that you deploy to an Android device.</p>
+          <h2 id="ios-setup-steps">iOS Setup Steps</h2>
+          <h3 id="xcode-setup">XCode Setup</h3>
+          <ol>
+            <li>Install Xcode from app store. This will take awhile since it is ~2 gigs in size.
+              <ul>
+                <li>Once install is completed, open xcode and accept the license</li>
+              </ul>
+            </li>
+            <li>
+              <p>Install the iOS Simulator that Ionic will use.</p>
+              <p>npm install -g iOS-sim</p>
+              <blockquote>
+                <p>Note that if you just install NodeJs without using HomeBrew, you may have to add sudo in front of the npm install commands.</p>
+              </blockquote>
+            </li>
+          </ol>
+          <h3 id="verify-the-ios-setup">Verify the iOS Setup</h3>
+          <ol>
+            <li>Open terminal</li>
+            <li>Navigate the directory where you store you development projects (I use ~/projects)</li>
+            <li>
+              <p>If you need to generate the todo app, run the following command from the ~/projects directory</p>
+              <p>ionic start todo tabs</p>
+            </li>
+            <li>
+              <p>cd into todo (directory was created by the ionic start command)</p>
+            </li>
+            <li>
+              <p>We need to do is tell ionic that we want to add the iOS platform to our todo app by running:</p>
+              <pre><code>ionic platform add iOS
+</code></pre>
+            </li>
+            <li>
+              <p>The todo app is now setup to be able to deploy to an iOS device. To validate that we can build for iOS, run the following:</p>
+              <pre><code>ionic build iOS
+</code></pre>
+            </li>
+            <li>
+              <p>The last thing we need to verify is that we can deploy the todo app to the iOS Simulator by running:</p>
+              <p>ionic run iOS</p>
+            </li>
+          </ol>
+          <p>You are now ready to go create your ionic applications.</p>
+        </p>
+        <p> </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Ionic%20-%20Setup%20on%20OSx&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fionic-setup-osx%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Ionic%20-%20Setup%20on%20OSx&http://digitaldrummerj.me/ionic-setup-osx/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fionic-setup-osx%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fionic-setup-osx%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

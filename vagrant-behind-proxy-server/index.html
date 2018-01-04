@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Vagrant Part 6 - Behind A Proxy Server" />
+  <meta property="og:description" content="Overview If you are working behind a proxy server you will need to configure both the host computer and the Vagrant virtual machines to communicate through the proxy server. It is easy to configure the proxy settings but finding the documentation is a different story. Below we will go through how to configure the proxy for the vagrant commands (up, status, box add, etc) and then how to configure the virtual machine proxy settings."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/vagrant-behind-proxy-server/" />
+  <meta property="article:published_time" content="2015-07-06T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2015-07-06T00:00:00&#43;00:00" />
+  <meta itemprop="name" content="Vagrant Part 6 - Behind A Proxy Server">
+  <meta itemprop="description" content="Overview If you are working behind a proxy server you will need to configure both the host computer and the Vagrant virtual machines to communicate through the proxy server. It is easy to configure the proxy settings but finding the documentation is a different story. Below we will go through how to configure the proxy for the vagrant commands (up, status, box add, etc) and then how to configure the virtual machine proxy settings.">
+  <meta itemprop="datePublished" content="2015-07-06T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-07-06T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="538">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Vagrant Part 6 - Behind A Proxy Server" />
+  <meta name="twitter:description" content="Overview If you are working behind a proxy server you will need to configure both the host computer and the Vagrant virtual machines to communicate through the proxy server. It is easy to configure the proxy settings but finding the documentation is a different story. Below we will go through how to configure the proxy for the vagrant commands (up, status, box add, etc) and then how to configure the virtual machine proxy settings."
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/vagrant-behind-proxy-server/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Vagrant Part 6 - Behind A Proxy Server</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-07-06T00:00:00Z">
+        Mon Jul 06, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/vagrant">vagrant</a>/ <a href="/categories/chocolatey">chocolatey</a>
+</span></span>
+        </div>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/vagrant-overview/">Part 1 - Vagrant Part 1 - Easy Virtual Machine Management</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-provisioning-intro/">Part 2 - Vagrant Part 2 - Provisioning Introduction</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/">Part 3 - Vagrant Part 3 - Provisioning With Chocolatey</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-installing-boxstarter/">Part 4 - Vagrant Part 4 - Install Boxstarter</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-installing-your-software/">Part 5 - Vagrant Part 5 - Installing Your Software</a></li>
+              <li class="current"><span>Part 6 - This Article</span> </ul>
+          </div>
+        </p>
+        <p>
+          <h2 id="overview">Overview</h2>
+          <p>If you are working behind a proxy server you will need to configure both the host computer and the Vagrant virtual machines to communicate through the proxy server. It is easy to configure the proxy settings but finding the documentation is
+            a different story. Below we will go through how to configure the proxy for the vagrant commands (up, status, box add, etc) and then how to configure the virtual machine proxy settings.</p>
+          <h2 id="vagrant-commands">Vagrant Commands</h2>
+          <p>In order for the Vagrant commands that talk out to the internet to work there are several environment variables that need to be set.</p>
+          <p>The typical proxy environment variables are http_proxy and https_proxy. You can either permanently set them so they are always available or you can set them only for the current open command prompt/terminal.</p>
+          <h2 id="on-windows">On Windows</h2>
+          <h3 id="current-open-command-prompt">Current Open Command Prompt</h3>
+          <pre><code>set http_proxy=http://yourproxyserver:port
+set https_proxy=https://yourproxyserver:port
+</code></pre>
+          <h3 id="permantly-set">Permantly Set</h3>
+          <pre><code>setx http_proxy=http://yourproxyserver:port
+setx https_proxy=https://yourproxyserver:port
+</code></pre>
+          <h3 id="view-proxy-settings">View Proxy Settings</h3>
+          <p>If the commands below just echo out the text instead of the actual proxy server, it means that the proxy server is not set.</p>
+          <pre><code>echo %http_proxy%
+echo %https_proxy%
+</code></pre>
+          <h3 id="removing-proxy-setting">Removing Proxy Setting</h3>
+          <p>Unfortunately there is no way to remove the proxy settings from the command line without issuing a reg delete. For whatever reason, Microsoft only allows you to blank out an environment variable with setx but not remove it. Luckily, this does
+            make it so that Vagrant will not use a proxy to connect to the internet.</p>
+          <h2 id="vagrant-boxes-virtual-machines">Vagrant Boxes (Virtual Machines)</h2>
+          <p>
+            <div class="panel"> <span style="color: red">WARNING: </span>As of September 13, 2015, the vagrant-proxyconf appears to no longer work on Windows machines. It has been throwing powershell errors on vagrant up. It still works on Linux vagrant machines. </div>
+            In order to configure the vagrant virtual machines to use a proxy server, you need to install the vagrant-proxyconf plugin.</p>
+          <pre><code>vagrant plugin install vagrant-proxyconf
+</code></pre>
+          <p>The vagrant-proxyconf can configure the proxy settings for Generic Proxy environment variables, Chef, Apt, Docker, Git, npm, PEAR, Subversion, Yum, and Windows.</p>
+          <p>Below we will walk through the basics of using the vagrant-proxyconf plugin. You can read the full documentation at <a href="https://github.com/tmatilai/vagrant-proxyconf">https://github.com/tmatilai/vagrant-proxyconf</a>.</p>
+          <h3 id="ensuring-the-plugin-is-installed">Ensuring the plugin is installed</h3>
+          <p>There is no built-in vagrant command to make sure that a plugin is installed but since the Vagrantfile is a Ruby file, it is very easy to write a little bit of Ruby code to ensure that the plugin is installed.</p>
+          <p>In the Vagrantfile before the <strong>Vagrant.configure(2) do |config|</strong> line added the following code snippet:</p>
+          <pre><code>if !Vagrant.has_plugin?(&quot;vagrant-proxyconf&quot;) 
+        system('vagrant plugin install vagrant-proxyconf')     
+
+     raise(&quot;vagrant-proxyconf installed. Run command again.&quot;);
+end
+</code></pre>
+          <h3 id="generic-proxy-settings">Generic Proxy Settings</h3>
+          <p>You can either configure the Vagrant proxy settings on a per Vagrant virtual machine basis or globally.</p>
+          <p>To configure on a per machine basis, add the code snippet below to the the machines VagrantFile.</p>
+          <p>To configure global add the code snippet below to VagrantFile at .vagrant.d/Vagrantfile. You may need to create this file. To learn more about a global VagrantFile and the order that the VagrantFile&rsquo;s are read see <a href="http://docs.vagrantup.com/v2/vagrantfile/">http://docs.vagrantup.com/v2/vagrantfile/</a>.</p>
+          <pre><code>Vagrant.configure(&quot;2&quot;) do |config|
+  if Vagrant.has_plugin?(&quot;vagrant-proxyconf&quot;)
+    config.proxy.http     = &quot;http://192.168.0.2:3128/&quot;
+    config.proxy.https    = &quot;http://192.168.0.2:3128/&quot;
+    config.proxy.no_proxy = &quot;localhost,127.0.0.1,.example.com&quot;
+  end
+  # ... rest of the configurations
+end
+</code></pre>
+          <h2 id="next-steps">Next Steps</h2>
+          <p>Now you have everything you need to configure Vagrant to work from behind a proxy server. In the next lesson we will cover the different networking options for Vagrant.</p>
+        </p>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/vagrant-overview/">Part 1 - Vagrant Part 1 - Easy Virtual Machine Management</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-provisioning-intro/">Part 2 - Vagrant Part 2 - Provisioning Introduction</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-provisioning-with-chocolatey/">Part 3 - Vagrant Part 3 - Provisioning With Chocolatey</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-installing-boxstarter/">Part 4 - Vagrant Part 4 - Install Boxstarter</a></li>
+              <li><a href="http://digitaldrummerj.me/vagrant-installing-your-software/">Part 5 - Vagrant Part 5 - Installing Your Software</a></li>
+              <li class="current"><span>Part 6 - This Article</span> </ul>
+          </div>
+        </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Vagrant%20Part%206%20-%20Behind%20A%20Proxy%20Server&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fvagrant-behind-proxy-server%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Vagrant%20Part%206%20-%20Behind%20A%20Proxy%20Server&http://digitaldrummerj.me/vagrant-behind-proxy-server/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fvagrant-behind-proxy-server%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fvagrant-behind-proxy-server%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

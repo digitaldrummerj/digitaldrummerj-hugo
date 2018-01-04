@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Ionic - The Ionicbox and How To Use It" />
+  <meta property="og:description" content="If you have looked at setting up the Ionic Framework or have it done it before, you know on much of a pain it can be, especially when something doesn&rsquo;t work. Luckily, Ionic offers a free virtual machine called Ionicbox that is already configured with all of the software that you need.
+Prerequisites: Before you can use Ionicbox you need to install VirtualBox and Vagrant. If you are on Windows and using Chocolatey, you can install both using cinst virtualbox and cinst vagrant." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/ionicbox-notes/" />
+  <meta property="article:published_time" content="2015-01-17T20:45:35&#43;00:00" />
+  <meta property="article:modified_time" content="2015-01-17T20:45:35&#43;00:00" />
+  <meta itemprop="name" content="Ionic - The Ionicbox and How To Use It">
+  <meta itemprop="description" content="If you have looked at setting up the Ionic Framework or have it done it before, you know on much of a pain it can be, especially when something doesn&rsquo;t work. Luckily, Ionic offers a free virtual machine called Ionicbox that is already configured with all of the software that you need.
+Prerequisites: Before you can use Ionicbox you need to install VirtualBox and Vagrant. If you are on Windows and using Chocolatey, you can install both using cinst virtualbox and cinst vagrant.">
+  <meta itemprop="datePublished" content="2015-01-17T20:45:35&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-01-17T20:45:35&#43;00:00" />
+  <meta itemprop="wordCount" content="1389">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ionic - The Ionicbox and How To Use It" />
+  <meta name="twitter:description" content="If you have looked at setting up the Ionic Framework or have it done it before, you know on much of a pain it can be, especially when something doesn&rsquo;t work. Luckily, Ionic offers a free virtual machine called Ionicbox that is already configured with all of the software that you need.
+Prerequisites: Before you can use Ionicbox you need to install VirtualBox and Vagrant. If you are on Windows and using Chocolatey, you can install both using cinst virtualbox and cinst vagrant." />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/ionicbox-notes/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Ionic - The Ionicbox and How To Use It</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-01-17T20:45:35Z">
+        Sat Jan 17, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/ionic">ionic</a>/ <a href="/categories/vagrant">vagrant</a>/ <a href="/categories/virtualbox">virtualbox</a>
+</span></span>
+        </div>
+        <p> </p>
+        <p>
+          <p>If you have looked at setting up the <a href="http://www.ionicframework.com">Ionic Framework</a> or have it done it before, you know on much of a pain it can be, especially when something doesn&rsquo;t work. Luckily, Ionic offers a free virtual
+            machine called <a href="https://github.com/driftyco/ionic-box">Ionicbox</a> that is already configured with all of the software that you need.</p>
+          <h2 id="prerequisites">Prerequisites:</h2>
+          <p>Before you can use <a href="https://github.com/driftyco/ionic-box">Ionicbox</a> you need to install <a href="http://www.virtualbox.org">VirtualBox</a> and <a href="http://www.vagrantup.com">Vagrant</a>. If you are on Windows and using <a href="http://www.chocolatey.org">Chocolatey</a>,
+            you can install both using cinst virtualbox and cinst vagrant.</p>
+          <p><a href="http://www.virtualbox.org">VirtalBox</a> is a free virtual machine program. A virtual machine is a complete computer and operating system run from within your current operating system. It makes it possible to run Linux on a Windows
+            Machine, Windows on a Mac, etc.</p>
+          <p><a href="http://www.vagrantup.com">Vagrant</a> is an easy way to manage virtual machines. A full explaination is out of scope for this article.</p>
+          <h2 id="ionic-box">Ionic Box</h2>
+          <p>Make sure that you installed VirtualBox and Vagrant before proceeding.</p>
+          <h2 id="installing">Installing</h2>
+          <ol>
+            <li>
+              <p>Open Windows Explorer and create a directory where you want to hold all of your Vagrant configuration files</p>
+            </li>
+            <li>
+              <p>Instead the directory created in step 1, create a directory called IonicBox</p>
+            </li>
+            <li>
+              <p>In Windows Explorer, create the directory under the c drive called projects (i.e. c:\projects)</p>
+            </li>
+            <li>
+              <p>In Windows Explorer, do a shift+right click on the IonicBox directory and select Open Command Prompt</p>
+            </li>
+            <li>
+              <p>Run: vagrant init drifty/ionic-android</p>
+            </li>
+            <li>
+              <p>Open notepad</p>
+            </li>
+            <li>
+              <p>In notepad, open the VagrantFile created in the IonicBox directory.</p>
+            </li>
+            <li>
+              <p>select all of the text in the VagrantFile and remove it</p>
+            </li>
+            <li>
+              <p>Copy the following text into the VagrantFile</p>
+            </li>
+          </ol>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># -*- mode: ruby -*-
+</span>
+<span style="color:#75715e"># vi: set ft=ruby :
+</span>
+<span style="color:#66d9ef">Vagrant</span><span style="color:#f92672">.</span>configure(<span style="color:#ae81ff">2</span><span style="color:#f92672"></span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>config<span style="color:#f92672">|</span>
+ config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>box <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;drifty/ionic-android&#34;</span>
+ config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>hostname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;[Replace with what you want your Host Name to be]&#34;</span> <span style="color:#75715e"># No Spaced Allowed
+</span>
+ config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>boot_timeout <span style="color:#f92672">=</span> <span style="color:#ae81ff">600</span>
+ <span style="color:#f92672"></span>config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>network <span style="color:#e6db74">:forwarded_port</span>, <span style="color:#e6db74">host</span>: <span style="color:#ae81ff">8100</span><span style="color:#f92672"></span>, <span style="color:#e6db74">guest</span>: <span style="color:#ae81ff">8100</span>
+ <span style="color:#f92672"></span>config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>network <span style="color:#e6db74">:forwarded_port</span>, <span style="color:#e6db74">host</span>: <span style="color:#ae81ff">35729</span><span style="color:#f92672"></span>, <span style="color:#e6db74">guest</span>: <span style="color:#ae81ff">35729</span>
+ <span style="color:#f92672"></span>config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>synced_folder <span style="color:#e6db74">&#34;c:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">projects&#34;</span>, <span style="color:#e6db74">&#34;/home/vagrant/vagrant_projects&#34;</span>
+ config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>provider <span style="color:#e6db74">&#34;virtualbox&#34;</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>vb<span style="color:#f92672">|</span>
+       vb<span style="color:#f92672">.</span>gui <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+       vb<span style="color:#f92672">.</span>customize <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;modifyvm&#34;</span>, <span style="color:#e6db74">:id</span>, <span style="color:#e6db74">&#34;--vram&#34;</span>, <span style="color:#e6db74">&#34;128&#34;</span><span style="color:#f92672">]</span>
+       vb<span style="color:#f92672">.</span>customize <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;modifyvm&#34;</span>, <span style="color:#e6db74">:id</span>, <span style="color:#e6db74">&#34;--usb&#34;</span>, <span style="color:#e6db74">&#34;on&#34;</span><span style="color:#f92672">]</span>
+       vb<span style="color:#f92672">.</span>customize <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;usbfilter&#34;</span>, <span style="color:#e6db74">&#34;add&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;--target&#34;</span>, <span style="color:#e6db74">:id</span>, <span style="color:#e6db74">&#34;--name&#34;</span>, <span style="color:#e6db74">&#34;android&#34;</span>, <span style="color:#e6db74">&#34;--vendorid&#34;</span>, <span style="color:#e6db74">&#34;0x18d1&#34;</span><span style="color:#f92672">]</span>
+       vb<span style="color:#f92672">.</span>memory <span style="color:#f92672">=</span> <span style="color:#ae81ff">2048</span>
+       <span style="color:#f92672"></span>vb<span style="color:#f92672">.</span>cpus <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+       <span style="color:#f92672"></span>vb<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;IonicBox&#34;</span>
+       
+       <span style="color:#75715e"># Need This If On Windows
+</span>
+       vb<span style="color:#f92672">.</span>customize <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;setextradata&#34;</span>, <span style="color:#e6db74">:id</span>, <span style="color:#e6db74">&#34;VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root&#34;</span>, <span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">]</span>
+ <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span></code></pre>
+          </div>
+          <h2 id="so-what-do-all-of-those-options-in-the-vagrantfile-mean">So what do all of those options in the VagrantFile mean?</h2>
+          <p>In the configuration we configure the video and physical memory of the virtual machine. Since IonicBox is just a shell without a GUI, it doesn&rsquo;t need a lot of resources, so we only give it 2 gigs of memory. Now if your host system doesn&rsquo;t
+            have a lot of memory, you will need to dial this down.</p>
+          <p>Ionic uses port 8100 for the web site and the live reload function use port 35729. We forwarded these ports from IonicBox to the host machine so we can access the web server. The following two lines do the port forwarding</p>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>network <span style="color:#960050;background-color:#1e0010">:</span>forwarded_port<span style="color:#f92672">,</span> host<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#ae81ff">8100</span><span style="color:#f92672">,</span> guest<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#ae81ff">8100</span>
+config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>network <span style="color:#960050;background-color:#1e0010">:</span>forwarded_port<span style="color:#f92672">,</span> host<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#ae81ff">35729</span><span style="color:#f92672">,</span> guest<span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#ae81ff">35729</span></code></pre>
+          </div>
+          <p>The IonicBox is just a Linux shell with no GUI so you will want to use a feature in VirtualBox called Shared Folders to be able to edit the files from your host machine. In our case we are using c:\projects on the host machine which is linked
+            to ~/vagrant_projects on the IonicBox</p>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">config<span style="color:#f92672">.</span>vm<span style="color:#f92672">.</span>synced_folder <span style="color:#e6db74">&#34;c:\\projects&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/home/vagrant/projects&#34;</span></code></pre>
+          </div>
+          <p>Next we set up the VirtualBox options</p>
+          <ul>
+            <li>We don&rsquo;t need the VirtualBox GUI since we are going to SSH into the machine so we can turn it off with. Set this to true the first time, just so you can see it</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vb<span style="color:#f92672">.</span>gui <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span></code></pre>
+          </div>
+          <ul>
+            <li>We set the Video Ram to 128 megs</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vb<span style="color:#f92672">.</span>customize <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;modifyvm&#34;</span><span style="color:#f92672">,</span> <span style="color:#960050;background-color:#1e0010">:</span>id<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;--vram&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;128&#34;</span><span style="color:#f92672">]</span></code></pre>
+          </div>
+          <ul>
+            <li>Turn on the USB drivers so that we can connect an Android device</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vb<span style="color:#f92672">.</span>customize <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;modifyvm&#34;</span><span style="color:#f92672">,</span> <span style="color:#960050;background-color:#1e0010">:</span>id<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;--usb&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;on&#34;</span><span style="color:#f92672">]</span></code></pre>
+          </div>
+          <ul>
+            <li>Add a usb device filter for a Android Device</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vb<span style="color:#f92672">.</span>customize <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;usbfilter&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;add&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;--target&#34;</span><span style="color:#f92672">,</span> <span style="color:#960050;background-color:#1e0010">:</span>id<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;--name&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;android&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;--vendorid&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;0x18d1&#34;</span><span style="color:#f92672">]</span></code></pre>
+          </div>
+          <ul>
+            <li>On Windows, You need to turn on Symlinks to the synced_folders. This is needed if your Host Operating System is Windows in order node/npm to work correctly. Remember you have to run your command prompt as an administrator for this command
+              to work.<br /></li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vb<span style="color:#f92672">.</span>customize <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;setextradata&#34;</span><span style="color:#f92672">,</span> <span style="color:#960050;background-color:#1e0010">:</span>id<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">]</span></code></pre>
+          </div>
+          <ul>
+            <li>Set the system memory for the virtual machine. If you host machine is low on memory you can reduce this down. You must have this much memory free when the virtual machine starts up</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vb<span style="color:#f92672">.</span>memory <span style="color:#f92672">=</span> <span style="color:#ae81ff">2048</span></code></pre>
+          </div>
+          <ul>
+            <li>Number of Physical CPUs to allocate. My machine only has 2 physical CPUs. You can allocate more or take it down to 1</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vb<span style="color:#f92672">.</span>cpus <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span></code></pre>
+          </div>
+          <ul>
+            <li>The name to use for the virtual machine in the VirtualBox Manager UI</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vb<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;IonicBox&#34;</span></code></pre>
+          </div>
+          <h2 id="starting-up-the-ionicbox-and-getting-logged-in">Starting up the IonicBox and Getting logged in</h2>
+          <ol>
+            <li>
+              <p>Open a command prompt and navigate to the IonicBox folder that contains the VagrantFile.</p>
+              <ul>
+                <li>
+                  <font color="red">If on Windows, open the command prompt as an Administrator.</font>
+                </li>
+                <li>To open the command prompt as an administrator in Windows 8 go to the Start Menu Screen, type cmd, then ctrl+shift+click or ctrl+shift+enter<br /> <br /></li>
+              </ul>
+            </li>
+            <li>
+              <p>Run command below. This command will take a while the first time you run it since it has to download the vagrant box container which is about 1 gig in size.</p>
+            </li>
+          </ol>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vagrant up</code></pre>
+          </div>
+          <p>If you have the vb.gui = true in your VagrantFile, the first thing you will notice when you boot up the IonicBox is that it just comes to a command prompt and it leaves you wondering now what. Luckily, this is exactly what we want and it is
+            very easy to manage it. The IonicBox basically just replaces the command prompt that we would normally use for all of the Ionic commands with a linux machine.</p>
+          <ul>
+            <li>To login to the machine, use the same command prompt as previous step and run</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vagrant ssh</code></pre>
+          </div>
+          <ul>
+            <li>if everything went successful you should be logged in</li>
+          </ul>
+          <h2 id="testing-the-ionicbox">Testing the IonicBox</h2>
+          <p>Now lets create our first Ionic project.</p>
+          <p>On the IonicBox ssh connection:</p>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">cd projects
+ionic start firstApp tabs <span style="color:#f92672">&amp;&amp;</span> cd firstApp
+ionic serve</code></pre>
+          </div>
+          <p>You now have a Ionic project in a directory called firstApp and the web server is running.</p>
+          <p>Open up your web browser and navigate to <a href="http://localhost:8100">http://localhost:8100</a></p>
+          <p>You can view all of the files that make up this project on your host machine under c:\projects\firstApp</p>
+          <p>If you are NOT using Windows as your host operating system that we are done with configurations. Unfortunately, if you are using Windows as your host operating system, we have one more step to get npm working correctly, so that you can download
+            all of the dependencies for Ionic.</p>
+          <p>
+            <font color="red">WARNING: Unless you have npm 3.0+. This may not fix the issue with node and long file names on Windows with npm.</font>
+          </p>
+          <p>We need to setup a symbolic link for the node modules folder since windows has a length limitation when using shared folders. A symbolic link is basically a point from one directory to another. Windows has a directory name length limitation
+            that we encounter when host our files through a shared folder. Since our npm dependencies (node modules) folder doesn&rsquo;t need to be checked into source control, we can move it to a directory on the IonicBox and just point to that from
+            within our Ionic projects.</p>
+          <p>On the IonicBox from the firstApp folder run the following commands:</p>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">mkdir <span style="color:#960050;background-color:#1e0010">~</span><span style="color:#f92672">/</span>node_modules_<span style="color:#f92672">[</span>Your Project<span style="color:#f92672">]</span>
+ln <span style="color:#f92672">-</span>s <span style="color:#960050;background-color:#1e0010">~</span><span style="color:#f92672">/</span>node_modules_<span style="color:#f92672">[</span>Your Project<span style="color:#f92672">]</span> node_modules
+npm install</code></pre>
+          </div>
+          <p><strong><font color="red">Remember:</font></strong> If on Windows, you need to run the vagrant up command from an administrative command prompt.</p>
+          <p>You may also need to manually install bower</p>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">sudo npm install bower <span style="color:#f92672">-</span>g</code></pre>
+          </div>
+          <h2 id="i-am-done-with-ionicbox-now-what">I am done with IonicBox, now what?</h2>
+          <ul>
+            <li>
+              <p>To exit vagrant ssh session, just type exit from the command prompt that is logged into the IonicBox. This will put you back into the original command prompt.</p>
+            </li>
+            <li>
+              <p>Hibernate: from the IonicBox directory with the VagrantFile run</p>
+            </li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vagrant suspend</code></pre>
+          </div>
+          <ul>
+            <li>Shutdown and Turn Off: from the IonicBox directory with the VagrantFile run</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">vagrant halt</code></pre>
+          </div>
+          <ul>
+            <li>Delete the whole IonicBox Virtual Machine: from the IonicBox directory with the VagrantFile run</li>
+          </ul>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-io" data-lang="io">      
+vagrant destroy</code></pre>
+          </div>
+          <ul>
+            <li>Note that sometimes this leaves behind the directory that contained the Virtual Machine. Before you can run vagrant up again, you will need to manually delete this directory.</li>
+          </ul>
+          <h2 id="conclusion">Conclusion</h2>
+          <p>This is a nice easy way to get started with ionic without having to install much onto your current machine.</p>
+          <p>However, if you are going to spend a lot of time developing ionic applications, it won&rsquo;t be long before you go down the route of installing everything onto your machine to do the development work.</p>
+          <p>Check out my installation guides to help you out:</p>
+          <p><a href="{{ &quot;ionic-setup-osx&quot; | prepend: site.baseurl | prepend: site.url }}">Mac Installation</a></p>
+          <p><a href="{{ &quot;Ionic-Setup-Windows&quot; | prepend: site.baseurl | prepend: site.url }}">Windows Installation</a></p>
+        </p>
+        <p> </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Ionic%20-%20The%20Ionicbox%20and%20How%20To%20Use%20It&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fionicbox-notes%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Ionic%20-%20The%20Ionicbox%20and%20How%20To%20Use%20It&http://digitaldrummerj.me/ionicbox-notes/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fionicbox-notes%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fionicbox-notes%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

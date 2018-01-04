@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="ASP.NET Web Api - Setup JSON Camel Cased Fields" />
+  <meta property="og:description" content="Welcome to the continuing series on getting started with ASP.NET Web Api. In the last post, we created our ASP.NET Web Api project, created our 1st controller and enabled Windows authentication. In this article we will learn how to set the JSON response to convert the .NET pascal cased properties into camel cased properties.
+The naming convention between .NET and JSON is different but we should present our Api users the naming convention that they expect without having to write all kinds of conversion code." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/webapi-json-setup/" />
+  <meta property="article:published_time" content="2016-08-31T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2016-08-31T00:00:00&#43;00:00" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/webapi-standard-response/" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/webapi-cors-with-credentials/" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/webapi-getting-started/" />
+  <meta itemprop="name" content="ASP.NET Web Api - Setup JSON Camel Cased Fields">
+  <meta itemprop="description" content="Welcome to the continuing series on getting started with ASP.NET Web Api. In the last post, we created our ASP.NET Web Api project, created our 1st controller and enabled Windows authentication. In this article we will learn how to set the JSON response to convert the .NET pascal cased properties into camel cased properties.
+The naming convention between .NET and JSON is different but we should present our Api users the naming convention that they expect without having to write all kinds of conversion code.">
+  <meta itemprop="datePublished" content="2016-08-31T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2016-08-31T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="841">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ASP.NET Web Api - Setup JSON Camel Cased Fields" />
+  <meta name="twitter:description" content="Welcome to the continuing series on getting started with ASP.NET Web Api. In the last post, we created our ASP.NET Web Api project, created our 1st controller and enabled Windows authentication. In this article we will learn how to set the JSON response to convert the .NET pascal cased properties into camel cased properties.
+The naming convention between .NET and JSON is different but we should present our Api users the naming convention that they expect without having to write all kinds of conversion code." />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/webapi-json-setup/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>ASP.NET Web Api - Setup JSON Camel Cased Fields</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2016-08-31T00:00:00Z">
+        Wed Aug 31, 2016
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/web-api">web api</a>
+</span></span>
+        </div>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/webapi-getting-started/">Part 1 - ASP.NET Web Api - Getting Started</a></li>
+              <li class="current"><span>Part 2 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/webapi-cors-with-credentials/">Part 3 - ASP.NET Web Api with Credentials CORS Issues Solved</a></li>
+                <li><a href="http://digitaldrummerj.me/webapi-standard-response/">Part 4 - ASP.NET Web Api - Setup Generic Response Handler</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <p>Welcome to the continuing series on getting started with ASP.NET Web Api. In the last post, we created our ASP.NET Web Api project, created our 1st controller and enabled Windows authentication. In this article we will learn how to set the JSON
+            response to convert the .NET pascal cased properties into camel cased properties.</p>
+          <p>The naming convention between .NET and JSON is different but we should present our Api users the naming convention that they expect without having to write all kinds of conversion code. Luckily this is very easy to accomplish with a few lines
+            of code in ASP.NET Web Api.</p>
+          <p>For the naming convention, .NET uses pascal case which means that properties start each word in the property name with a captial letter (e.g. UserName). JSON uses camel case which means that the property names start with a lowercase letter and
+            then each word after that starts with a captial letter (e.g. userName). Notice the lower case u in userName and then the uppercase N for the next work.</p>
+          <p>Before we get started, if you have not read the first post, I would suggest that you do so before continuing with this artcle so that you are at the same starting point as I am. It will take you about 10 minutes to complete the 1st article.</p>
+          <p>The first thing that we are going to do is create a C# class to hold the information about the logged in user. Then we will update the FirstController that we created in the previous post to return the C# class that we created.</p>
+          <h3 id="creating-a-class-to-return-from-web-api-method">Creating A Class to Return from Web Api Method</h3>
+          <ol>
+            <li>Open up the solution that we created in the previous article in Visual Studio</li>
+            <li>In the solution explorer, right-click on the Models directory</li>
+            <li>Select Add</li>
+            <li>Select Class</li>
+          </ol>
+          <p><img src="/images/web-api-getting-started/webapi-add-new-model.png" alt="Add New Class to Model Folder in Visual Studio" /></p>
+          <p>In the &ldquo;Add New Item&rdquo; dialog that comes up, name the file UserModel.cs and click ok</p>
+          <p><img src="/images/web-api-getting-started/webapi-add-new-model-filename.png" alt="Set new model file name to UserModel.cs" /></p>
+          <p>In the UserModel.cs replace the contents with the following code:</p>
+          <pre><code class="language-c#">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace Web Api_Demo.Models
+{
+    public class UserModel
+    {
+        public string UserName { get; set; }
+    }
+}
+
+</code></pre>
+          <p>Next we need to update the FirstController Get method to return a UserModel with the UserName set to the logged in user.</p>
+          <ol>
+            <li>Open the Controllers\FirstController.cs file</li>
+            <li>Change the return type of the Get method to <code>UserModel</code></li>
+            <li>Change the return statement to create a new UserModel with the UserName set to RequestContext.Principal.Identity.Name</li>
+          </ol>
+          <pre><code class="language-c#">public UserModel Get()
+{
+    return new UserModel { UserName = RequestContext.Principal.Identity.Name };
+}
+</code></pre>
+          <p>You will also need to add the following using statement so that is knows how to find the UserModel class we created.</p>
+          <pre><code class="language-c#">using Web Api_Demo.Models;
+</code></pre>
+          <h2 id="testing-default-behavior">Testing Default Behavior</h2>
+          <p>We are now ready to test our changes. However, before we do, we need to make 1 configuration change. Previously we were able to test in our browser since we didn&rsquo;t care if XML was returned. This time we do care about the return type as
+            we want it to be JSON. By default XML is returned when hitting the url directly from the browser since it sends application/xml as the content-type from the browser. There are two options to fix this: 1.) Use the Google Chrome Extension Postman
+            to do our testing and tell it the type is application/json 2.) Turn off XML as a format option.</p>
+          <p>Since we do not need XML to be returned from our Web Api we are going to go with option #2.</p>
+          <ol>
+            <li>Open the file App_Start\Web ApiConfig.cs</li>
+            <li>In the <code>Register</code> method, add the following code after the call to config.Routes.MapHttpRoute</li>
+          </ol>
+          <pre><code class="language-c#">config.Formatters.Remove(config.Formatters.XmlFormatter);
+</code></pre>
+          <p>Press F5 to compile our code and start a debug session. Go to the api/first endpoint and you will notice that the output casing currently matches that of our C# class.</p>
+          <pre><code class="language-json">{&quot;UserName&quot;:&quot;[My User Name]&quot;}
+</code></pre>
+          <p>Now that we have our Api updated to return the UserModel C# class that we created, we need to configure the JSON formatter to convert the C# class properties to camel case.</p>
+          <h2 id="updating-web-api-configuration">Updating Web Api Configuration</h2>
+          <p>To fix the casing, we will use the CamelCasePropertyNamesContractResolver that is part of the JSON.NET library that is included with Web Api.</p>
+          <ol>
+            <li>Open the file App_Start\Web ApiConfig.cs</li>
+            <li>In the <code>Register</code> method, add the following code after the call to config.Routes.MapHttpRoute</li>
+          </ol>
+          <pre><code class="language-c#">var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+</code></pre>
+          <p>We also need to add the using statement to tell .NET where to find the CamelCasePropertyNamesContractResolver</p>
+          <pre><code class="language-c#">using Newtonsoft.Json.Serialization;
+</code></pre>
+          <p>Now anytime we return back a serialized .NET class, all of the properties will be converted to the standard JSON camel case instead of using the standard .NET Pascal case.</p>
+          <p>If you press F5 to compile our code and start a debug session and go to the api/first endpoint, you will notice that the output casing is now camel cased</p>
+          <pre><code class="language-json">{&quot;userName&quot;:&quot;[My User Name]&quot;}
+</code></pre>
+          <h2 id="conclussion">Conclussion</h2>
+          <p>In this guide we learned how to convert the JSON output response to be camel cased instead of the .NET pascal case without having to modify all of our .NET classes. In the next post, we will look at creating a common response format to all of
+            the endpoint return values.</p>
+        </p>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/webapi-getting-started/">Part 1 - ASP.NET Web Api - Getting Started</a></li>
+              <li class="current"><span>Part 2 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/webapi-cors-with-credentials/">Part 3 - ASP.NET Web Api with Credentials CORS Issues Solved</a></li>
+                <li><a href="http://digitaldrummerj.me/webapi-standard-response/">Part 4 - ASP.NET Web Api - Setup Generic Response Handler</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=ASP.NET%20Web%20Api%20-%20Setup%20JSON%20Camel%20Cased%20Fields&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fwebapi-json-setup%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=ASP.NET%20Web%20Api%20-%20Setup%20JSON%20Camel%20Cased%20Fields&http://digitaldrummerj.me/webapi-json-setup/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fwebapi-json-setup%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fwebapi-json-setup%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

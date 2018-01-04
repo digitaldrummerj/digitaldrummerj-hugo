@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Javascript Debugging Made Easier with Sourcemaps" />
+  <meta property="og:description" content="Updated: Add clean task that uses rimraf to delete the bundle.min.js file if it already exist. Without this it would just append to the existing bundle.min.js file.
+When you release your web site to production, you should minify and concatenate your javascript files. You will have much better performance by doing this but unfortunately debugging becomes difficult with the minified code as it shortens all of the variable and method names."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/javascript-sourcemaps/" />
+  <meta property="article:published_time" content="2015-05-17T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2015-05-17T00:00:00&#43;00:00" />
+  <meta itemprop="name" content="Javascript Debugging Made Easier with Sourcemaps">
+  <meta itemprop="description" content="Updated: Add clean task that uses rimraf to delete the bundle.min.js file if it already exist. Without this it would just append to the existing bundle.min.js file.
+When you release your web site to production, you should minify and concatenate your javascript files. You will have much better performance by doing this but unfortunately debugging becomes difficult with the minified code as it shortens all of the variable and method names.">
+  <meta itemprop="datePublished" content="2015-05-17T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-05-17T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="915">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Javascript Debugging Made Easier with Sourcemaps" />
+  <meta name="twitter:description" content="Updated: Add clean task that uses rimraf to delete the bundle.min.js file if it already exist. Without this it would just append to the existing bundle.min.js file.
+When you release your web site to production, you should minify and concatenate your javascript files. You will have much better performance by doing this but unfortunately debugging becomes difficult with the minified code as it shortens all of the variable and method names."
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/javascript-sourcemaps/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Javascript Debugging Made Easier with Sourcemaps</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-05-17T00:00:00Z">
+        Sun May 17, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/debugging">debugging</a>/ <a href="/categories/chrome">chrome</a>/ <a href="/categories/gulp">gulp</a>
+</span></span>
+        </div>
+        <p> </p>
+        <p>
+          <p>Updated: Add clean task that uses rimraf to delete the bundle.min.js file if it already exist. Without this it would just append to the existing bundle.min.js file.</p>
+          <p>When you release your web site to production, you should minify and concatenate your javascript files. You will have much better performance by doing this but unfortunately debugging becomes difficult with the minified code as it shortens all
+            of the variable and method names. Luckily there is a simple solution to tell the browser developer tools to use the original javascript files when debugging the code, called source maps.</p>
+          <p>Sourcemaps bacically are a way to map the combined/minified file back to the original file. As part of the minification process you generate a source map which holds the information about your original files. The developer tools will then parse
+            the source map and make it appear as though you&rsquo;re running unminified and uncombined files.</p>
+          <p>##Creating Sourcemaps</p>
+          <p>To generate the sourcemaps we are going to gulp with the gulp-concat, gulp-uglify, and gulp-sourcemaps modules. If you are not familiar with gulp, it is basically a javascript build system that allows you to write code to automate tasks.</p>
+          <ol>
+            <li>Install <a href="http://nodejs.org">node.js</a> if you don&rsquo;t have it installed already.</li>
+            <li>
+              <p>Install Gulp and the Gulp modules that we need.</p>
+              <pre><code>$ npm install --save gulp
+$ npm install --save gulp-concat
+$ npm install --save-dev gulp-uglify  
+$ npm install --save-dev gulp-sourcemaps
+$ npm install --save-dev rimraf
+</code></pre>
+            </li>
+            <li>
+              <p>Create a file called gulpfile.js if you don&rsquo;t already have one.</p>
+            </li>
+            <li>
+              <p>Add the required gulp modules to the gulpfile.js.</p>
+              <pre><code>var gulp = require('gulp');
+var gutil = require('gulp-util');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
+var rimraf = require('rimraf');
+</code></pre>
+            </li>
+            <li>
+              <p>Create the input paths variable to hold what files we should minify/concatenate. I keep my files in the www folder. The ! in the 2nd input path means to exclude this path. I typically keep my vendor skips like angular, ionic, jquery, etc
+                in the lib folder, so I don&rsquo;t want to minify those scripts again.</p>
+              <pre><code>  var inputPaths = {
+    javascript: ['./www/**/*.js', '!./www/lib/**']
+  };
+</code></pre>
+            </li>
+            <li>
+              <p>Create the output path variable to tell gulp where to output the minified file.</p>
+              <pre><code>  var outputPaths = {
+    'javascript': './www/js'
+  };
+</code></pre>
+            </li>
+            <li>
+              <p>Now we need to create the actual gulp task that does the minification and source map creation. This tasks takes the inputPaths.javscript files, combines them, minifies them, creates the source maps and save it all as a file called bundle.min.js.
+                By default the gulp.dest call will append the minified text to the bundle.min.js instead of overwriting it. Instead we need to call the clean task task first which will delete the minified file if it already exist.</p>
+              <pre><code>  var minifiedJsFileName = 'bundle.min.js';
+
+  gulp.task('build-js', ['clean'], function() {
+    return gulp.src(inputPaths.javascript)
+      .pipe(sourcemaps.init())
+      .pipe(concat(minifiedJsFileName))
+      .pipe(uglify())
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest(outputPaths.javascript));
+  });
+</code></pre>
+            </li>
+            <li>
+              <p>Create the clean task</p>
+              <pre><code>  gulp.task(&quot;clean&quot;, function (cb) {
+    rimraf(outputPaths.javascript + '/' + minifiedJsFileName, cb);
+  });
+</code></pre>
+            </li>
+            <li>
+              <p>Once the task is created, we want to setup a gulp watch to regenerate the file when any of the javascript changes.</p>
+              <pre><code>gulp.task('watch', function() {
+  gulp.watch(inputPaths.javascript, ['build-js']);
+});
+</code></pre>
+            </li>
+            <li>
+              <p>Finally, we are going to create a default task to run the build-js task we created. The default task will typically what you want to run anytime you start up the web server.</p>
+              <pre><code>gulp.task('default', ['build-js']);
+</code></pre>
+            </li>
+          </ol>
+          <p>##Running Task</p>
+          <ol>
+            <li>Open a command prompt or terminal.</li>
+            <li>Navigate to the directory that contain the gulpfile.js we created.</li>
+            <li>
+              <p>Run the following command:</p>
+              <pre><code>$ gulp build-js
+</code></pre>
+            </li>
+            <li>
+              <p>If it worked successfully, you should have a minified file in your www/js folder.</p>
+            </li>
+            <li>
+              <p>To use the file, open up the index.html file and remove all of your javascript script tags that reference your js files in the www folder and replace it with a single script tag that references the www/js/bundle.min.js file. Make sure to
+                leave any vendor script tags.</p>
+            </li>
+          </ol>
+          <p>##Enabling Sourcemaps in Chrome Developer Tools</p>
+          <p>Now that we have the source maps generated, we have to tell the Chrome Developer Tools to enable the source maps.</p>
+          <ol>
+            <li>Open Google Chrome.</li>
+            <li>
+              <p>Open the Developer Tools.</p>
+              <p><img src="/images/ChromeDevTools/ChromeDevTools-Open.png" alt="Open Chrome Developer Tools" /></p>
+            </li>
+            <li>
+              <p>Click on the Setting Cog.</p>
+              <p><img src="/images/ChromeDevTools/ChromeDevTools-SettingsCog.png" alt="Open Settings" /></p>
+            </li>
+            <li>
+              <p>Scroll down in the General Settings under you see the Sources section and ensure that the &ldquo;Enable JavaScript source maps&rdquo; is checked.</p>
+              <p><img src="/images/ChromeDevTools/ChromeDevTools-JavascriptSourcemapsEnabled.png" alt="Enable Javascript Source Maps" /></p>
+            </li>
+            <li>
+              <p>Click on the X in the upper right of the Settings windows to close it.</p>
+            </li>
+            <li>
+              <p>Now view your web site in the browser to make sure everything is still working.</p>
+              <ul>
+                <li>Note: If you are using Angular, you have to make sure that you use the minification safe syntax for the dependency injection. See the next section for examples.</li>
+                <li>Note 2: If you are using the Ionic Framework, the default templates (blank, tabs, sidemenu) do not use the Angular minification safe syntax. You will need to modify the template after you generate your application. <br /></li>
+              </ul>
+            </li>
+          </ol>
+          <p>##Angular Minification Safe Syntax</p>
+          <p>If you are using the AngularJs framework it does a lot of dependency injection. Out of the box, if you just pass in your arguments to the different functions, it is not minification safe. There are a couple of easy ways to make it minification
+            safe with a minimal amount of code changes.</p>
+          <p>Option 1: $inject method
+            <div class="highlight">
+              <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">//Controllers
+var myController = function(anyVariableName, $http) {
+};
+  
+myController.$inject = [&#39;$scope&#39;, &#39;$http&#39;];</code></pre>
+            </div>
+          </p>
+          <p>Option 2: &#91;&#93; syntax. You start the 2nd parameter with a &#91;, put your list of dependencies as string, your function to run and then the closing &#93;.</p>
+          <div class="highlight">
+            <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  
+//Modules  
+var myApp = angular.module(&#39;myApp&#39;, 
+     [ //Dependencies go here.]
+);
+  
+//Services
+myApp.service(&#39;serviceName&#39;,
+   [&#39;$http&#39;, &#39;$location&#39;, 
+        function($http, $location) {
+        }
+   ]
+);
+  
+//Directives
+myApp.directive(&#39;directiveName&#39;, 
+    [&#39;$http&#39;, &#39;$location&#39;, 
+         function($http, $location) 
+         {    
+         }
+    ]
+);
+  
+//Factories
+myApp.factory(&#39;factoryName&#39;, 
+     [&#39;$http&#39;, &#39;$location&#39;, 
+          function($http, $location) {    
+          }
+     ]
+);</code></pre>
+          </div>
+        </p>
+        <p> </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Javascript%20Debugging%20Made%20Easier%20with%20Sourcemaps&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fjavascript-sourcemaps%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Javascript%20Debugging%20Made%20Easier%20with%20Sourcemaps&http://digitaldrummerj.me/javascript-sourcemaps/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fjavascript-sourcemaps%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fjavascript-sourcemaps%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

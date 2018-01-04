@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Ionic - How to setup on Windows" />
+  <meta property="og:description" content="Updates:
+ 2016-08-13: Added Gradle and VS Code to software installed. Changed from JDK7 to JDK8. Removed Ant. Added Android SDK Apis install to Chocolatey script. Switched suggested emulator to Visual Studio Emulator for Android.  If you are like me and just starting to work with the Ionic Framework and don&rsquo;t already have a machine setup to do Android, iOS, Node, etc development then many of the guides out there leave out a number of steps that you need to do in order to get everything working."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/ionic-setup-windows/" />
+  <meta property="article:published_time" content="2015-01-11T20:45:35&#43;00:00" />
+  <meta property="article:modified_time" content="2015-01-11T20:45:35&#43;00:00" />
+  <meta itemprop="name" content="Ionic - How to setup on Windows">
+  <meta itemprop="description" content="Updates:
+ 2016-08-13: Added Gradle and VS Code to software installed. Changed from JDK7 to JDK8. Removed Ant. Added Android SDK Apis install to Chocolatey script. Switched suggested emulator to Visual Studio Emulator for Android.  If you are like me and just starting to work with the Ionic Framework and don&rsquo;t already have a machine setup to do Android, iOS, Node, etc development then many of the guides out there leave out a number of steps that you need to do in order to get everything working.">
+  <meta itemprop="datePublished" content="2015-01-11T20:45:35&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-01-11T20:45:35&#43;00:00" />
+  <meta itemprop="wordCount" content="706">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ionic - How to setup on Windows" />
+  <meta name="twitter:description" content="Updates:
+ 2016-08-13: Added Gradle and VS Code to software installed. Changed from JDK7 to JDK8. Removed Ant. Added Android SDK Apis install to Chocolatey script. Switched suggested emulator to Visual Studio Emulator for Android.  If you are like me and just starting to work with the Ionic Framework and don&rsquo;t already have a machine setup to do Android, iOS, Node, etc development then many of the guides out there leave out a number of steps that you need to do in order to get everything working."
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/ionic-setup-windows/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Ionic - How to setup on Windows</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-01-11T20:45:35Z">
+        Sun Jan 11, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/ionic">ionic</a>
+</span></span>
+        </div>
+        <p> </p>
+        <p>
+          <p>Updates:</p>
+          <ul>
+            <li>2016-08-13: Added Gradle and VS Code to software installed. Changed from JDK7 to JDK8. Removed Ant. Added Android SDK Apis install to Chocolatey script. Switched suggested emulator to Visual Studio Emulator for Android.</li>
+          </ul>
+          <p>If you are like me and just starting to work with the <a href="http://www.ionicframework.com">Ionic Framework</a> and don&rsquo;t already have a machine setup to do Android, iOS, Node, etc development then many of the guides out there leave
+            out a number of steps that you need to do in order to get everything working.</p>
+          <p>It is really easy to get everything working though once you know the steps. Since I am a Windows user and love to automate work that is easily repeatable, I used <a href="http://www.chocolatey.org">Chocolatey</a> and <a href="http://www.boxstarter.org">Boxstarter</a>            to automate the setup for the Ionic Framework.</p>
+          <p>On Windows, you will only be able to setup Android development. Apple requires a Mac in order to do iOS development.</p>
+          <h2 id="software-to-be-installed">Software to be installed</h2>
+          <ul>
+            <li><a href="https://chocolatey.org/packages/nodejs.install">NodeJS</a></li>
+            <li><a href="https://chocolatey.org/packages/git">Git</a></li>
+            <li><a href="https://chocolatey.org/packages/gradle">Gradle</a></li>
+            <li><a href="https://chocolatey.org/packages/jdk8">JDK8</a></li>
+            <li><a href="https://chocolatey.org/packages/android-sdk">Android SDK</a></li>
+            <li><a href="https://chocolatey.org/packages/AndroidStudio">Android Studio</a></li>
+            <li><a href="https://chocolatey.org/packages/GoogleChrome">Google Chrome</a></li>
+            <li>Npm Modules:
+              <ul>
+                <li><a href="https://www.npmjs.com/package/cordova">cordova</a></li>
+                <li><a href="https://www.npmjs.com/package/gulp-cli">gulp cli</a></li>
+                <li><a href="https://www.npmjs.com/package/bower">bower</a></li>
+                <li><a href="https://www.npmjs.com/package/ionic">ionic</a></li>
+              </ul>
+            </li>
+            <li><a href="https://www.visualstudio.com/en-us/features/msft-android-emulator-vs.aspx">Visual Studio Emulator for Android (Hyper-V Based)</a></li>
+            <li><a href="https://code.visualstudio.com/">VS Code</a></li>
+          </ul>
+          <h2 id="how-to-install-software">How to install software</h2>
+          <ol>
+            <li>
+              <p>Install Chocolatey from <a href="http://www.chocolatey.org">http://www.chocolatey.org</a>. Command is on the front-page of the site or below. Open an administrative command prompt to run the command. To open an administrative command prompt
+                on Windows 8, go to the start menu, type cmd and then ctrl+shift+click on the cmd search result.</p>
+              <pre><code>Command Prompt: @powershell -NoProfile -ExecutionPolicy unrestricted -Command &quot;iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))&quot; &amp;&amp; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+</code></pre>
+            </li>
+            <li>
+              <p>Install the <a href="http://boxstarter.org">BoxStarter</a> Chocolatey package</p>
+              <pre><code>choco install -y BoxStarter
+</code></pre>
+            </li>
+            <li>
+              <p>Close the command prompt that you opened to install Chocolatey and BoxStarter</p>
+            </li>
+            <li>
+              <p>On the desktop there should be a BoxStarter Shell icon, double-click on that to run it. If the icon is not on the desktop, then open up a command prompt and type BoxStarterShell.</p>
+            </li>
+            <li>
+              <p>I have setup a gist file that has all of the Chocolatey commands to run to install the rest of the software and configure it. Run the gist file from the Boxstarter Shell:</p>
+              <pre><code>Install-BoxStarterPackage -PackageName  https://gist.githubusercontent.com/digitaldrummerj/3fe2eb057004b6742b89/raw/3da48d349c313684077d7103547dfe79f7052617/IonicSetup  -DisableReboots
+</code></pre>
+            </li>
+          </ol>
+          <ul>
+            <li><strong>NOTE:</strong> If you want to install any of the optional software you will need to fork the gist file and remove the # in front of the line for the package you want to install. <br /></li>
+          </ul>
+          <h2 id="post-install-steps">Post Install Steps</h2>
+          <h3 id="configure-visual-studio-emulator-for-android">Configure Visual Studio Emulator for Android</h3>
+          <ul>
+            <li>Open up the Visual Studio Emulator for Android application</li>
+            <li>Find the devices that you want to download. Any device will do. I normally pick one of the latest ones as a starting point (Marshmellow 6.0 at the time of this writing)<br /></li>
+          </ul>
+          <h2 id="verify-that-everything-works">Verify that everything works</h2>
+          <ol>
+            <li>Open a command prompt</li>
+            <li>Navigate the directory where you store you development projects (I use c:\projects)</li>
+            <li>From c:\projects type: ionic start todo tabs</li>
+            <li>cd into c:\projects\todo (directory was created by the ionic start command)</li>
+          </ol>
+          <p>The first test that we are going to run is to make sure that we can test the todo app that we generated in the web browser by running:</p>
+          <pre><code>    ionic serve --lab
+</code></pre>
+          <p>This will start up a node based web server and the &ndash;lab will tell it to launch a page that shows what the app would look like on an iOS and Android phone. Granted the node based serve is about 80% accurate but good enough to do a majority
+            of our testing. Ultimately you should test on a device before releasing into the app stores.</p>
+          <p>Next we are going to test our Android device setup. The first thing we need to do is tell ionic that we want to add the Android platform to our todo app by running:</p>
+          <pre><code>    ionic platform add android
+</code></pre>
+          <p>This sets up the todo app to be able to be build and deployed to an Android device. To validate that we can build for Android, run the following:</p>
+          <pre><code>    ionic build android
+</code></pre>
+          <p>The last thing we need to verify is that we can deploy the todo app to the Visual Studio Emulator for Android. Before we can deploy the application, we need to start up the emulator.</p>
+          <ol>
+            <li>Open up the Visual Studio Emulator for Android</li>
+            <li>Find the device that we downloaded</li>
+            <li>Click the green arrow to start it up<br /></li>
+            <li>
+              <p>Once the emulator is started, you can deploy to it by running:</p>
+              <pre><code>ionic run android
+</code></pre>
+            </li>
+          </ol>
+          <p>You are now ready to go create your ionic applications.</p>
+        </p>
+        <p> </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Ionic%20-%20How%20to%20setup%20on%20Windows&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fionic-setup-windows%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Ionic%20-%20How%20to%20setup%20on%20Windows&http://digitaldrummerj.me/ionic-setup-windows/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fionic-setup-windows%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fionic-setup-windows%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

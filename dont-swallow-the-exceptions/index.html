@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Do Not Swallow The Exceptions" />
+  <meta property="og:description" content="Throwing away exceptions in your code is just a bad practice and makes it harder to support your application. It may make it easier for you as a developer to get something working but in the long run it cost way more money to do the maintenance and troubleshooting then if you had just put in proper exception handling to start with.
+I have worked on several codebases recently where methods returned false if either a business rule failed or an unexpected exception occurred with no logging of the error anywhere." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/dont-swallow-the-exceptions/" />
+  <meta property="article:published_time" content="2015-10-05T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2015-10-05T00:00:00&#43;00:00" />
+  <meta itemprop="name" content="Do Not Swallow The Exceptions">
+  <meta itemprop="description" content="Throwing away exceptions in your code is just a bad practice and makes it harder to support your application. It may make it easier for you as a developer to get something working but in the long run it cost way more money to do the maintenance and troubleshooting then if you had just put in proper exception handling to start with.
+I have worked on several codebases recently where methods returned false if either a business rule failed or an unexpected exception occurred with no logging of the error anywhere.">
+  <meta itemprop="datePublished" content="2015-10-05T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-10-05T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="903">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Do Not Swallow The Exceptions" />
+  <meta name="twitter:description" content="Throwing away exceptions in your code is just a bad practice and makes it harder to support your application. It may make it easier for you as a developer to get something working but in the long run it cost way more money to do the maintenance and troubleshooting then if you had just put in proper exception handling to start with.
+I have worked on several codebases recently where methods returned false if either a business rule failed or an unexpected exception occurred with no logging of the error anywhere." />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/dont-swallow-the-exceptions/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Do Not Swallow The Exceptions</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-10-05T00:00:00Z">
+        Mon Oct 05, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/programming">programming</a>/ <a href="/categories/c">c#</a>
+</span></span>
+        </div>
+        <p> </p>
+        <p>
+          <p>Throwing away exceptions in your code is just a bad practice and makes it harder to support your application. It may make it easier for you as a developer to get something working but in the long run it cost way more money to do the maintenance
+            and troubleshooting then if you had just put in proper exception handling to start with.</p>
+          <p>I have worked on several codebases recently where methods returned false if either a business rule failed or an unexpected exception occurred with no logging of the error anywhere. This made it extremely difficult to figure out what the issue
+            was. In several cases, even when you hooked up a debugger there was no way to get at the exception details since the exception was not passed into the catch block.</p>
+          <h2 id="examples-of-issue">Examples of Issue</h2>
+          <p>Here are a couple of examples of what I am talking about when I say swallowing the exception.</p>
+          <p><strong>Example 1: Totally Throwing Away Exception</strong></p>
+          <p>In this example, the code does nothing with the exception and does not even tell the caller that something failed. I have spent many hours troubleshooting projects with this exact try/catch block and wondering why something that I thought should
+            have worked was not, just to discover that deep down in the call stack it was swallowing the exception. Since the catch block is empty, there is no way to put a breakpoint in the catch block but even if you could, there is no way to get at
+            the exception in the catch block since it was not passed into it. You would need to make a temp code change to add an exception parameter to the catch block and a bogus line in the catch block to be able to get at the exception.</p>
+          <pre><code>public void SomeMethod()
+{
+    try
+    {
+        //Some Code That Errors
+    }
+    catch
+    {
+    }
+}
+</code></pre>
+          <p><strong>Example 2: At Least Tells You Something Went Wrong</strong></p>
+          <p>In this example, the code at least returns false back from the method so you can assume that something didn&rsquo;t go right but you don&rsquo;t know if it was an exception or if it was business logic that failed. This example is also not logging
+            any information about the exception and there is no way in a debugger to get the exception details. You can at least put a breakpoint in the catch block, but you would need to make a code change to add pass the exception into the catch block.</p>
+          <pre><code>public bool SomeMethod()
+{
+    try
+    {
+       //Some code
+       if (&quot;Business Logic Failed&quot;)
+       {
+            return false;   
+       }
+
+       //everything passed
+       return true;  
+    }
+    catch 
+    {
+        return false;    
+    }    
+}
+</code></pre>
+          <h2 id="fixing-this-issue">Fixing This Issue</h2>
+          <p>Now that you understand the issue, lets examine how to fix it. The fix is really simple. There are two options that I use:</p>
+          <ol>
+            <li>Pass the exception variable into the catch block and log the information somewhere.</li>
+            <li>Let the exception bubble up the call stack and handle it at a higher level.<br /></li>
+          </ol>
+          <p><strong>Fix Example #1: Logging The Exception</strong></p>
+          <p>In this example, the exception along with all of the inner exceptions are logged and the business rules are checked. You can also put a breakpoint inside the catch block to get details on the exception. This code still returns a false though
+            if something went wrong which doesn&rsquo;t make it obvious if it was an exception or business logic that didn&rsquo;t pass without looking at the logs.</p>
+          <pre><code>public bool SomeMethod()
+{
+    try
+    {
+       //Some code
+       if (&quot;Business Logic Failed&quot;)
+       {
+            throw new ApplicationException(&quot;Business Logic Failed...Give details on what failed&quot;);  
+       }
+
+       return true;  
+    }  
+    catch (Exception ex)
+    {
+        //Logs StackTrace, Message, and all InnerException Message/StackTrace
+        LogMessage(ex);   
+        return false;
+    }
+}
+</code></pre>
+          <p><strong>Fix Example #2: Bubbling Exception Up Call Stack</strong></p>
+          <p>This example lets the full exception go up the call stack with a custom exception so that the calling method can figure out how it wants to handle the exception. You should handle this exception at some point. It is bad practice to let it become
+            an unhandled exception and crash your application.</p>
+          <p>The reason for using a custom exception is to be able to catch your business logic errors versus an unexpected exception.</p>
+          <pre><code>public void SomeMethod()
+{
+    //Some Code        
+    if (&quot;Business Logic Failed&quot;)
+    {
+        //Let Exception Bubble Up the Call Stack with a custom exception
+        //Can also use ApplicationException but harder to catch specific exceptions without examining the exception message
+        throw new MyCustomException(&quot;Business Logic Failed...Give details on what failed&quot;);  
+    }
+
+}    
+</code></pre>
+          <p><strong>Fix Example #3: Ability to Put in a Breakpoint</strong></p>
+          <p>Yes I know I said there is 2 days to fix it but you can also do it this way. However this is my least favorite way to not swallow exception as you are still technically swallowing the error but you can at least hook up the debugger, put a breakpoint
+            on the return statement, and get at the exception details. This only is of value in your development machine but it is at least better than nothing.</p>
+          <pre><code>public void SomeMethod()
+{
+    try
+    {
+
+        //Some Code    
+    }   
+    catch (Exception ex)
+    {
+        return;
+    }    
+}    
+</code></pre>
+          <h2 id="wrap-up">Wrap-Up</h2>
+          <p>As you can see it does not take much more work to be able to do something with the exception. It will save you hours of troubleshooting work just by handling the exception and not throwing it away. Don&rsquo;t take the easy way out by swallowing
+            exceptions. Be nice to your fellow developers and don&rsquo;t throw away the exceptions.</p>
+        </p>
+        <p> </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Do%20Not%20Swallow%20The%20Exceptions&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fdont-swallow-the-exceptions%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Do%20Not%20Swallow%20The%20Exceptions&http://digitaldrummerj.me/dont-swallow-the-exceptions/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fdont-swallow-the-exceptions%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fdont-swallow-the-exceptions%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

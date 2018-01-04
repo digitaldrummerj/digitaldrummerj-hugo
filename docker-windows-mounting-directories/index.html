@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Docker - Mounting Windows Directories in Containers" />
+  <meta property="og:description" content="In the previous tutorial we learned how to install Docker and get our first container running. In this tutorial we are going to learn how to mount additional directories within our Docker container that are outside of the c:\Users directory. By default, Docker only mounts the c:\Users directory inside the docker machine and containers. For myself, I have all of my project files two places: c:\projects and c:\personal. I didn&rsquo;t want to change my standard configuration just for Docker."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/docker-windows-mounting-directories/" />
+  <meta property="article:published_time" content="2016-06-03T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2016-06-03T00:00:00&#43;00:00" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/docker-running-container-as-service/" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/docker-on-windows-getting-started/" />
+  <meta itemprop="name" content="Docker - Mounting Windows Directories in Containers">
+  <meta itemprop="description" content="In the previous tutorial we learned how to install Docker and get our first container running. In this tutorial we are going to learn how to mount additional directories within our Docker container that are outside of the c:\Users directory. By default, Docker only mounts the c:\Users directory inside the docker machine and containers. For myself, I have all of my project files two places: c:\projects and c:\personal. I didn&rsquo;t want to change my standard configuration just for Docker.">
+  <meta itemprop="datePublished" content="2016-06-03T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2016-06-03T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="991">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Docker - Mounting Windows Directories in Containers" />
+  <meta name="twitter:description" content="In the previous tutorial we learned how to install Docker and get our first container running. In this tutorial we are going to learn how to mount additional directories within our Docker container that are outside of the c:\Users directory. By default, Docker only mounts the c:\Users directory inside the docker machine and containers. For myself, I have all of my project files two places: c:\projects and c:\personal. I didn&rsquo;t want to change my standard configuration just for Docker."
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/docker-windows-mounting-directories/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Docker - Mounting Windows Directories in Containers</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2016-06-03T00:00:00Z">
+        Fri Jun 03, 2016
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/docker">docker</a>
+</span></span>
+        </div>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/docker-on-windows-getting-started/">Part 1 - Docker - Getting Started On Windows</a></li>
+              <li class="current"><span>Part 2 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/docker-running-container-as-service/">Part 3 - Docker - Running Container As a Service</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <p>In the <a href="../docker-on-windows-getting-started/">previous tutorial</a> we learned how to install Docker and get our first container running. In this tutorial we are going to learn how to mount additional directories within our Docker container
+            that are outside of the c:\Users directory. By default, Docker only mounts the c:\Users directory inside the docker machine and containers. For myself, I have all of my project files two places: c:\projects and c:\personal. I didn&rsquo;t
+            want to change my standard configuration just for Docker. Luckily, it is really easy to mount additional directories.</p>
+          <p>To mount additional directories, you need to add the directory as a shared folder within Virtualbox and then enable long file paths and symlinks. Once the Virtualbox shared folders are setup, you need to mount the directories within the docker
+            machine so that they are available to the containers.</p>
+          <p>Steps:</p>
+          <p><strong>Table of Contents</strong></p>
+          <p>{{.TableOfContents}}</p>
+          <h2 id="step-1-adding-shared-folders">Step 1: Adding Shared Folders</h2>
+          <p>The first step is to add the directories as Virtualbox shared folders by using the VBoxManage.exe utility that comes with Virtualbox. VBoxManage.exe is located in your Virtualbox install directory, which by default is C:\Program Files\Oracle\VirtualBox.</p>
+          <blockquote>
+            <p><strong>Warning:</strong> To make symlinks works when you start up the docker-machine, you need to run the Docker Quickstart Terminal or Command Line as an administrator. This is a security limitation of Windows for symlinks.<br /> {:.warning}</p>
+          </blockquote>
+          <p>Before adding the shared folders, we need to make sure that no docker machines are running. We are going to check for running docker containers and machines as both a non-admin and admin.</p>
+          <p><strong>Non-Admin Checking For Running Machines</strong></p>
+          <p>Launch the Windows Command Prompt and run</p>
+          <pre><code>$ docker-machine ls
+</code></pre>
+          <p>If any machines comes back with the state of running, you will need to stop the machine.</p>
+          <ol>
+            <li>
+              <p>Before stopping the machine you will want to make sure that your containers are stopped.</p>
+              <pre><code>      $ docker ps 
+</code></pre>
+            </li>
+            <li>
+              <p>For any containers that are returned you can stop them by running</p>
+              <pre><code>    $ docker stop [Container ID]
+</code></pre>
+            </li>
+            <li>
+              <p>Once all of the containers are stop, you can stop the docker machine. Replace the &ldquo;[machine name]&rdquo; with you machine name that we returned from the docker-machine ls command. Typically you will only have 1 machine and it will
+                be named default</p>
+              <pre><code>    $ docker-machine stop [machine name]           
+</code></pre>
+            </li>
+          </ol>
+          <p><strong>Admin Checking For Running Machines</strong></p>
+          <ol>
+            <li>Open the Windows Command Prompt as an administrator.
+              <ul>
+                <li>Start Menu</li>
+                <li>Search for command prompt</li>
+                <li>Right-click on the Command Prompt and select Run as Administrator</li>
+              </ul>
+            </li>
+            <li>
+              <p>To check if any docker machines are running, run the command:</p>
+              <pre><code>$ docker-machine ls
+</code></pre>
+            </li>
+          </ol>
+          <p>If any machines comes back with the state running, you will need to stop the machine.</p>
+          <ol>
+            <li>
+              <p>Before stopping the machine you will want to make sure that your containers are stopped.</p>
+              <pre><code>      $ docker ps 
+</code></pre>
+            </li>
+            <li>
+              <p>For any containers that are returned you can stop them by running</p>
+              <pre><code>    $ docker stop [Container ID]
+</code></pre>
+            </li>
+            <li>
+              <p>Once all of the containers are stop, you can stop the docker machine. Replace the &ldquo;[machine name]&rdquo; with you machine name that we returned from the docker-machine ls command. Typically you will only have 1 machine and it will
+                be named default</p>
+              <pre><code>$ docker-machine stop [machine name]           
+</code></pre>
+            </li>
+          </ol>
+          <p>We are now ready to add in our shared folders.</p>
+          <ol>
+            <li>
+              <p>Navigate to the Virtualbox directory.</p>
+              <pre><code>$ cd &quot;c:\Program Files\Oracle\Virtualbox&quot;
+</code></pre>
+            </li>
+            <li>
+              <p>Run the following command to add the shared folders. For your shared folders, replace the projects or personal name in the name and hostpath options.</p>
+              <pre><code>$ VBoxManage.exe sharedfolder add default --name &quot;c/projects&quot; --hostpath &quot;\\?\c:\projects&quot; --automount
+$ VBoxManage.exe sharedfolder add default --name &quot;c/personal&quot; --hostpath &quot;\\?\c:\personal&quot; --automount
+</code></pre>
+            </li>
+          </ol>
+          <blockquote>
+            <p>The \?\ in the hostpath tells Windows to enable long file paths. {:.warning}</p>
+          </blockquote>
+          <h2 id="step-2-allow-long-paths-and-symlinks">Step 2: Allow Long Paths and Symlinks</h2>
+          <p>If you are using node many of the modules will create symlinks which are supported under Virtualbox but you need to make a configuration change to enable them.</p>
+          <pre><code> $ VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root 1
+</code></pre>
+          <p>Next you need to enable symlinks for each of the shared folders. Replace SharedFolderName with the &ndash;name value that you used when creating the sharedfolder.</p>
+          <pre><code>$ VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/c/personal 1
+
+$ VBoxManage.exe setextradata default VBoxInternal2/SharedFoldersEnableSymlinksCreate/c/projects 1
+</code></pre>
+          <h2 id="step-3-mounting-shared-folders-in-docker">Step 3: Mounting Shared Folders in Docker</h2>
+          <blockquote>
+            <p><strong>Warning:</strong> To make symlinks works when you start up the docker-machine, you need to run the Docker Quickstart Terminal as an administrator. This is a security limitation of Windows for symlinks. Right-click on the Docker Quickstart
+              Terminal and select Run As Administrator. {:.warning}</p>
+          </blockquote>
+          <p>Unfortunately even with auto-mount Docker will only mount the c/Users folder in the docker-machine. If you want the folders to auto-mount you will need to manually mount them each time you start up the default docker machine.</p>
+          <ol>
+            <li>
+              <p>Open the Docker Quickstart Terminal as an administrator</p>
+              <ul>
+                <li>Start Menu</li>
+                <li>Search for Docker Quickstart Terminal</li>
+                <li>Right-click on the Docker Quickstart Terminal and select &ldquo;Run as Administrator&rdquo;<br /> <br /></li>
+              </ul>
+            </li>
+            <li>
+              <p>In order to mount the directories we need to ssh into the docker machine</p>
+              <pre><code>$ docker-machine ssh default
+</code></pre>
+            </li>
+            <li>
+              <p>Once you have ssh&rsquo;ed into the docker machine run the following commands to mount the shared folders we created.</p>
+              <pre><code>  $ sudo mkdir --parents /c/projects
+  $ sudo mount -t vboxsf c/projects /c/projects/
+
+  $ sudo mkdir --parents /c/personal
+  $ sudo mount -t vboxsf c/personal /c/personal/
+</code></pre>
+            </li>
+            <li>
+              <p>Within the docker machine you should now be able to see the files and directories in /c/projects and c/personal</p>
+              <pre><code>$ ls /c/projects
+$ ls /c/personal
+</code></pre>
+            </li>
+            <li>
+              <p>exit the ssh session</p>
+            </li>
+            <li>
+              <p>You are now ready to start up or create your containers</p>
+            </li>
+          </ol>
+          <h2 id="step-4-using-the-shared-folders">Step 4: Using the Shared Folders</h2>
+          <p>Now that the shared folders are mounted in the docker machine to use them from a container -v argument. The command below will mount the local directory c:\projects (in unix form /c/projects) to /projects within the container. The -it say run
+            interactively, ubuntu is the image name and bash is the type of interactive shell</p>
+          <pre><code> $ docker run -v /c/projects:/projects -it ubuntu bash
+</code></pre>
+          <p>From the container, you can look at the projects directory by running</p>
+          <pre><code> $ ls /projects
+</code></pre>
+          <p>You are now ready to start using the container for your development work. In the next tutorial we will look at running docker containers in the background for processes like mysql and postgres.</p>
+        </p>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/docker-on-windows-getting-started/">Part 1 - Docker - Getting Started On Windows</a></li>
+              <li class="current"><span>Part 2 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/docker-running-container-as-service/">Part 3 - Docker - Running Container As a Service</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Docker%20-%20Mounting%20Windows%20Directories%20in%20Containers&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fdocker-windows-mounting-directories%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Docker%20-%20Mounting%20Windows%20Directories%20in%20Containers&http://digitaldrummerj.me/docker-windows-mounting-directories/" title="Send ia email"></a> </li>
+              <li>
+              <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fdocker-windows-mounting-directories%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fdocker-windows-mounting-directories%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

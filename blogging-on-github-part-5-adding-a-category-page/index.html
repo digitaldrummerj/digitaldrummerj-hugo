@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Jekyll Part 05: Adding Category Page" />
+  <meta property="og:description" content="Welcome the continuing series on using Jekyll. In this tutorial we will go through creating a page to show blog post by category.
+Overview A typical blog has a way for your readers to view posts by either category or date, so that they can look at your archives without having to go through the blog post one by one. Unfortunately, the Jekyll-Now repository that we cloned your blog from, does not have these pages."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/blogging-on-github-part-5-adding-a-category-page/" />
+  <meta property="article:published_time" content="2015-02-15T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2015-02-15T00:00:00&#43;00:00" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/jekyll-automated-deployment-to-azure-with-travisci/" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/jekyll-automatically-tweeting-new-post/" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/jekyll-validating-links-and-images/" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/blogging-on-github-part-12-editing-locally/" />
+  <meta property="og:see_also" content="http://digitaldrummerj.me/blogging-on-github-part-9-installing-jekyll-on-windows/" />
+  <meta itemprop="name" content="Jekyll Part 05: Adding Category Page">
+  <meta itemprop="description" content="Welcome the continuing series on using Jekyll. In this tutorial we will go through creating a page to show blog post by category.
+Overview A typical blog has a way for your readers to view posts by either category or date, so that they can look at your archives without having to go through the blog post one by one. Unfortunately, the Jekyll-Now repository that we cloned your blog from, does not have these pages.">
+  <meta itemprop="datePublished" content="2015-02-15T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-02-15T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="698">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Jekyll Part 05: Adding Category Page" />
+  <meta name="twitter:description" content="Welcome the continuing series on using Jekyll. In this tutorial we will go through creating a page to show blog post by category.
+Overview A typical blog has a way for your readers to view posts by either category or date, so that they can look at your archives without having to go through the blog post one by one. Unfortunately, the Jekyll-Now repository that we cloned your blog from, does not have these pages."
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/blogging-on-github-part-5-adding-a-category-page/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Jekyll Part 05: Adding Category Page</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-02-15T00:00:00Z">
+        Sun Feb 15, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/blogging">blogging</a>/ <a href="/categories/jekyll">jekyll</a>
+</span></span>
+        </div>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/blogging-on-github-part-1-getting-started/">Part 1 - Jekyll Part 01: Getting Started</a></li>
+              <li><a href="http://digitaldrummerj.me/blogging-on-github-part-2-your-first-post/">Part 2 - Jekyll Part 02: Your First Post</a></li>
+              <li><a href="http://digitaldrummerj.me/blogging-on-github-part-3-adding-comments/">Part 3 - Jekyll Part 03: Adding Commenting to Post</a></li>
+              <li><a href="http://digitaldrummerj.me/blogging-on-github-part-4-creating-additional-pages/">Part 4 - Jekyll Part 04: Adding Additional Pages</a></li>
+              <li class="current"><span>Part 5 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-6-adding-post-by-date/">Part 6 - Jekyll Part 06: Adding Post by Date Page</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-7-adding-a-custom-google-search/">Part 7 - Jekyll Part 07: Adding a custom Google search</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-8-using-a-custom-domain/">Part 8 - Jekyll Part 08: Using a Custom Domain</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-9-installing-jekyll-on-windows/">Part 9 - Jekyll Part 09: Installing Jekyll On Windows</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-10-installing-jekyll-on-linux/">Part 10 - Jekyll Part 10: Installing Jekyll On Linux</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-11-installing-jekyll-osx/">Part 11 - Jekyll Part 11: Installing Jekyll On OSx</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-12-editing-locally/">Part 12 - Jekyll Part 12: Editing Locally</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/">Part 13 - Jekyll Part 13: Creating an Article Series</a></li>
+                <li><a href="http://digitaldrummerj.me/jekyll-validating-links-and-images/">Part 14 - Jekyll Part 14: How To Validate Links and Images</a></li>
+                <li><a href="http://digitaldrummerj.me/jekyll-automatically-tweeting-new-post/">Part 15 - Jekyll Part 15: Automatically Tweet New Post</a></li>
+                <li><a href="http://digitaldrummerj.me/jekyll-automated-deployment-to-azure-with-travisci/">Part 16 - Jekyll Part 16: Automated Deployment to Azure</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <p>Welcome the continuing series on using Jekyll. In this tutorial we will go through creating a page to show blog post by category.</p>
+          <h2 id="overview">Overview</h2>
+          <p>A typical blog has a way for your readers to view posts by either category or date, so that they can look at your archives without having to go through the blog post one by one. Unfortunately, the Jekyll-Now repository that we cloned your blog
+            from, does not have these pages. Luckily, these pages are really easy to create.</p>
+          <h2 id="section-1-creating-the-category-page">Section 1: Creating the Category Page</h2>
+          <p>If you have been following along with the other lessons in the series, this should be familiar to you.</p>
+          <ol>
+            <li>
+              <p>Open a web browser and navigate to your [username].github.io repository.</p>
+            </li>
+            <li>
+              <p>Click on the + button to add a new file</p>
+              <p><img src="/images/BloggingOnGitHub/github_add_button.png" alt="Github Plus Button" /></p>
+            </li>
+            <li>
+              <p>Name the file archivebycategory.md</p>
+              <p><img src="/images/BloggingOnGitHub/github_part_5_archivebycategory_file_name.png" alt="Github Name the New File archivebycategory.md" /></p>
+            </li>
+          </ol>
+          <h2 id="section-2-adding-the-metadata">Section 2: Adding the Metadata</h2>
+          <p>Add the following front matter to the top of the archivebycategory.md file.</p>
+          <pre><code>{% raw %}
+    ---
+    layout: page
+    title: Post by Category
+    permalink: /categoryview/
+    sitemap: false
+    ---
+{% endraw %}
+</code></pre>
+          <h2 id="section-3-category-list">Section 3: Category List</h2>
+          <p>After the front matter, add the following code to display the categories and the number of post per category. Each category will link to further down in the page where is will show the post for that category.</p>
+          <pre><code>{% raw %}
+    &lt;div&gt;
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+     &lt;span class=&quot;site-tag&quot;&gt;
+        &lt;a href=&quot;#{{ category | first | slugify }}&quot;&gt;
+                {{ category[0] | replace:'-', ' ' }} ({{ category | last | size }})
+        &lt;/a&gt;
+    &lt;/span&gt;
+    {% endfor %}
+    &lt;/div&gt;
+{% endraw %}
+</code></pre>
+          <h2 id="section-4-blog-post-by-category">Section 4: Blog Post by Category</h2>
+          <p>Next you need to add the code to display the list of blog post by category and sorted by title</p>
+          <pre><code>{% raw %}
+    &lt;div id=&quot;index&quot;&gt;
+
+    {% for category in categories %}
+    &lt;a name=&quot;{{ category[0] }}&quot;&gt;&lt;/a&gt;&lt;h2&gt;{{ category[0] | replace:'-', ' ' }} ({{ category | last | size }}) &lt;/h2&gt;
+    {% assign sorted_posts = site.posts | sort: 'title' %}
+    {% for post in sorted_posts %}
+    {%if post.categories contains category[0]%}
+
+      &lt;h3&gt;&lt;a href=&quot;{{ site.url }}{{ site.baseurl }}{{ post.url }}&quot; title=&quot;{{ post.title }}&quot;&gt;{{ post.title }} &lt;p class=&quot;date&quot;&gt;{{ post.date |  date: &quot;%B %e, %Y&quot; }}&lt;/p&gt;&lt;/a&gt;&lt;/h3&gt;
+       &lt;p&gt;{{ post.excerpt | strip_html | truncate: 160 }}&lt;/p&gt;
+
+    {%endif%}
+    {% endfor %}
+
+    {% endfor %}
+    &lt;/div&gt;
+{% endraw %}
+</code></pre>
+          <h2 id="section-5-viewing-the-category-page">Section 5: Viewing the Category Page</h2>
+          <ol>
+            <li>
+              <p>After you have added the above text, scroll to the bottom of the page, add your commit note, and click the commit button.</p>
+              <p><img src="/images/BloggingOnGitHub/github_part_5_commit_archivebycategory.png" alt="Github Commit archivebycategory.md" /></p>
+            </li>
+            <li>
+              <p>To view the category page, navigate to http://[username].github.io/categoryview</p>
+            </li>
+            <li>
+              <p>Your page should look like the following but with your avatar, site name and description in the header of the page.</p>
+              <p><img src="/images/BloggingOnGitHub/github_part_5_archivebycategory_in_browser.png" alt="category view screenshot" /></p>
+            </li>
+            <li>
+              <p>You will notice that the &ldquo;You&rsquo;re up and running&rdquo; post does not show up on the categories page. This is because there is no categories front matter tag for that blog post. Go ahead and open 2014-3-3-Hello-World.md and add
+                the categories front matter tag.</p>
+              <pre><code>categories: ['welcome']
+</code></pre>
+            </li>
+            <li>
+              <p>Right now the page is published but not linked to from anywhere. In the next section we will add it to the header section of the page.</p>
+            </li>
+          </ol>
+          <h2 id="section-6-adding-category-view-into-header">Section 6: Adding Category View into Header</h2>
+          <p>Unlike the portfolio page that we created in the last lesson, this time we are not going to add the category page into the menu. Instead we are going to create a row below the header with a link to the page.</p>
+          <ol>
+            <li>
+              <p>Go into the _layouts directory by clicking on _layouts</p>
+            </li>
+            <li>
+              <p>Click on the default.html file to open it.</p>
+            </li>
+            <li>
+              <p>Click on the <img src="/images/BloggingOnGitHub/github_edit_button.png" alt="github_edit_button.png" /> icon to edit the file.</p>
+            </li>
+            <li>
+              <p>Right after the &lt;/header&gt; tag, add the following html snippet</p>
+              <pre><code>{% raw %}
+  &lt;div class=&quot;container&quot; &gt;
+        &lt;div id=&quot;archives&quot;&gt;
+            browse by &lt;a title=&quot;The complete archive of {{ site.name }}'s Blog by category&quot;
+                         href=&quot;{{ site.url}}{{ site.baseurl }}//categoryview&quot;&gt;category&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+{% endraw %}
+</code></pre>
+            </li>
+            <li>
+              <p>Scroll down to the bottom, add the commit comment, and click on the commit change button.</p>
+              <p><img src="/images/BloggingOnGitHub/github_part_5_commit_default.png" alt="Commit default.html changes" /></p>
+            </li>
+            <li>
+              <p>Now go view your blog&rsquo;s home page at http://[username].github.io/. You should now see the &ldquo;browse by category&rdquo; link in the header.</p>
+              <p><img src="/images/BloggingOnGitHub/github_part_5_browse_by_category_in_header.png" alt="Blog's Home Page with Browse By Category Link in Header" /></p>
+            </li>
+          </ol>
+          <h2 id="conclusion">Conclusion</h2>
+          <p>With just a few simple steps, you were added the post by category page and put it in the header. In the next lesson we will add in a new page for browsing blog post by year and month.</p>
+        </p>
+        <p>
+          <div class="series-nav">
+            <p>This article is part of a series. </p>
+            <ul class="side-nav">
+              <li><a href="http://digitaldrummerj.me/blogging-on-github-part-1-getting-started/">Part 1 - Jekyll Part 01: Getting Started</a></li>
+              <li><a href="http://digitaldrummerj.me/blogging-on-github-part-2-your-first-post/">Part 2 - Jekyll Part 02: Your First Post</a></li>
+              <li><a href="http://digitaldrummerj.me/blogging-on-github-part-3-adding-comments/">Part 3 - Jekyll Part 03: Adding Commenting to Post</a></li>
+              <li><a href="http://digitaldrummerj.me/blogging-on-github-part-4-creating-additional-pages/">Part 4 - Jekyll Part 04: Adding Additional Pages</a></li>
+              <li class="current"><span>Part 5 - This Article</span>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-6-adding-post-by-date/">Part 6 - Jekyll Part 06: Adding Post by Date Page</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-7-adding-a-custom-google-search/">Part 7 - Jekyll Part 07: Adding a custom Google search</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-8-using-a-custom-domain/">Part 8 - Jekyll Part 08: Using a Custom Domain</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-9-installing-jekyll-on-windows/">Part 9 - Jekyll Part 09: Installing Jekyll On Windows</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-10-installing-jekyll-on-linux/">Part 10 - Jekyll Part 10: Installing Jekyll On Linux</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-11-installing-jekyll-osx/">Part 11 - Jekyll Part 11: Installing Jekyll On OSx</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-12-editing-locally/">Part 12 - Jekyll Part 12: Editing Locally</a></li>
+                <li><a href="http://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/">Part 13 - Jekyll Part 13: Creating an Article Series</a></li>
+                <li><a href="http://digitaldrummerj.me/jekyll-validating-links-and-images/">Part 14 - Jekyll Part 14: How To Validate Links and Images</a></li>
+                <li><a href="http://digitaldrummerj.me/jekyll-automatically-tweeting-new-post/">Part 15 - Jekyll Part 15: Automatically Tweet New Post</a></li>
+                <li><a href="http://digitaldrummerj.me/jekyll-automated-deployment-to-azure-with-travisci/">Part 16 - Jekyll Part 16: Automated Deployment to Azure</a></li>
+            </ul>
+          </div>
+        </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Jekyll%20Part%2005%3a%20Adding%20Category%20Page&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fblogging-on-github-part-5-adding-a-category-page%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Jekyll%20Part%2005:%20Adding%20Category%20Page&http://digitaldrummerj.me/blogging-on-github-part-5-adding-a-category-page/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fblogging-on-github-part-5-adding-a-category-page%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fblogging-on-github-part-5-adding-a-category-page%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta property="og:title" content="Ionic - Using Local Notifications" />
+  <meta property="og:description" content="When you are creating a mobile applications there are times where you need to notify users about something such as an upcoming appointment. If the application is running and the user is using it in the foreground, this is easy to accomplish. However, if the application is running in the background this can be a challenging task. You could do push notifications but that takes a decent amount of work to setup with both iOS and Android app stores."
+  />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://digitaldrummerj.me/ionic-local-notification/" />
+  <meta property="article:published_time" content="2015-12-01T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2015-12-01T00:00:00&#43;00:00" />
+  <meta itemprop="name" content="Ionic - Using Local Notifications">
+  <meta itemprop="description" content="When you are creating a mobile applications there are times where you need to notify users about something such as an upcoming appointment. If the application is running and the user is using it in the foreground, this is easy to accomplish. However, if the application is running in the background this can be a challenging task. You could do push notifications but that takes a decent amount of work to setup with both iOS and Android app stores.">
+  <meta itemprop="datePublished" content="2015-12-01T00:00:00&#43;00:00" />
+  <meta itemprop="dateModified" content="2015-12-01T00:00:00&#43;00:00" />
+  <meta itemprop="wordCount" content="1442">
+  <meta itemprop="keywords" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ionic - Using Local Notifications" />
+  <meta name="twitter:description" content="When you are creating a mobile applications there are times where you need to notify users about something such as an upcoming appointment. If the application is running and the user is using it in the foreground, this is easy to accomplish. However, if the application is running in the background this can be a challenging task. You could do push notifications but that takes a decent amount of work to setup with both iOS and Android app stores."
+  />
+  <meta name="msvalidate.01" content="E414777C8C1E619FC57F320448FD584A" />
+  <base href="http://digitaldrummerj.me/">
+  <link rel="canonical" href="http://digitaldrummerj.me/ionic-local-notification/">
+  <title>Justin James</title>
+  <link href="http://digitaldrummerj.me/css/app.css" rel="stylesheet">
+  <script src="http://digitaldrummerj.me/js/modernizr.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+  </noscript>
+  <link href="http://digitaldrummerj.me//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Lato:400,700,400italic:latin', 'Volkhov::latin']
+      }
+    });
+  </script> <noscript>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+</noscript> </head>
+
+<body id="top-of-page">
+  <div id="navigation" class="sticky">
+    <nav class="top-bar" role="navigation" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1 class="show-for-small-only"><a href="http://digitaldrummerj.me/" class="icon-tree"> Justin James</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="http://digitaldrummerj.me/">
+                Home
+              </a></li>
+          <li><a href="http://digitaldrummerj.me/speaking/">Speaking Engagements</a></li>
+          <li><a href="http://digitaldrummerj.me/blog/">Blog</a></li>
+          <li class="has-dropdown  not-click"> <a href="/workshops/">Workshops </a>
+            <ul class="dropdown">
+              <li class="parent-link hide-for-large-up"> <a class="parent-link js-generated" href="/workshops/">Workshops </a> </li>
+              <li> <a href="http://digitaldrummerj.me/sails-tutorial">Rapid API Development with SailsJS</a></li>
+              <li> <a href="http://digitaldrummerj.me/angular-tutorial">Up and Running with Angular</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="right">
+          <li><a href="http://digitaldrummerj.me/about/">About</a></li>
+          <li><a href="http://digitaldrummerj.me/contact/">Contact</a></li>
+          <li><a href="http://digitaldrummerj.me/search/">Search</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+  <div id="masthead-no-image-header">
+    <div class="row">
+      <div class="small-12 columns"> <a id="logo" href="http://digitaldrummerj.me/" title="Justin James">
+                <img src="/images/logo.png" alt="Justin James">
+              </a> </div>
+    </div>
+  </div>
+  <div class="row t30">
+    <div class="small-12 columns medium-8">
+      <header>
+        <div itemprop="name">
+          <h1>Ionic - Using Local Notifications</h1>
+        </div>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-12-01T00:00:00Z">
+        Tue Dec 01, 2015
+      </time> </span> <span class="meta-tags">
+  <span class="icon-price-tag"></span> <span> 
+<a href="/categories/ionic">ionic</a>
+</span></span>
+        </div>
+        <p> </p>
+        <p>
+          <p>When you are creating a mobile applications there are times where you need to notify users about something such as an upcoming appointment. If the application is running and the user is using it in the foreground, this is easy to accomplish.
+            However, if the application is running in the background this can be a challenging task. You could do push notifications but that takes a decent amount of work to setup with both iOS and Android app stores. If all you need to do is alert them
+            on their local device you can just use the cordova local notification plugin and skip the headache of setting up push notifications.</p>
+          <p>In this post we will walk you through creating an ionic application that uses the <a href="http://ngcordova.com/docs/plugins/localNotification/">ngCordova local notification plugin</a>.</p>
+          <h2 id="environment-setup">Environment Setup</h2>
+          <p>Before we get started, we need to make sure that you have your development environment configured with either an emulator or physical device as the local notification only works on a device and not a web browser. If you have already configured
+            the Ionic Framework and an emulator/physical device, you can skip this section.</p>
+          <p>Make sure that you meet these requirements:</p>
+          <ul>
+            <li>Android environment configured -
+              <ul>
+                <li>Java 7+</li>
+                <li>Android SDK</li>
+                <li>Android Studio</li>
+                <li>Either emulator, genymotion, or physical device</li>
+              </ul>
+            </li>
+            <li>iOS environment configured (if on a MAC)
+              <ul>
+                <li>XCode</li>
+                <li>Either iOS Simulator or Device</li>
+                <li>XCode Command Line Tools<br /></li>
+              </ul>
+            </li>
+            <li>nodejs</li>
+            <li>ionic</li>
+            <li>cordova</li>
+            <li>gulp</li>
+            <li>bower</li>
+          </ul>
+          <p>You can refer to the following articles to configure your environment:</p>
+          <ol>
+            <li><a href="/images/IonicLocalNotifications/Ionic-Setup-Windows">Setup Ionic on Windows</a></li>
+            <li><a href="/images/IonicLocalNotifications/ionic-setup-osx/">Setup Ionic on Mac</a></li>
+          </ol>
+          <h2 id="creating-project">Creating Project</h2>
+          <p>The first thing we need to do is create a new ionic project that we will use to test the local notifications.</p>
+          <pre><code>ionic start ionic-local-notifications blank
+cd ionic-local-notifications
+</code></pre>
+          <p>Now we need to add the platforms to the ionic application since we need to deploy to a device in order for the local notifications to work. It will not work correctly in the browser.</p>
+          <p>To add the android platform:</p>
+          <pre><code>ionic platform add android
+</code></pre>
+          <p>To add the iOS platform (for Mac users):</p>
+          <pre><code>ionic platform add ios
+</code></pre>
+          <p>Remember, if you’re not using a Mac, you cannot build for the iOS platform.</p>
+          <h2 id="install-ngcordova">Install ngCordova</h2>
+          <p>ngCordova is a collection of 70+ AngularJS extensions on top of the Cordova API that make it easy to build, test, and deploy Cordova mobile apps with AngularJS. These extensions allow us to interact with device features such as the camera, battery
+            status, and geolocation.</p>
+          <p>To install ngCordova run:</p>
+          <pre><code>bower install ngCordova --save
+</code></pre>
+          <p>Include ng-cordova.js or ng-cordova.min.js in your www\index.html file before cordova.js and after your AngularJS / Ionic file.</p>
+          <pre><code>&lt;script src=&quot;lib/ionic/js/ionic.bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;lib/ngCordova/dist/ng-cordova.min.js&quot;&gt;&lt;/script&gt;    
+&lt;script src=&quot;cordova.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+          <h2 id="install-the-local-notification-plugin">Install the local notification plugin</h2>
+          <p>To install the plugin run:</p>
+          <pre><code>ionic plugin add https://github.com/katzer/cordova-plugin-local-notifications.git
+</code></pre>
+          <p>If you open up the package.json file, you will see the local notification plugin add along with the other cordova plugins.</p>
+          <pre><code>&quot;cordovaPlugins&quot;: [
+    {
+        &quot;locator&quot;: &quot;https://github.com/katzer/cordova-plugin-local-notifications.git&quot;,
+        &quot;id&quot;: &quot;de.appplant.cordova.plugin.local-notification&quot;
+    }
+]
+</code></pre>
+          <h2 id="add-ngcordova-as-a-dependency">Add ngCordova as a dependency</h2>
+          <p>Open up the www/js/app.js file and inject ngCordova into the module</p>
+          <p>angular.module(&lsquo;starter&rsquo;, [&lsquo;ionic&rsquo;, &lsquo;ngCordova&rsquo;])</p>
+          <h2 id="creating-a-new-controller">Creating a New Controller</h2>
+          <p>We need to create an Angular controller that the UI will interact with. At the bottom of the www/js/app.js file add the following</p>
+          <pre><code>.controller('SampleController', function($scope, $cordovaLocalNotification) {
+
+});
+</code></pre>
+          <p>Now we need to tell the UI what the controller is. Open up the www/index.html page and add the controller to the ion-content.</p>
+          <pre><code>&lt;ion-pane&gt;
+  &lt;ion-header-bar class=&quot;bar-stable&quot;&gt;
+    &lt;h1 class=&quot;title&quot;&gt;Local Notification Sample&lt;/h1&gt;
+  &lt;/ion-header-bar&gt;
+  &lt;ion-content ng-controller=&quot;SampleController&quot;&gt;
+  &lt;/ion-content&gt;
+&lt;/ion-pane&gt;
+</code></pre>
+          <h2 id="adding-functions-to-create-notifications">Adding Functions to Create Notifications</h2>
+          <p>Within the SampleController, we need to add all of the functions to do the scheduling of the notifications.</p>
+          <p>All of the local notification functions should be contained within an ionic platform ready function and inside of a check that makes sure we are running in a WebView on a device. This will at least allow us to see the UI in the browser without
+            error, it just won&rsquo;t run any of the local notification function unless on a WebView.</p>
+          <pre><code>$ionicPlatform.ready(function () {
+          if (ionic.Platform.isWebView()) {
+          }
+})
+</code></pre>
+          <p>Make sure to inject $ionicPlatform into the SampleController</p>
+          <pre><code>.controller('SampleController', function($scope, $cordovaLocalNotification, $ionicPlatform) {
+
+});
+</code></pre>
+          <h3 id="instant-notification">Instant Notification</h3>
+          <p>To schedule an immediate notification, add the following function within the ionicPlatform.ready function</p>
+          <pre><code>$scope.scheduleInstantNotification = function () {
+      $cordovaLocalNotification.schedule({
+      id: 1,
+      text: 'Instant Notification',
+      title: 'Instant'
+    }).then(function () {
+      alert(&quot;Instant Notification set&quot;);
+    });
+  };
+</code></pre>
+          <p>In the www/index.html page within the ion-content, add a button and set the ng-click to call the scheduleInstantNotification function.</p>
+          <pre><code>&lt;button 
+    class=&quot;button&quot;      
+    ng-click=&quot;scheduleInstantNotification()&quot;&gt;
+    Instant 
+&lt;/button&gt;
+</code></pre>
+          <h3 id="notification-x-seconds-from-now">Notification X Seconds from Now</h3>
+          <p>To schedule a notification 5 seconds from now, add the following function within the ionicPlatform.ready function.</p>
+          <p>The difference between this function and the immediate notification is the date property is being set.</p>
+          <pre><code>$scope.scheduleNotificationFiveSecondsFromNow = function () {
+    var now = new Date().getTime();
+    var _5SecondsFromNow = new Date(now + 5000);
+
+
+    $cordovaLocalNotification.schedule({
+        id: 2,
+        date: _5SecondsFromNow,
+        text: 'Notification After 5 Seconds Has Been Triggered',
+        title: 'After 5 Seconds'
+    }).then(function () {
+        alert(&quot;Notification After 5 seconds set&quot;);
+    });
+};
+</code></pre>
+          <p>In the www/index.html page within the ion-content, add a button and set the ng-click to call the scheduleNotificationFiveSecondsFromNow function.</p>
+          <pre><code>&lt;button 
+    class=&quot;button&quot;      
+    ng-click=&quot;scheduleNotificationFiveSecondsFromNow()&quot;&gt;
+        In 5 Sec
+&lt;/button&gt;
+</code></pre>
+          <h3 id="notification-every-minute">Notification Every Minute</h3>
+          <p>To schedule a notification every minute, add the following function within the ionicPlatform.ready function</p>
+          <pre><code>$scope.scheduleEveryMinuteNotification = function () {
+    $cordovaLocalNotification.schedule({
+    id: 3,
+    title: 'Every Minute',
+    text: 'Give a real message',
+    every: 'minute'
+    }).then(function (result) {
+    console.log('Every Minute Notification Set');
+    });
+};     
+</code></pre>
+          <p>Note: The every options possible values are second, minute, hour, day, week, month, or year.</p>
+          <p>In the www/index.html page within the ion-content, add a button and set the ng-click to call the scheduleEveryMinuteNotification function.</p>
+          <pre><code>&lt;button 
+    class=&quot;button&quot;      
+    ng-click=&quot;scheduleEveryMinuteNotification()&quot;&gt;
+        Every Minute
+&lt;/button&gt;
+</code></pre>
+          <h3 id="update-notification-text">Update Notification Text</h3>
+          <p>To update a the every minute notification, add the following function within the ionicPlatform.ready function. You also need to check that the notification is scheduled before trying to update it. This functions requires that you clicked on
+            the Every Minute button to schedule the every minute notification.</p>
+          <pre><code>$scope.updateNotificationText = function () {
+    $cordovaLocalNotification.isPresent(3).then(function (present) {
+        if (present) {
+
+            $cordovaLocalNotification.update({
+                id: 3,
+                title: 'Notificaton  Update',
+                text: 'Notification Update Details'
+            }).then(function (result) {
+                console.log('Updated Notification Text');
+            });
+        } else {
+            alert(&quot;Must Schedule Every Minute First&quot;);
+        }
+    });
+};
+</code></pre>
+          <p>In the www/index.html page within the ion-content, add a button and set the ng-click to call the updateNotification function.</p>
+          <pre><code>&lt;button 
+    class=&quot;button&quot;      
+    ng-click=&quot;updateNotificationText()&quot;&gt;
+        Update Text for Every Minute
+&lt;/button&gt;
+</code></pre>
+          <h3 id="update-notification-interval">Update Notification Interval</h3>
+          <p>To update a the every minute notification to be scheduled every second, add the following function within the ionicPlatform.ready function. You also need to check that the notification is scheduled before trying to update it. This functions
+            requires that you clicked on the Every Minute button to schedule the every minute notification.</p>
+          <pre><code>$scope.updateNotificationEvery = function () {
+    $cordovaLocalNotification.isPresent(3).then(function (present) {
+        if (present) {
+            $cordovaLocalNotification.update({
+                id: 3,
+                title: 'Notification  Update',
+                text: 'Every Minute change to second',
+                every: 'second'
+
+            }).then(function (result) {
+                console.log('Updated Notification Every');
+            });
+        } else {
+            alert(&quot;Must Schedule Every Minute First&quot;);
+        }
+    });
+};
+</code></pre>
+          <p>In the www/index.html page within the ion-content, add a button and set the ng-click to call the updateNotification function.</p>
+          <pre><code>&lt;button 
+    class=&quot;button  button-block button-positive&quot;
+    ng-click=&quot;updateNotificationEvery()&quot;&gt;
+    Update Every Min to Second
+&lt;/button&gt;
+</code></pre>
+          <h3 id="cancel-notification">Cancel Notification</h3>
+          <p>To cancel a notification, add the following function within the ionicPlatform.ready function. You also need to check that the notification is scheduled before trying to cancel it. This functions requires that you clicked on the Every Minute
+            button to schedule the every minute notification.</p>
+          <pre><code>$scope.cancelNotification = function () {
+    $cordovaLocalNotification.isPresent(3).then(function (present) {
+        if (present) {
+            $cordovaLocalNotification.cancel(3).then(function (result) {
+                console.log('Notification EveryMinute Cancelled');
+                alert('Cancelled Every Minute');
+            });
+        } else {
+            alert(&quot;Must Schedule Every Minute First&quot;);
+        }
+    });
+};
+</code></pre>
+          <p>In the www/index.html page within the ion-content, add a button and set the ng-click to call the cancelNotification function.</p>
+          <pre><code>&lt;button 
+    class=&quot;button&quot;      
+    ng-click=&quot;cancelNotification()&quot;&gt;
+        Cancel Every Minute
+&lt;/button&gt;
+</code></pre>
+          <h2 id="deploy-to-device">Deploy to Device</h2>
+          <p>In order for the local notifications to work, you need to deploy the application to a device or an emulator. It will not work correctly in the browser.</p>
+          <p>Note: You can only compile and deploy ios application on a Mac.</p>
+          <p>Android:</p>
+          <pre><code>$ ionic run android
+</code></pre>
+          <p>iOS:</p>
+          <pre><code>$ionic run ios     
+</code></pre>
+          <p>Note: You may need to pass in &ndash;device to the command to get it to run on a device vs an emulator.</p>
+          <h2 id="wrap-up">Wrap-up</h2>
+          <p>Local notifications are a great option for being able to alert a user to something in your application. As you saw it only took a few lines of code to enable them. This article touched on the basic but there is more that you can do with local
+            notifications. You can interact with multiple notifications at once for scheduling, updating, and cancelling. You can pass additional data into each notification that you can then use when the notification is trigger. On the rootscope you
+            can listen for notifications to be scheduled, tiggered, updated or cancelled.</p>
+          <p>Source code for this article is available at <a href="https://github.com/digitaldrummerj-ionic/ionic-local-notifications-sample">https://github.com/digitaldrummerj-ionic/ionic-local-notifications-sample</a>.</p>
+        </p>
+        <p> </p>
+        <p>
+          <h4>Share Post:</h4>
+          <section id="sharer" class="small-12 columns social-icons">
+            <ul class="inline-list">
+              <li> <a class="share-twitter icon-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Ionic%20-%20Using%20Local%20Notifications&via=digitaldrummerj" title="Tweet this"></a> </li>
+              <li> <a class="share-facebook icon-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdigitaldrummerj.me%2fionic-local-notification%2f" title="Share on Facebook"></a> </li>
+              <li> <a class="share-email icon-mail " target="_blank" href="mailto:subject=Ionic%20-%20Using%20Local%20Notifications&http://digitaldrummerj.me/ionic-local-notification/" title="Send ia email"></a> </li>
+              <li> <a class=" share-googleplus icon-googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fdigitaldrummerj.me%2fionic-local-notification%2f" title="Share on Google+"></a> </li>
+              <li> <a class="share-linkedin icon-linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fdigitaldrummerj.me%2fionic-local-notification%2f" title="Share on LinkedIn"></a> </li>
+            </ul>
+          </section>
+        </p>
+    </div>
+    <div class="hide-for-small-only medium-4 columns" data-sticky-container>
+      <aside class="sidebar">
+        <div class="panel radius">
+          <h3>Subscribe</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//feed.xml">RSS Feed</a>
+              <li><span class="icon-rss"></span><a href="http://digitaldrummerj.me//atom.xml">Atom Feed</a></ul>
+        </div>
+        <div class="panel radius latePost">
+          <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me//blog/">All Posts</a>)</small></span></h3>
+          <ul class="no-bullet ">
+            <li><a href="/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
+            <li><a href="/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
+            <li><a href="/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
+            <li><a href="/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
+            <li><a href="/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Archive</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/monthview">By Date</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/categoryview">By Category</a></li>
+            <li><span class="icon-archive"></span><a href="http://digitaldrummerj.me//blog/archive/tagcloudview">By Tag Cloud</a></li>
+          </ul>
+        </div>
+        <div class="panel radius">
+          <h3>Categories</h3>
+          <ul class="no-bullet">
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/android">Android &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/c">C# &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/community">Community &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/git">Git &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/github">Github &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/gulp">Gulp &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/node">Node &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/powershell">Powershell &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  </div>
+  <footer id="footer-content" class="bg-grau">
+    <div id="footer">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h5 class="shadow-black">About This Site</h5>
+          <p class="shadow-black"> Sharing my knowledge with others in a manner that is easy to understand and consume. <a href="/about/">More ›</a></p>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <h5 class="shadow-black">Services</h5>
+          <ul class="no-bullet shadow-black">
+            <li> <a href="" title=""></a></li>
+            <li class="icon-mail"> <a href="/contact/" title="Contact">Contact</a></li>
+            <li class="icon-rss"> <a href="/feed.xml" type="application/rss+xml" title="Subscribe to RSS Feed">RSS</a></li>
+            <li class="icon-rss"><a href="/atom.xml" type="application/rss+xml" title="Subscribe to Atom Feed">Atom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <nav class="row">
+        <section id="subfooter-left" class="small-12 medium-6 columns credits">
+          <p>Created with ♥ by <a href="/about/">Justin James</a>. All content is the property of Justin James and digitaldrummerj.me. This blog, its content, and opinions are my own.</p>
+        </section>
+        <section id="subfooter-right" class="small-12 medium-6 columns social-icons">
+          <ul class="inline-list">
+            <li><a href="https://github.com/digitaldrummerj" target="_blank" class="icon-github" title="Code and such..."></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDMvOL1XSKclxwplUT0fzLA" target="_blank" class="icon-youtube" title="Tech Videos"></a></li>
+            <li><a href="https://twitter.com/digitaldrummerj" target="_blank" class="icon-twitter" title="Twitter"></a></li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </footer>
+  <foot>
+    <script src="http://digitaldrummerj.me/js/jquery-3.1.1.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/javascript.min.js"></script>
+    <script src="http://digitaldrummerj.me/js/app.js"></script>
+  </foot>
+</body>
+
+</html>
