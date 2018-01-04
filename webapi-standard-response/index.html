@@ -13,7 +13,6 @@
   <meta property="article:published_time" content="2016-09-29T00:00:00&#43;00:00" />
   <meta property="article:modified_time" content="2016-09-29T00:00:00&#43;00:00" />
   <meta property="og:see_also" content="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-json-setup/" />
-  <meta property="og:see_also" content="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-with-credentials/" />
   <meta property="og:see_also" content="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-getting-started/" />
   <meta itemprop="name" content="ASP.NET Web Api - Setup Generic Response Handler">
   <meta itemprop="description" content="Welcome to the continuing series on getting started with ASP.NET Web Api. In the previous post, we created our ASP.NET Web Api project, created our 1st controller, enabled Windows authentication and configured JSON to be camel cased for our returned C# class. In this article we will learn how to setup a generic response handler for all of Api calls. This will allow us to consolidate the logic needed to create a proper response as well as it will allow us to consolidate the exception handling logic.">
@@ -42,6 +41,15 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
   </noscript>
   <link href="http://digitaldrummerj.me/digitaldrummerj-hugo//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script>
+    window.ga = window.ga || function() {
+      (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-58457343-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script async src='//www.google-analytics.com/analytics.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
   <script>
     WebFont.load({
@@ -113,8 +121,7 @@
             <ul class="side-nav">
               <li><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-getting-started/">Part 1 - ASP.NET Web Api - Getting Started</a></li>
               <li><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-json-setup/">Part 2 - ASP.NET Web Api - Setup JSON Camel Cased Fields</a></li>
-              <li><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-with-credentials/">Part 3 - ASP.NET Web Api with Credentials CORS Issues Solved</a></li>
-              <li class="current"><span>Part 4 - This Article</span> </ul>
+              <li class="current"><span>Part 3 - This Article</span> </ul>
           </div>
         </p>
         <p>
@@ -257,8 +264,7 @@ public WrapResponseResult(Func&lt;T&gt; func, HttpRequestMessage request)
             <ul class="side-nav">
               <li><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-getting-started/">Part 1 - ASP.NET Web Api - Getting Started</a></li>
               <li><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-json-setup/">Part 2 - ASP.NET Web Api - Setup JSON Camel Cased Fields</a></li>
-              <li><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-with-credentials/">Part 3 - ASP.NET Web Api with Credentials CORS Issues Solved</a></li>
-              <li class="current"><span>Part 4 - This Article</span> </ul>
+              <li class="current"><span>Part 3 - This Article</span> </ul>
           </div>
         </p>
         <p>
@@ -273,7 +279,18 @@ public WrapResponseResult(Func&lt;T&gt; func, HttpRequestMessage request)
             </ul>
           </section>
         </p>
-    </div>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          (function() {
+            if (window.location.hostname == "localhost") return;
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'digitaldrummerj';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>        </div>
     <div class="hide-for-small-only medium-4 columns" data-sticky-container>
       <aside class="sidebar">
         <div class="panel radius">
@@ -285,11 +302,11 @@ public WrapResponseResult(Func&lt;T&gt; func, HttpRequestMessage request)
         <div class="panel radius latePost">
           <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me/digitaldrummerj-hugo//blog/">All Posts</a>)</small></span></h3>
           <ul class="no-bullet ">
-            <li><a href="/digitaldrummerj-hugo/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
             <li><a href="/digitaldrummerj-hugo/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
             <li><a href="/digitaldrummerj-hugo/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
             <li><a href="/digitaldrummerj-hugo/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
             <li><a href="/digitaldrummerj-hugo/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+            <li><a href="/digitaldrummerj-hugo/ionic-v2-setup-windows/">Ionic v2 - How to setup on Windows</a></li>
           </ul>
         </div>
         <div class="panel radius">
@@ -306,15 +323,13 @@ public WrapResponseResult(Func&lt;T&gt; func, HttpRequestMessage request)
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/android">Android &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/blogging">Blogging &nbsp;<span>(17)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/c">C# &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/community">Community &nbsp;<span>(1)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/git">Git &nbsp;<span>(5)</span></a></li>
@@ -323,10 +338,8 @@ public WrapResponseResult(Func&lt;T&gt; func, HttpRequestMessage request)
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/jekyll">Jekyll &nbsp;<span>(16)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/node">Node &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
@@ -334,13 +347,12 @@ public WrapResponseResult(Func&lt;T&gt; func, HttpRequestMessage request)
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/speaking">Speaking &nbsp;<span>(3)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
           </ul>

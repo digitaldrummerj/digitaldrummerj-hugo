@@ -9,7 +9,7 @@
   <meta property="og:description" content="Web Developer and Professional Speaker" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://digitaldrummerj.me/digitaldrummerj-hugo/blog/" />
-  <meta property="og:updated_time" content="2016-01-11T00:00:00&#43;00:00" />
+  <meta property="og:updated_time" content="2015-10-05T00:00:00&#43;00:00" />
   <meta itemprop="name" content="Blogs">
   <meta itemprop="description" content="Web Developer and Professional Speaker">
   <meta name="twitter:card" content="summary" />
@@ -32,6 +32,15 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
   </noscript>
   <link href="http://digitaldrummerj.me/digitaldrummerj-hugo//feed.xml" rel="alternate" type="application/rss+xml" title="Justin James" />
+  <script>
+    window.ga = window.ga || function() {
+      (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-58457343-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script async src='//www.google-analytics.com/analytics.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
   <script>
     WebFont.load({
@@ -87,74 +96,76 @@
   <div class="row t30">
     <div class="small-12 columns medium-8">
       <div class="blog-post">
-        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/angular-running-service-in-console/">Angular - Calling Service Methods from Console</a> </h2>
-        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2016-01-11T00:00:00Z">
-            Mon Jan 11, 2016
+        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/dont-swallow-the-exceptions/">Do Not Swallow The Exceptions</a> </h2>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-10-05T00:00:00Z">
+            Mon Oct 05, 2015
           </time> </span> <span class="meta-tags">
   <span class="icon-price-tag"></span> <span> 
-<a href="/digitaldrummerj-hugo/categories/angular">angular</a>
+<a href="/digitaldrummerj-hugo/categories/programming">programming</a>/ <a href="/digitaldrummerj-hugo/categories/c">c#</a>
 </span></span>
         </div>
-        <p> Here is a quick tip for how you can run your Angular service and factory methods within the Chrome Dev Tools console. No longer will you have to go through the process of navigating through the UI to trigger a Service/Factory method to run. Now
-          you can just load up the web site and do all of your debugging through the Chrome console. If your service/factory was called &ldquo;YourFactory&rdquo; and the ng-app attribute is on the body tag, you can get a reference to the &ldquo;YourFactory&rdquo;
-          with the following line in the console. </p>
-        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/angular-running-service-in-console/'><strong>Read More ›</strong></a></p>
+        <p> Throwing away exceptions in your code is just a bad practice and makes it harder to support your application. It may make it easier for you as a developer to get something working but in the long run it cost way more money to do the maintenance
+          and troubleshooting then if you had just put in proper exception handling to start with. I have worked on several codebases recently where methods returned false if either a business rule failed or an unexpected exception occurred with no logging
+          of the error anywhere. </p>
+        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/dont-swallow-the-exceptions/'><strong>Read More ›</strong></a></p>
       </div>
       <hr>
       <div class="blog-post">
-        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/year-in-review/">2015 Year In Review</a> </h2>
-        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-12-31T00:00:00Z">
-            Thu Dec 31, 2015
+        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-fixing-opentable-basebox/">Vagrant - Fixing Opentable Basebox looking for Windows Plugin</a> </h2>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-10-04T00:00:00Z">
+            Sun Oct 04, 2015
           </time> </span> <span class="meta-tags">
   <span class="icon-price-tag"></span> <span> 
-<a href="/digitaldrummerj-hugo/categories/year-in-review">year in review</a>
+<a href="/digitaldrummerj-hugo/categories/vagrant">vagrant</a>
 </span></span>
         </div>
-        <p> 2015 was a great year with lots of new adventures. I did a bunch of travelling, started a new position at work, competed in my first hackathon (and win), and started a couple of meetups. At the beginning of 2015 I set a few goals for myself: Speak
-          at more events Start blogging again Be more active in my local dev community Speaking I spoke at a good amount of events this year considering this was my first year putting myself out there. </p>
-        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/year-in-review/'><strong>Read More ›</strong></a></p>
+        <p> Overview As part of my demo during my Vagrant talk, I use the opentable/win-8.1-enterprise-amd64-nocm vagrant base box with the virtualbox provider. This vagrant base box unfortunately has an issue with the vagrantfile that is included with it
+          looking for the old/unneeded vagrant windows plugin to be installed and trying to port forward the WinRM and RDP ports without detecting if the port is already in use. Luckily, it is really easy to fix the included vagrantfile so that you can
+          create vagrant machines but you have to do some prework before running a vagrant up using this base box. </p>
+        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/vagrant-fixing-opentable-basebox/'><strong>Read More ›</strong></a></p>
       </div>
       <hr>
       <div class="blog-post">
-        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-local-notification/">Ionic - Using Local Notifications</a> </h2>
-        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-12-01T00:00:00Z">
-            Tue Dec 01, 2015
+        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/git-syncing-fork-with-original-repo/">Sync your Git Fork to the Original Repo</a> </h2>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-09-28T00:00:00Z">
+            Mon Sep 28, 2015
           </time> </span> <span class="meta-tags">
   <span class="icon-price-tag"></span> <span> 
-<a href="/digitaldrummerj-hugo/categories/ionic">ionic</a>
+<a href="/digitaldrummerj-hugo/categories/git">git</a>/ <a href="/digitaldrummerj-hugo/categories/github">github</a>
 </span></span>
         </div>
-        <p> When you are creating a mobile applications there are times where you need to notify users about something such as an upcoming appointment. If the application is running and the user is using it in the foreground, this is easy to accomplish. However,
-          if the application is running in the background this can be a challenging task. You could do push notifications but that takes a decent amount of work to setup with both iOS and Android app stores. </p>
-        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/ionic-local-notification/'><strong>Read More ›</strong></a></p>
+        <p> Syncing your forked repository to the original repository is an important step before submitting any pull request to the original repository for the changes in your forked repository. Even if you are not going to submit a pull request to the original
+          repository, there are times that you want the additional features and/or bug fixes that have been done since you forked the original repository. You could do a pull request but this adds an additional commit into your forked repository instead
+          of making your forked repository match the original repository. </p>
+        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/git-syncing-fork-with-original-repo/'><strong>Read More ›</strong></a></p>
       </div>
       <hr>
       <div class="blog-post">
-        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/running-gulp-task-in-visual-studio/">Running Gulp Task in Visual Studio</a> </h2>
-        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-11-15T00:00:00Z">
-            Sun Nov 15, 2015
+        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-2015-cordova-tools-and-ionic-framework/">Getting Visual Studio Cordova Tooling Working with the Ionic Framework</a> </h2>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-09-17T00:00:00Z">
+            Thu Sep 17, 2015
           </time> </span> <span class="meta-tags">
   <span class="icon-price-tag"></span> <span> 
-<a href="/digitaldrummerj-hugo/categories/visual-studio">visual studio</a>/ <a href="/digitaldrummerj-hugo/categories/gulp">gulp</a>
+<a href="/digitaldrummerj-hugo/categories/ionic">ionic</a>/ <a href="/digitaldrummerj-hugo/categories/visual-studio">visual studio</a>
 </span></span>
         </div>
-        <p> When I am working in an code editor such as Visual Studio, I do not want to have to have to leave the editor to run command line programs such as Gulp task. I want to be able to run the gulp task right from instead the editor. Starting with Visual
-          Studio 2013, you could do this with the Task Runner Explorer extension. Microsoft then integrated the Task Runner Explorer into Visual Studio 2015 so you no longer have to install an extension. </p>
-        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/running-gulp-task-in-visual-studio/'><strong>Read More ›</strong></a></p>
+        <p> I am doing an Ionic Framework presentation and I wanted to use the Visual Studio 2015 Cordova Tooling. I have done this presentation twice in the past couple of months using my Intel Nuc machine with the Visual Studio 2015 RTM Cordova tooling
+          but it is kind of pain to do this since the Nuc is a desktop machine and doesn&rsquo;t have a monitor so I have to look at the projector screen or being a laptop to use as well. </p>
+        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/visual-studio-2015-cordova-tools-and-ionic-framework/'><strong>Read More ›</strong></a></p>
       </div>
       <hr>
       <div class="blog-post">
-        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/strongloop-extending-user-model-security/">Strongloop - Fixing Security When Extending User Model</a> </h2>
-        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-10-30T00:00:00Z">
-            Fri Oct 30, 2015
+        <h2 class="blog-title"> <a href="http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-13-creating-an-article-series/">Jekyll Part 13: Creating an Article Series</a> </h2>
+        <div id="page-meta" class="t10"> <span class="pr20"><span class="icon-calendar"></span> <time datetime="2015-09-15T00:00:00Z">
+            Tue Sep 15, 2015
           </time> </span> <span class="meta-tags">
   <span class="icon-price-tag"></span> <span> 
-<a href="/digitaldrummerj-hugo/categories/ionic">ionic</a>/ <a href="/digitaldrummerj-hugo/categories/strongloop">strongloop</a>
+<a href="/digitaldrummerj-hugo/categories/blogging">blogging</a>/ <a href="/digitaldrummerj-hugo/categories/jekyll">jekyll</a>
 </span></span>
         </div>
-        <p> After following Raymond Camden&rsquo;s Strongloop Introduction, I was ready to update the todo demo application that I have been using for the Ionic Arizona Meetup. So I created a models for projects and app users. The app users model base class
-          was User. Then within the project model I associated a project to an app users with a belongsTo and in the app users model I associated multiple projects to a single user with a hasMany. </p>
-        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/strongloop-extending-user-model-security/'><strong>Read More ›</strong></a></p>
+        <p> Welcome the continuing series on using Jekyll. In this tutorial we are going to go through how to create the series listing like you see for this blog series. Overview Sometimes a blog post gets too big and you need to split it into multiple articles
+          or you want to do a series like this one that builds upon each other but you don&rsquo;t want to have to manage a listing of all of the post in the series. </p>
+        <p> <a href='http://digitaldrummerj.me/digitaldrummerj-hugo/blogging-on-github-part-13-creating-an-article-series/'><strong>Read More ›</strong></a></p>
       </div>
       <hr>
       <div> <a class="button" href="/digitaldrummerj-hugo/blog/page/6/">Previous page</a> <a class="button" href="/digitaldrummerj-hugo/blog/page/8/">Next page</a>
@@ -171,11 +182,11 @@
         <div class="panel radius latePost">
           <h3>Recent Posts <span style="float: right"><small>(<a href="http://digitaldrummerj.me/digitaldrummerj-hugo//blog/">All Posts</a>)</small></span></h3>
           <ul class="no-bullet ">
-            <li><a href="/digitaldrummerj-hugo/node-download-zip-and-extract/">Download and Extract Zip File with Node</a></li>
             <li><a href="/digitaldrummerj-hugo/ng2-karma-not-finding-tests/">Angular 2 - No  Test Found</a></li>
             <li><a href="/digitaldrummerj-hugo/ng2-add-bootstrap/">Angular 2 - Adding Bootstrap Library</a></li>
             <li><a href="/digitaldrummerj-hugo/ng2-your-first-project/">Angular 2 - Your First Project</a></li>
             <li><a href="/digitaldrummerj-hugo/ng2-wtf-my-module-wont-route/">Angular - WTF Module Won&rsquo;t Route</a></li>
+            <li><a href="/digitaldrummerj-hugo/ionic-v2-setup-windows/">Ionic v2 - How to setup on Windows</a></li>
           </ul>
         </div>
         <div class="panel radius">
@@ -192,15 +203,13 @@
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/android">Android &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/angular">Angular &nbsp;<span>(8)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/bash">Bash &nbsp;<span>(1)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/blogging">Blogging &nbsp;<span>(19)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/blogging">Blogging &nbsp;<span>(17)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/book-reviews">Book Reviews &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/bower">Bower &nbsp;<span>(2)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/c">C# &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/camtasia">Camtasia &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/chocolatey">Chocolatey &nbsp;<span>(5)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/chrome">Chrome &nbsp;<span>(2)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/community">Community &nbsp;<span>(1)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/cors">Cors &nbsp;<span>(2)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/debugging">Debugging &nbsp;<span>(2)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/docker">Docker &nbsp;<span>(3)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/git">Git &nbsp;<span>(5)</span></a></li>
@@ -209,10 +218,8 @@
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/how-to">How To &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/iis">Iis &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/ionic">Ionic &nbsp;<span>(16)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/jekyll">Jekyll &nbsp;<span>(18)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/jekyll">Jekyll &nbsp;<span>(16)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/markdown">Markdown &nbsp;<span>(1)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/meetup">Meetup &nbsp;<span>(1)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/node">Node &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/nodejs">Nodejs &nbsp;<span>(3)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/npm">Npm &nbsp;<span>(4)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/nuget">Nuget &nbsp;<span>(1)</span></a></li>
@@ -220,13 +227,12 @@
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/productivity">Productivity &nbsp;<span>(5)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/programming">Programming &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/proxy">Proxy &nbsp;<span>(2)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/speaking">Speaking &nbsp;<span>(4)</span></a></li>
+            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/speaking">Speaking &nbsp;<span>(3)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/strongloop">Strongloop &nbsp;<span>(1)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/vagrant">Vagrant &nbsp;<span>(9)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/virtualbox">Virtualbox &nbsp;<span>(6)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/visual-studio">Visual Studio &nbsp;<span>(6)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/web-api">Web Api &nbsp;<span>(3)</span></a></li>
-            <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/webapi">Webapi &nbsp;<span>(2)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/windows">Windows &nbsp;<span>(4)</span></a></li>
             <li><span class="icon-price-tag"></span><a href="http://digitaldrummerj.me/digitaldrummerj-hugo/categories/year-in-review">Year in Review &nbsp;<span>(1)</span></a></li>
           </ul>

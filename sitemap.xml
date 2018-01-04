@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/node-download-zip-and-extract/</loc>
-    <lastmod>2017-10-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/about/</loc>
     <lastmod>2017-05-19T21:49:20+02:00</lastmod>
   </url>
@@ -48,17 +43,7 @@
   </url>
   
   <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-solved/</loc>
-    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-json-setup/</loc>
-    <lastmod>2016-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/webapi-cors-with-credentials/</loc>
     <lastmod>2016-08-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -105,26 +90,6 @@
   <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/reset-dell-tablet/</loc>
     <lastmod>2016-04-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/running-a-successful-user-group/</loc>
-    <lastmod>2016-02-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-automated-deployment-to-azure-with-travisci/</loc>
-    <lastmod>2016-02-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/jekyll-automatically-tweeting-new-post/</loc>
-    <lastmod>2016-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/getting-feedback-on-talks-with-twilio/</loc>
-    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -475,13 +440,13 @@
   
   <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/series/blogging-with-jekyll/</loc>
-    <lastmod>2016-02-15T00:00:00+00:00</lastmod>
+    <lastmod>2016-02-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/blog/</loc>
-    <lastmod>2017-10-03T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -528,19 +493,7 @@
   </url>
   
   <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/categories/community/</loc>
-    <lastmod>2016-02-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/contact/</loc>
-  </url>
-  
-  <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/categories/cors/</loc>
-    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -617,25 +570,13 @@
   
   <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/</loc>
-    <lastmod>2017-10-03T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-19T21:49:20+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/categories/markdown/</loc>
     <lastmod>2016-05-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/categories/meetup/</loc>
-    <lastmod>2016-02-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/categories/node/</loc>
-    <lastmod>2017-10-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -693,7 +634,7 @@
   
   <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/categories/speaking/</loc>
-    <lastmod>2016-02-04T00:00:00+00:00</lastmod>
+    <lastmod>2016-01-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -759,12 +700,6 @@
   <url>
     <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/series/web-api-getting-started/</loc>
     <lastmod>2016-09-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://digitaldrummerj.me/digitaldrummerj-hugo/categories/webapi/</loc>
-    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
