@@ -54,7 +54,7 @@
                 {{ range first $recent_post (after 1 (where .Site.Pages "Section" "blog")) }}
                   <li><a href="{{.RelPermalink}}"><strong>{{.Title | markdownify }}</strong></a>
                 {{ end }}
-                <li><a data-proofer-ignore="" href="/blog/"><strong>More ›</strong></a></li>
+                <li><a data-proofer-ignore="" href="blog/"><strong>More ›</strong></a></li>
               </ul>
             </div>
           </div>
